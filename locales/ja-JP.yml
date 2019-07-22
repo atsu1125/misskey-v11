@@ -673,6 +673,8 @@ common/views/components/user-menu.vue:
   suspend-confirm: "このユーザーを凍結しますか？"
   unsuspend-confirm: "このユーザーを凍結解除しますか？"
   confirm: "確認"
+  update-remote-user: "リモートユーザー情報の更新"
+  remote-user-updated: "リモートユーザー情報を更新しました"
 
 common/views/components/poll.vue:
   vote-to: "「{}」に投票する"
