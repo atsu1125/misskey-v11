@@ -211,6 +211,12 @@ export class User {
 	@JoinColumn()
 	public movedToUser: User | null;
 
+	@Column('enum', {
+		enum: ['not-known', 'male', 'female', 'not-applicable'],
+		default: 'not-known', nullable: false,
+	})
+	public sex: 'not-known' | 'male' | 'female' | 'not-applicable';
+
 	constructor(data: Partial<User>) {
 		if (data == null) return;
 
