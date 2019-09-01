@@ -206,6 +206,7 @@ export default (opts: Opts = {}) => ({
 			const w = this.$root.new(MkNoteMenu, {
 				source: this.$refs.menuButton,
 				note: this.appearNote,
+				actualNote: this.note
 				animation: !viaKeyboard
 			}).$once('closed', () => {
 				this.openingMenu = false;
