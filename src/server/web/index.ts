@@ -21,11 +21,16 @@ import getNoteSummary from '../../misc/get-note-summary';
 import { ensure } from '../../prelude/ensure';
 import { getConnection } from 'typeorm';
 import redis from '../../db/redis';
+import { env } from 'gulp-util';
 
 const client = `${__dirname}/../../client/`;
 
 // Init app
 const app = new Koa();
+
+const setCache = (ctx: Koa.ParameterizedContext, onProduction: string) => {
+	ctx.set('Cache-Control', env === 'production' ? onProduction : 'no-store');
+};
 
 // Init renderer
 app.use(views(__dirname + '/views', {
@@ -51,6 +56,9 @@ const router = new Router();
 //#region static assets
 
 router.get('/assets/*', async ctx => {
+	if (env !== 'production') {
+		ctx.set('Cache-Control', 'no-store');
+	}
 	await send(ctx as any, ctx.path, {
 		root: client,
 		maxage: ms('7 days'),
@@ -169,7 +177,7 @@ router.get(['/@:user', '/@:user/:sub'], async (ctx, next) => {
 			instanceName: meta.name || 'Misskey',
 			icon: meta.iconUrl
 		});
-		ctx.set('Cache-Control', 'public, max-age=30');
+		setCache(ctx, 'public, max-age=30');
 	} else {
 		// リモートユーザーなので
 		// モデレータがAPI経由で参照可能にするために404にはしない
@@ -222,9 +230,9 @@ router.get('/notes/:note', async ctx => {
 		});
 
 		if (['public', 'home'].includes(note.visibility)) {
-			ctx.set('Cache-Control', 'public, max-age=180');
+			setCache(ctx, 'public, max-age=180');
 		} else {
-			ctx.set('Cache-Control', 'private, max-age=0, must-revalidate');
+			setCache(ctx, 'private, max-age=0, must-revalidate');
 		}
 
 		return;
@@ -257,9 +265,9 @@ router.get('/@:user/pages/:page', async ctx => {
 		});
 
 		if (['public'].includes(page.visibility)) {
-			ctx.set('Cache-Control', 'public, max-age=180');
+			setCache(ctx, 'public, max-age=180');
 		} else {
-			ctx.set('Cache-Control', 'private, max-age=0, must-revalidate');
+			setCache(ctx, 'private, max-age=0, must-revalidate');
 		}
 
 		return;
@@ -318,7 +326,7 @@ router.get('*', async ctx => {
 		desc: meta.description,
 		icon: meta.iconUrl
 	});
-	ctx.set('Cache-Control', 'public, max-age=300');
+	setCache(ctx, 'public, max-age=300');
 });
 
 // Register router

@@ -17,6 +17,9 @@
 		"migrateandstart": "npm run migrate && npm run start",
 		"build": "webpack && gulp build",
 		"webpack": "webpack",
+		"dev": "run-p watch gulpstart",
+		"gulpstart": "run-s gulp start",
+		"watch": "webpack --watch",
 		"gulp": "gulp build",
 		"clean": "gulp clean",
 		"cleanall": "gulp cleanall",
@@ -134,6 +137,7 @@
 		"gulp-terser": "2.1.0",
 		"gulp-tslint": "8.1.4",
 		"gulp-typescript": "5.0.1",
+		"gulp-util": "3.0.8",
 		"hard-source-webpack-plugin": "0.13.1",
 		"highlight.js": "10.6.0",
 		"hpagent": "0.1.2",
@@ -253,6 +257,7 @@
 		"xev": "2.0.1"
 	},
 	"devDependencies": {
-		"@redocly/openapi-core": "1.0.0-beta.112"
+		"@redocly/openapi-core": "1.0.0-beta.112",
+		"npm-run-all": "4.1.5"
 	}
 }
