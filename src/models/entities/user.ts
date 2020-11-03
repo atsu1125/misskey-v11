@@ -164,6 +164,16 @@ export class User {
 	})
 	public isDeleted: boolean;
 
+	@Column('boolean', {
+		default: false,
+	})
+	public isVerified: boolean;
+
+	@Column('boolean', {
+		default: false,
+	})
+	public isPremium: boolean;
+
 	@Column('varchar', {
 		length: 128, array: true, default: '{}'
 	})

@@ -129,6 +129,16 @@ import {
 	faHourglassHalf,
 	faGavel,
 	faUndoAlt,
+	faCode,
+	faTh,
+	faMars,
+	faVenus,
+	faGenderless,
+	faUserFriends,
+	faFish,
+	faComment,
+	faQuestionCircle,
+	faCrown,
 } from '@fortawesome/free-solid-svg-icons';
 
 import {
@@ -262,6 +272,16 @@ library.add(
 	faHourglassHalf,
 	faGavel,
 	faUndoAlt,
+	faCode,
+	faTh,
+	faMars,
+	faVenus,
+	faGenderless,
+	faUserFriends,
+	faFish,
+	faComment,
+	faQuestionCircle,
+	faCrown,
 
 	farBell,
 	farEnvelope,

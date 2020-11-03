@@ -16,6 +16,9 @@
 		<mk-user-list :pagination="pinnedUsers" :expanded="false">
 			<fa :icon="faBookmark" fixed-width/>{{ $t('pinned-users') }}
 		</mk-user-list>
+		<mk-user-list :pagination="verifiedUsers">
+			<fa :icon="faCertificate" fixed-width/>{{ $t('verified-users') }}
+		</mk-user-list>
 		<mk-user-list :pagination="popularUsers" :expanded="false">
 			<fa :icon="faChartLine" fixed-width/>{{ $t('popular-users') }}
 		</mk-user-list>
@@ -60,7 +63,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import i18n from '../../../i18n';
-import { faChartLine, faPlus, faHashtag, faRocket, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faChartLine, faPlus, faHashtag, faRocket, faSearch, faCertificate } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
 
 export default Vue.extend({
@@ -82,6 +85,12 @@ export default Vue.extend({
 	data() {
 		return {
 			pinnedUsers: { endpoint: 'pinned-users' },
+			verifiedUsers: () => this.$root.api('users', {
+				state: 'verified',
+				origin: 'local',
+				sort: '+follower',
+				limit: 10
+			}),
 			popularUsers: { endpoint: 'users', limit: 10, params: {
 				state: 'alive',
 				origin: 'local',
@@ -115,7 +124,7 @@ export default Vue.extend({
 			query: null,
 			meta: null,
 			num: Vue.filter('number'),
-			faBookmark, faChartLine, faCommentAlt, faPlus, faHashtag, faRocket, faSearch
+			faBookmark, faChartLine, faCommentAlt, faPlus, faHashtag, faRocket, faSearch, faCertificate
 		};
 	},
 

@@ -132,6 +132,8 @@ export class UserRepository extends Repository<User> {
 			isAdmin: user.isAdmin || falsy,
 			isBot: user.isBot || falsy,
 			isCat: user.isCat || falsy,
+			isVerified: user.isVerified || falsy,
+			isPremium: user.isPremium || falsy,
 
 			// カスタム絵文字添付
 			emojis: populateEmojis(user.emojis, user.host),
@@ -405,6 +407,10 @@ export const packedUserSchema = {
 			type: 'boolean' as const,
 			nullable: false as const, optional: true as const,
 			description: 'Whether this account is a moderator.'
+		},
+		isVerified: {
+			type: 'boolean' as const,
+			nullable: false as const, optional: true as const,
 		},
 		isLocked: {
 			type: 'boolean' as const,
