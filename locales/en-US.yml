@@ -12,7 +12,7 @@ common:
     rich-contents: "Post"
     rich-contents-desc: "Just post your idea, hot topics, and anything you want to share. You may want to decorate your words, attach your favorite pictures, send files, including videos, or create a poll - those are some of the things you can do with Misskey!"
     reaction: "Reactions"
-    reaction-desc: "The easiest way to express your emotions. Misskey allows you to add various reactions to posts. Other SNSs only have a \"like\" reaction."
+    reaction-desc: 'The easiest way to express your emotions. Misskey allows you to add various reactions to posts. Other SNSs only have a "like" reaction.'
     ui: "Interface"
     ui-desc: "No single UI can suit everyone. Therefore, Misskey has a highly customizable UI for your tastes. You can make your home original by editing the layout of your timeline, and moving around selectable widgets that you can easily adjust to make this place your own."
     drive: "Drive"
@@ -49,7 +49,7 @@ common:
   got-it: "Got it!"
   customization-tips:
     title: "Customization tips"
-    paragraph: "<p>Home customization allows you to add/delete, drag and drop and rearrange widgets.</p><p>You can change the display by <strong><strong>right</strong> clicking</strong> on some widgets.</p><p>To delete a widget, drag and drop the widget onto <strong>the area labeled \"Trash\"</strong> in the header.</p><p>To finish the customization, click \"Done\" on the upper right.</p>"
+    paragraph: '<p>Home customization allows you to add/delete, drag and drop and rearrange widgets.</p><p>You can change the display by <strong><strong>right</strong> clicking</strong> on some widgets.</p><p>To delete a widget, drag and drop the widget onto <strong>the area labeled "Trash"</strong> in the header.</p><p>To finish the customization, click "Done" on the upper right.</p>'
     gotit: "Got it!"
   notification:
     file-uploaded: "File uploaded!"
@@ -212,7 +212,7 @@ common:
     web-search-engine-desc: "Example: https://www.google.com/?#q={{query}}"
     paste: "Paste"
     pasted-file-name: "Template for pasted file name"
-    pasted-file-name-desc: "Example: \"yyyy-MM-dd HH-mm-ss [{{number}}]\" → \"2018-03-20 21-30-24 1\""
+    pasted-file-name-desc: 'Example: "yyyy-MM-dd HH-mm-ss [{{number}}]" → "2018-03-20 21-30-24 1"'
     paste-dialog: "Edit the pasted file name"
     paste-dialog-desc: "Display a dialog to edit the file name when you paste a file."
     keep-cw: "Preserve content warning"
@@ -438,7 +438,7 @@ common/views/components/games/reversi/reversi.index.vue:
   sub-title: "Play reversi with your friends!"
   invite: "Invite"
   rule: "How to play"
-  rule-desc: "Reversi is a strategy board game for two players, played on an 8×8 uncheckered board. There are sixty-four identical game pieces called disks (often spelled \"discs\"), which are light on one side and dark on the other. Players take turns placing disks on the board with their assigned color facing up. During a play, any disks of the opponent's color that are in a straight line and bounded by the disk just placed and another disk of the current player's color are turned over to the current player's color. The object of the game is to have the majority of disks turned to display your color when the last playable empty square is filled."
+  rule-desc: 'Reversi is a strategy board game for two players, played on an 8×8 uncheckered board. There are sixty-four identical game pieces called disks (often spelled "discs"), which are light on one side and dark on the other. Players take turns placing disks on the board with their assigned color facing up. During a play, any disks of the opponent''s color that are in a straight line and bounded by the disk just placed and another disk of the current player''s color are turned over to the current player''s color. The object of the game is to have the majority of disks turned to display your color when the last playable empty square is filled.'
   mode-invite: "Invite"
   mode-invite-desc: "Game with a specified user."
   invitations: "You’ve got an invitation!"
@@ -465,7 +465,7 @@ common/views/components/games/reversi/reversi.room.vue:
   waiting-for-both: "Preparing"
   cancel: "Cancel"
   ready: "Ready"
-  cancel-ready: "Cancel \"Ready\""
+  cancel-ready: 'Cancel "Ready"'
 common/views/components/connect-failed.vue:
   title: "Unable to connect to the server"
   description: "There is a problem with your Internet connection, or the server may be down or under maintenance. Please {try again} later."
@@ -502,7 +502,7 @@ common/views/components/theme.vue:
   install-a-theme: "Install a theme"
   theme-code: "Theme code"
   install: "Install"
-  installed: "\"{}\" has been installed"
+  installed: '"{}" has been installed'
   create-a-theme: "Create a theme"
   save-created-theme: "Save theme"
   primary-color: "Primary color"
@@ -523,7 +523,7 @@ common/views/components/theme.vue:
   installed-themes: "Installed themes"
   select-theme: "Select your theme"
   uninstall: "Uninstall"
-  uninstalled: "\"{}\" has been uninstalled"
+  uninstalled: '"{}" has been uninstalled'
   author: "Author"
   desc: "Description"
   export: "Export"
@@ -680,7 +680,7 @@ common/views/components/signin.vue:
   enter-2fa-code: "Enter your verification code"
 common/views/components/signup.vue:
   invitation-code: "Invitation code"
-  invitation-info: "If you do not have an invitation code, please contact an <a href=\"{}\">administrator</a>."
+  invitation-info: 'If you do not have an invitation code, please contact an <a href="{}">administrator</a>.'
   username: "Username"
   checking: "Confirming..."
   available: "Available"
@@ -813,7 +813,7 @@ common/views/components/user-list-editor.vue:
   rename: "Rename list"
   delete: "Delete list"
   remove-user: "Remove from this list"
-  delete-are-you-sure: "Delete list \"$1\"?"
+  delete-are-you-sure: 'Delete list "$1"?'
   deleted: "Deleted successfully"
   add-user: "Add a user"
 common/views/components/user-group-editor.vue:
@@ -824,7 +824,7 @@ common/views/components/user-group-editor.vue:
   transfer-are-you-sure: "Are you sure you want to add @$2 to the group $1?"
   transferred: "Group transferred"
   remove-user: "Remove a user from this group"
-  delete-are-you-sure: "Are you sure to delete group \"$1\"?"
+  delete-are-you-sure: 'Are you sure to delete group "$1"?'
   deleted: "Deleted"
   invite: "Invite"
   invited: "The invitation was successfully sent"
@@ -884,7 +884,7 @@ common/views/widgets/tips.vue:
   tips-line8: "The Home layout can be customized from the settings."
   tips-line9: "Misskey is licensed under AGPLv3."
   tips-line10: "Using the Time Machine widget makes it easy to trace back to the past timeline."
-  tips-line11: "You can pin posts to user page by clicking on \"...\""
+  tips-line11: 'You can pin posts to user page by clicking on "..."'
   tips-line13: "All the files attached to the post are saved to Drive."
   tips-line14: "While customizing your home layout, you can right click on a widget to change its design."
   tips-line17: "Surrounding the text with ** ** will highlight it."
@@ -1112,7 +1112,7 @@ common/views/components/api-settings.vue:
     title: "API console"
     endpoint: "Endpoint"
     parameter: "Parameters"
-    credential-info: "Parameter \"i\" is not required at this console."
+    credential-info: 'Parameter "i" is not required at this console.'
     send: "Send"
     sending: "Sending"
     response: "Result"
@@ -1425,7 +1425,7 @@ admin/views/users.vue:
   lookup: "Look up"
   reset-password: "Reset password"
   reset-password-confirm: "Do you want to reset your password?"
-  password-updated: "The password is now \"{password}\""
+  password-updated: 'The password is now "{password}"'
   suspend: "Suspend"
   suspend-confirm: "Do you want to suspend this account?"
   suspended: "Successfully suspended."
@@ -1497,7 +1497,7 @@ admin/views/emoji.vue:
     remove: "Remove"
   updated: "Updated"
   remove-emoji:
-    are-you-sure: "Delete \"$1\"?"
+    are-you-sure: 'Delete "$1"?'
     removed: "Deleted"
 admin/views/announcements.vue:
   announcements: "Announcements"
@@ -1508,7 +1508,7 @@ admin/views/announcements.vue:
   text: "Content"
   saved: "Saved"
   _remove:
-    are-you-sure: "Delete \"$1\"?"
+    are-you-sure: 'Delete "$1"?'
     removed: "Deleted"
 admin/views/hashtags.vue:
   hided-tags: "Hidden Tags"
@@ -1606,7 +1606,7 @@ desktop/views/pages/search.vue:
   not-available: "Search feature is turned off in the settings for this instance."
   not-found: "No posts were found for '{q}'"
 desktop/views/pages/tag.vue:
-  no-posts-found: "No posts contains \"{q}\" found."
+  no-posts-found: 'No posts contains "{q}" found.'
 desktop/views/pages/user-list.users.vue:
   users: "User"
   add-user: "Add a user"
@@ -1759,10 +1759,10 @@ mobile/views/pages/home.vue:
   mentions: "Mentions"
   messages: "Direct posts"
 mobile/views/pages/tag.vue:
-  no-posts-found: "No posts contains \"{q}\" found."
+  no-posts-found: 'No posts contains "{q}" found.'
 mobile/views/pages/widgets.vue:
   dashboard: "Dashboard"
-  widgets-hints: "You can add/delete/rearrange widgets. To move the widget, drag \"三\". Tap \"x\" to delete the widget. Some widgets can change display by tapping."
+  widgets-hints: 'You can add/delete/rearrange widgets. To move the widget, drag "三". Tap "x" to delete the widget. Some widgets can change display by tapping.'
   add-widget: "Add"
   customization-tips: "Customization tips"
 mobile/views/pages/widgets/activity.vue:
@@ -1841,6 +1841,10 @@ deck/deck.user-column.vue:
   timeline: "Timeline"
   pinned-notes: "Pinned posts"
   pinned-page: "Pinned page"
+  years-old: "{age} years old"
+  year: "/"
+  month: "/"
+  day: "-"
 docs:
   edit-this-page-on-github: "Found an error, or do you want to contribute to the documentation?"
   edit-this-page-on-github-link: "Edit this page at GitHub!"
@@ -2134,7 +2138,7 @@ pages:
       _for:
         arg1: "Count"
         arg2: "Action"
-    typeError: "Slot {slot} accepts \"{expect}\" type, but It actually contains \"{actual}\" type!"
+    typeError: 'Slot {slot} accepts "{expect}" type, but It actually contains "{actual}" type!'
     thereIsEmptySlot: "Slot {slot} is empty!"
     types:
       string: "Text"

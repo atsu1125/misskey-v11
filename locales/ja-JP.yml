@@ -225,7 +225,7 @@ common:
     web-search-engine-desc: "例: https://www.google.com/?#q={{query}}"
     paste: "ペースト"
     pasted-file-name: "ペーストされたファイル名のテンプレート"
-    pasted-file-name-desc: "例: \"yyyy-MM-dd HH-mm-ss [{{number}}]\" → \"2018-03-20 21-30-24 1\""
+    pasted-file-name-desc: '例: "yyyy-MM-dd HH-mm-ss [{{number}}]" → "2018-03-20 21-30-24 1"'
     paste-dialog: "ペースト時にファイル名を編集"
     paste-dialog-desc: "ペースト時にファイル名を編集するダイアログを表示するようにします。"
     keep-cw: "CW保持"
@@ -728,7 +728,7 @@ common/views/components/signin.vue:
 
 common/views/components/signup.vue:
   invitation-code: "招待コード"
-  invitation-info: "招待コードをお持ちでない方は、<a href=\"{}\">管理者</a>までご連絡ください。"
+  invitation-info: '招待コードをお持ちでない方は、<a href="{}">管理者</a>までご連絡ください。'
   username: "ユーザー名"
   checking: "確認しています..."
   available: "利用できます"
@@ -2040,6 +2040,10 @@ deck/deck.user-column.vue:
   timeline: "タイムライン"
   pinned-notes: "ピン留めされた投稿"
   pinned-page: "ピン留めされたページ"
+  years-old: "{age}歳"
+  year: "年"
+  month: "月"
+  day: "日"
 
 docs:
   edit-this-page-on-github: "間違いや改善点を見つけましたか？"
@@ -2348,7 +2352,7 @@ pages:
       _for:
         arg1: "回数"
         arg2: "処理"
-    typeError: "スロット{slot}は\"{expect}\"を受け付けますが、\"{actual}\"が入れられています！"
+    typeError: 'スロット{slot}は"{expect}"を受け付けますが、"{actual}"が入れられています！'
     thereIsEmptySlot: "スロット{slot}が空です！"
     types:
       string: "テキスト"

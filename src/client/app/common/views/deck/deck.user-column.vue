@@ -37,6 +37,10 @@
 					</dd>
 				</dl>
 			</div>
+			<div class="info">
+				<span class="location" v-if="user.host === null && user.location"><fa icon="map-marker"/> {{ user.location }}</span>
+				<span class="birthday" v-if="user.host === null && user.birthday"><fa icon="birthday-cake"/> {{ user.birthday.replace('-', $t('year')).replace('-', $t('month')) + $t('day') }} ({{ $t('years-old', { age }) }})</span>
+			</div>
 			<div class="counts">
 				<div>
 					<router-link :to="user | userPage()">
@@ -66,6 +70,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import i18n from '../../../i18n';
+import * as age from 's-age';
 import parseAcct from '../../../../../misc/acct/parse';
 import XColumn from './deck.column.vue';
 import XUserMenu from '../../../common/views/components/user-menu.vue';
@@ -92,6 +97,10 @@ export default Vue.extend({
 				backgroundImage: `url(${ this.user.bannerUrl })`
 			};
 		},
+
+		age(): number {
+			return age(this.user.birthday);
+		}
 	},
 
 	watch: {
@@ -240,6 +249,11 @@ export default Vue.extend({
 					overflow hidden
 					white-space nowrap
 					text-overflow ellipsis
+
+		> .info
+
+			> .location
+				margin-right 12px
 
 		> .counts
 			display grid
