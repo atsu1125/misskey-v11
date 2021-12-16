@@ -69,7 +69,7 @@ export async function renderPerson(user: ILocalUser) {
 		icon: avatar ? renderImage(avatar) : null,
 		image: banner ? renderImage(banner) : null,
 		tag,
-		manuallyApprovesFollowers: user.isLocked,
+		manuallyApprovesFollowers: user.isLocked || user.carefulRemote,
 		publicKey: renderKey(user, keypair, `#main-key`),
 		isCat: user.isCat,
 		attachment: attachment.length ? attachment : undefined
