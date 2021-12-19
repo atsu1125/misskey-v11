@@ -59,6 +59,8 @@ common:
     notified-by: "Notified by {}:"
     reply-from: "Reply from {}:"
     quoted-by: "Quoted by {}:"
+    youGotNewFollower: "Followed you"
+    receiveFollowRequest: "Follow request received"
   time:
     unknown: "unknown"
     future: "future"
@@ -1042,6 +1044,8 @@ desktop/views/components/notes.vue:
   retry: "Retry"
 desktop/views/components/notifications.vue:
   empty: "No notifications!"
+  youGotNewFollower: "Followed you"
+  receiveFollowRequest: "Follow request received"
 desktop/views/components/post-form.vue:
   posted: "Posted!"
   replied: "Replied!"
@@ -1716,6 +1720,9 @@ mobile/views/components/note-sub.vue:
   admin: "admin"
   bot: "bot"
   cat: "cat"
+mobile/views/components/notification.vue:
+  youGotNewFollower: "Followed you"
+  receiveFollowRequest: "Follow request received"
 mobile/views/components/notifications.vue:
   empty: "No notifications"
 mobile/views/components/sub-note-content.vue:
@@ -1845,6 +1852,11 @@ deck/deck.user-column.vue:
   year: "/"
   month: "/"
   day: "-"
+deck/deck.notification.vue:
+  youGotNewFollower: "Followed you"
+  receiveFollowRequest: "Follow request received"
+deck/deck.notifications.vue:
+  empty: "No notifications!"
 docs:
   edit-this-page-on-github: "Found an error, or do you want to contribute to the documentation?"
   edit-this-page-on-github-link: "Edit this page at GitHub!"

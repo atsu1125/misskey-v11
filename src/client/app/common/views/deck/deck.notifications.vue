@@ -31,7 +31,7 @@ import XNotification from './deck.notification.vue';
 import paging from '../../../common/scripts/paging';
 
 export default Vue.extend({
-	i18n: i18n(),
+	i18n: i18n('deck/deck.notifications.vue'),
 
 	components: {
 		XNotification

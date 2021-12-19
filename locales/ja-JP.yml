@@ -1143,6 +1143,8 @@ desktop/views/components/notes.vue:
 
 desktop/views/components/notifications.vue:
   empty: "ありません！"
+  youGotNewFollower: "フォローされました"
+  receiveFollowRequest: "フォローリクエストされました"
 
 desktop/views/components/post-form.vue:
   posted: "投稿しました！"
@@ -1891,6 +1893,10 @@ mobile/views/components/note-sub.vue:
   bot: "bot"
   cat: "cat"
 
+mobile/views/components/notification.vue:
+  youGotNewFollower: "フォローされました"
+  receiveFollowRequest: "フォローリクエストされました"
+
 mobile/views/components/notifications.vue:
   empty: "ありません！"
 
@@ -2044,6 +2050,13 @@ deck/deck.user-column.vue:
   year: "年"
   month: "月"
   day: "日"
+
+deck/deck.notification.vue:
+  youGotNewFollower: "フォローされました"
+  receiveFollowRequest: "フォローリクエストされました"
+
+deck/deck.notifications.vue:
+  empty: "ありません！"
 
 docs:
   edit-this-page-on-github: "間違いや改善点を見つけましたか？"

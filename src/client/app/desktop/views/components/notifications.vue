@@ -73,6 +73,7 @@
 								</router-link>
 								<mk-time :time="notification.createdAt"/>
 							</header>
+							<span class="notify-info">{{ $t('youGotNewFollower') }}</span>
 						</div>
 					</template>
 
@@ -86,6 +87,7 @@
 								</router-link>
 								<mk-time :time="notification.createdAt"/>
 							</header>
+							<span class="notify-info">{{ $t('receiveFollowRequest') }}</span>
 						</div>
 					</template>
 
@@ -162,7 +164,7 @@ import getNoteSummary from '../../../../../misc/get-note-summary';
 import paging from '../../../common/scripts/paging';
 
 export default Vue.extend({
-	i18n: i18n(),
+	i18n: i18n('desktop/views/components/notifications.vue'),
 
 	mixins: [
 		paging({
@@ -320,6 +322,14 @@ export default Vue.extend({
 
 					[data-icon]:last-child
 						margin-left: 4px
+
+				.notify-info
+					color var(--noteText)
+					display inline-block
+					width: 100%
+					opacity: 0.5
+					overflow hidden
+					white-space nowrap
 
 				&.reaction
 					.text header

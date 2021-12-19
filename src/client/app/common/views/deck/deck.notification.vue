@@ -46,6 +46,7 @@
 				</router-link>
 				<mk-time :time="notification.createdAt"/>
 			</header>
+			<span class="notify-info">{{ $t('youGotNewFollower') }}</span>
 		</div>
 	</div>
 
@@ -59,6 +60,7 @@
 				</router-link>
 				<mk-time :time="notification.createdAt"/>
 			</header>
+			<span class="notify-info">{{ $t('receiveFollowRequest') }}</span>
 		</div>
 	</div>
 
@@ -96,9 +98,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import i18n from '../../../i18n';
 import getNoteSummary from '../../../../../misc/get-note-summary';
 
 export default Vue.extend({
+	i18n: i18n('deck/deck.notification.vue'),
+
 	props: ['notification'],
 	data() {
 		return {
@@ -172,6 +177,14 @@ export default Vue.extend({
 
 				[data-icon]:last-child
 					margin-left: 4px
+
+			> .notify-info
+				color var(--noteText)
+				display inline-block
+				width: 100%
+				opacity: 0.5
+				overflow hidden
+				white-space nowrap
 
 		&.reaction
 			> div > header
