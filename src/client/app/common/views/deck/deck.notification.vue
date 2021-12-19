@@ -161,26 +161,36 @@ export default Vue.extend({
 				text-overflow ellipsis
 
 				[data-icon]
-					font-size 1em
-					font-weight normal
-					font-style normal
 					display inline-block
-					margin-right 3px
+					font-size: 50%
+					opacity: 0.5
+					vertical-align: super
+
+				[data-icon]:first-child
+					margin-left: 4px
+					margin-right: 4px
+
+				[data-icon]:last-child
+					margin-left: 4px
 
 		&.reaction
 			> div > header
 				align-items normal
 
-		&.renote
+		&.reply, &.mention
 			> div > header [data-icon]
-				color #77B255
+				color #007aff
+
+		&.renote, &.quote
+			> div > header [data-icon]
+				color #36d298
 
 		&.follow
 			> div > header [data-icon]
-				color #53c7ce
+				color #36aed2
 
-		&.receiveFollowRequest
+		&.followRequest, &.pollVote
 			> div > header [data-icon]
-				color #888
+				color #5e7c8c
 
 </style>

@@ -209,7 +209,7 @@ common:
     default-note-visibility: "Default visibility"
     remember-note-visibility: "Remember post visibility"
     web-search-engine: "Web search engine"
-    web-search-engine-desc: "Example: https://www.google.com/?#q={{query}}"
+    web-search-engine-desc: "Example: https://www.google.com/search?q={{query}}"
     paste: "Paste"
     pasted-file-name: "Template for pasted file name"
     pasted-file-name-desc: 'Example: "yyyy-MM-dd HH-mm-ss [{{number}}]" → "2018-03-20 21-30-24 1"'

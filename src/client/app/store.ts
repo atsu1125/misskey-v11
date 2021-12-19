@@ -30,7 +30,7 @@ const defaultSettings = {
 	rememberNoteVisibility: false,
 	defaultNoteVisibility: 'public',
 	wallpaper: null,
-	webSearchEngine: 'https://www.google.com/?#q={{query}}',
+	webSearchEngine: 'https://www.google.com/search?q={{query}}',
 	mutedWords: [],
 	gamesReversiShowBoardLabels: false,
 	gamesReversiUseAvatarStones: true,

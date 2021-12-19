@@ -121,6 +121,7 @@ export default async function(follower: User, followee: User, requestId?: string
 
 	// フォロー対象が鍵アカウントである or
 	// フォロワーがBotであり、フォロー対象がBotからのフォローに慎重である or
+	// フォロワーがリモートユーザーであり、フォロー対象がリモートからのフォローに慎重である or
 	// フォロワーがローカルユーザーであり、フォロー対象がリモートユーザーである
 	// 上記のいずれかに当てはまる場合はすぐフォローせずにフォローリクエストを発行しておく
 	if (followee.isLocked || (followeeProfile.carefulBot && follower.isBot) || (followeeProfile.carefulRemote && Users.isRemoteUser(follower)) || (Users.isLocalUser(follower) && Users.isRemoteUser(followee))) {

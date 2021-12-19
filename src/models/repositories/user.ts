@@ -198,6 +198,7 @@ export class UserRepository extends Repository<User> {
 				autoWatch: profile!.autoWatch,
 				alwaysMarkNsfw: profile!.alwaysMarkNsfw,
 				carefulBot: profile!.carefulBot,
+				carefulRemote: profile!.carefulRemote,
 				autoAcceptFollowed: profile!.autoAcceptFollowed,
 				isDeleted: user.isDeleted,
 				hasUnreadMessagingMessage: this.getHasUnreadMessagingMessage(user.id),
