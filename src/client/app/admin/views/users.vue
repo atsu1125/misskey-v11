@@ -13,13 +13,9 @@
 				<div class="actions">
 					<ui-button v-if="user.host != null" @click="updateRemoteUser"><fa :icon="faSync"/> {{ $t('update-remote-user') }}</ui-button>
 					<ui-button @click="resetPassword"><fa :icon="faKey"/> {{ $t('reset-password') }}</ui-button>
-fe					<ui-horizon-group v-if="user.host == null" >
-						<ui-button :disabled="changing" @click="markAsAdmin">{{ $t('mark-admin') }}</ui-button>
-						<ui-button :disabled="changing" @click="unmarkAsAdmin">{{ $t('unmark-admin') }}</ui-button>
-					</ui-horizon-group>
 					<ui-horizon-group>
-						<ui-button @click="setPremium" :disabled="changing"><fa :icon="crown"/> {{ $t('set-premium') }}</ui-button>
-						<ui-button @click="unsetPremium" :disabled="changing">{{ $t('unset-premium') }}</ui-button>
+						<ui-button @click="setPremium" :disabled="changing"><fa :icon="crown"/> {{ $t('premium') }}</ui-button>
+						<ui-button @click="unsetPremium" :disabled="changing">{{ $t('unpremium') }}</ui-button>
 					</ui-horizon-group>
 					<ui-horizon-group>
 						<ui-button @click="verifyUser" :disabled="verifying"><fa :icon="faCertificate"/> {{ $t('verify') }}</ui-button>
@@ -211,40 +207,7 @@ export default Vue.extend({
 				});
 			});
 		},
-		async markAsAdmin() {
-			this.changing = true;
-			const process = async () => {
-				await this.$root.api('admin/admins/add', { userId: this.user.id });
-				this.$root.dialog({
-					type: 'success',
-					text: this.$t('marked-admin')
-				});
-			};
-			await process().catch(e => {
-				this.$root.dialog({
-					type: 'error',
-					text: e.message
-				});
-			});
-			this.changing = false;
-		},
-		async unmarkAsAdmin() {
-			this.changing = true;
-			const process = async () => {
-				await this.$root.api('admin/admins/remove', { userId: this.user.id });
-				this.$root.dialog({
-					type: 'success',
-					text: this.$t('unmarked-admin')
-				});
-			};
-			await process().catch(e => {
-				this.$root.dialog({
-					type: 'error',
-					text: e.message;
-				});
-			});
-			this.changing = false;
-		},
+
 		async verifyUser() {
 			if (!await this.getConfirmed(this.$t('verify-confirm'))) return;
 			this.verifying = true;
@@ -264,6 +227,7 @@ export default Vue.extend({
 			this.verifying = false;
 			this.refreshUser();
 		},
+
 		async unverifyUser() {
 			if (!await this.getConfirmed(this.$t('unverify-confirm'))) return;
 			this.unverifying = true;
@@ -283,14 +247,15 @@ export default Vue.extend({
 			this.unverifying = false;
 			this.refreshUser();
 		},
+
 		async setPremium() {
-			if (!await this.getConfirmed(this.$t('set-premium-confirm'))) return;
+			if (!await this.getConfirmed(this.$t('premium-confirm'))) return;
 			this.changing = true;
 			const process = async () => {
 				await this.$root.api('admin/set-premium', { userId: this.user.id });
 				this.$root.dialog({
 					type: 'success',
-					text: this.$t('become-premium')
+					text: this.$t('premiumed')
 				});
 			};
 			await process().catch(e => {
@@ -302,14 +267,15 @@ export default Vue.extend({
 			this.changing = false;
 			this.refreshUser();
 		},
+
 		async unsetPremium() {
-			if (!await this.getConfirmed(this.$t('unverify-confirm'))) return;
+			if (!await this.getConfirmed(this.$t('unpremium-confirm'))) return;
 			this.changing = true;
 			const process = async () => {
 				await this.$root.api('admin/unset-premium', { userId: this.user.id });
 				this.$root.dialog({
 					type: 'success',
-					text: this.$t('unverified')
+					text: this.$t('unpremiumed')
 				});
 			};
 			await process().catch(e => {
@@ -321,6 +287,7 @@ export default Vue.extend({
 			this.changing = false;
 			this.refreshUser();
 		},
+
 		async silenceUser() {
 			if (!await this.getConfirmed(this.$t('silence-confirm'))) return;
 			const process = async () => {
