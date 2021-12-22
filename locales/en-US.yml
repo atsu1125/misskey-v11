@@ -1475,6 +1475,7 @@ admin/views/users.vue:
       admin: "Administrator"
       moderator: "Moderator"
       adminOrModerator: "Admin/Moderator"
+      verified: "Official Account"
       silenced: "Already silenced"
       suspended: "Suspended"
     origin:
