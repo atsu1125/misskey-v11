@@ -75,6 +75,20 @@ export default Vue.extend({
 </script>
 
 <style lang="stylus" scoped>
+@keyframes earwiggleleft
+	from { transform: rotate(37.6deg) skew(30deg); }
+	25% { transform: rotate(10deg) skew(30deg); }
+	50% { transform: rotate(20deg) skew(30deg); }
+	75% { transform: rotate(0deg) skew(30deg); }
+	to { transform: rotate(37.6deg) skew(30deg); }
+
+@keyframes earwiggleright
+	from { transform: rotate(-37.6deg) skew(-30deg); }
+	30% { transform: rotate(-10deg) skew(-30deg); }
+	55% { transform: rotate(-20deg) skew(-30deg); }
+	75% { transform: rotate(0deg) skew(-30deg); }
+	to { transform: rotate(-37.6deg) skew(-30deg); }
+
 .mk-avatar
 	display inline-block
 	vertical-align bottom
@@ -102,6 +116,12 @@ export default Vue.extend({
 		border-radius 75% 0 75% 75%
 		transform rotate(-37.5deg) skew(-30deg)
 
+	&.cat:hover
+		&::before
+			animation: earwiggleleft 1s infinite;
+		&::after
+			animation: earwiggleright 1s infinite;
+
 	.inner
 		background-position center center
 		background-size cover
@@ -112,5 +132,4 @@ export default Vue.extend({
 		top 0
 		transition border-radius 1s ease
 		z-index 1
-
 </style>

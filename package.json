@@ -1,8 +1,8 @@
 {
 	"name": "misskey",
 	"author": "mei23 <m@m544.net>",
-	"version": "11.37.1-milkey-1.3.3",
-	"codename": "daybreak",
+	"version": "11.37.1-milkey-1.3.4",
+	"codename": "Obihiro",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/sakura-tel/misskey-v11.git"
