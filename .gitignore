@@ -11,6 +11,7 @@
 # config
 /.config/*
 !/.config/example.yml
+!/.config/docker.yml
 !/.config/mongo_initdb_example.js
 
 # misskey
