@@ -16,11 +16,11 @@ services:
       - external_network
     volumes:
       - ./files:/misskey/files
-      - ./.config:/misskey/.config
+      - ./.config/docker.yml:/misskey/.config/default.yml
 
   redis:
     restart: always
-    image: redis:4.0-alpine
+    image: redis:alpine
     networks:
       - internal_network
     volumes:
@@ -28,7 +28,7 @@ services:
 
   db:
     restart: always
-    image: postgres:11.2-alpine
+    image: postgres:alpine
     networks:
       - internal_network
     env_file:
