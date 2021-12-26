@@ -14,6 +14,8 @@ services:
     networks:
       - internal_network
       - external_network
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q --spider --proxy=off localhost:3000/info || exit 1"]
     volumes:
       - ./files:/misskey/files
       - ./.config/docker.yml:/misskey/.config/default.yml
@@ -23,14 +25,18 @@ services:
     image: redis:alpine
     networks:
       - internal_network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
     volumes:
       - ./redis:/data
 
   db:
     restart: always
-    image: postgres:alpine
+    image: postgres:14.1-alpine
     networks:
       - internal_network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "example-misskey-user"]
     env_file:
       - .config/docker.env
     volumes:
