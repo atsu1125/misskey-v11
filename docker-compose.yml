@@ -36,7 +36,7 @@ services:
     networks:
       - internal_network
     healthcheck:
-      test: ["CMD", "pg_isready", "-U", "example-misskey-user"]
+      test: ["CMD", "pg_isready", "-U", "example-misskey-user", "-d", "misskey"]
     env_file:
       - .config/docker.env
     volumes:
