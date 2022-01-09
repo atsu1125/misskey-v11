@@ -28,6 +28,7 @@
 		<mk-avatar class="avatar" :user="notification.user"/>
 		<div class="text">
 			<p><fa icon="user-plus"/><mk-user-name :user="notification.user"/></p>
+			<span class="notify-info">{{ $t('youGotNewFollower') }}</span>
 		</div>
 	</template>
 
@@ -35,6 +36,7 @@
 		<mk-avatar class="avatar" :user="notification.user"/>
 		<div class="text">
 			<p><fa icon="user-clock"/><mk-user-name :user="notification.user"/></p>
+			<span class="notify-info">{{ $t('receiveFollowRequest') }}</span>
 		</div>
 	</template>
 
@@ -66,9 +68,12 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import i18n from '../../../i18n';
 import getNoteSummary from '../../../../../misc/get-note-summary';
 
 export default Vue.extend({
+	i18n: i18n('mobile/views/components/notification.vue'),
+
 	props: ['notification'],
 	data() {
 		return {
@@ -111,27 +116,39 @@ export default Vue.extend({
 	.note-ref
 
 		[data-icon]
-			font-size 1em
-			font-weight normal
-			font-style normal
 			display inline-block
-			margin-right 3px
+			font-size: 50%
+			opacity: 0.5
+			vertical-align: super
 
-	&.renote, &.quote
-		.text p [data-icon]
-			color #77B255
+		[data-icon]:first-child
+			margin-left: 4px
+			margin-right: 4px
 
-	&.follow
-		.text p [data-icon]
-			color #53c7ce
+		[data-icon]:last-child
+			margin-left: 4px
 
-	&.receiveFollowRequest
-		.text p [data-icon]
-			color #888
+	.notify-info
+		color var(--noteText)
+		display inline-block
+		width: 100%
+		opacity: 0.5
 
 	&.reply, &.mention
 		.text p [data-icon]
-			color #fff
+			color #007aff
+
+	&.renote, &.quote
+		.text p [data-icon]
+			color #36d298
+
+	&.follow
+		.text p [data-icon]
+			color #36aed2
+
+	&.followRequest, &.pollVote
+		.text p [data-icon]
+			color #5e7c8c
 
 </style>
 

@@ -11,8 +11,8 @@
 			<span class="username">@{{ user | acct }}</span>
 			<span class="is-admin" v-if="user.isAdmin">admin</span>
 			<span class="is-moderator" v-if="user.isModerator">moderator</span>
-			<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><fa icon="star"/></span>
 			<span class="is-premium" v-if="user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
+			<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../assets/horseshoe.svg" class="horseshoe"/></span>
 			<span class="is-silenced" v-if="user.isSilenced" :title="$t('@.silenced-user')"><fa :icon="faMicrophoneSlash"/></span>
 			<span class="is-suspended" v-if="user.isSuspended" :title="$t('@.suspended-user')"><fa :icon="faSnowflake"/></span>
 		</header>
@@ -83,9 +83,14 @@ export default Vue.extend({
 			> .is-suspended
 				margin 0 0 0 .5em
 				color #4dabf7
+				> .horseshoe
+					width 1em
+					height 1em
+					vertical-align: -.125em
 			> .is-premium
 				margin 0 0 0 .5em
 				color #FFC107
+
 	&:hover
 		color var(--primaryForeground)
 		background var(--primary)

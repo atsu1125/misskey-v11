@@ -14,7 +14,7 @@
 					<ui-button v-if="user.host != null" @click="updateRemoteUser"><fa :icon="faSync"/> {{ $t('update-remote-user') }}</ui-button>
 					<ui-button @click="resetPassword"><fa :icon="faKey"/> {{ $t('reset-password') }}</ui-button>
 					<ui-horizon-group>
-						<ui-button @click="setPremium" :disabled="changing"><fa :icon="crown"/> {{ $t('premium') }}</ui-button>
+						<ui-button @click="setPremium" :disabled="changing"><fa :icon="faCrown"/> {{ $t('premium') }}</ui-button>
 						<ui-button @click="unsetPremium" :disabled="changing">{{ $t('unpremium') }}</ui-button>
 					</ui-horizon-group>
 					<ui-horizon-group>
@@ -85,7 +85,7 @@
 import Vue from 'vue';
 import i18n from '../../i18n';
 import parseAcct from "../../../../misc/acct/parse";
-import { faCertificate, faUsers, faTerminal, faSearch, faKey, faSync, faMicrophoneSlash } from '@fortawesome/free-solid-svg-icons';
+import { faCrown, faCertificate, faUsers, faTerminal, faSearch, faKey, faSync, faMicrophoneSlash } from '@fortawesome/free-solid-svg-icons';
 import { faSnowflake, faTrashAlt } from '@fortawesome/free-regular-svg-icons';
 import XUser from './users.user.vue';
 
@@ -112,7 +112,7 @@ export default Vue.extend({
 			users: [],
 			existMore: false,
 			changing: false,
-			faTerminal, faCertificate, faUsers, faSnowflake, faSearch, faKey, faSync, faMicrophoneSlash, faTrashAlt
+			faTerminal, faCrown, faCertificate, faUsers, faSnowflake, faSearch, faKey, faSync, faMicrophoneSlash, faTrashAlt
 		};
 	},
 
