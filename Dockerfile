@@ -1,25 +1,10 @@
-FROM node:17.3.0-alpine3.13 AS base
+FROM node:17.3.0-bullseye AS builder
 
 ENV NODE_ENV=production
-
 WORKDIR /misskey
 
-FROM base AS builder
-
-RUN apk add --no-cache \
-    autoconf \
-    automake \
-    file \
-    git \
-    g++ \
-    gcc \
-    libc-dev \
-    libtool \
-    make \
-    nasm \
-    pkgconfig \
-    python3 \
-    zlib-dev
+RUN apt-get update
+RUN apt-get install -y build-essential
 
 RUN git init
 RUN git submodule update --init
@@ -28,13 +13,13 @@ RUN yarn install
 COPY . ./
 RUN yarn build
 
-FROM base AS runner
+FROM node:17.3.0-bullseye-slim AS runner
 
-RUN apk add --no-cache \
-    ffmpeg \
-    tini
+ENV NODE_ENV=production
+WORKDIR /misskey
 
-ENTRYPOINT ["/sbin/tini", "--"]
+RUN apt-get update
+RUN apt-get install -y ffmpeg
 
 COPY --from=builder /misskey/node_modules ./node_modules
 COPY --from=builder /misskey/built ./built
