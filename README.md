@@ -1,18 +1,34 @@
-<h1>めいv11 (Mei v11)</h1>
+<div align="center">
 
-Mei v11 is a decentralized microblogging platform.  
-The fork of [Misskey v11](https://github.com/syuilo/misskey/tree/v11)
+<h1>Areionskey</h1>
 
-## 主な変更点
+[![GHCR](https://github.com/sakura-tel/areionskey/actions/workflows/ghcr.yml/badge.svg)](https://github.com/sakura-tel/areionskey/actions/workflows/ghcr.yml)
+[![E2E Test](https://github.com/sakura-tel/areionskey/actions/workflows/e2e.yml/badge.svg)](https://github.com/sakura-tel/areionskey/actions/workflows/e2e.yml)
+[![gitlocalized](https://gitlocalize.com/repo/6995/whole_project/badge.svg)](https://gitlocalize.com/repo/6995/whole_project?utm_source=badge)
+![license](https://img.shields.io/github/license/sakura-tel/areionskey)
 
-[11.37.1-20200514113754](https://github.com/mei23/misskey-v11/releases/tag/11.37.1-20200514113754)  
-リレー対応, 依存関係の更新 など
+🏇 Areionskey is a distributed microblogging platform based on [Mei v11](https://github.com/mei23/misskey-v11).
 
-[11.37.1-20200604081102](https://github.com/mei23/misskey-v11/releases/tag/11.37.1-20200604081102)  
-Twitter新UIのプレビューに対応, 偽の引用投稿が生成されてしまうバグ修正, 脆弱性のあるモジュールの更新 など
+[Official Instance](https://uma.milkey.homes)
 
-[11.37.1-20200706044821](https://github.com/mei23/misskey-v11/releases/tag/11.37.1-20200706044821)  
-リモートカスタム絵文字リアクション対応, タイムライン上でツイートを展開できる機能, 脆弱性のあるモジュールの修正 など
+</div>
 
-その他は以下を参照  
-https://github.com/mei23/misskey-v11/releases
+## Contribution
+
+- Please check the [contribution guide](CONTRIBUTING.md).
+- If you want to translate, you can use [GitLocalize](https://gitlocalize.com/repo/6995).
+
+### Collaborators
+
+<table>
+ <tr>
+  <td><img src="https://avatars.githubusercontent.com/u/85814493?s=120&v=4"></img></td>
+	<td><img src="https://avatars.githubusercontent.com/u/83960488?s=120&v=4"></img></td>
+	<td><img src="https://avatars.githubusercontent.com/u/79707512?s=120&v=4"></img></td>
+ </tr>
+ <tr>
+  <td align="center"><a href="https://github.com/fs5m8">@fs5m8</a></td>
+	<td align="center"><a href="https://github.com/atsu1125">@atsu1125</a></td>
+	<td align="center"><a href="https://github.com/remitocat">@remitocat</a></td>
+ </tr>
+</table>
