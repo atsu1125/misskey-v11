@@ -1,15 +1,15 @@
 <template>
 	<span class="mk-avatar" :style="style" :class="{ cat }" :title="user | acct" v-if="disableLink && !disablePreview" v-user-preview="user.id" @click="onClick" v-once>
-		<span class="inner" :style="icon"></span>
+		<span class="inner" :style="icon" decoding="async"></span>
 	</span>
 	<span class="mk-avatar" :style="style" :class="{ cat }" :title="user | acct" v-else-if="disableLink && disablePreview" @click="onClick" v-once>
-		<span class="inner" :style="icon"></span>
+		<span class="inner" :style="icon" decoding="async"></span>
 	</span>
 	<router-link class="mk-avatar" :style="style" :class="{ cat }" :to="user | userPage" :title="user | acct" :target="target" v-else-if="!disableLink && !disablePreview" v-user-preview="user.id" v-once>
-		<span class="inner" :style="icon"></span>
+		<span class="inner" :style="icon" decoding="async"></span>
 	</router-link>
 	<router-link class="mk-avatar" :style="style" :class="{ cat }" :to="user | userPage" :title="user | acct" :target="target" v-else-if="!disableLink && disablePreview" v-once>
-		<span class="inner" :style="icon"></span>
+		<span class="inner" :style="icon" decoding="async"></span>
 	</router-link>
 </template>
 

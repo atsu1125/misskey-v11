@@ -7,6 +7,6 @@ assignees: ''
 
 ---
 
-## Summary
+## 💡 Reason
 
-<!-- Tell us what the suggestion is -->
+<!-- Tell us why the idea came up -->
