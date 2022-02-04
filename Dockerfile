@@ -19,7 +19,7 @@ ENV NODE_ENV=production
 WORKDIR /misskey
 
 RUN apt-get update
-RUN apt-get install -y ffmpeg
+RUN apt-get install -y ffmpeg wget
 
 COPY --from=builder /misskey/node_modules ./node_modules
 COPY --from=builder /misskey/built ./built
