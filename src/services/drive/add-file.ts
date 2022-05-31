@@ -5,6 +5,7 @@ import { v4 as uuid } from 'uuid';
 import { publishMainStream, publishDriveStream } from '../stream';
 import { deleteFile } from './delete-file';
 import { fetchMeta } from '../../misc/fetch-meta';
+import { getDriveCapacity } from '../../misc/get-drive-capacity';
 import { GenerateVideoThumbnail } from './generate-video-thumbnail';
 import { driveLogger } from './logger';
 import { IImage, convertToJpeg, convertToWebp, convertToPng, convertToPngOrJpeg } from './image-processor';
@@ -311,7 +312,7 @@ export default async function(
 		const usage = await DriveFiles.clacDriveUsageOf(user);
 
 		const instance = await fetchMeta();
-		const driveCapacity = 1024 * 1024 * (Users.isLocalUser(user) ? instance.localDriveCapacityMb : instance.remoteDriveCapacityMb);
+		const driveCapacity = 1024 * 1024 * getDriveCapacity(user, instance);
 
 		logger.debug(`drive usage is ${usage} (max: ${driveCapacity})`);
 

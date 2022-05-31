@@ -18,7 +18,7 @@ export function genOpenapiSpec(lang = 'ja-JP') {
 
 		externalDocs: {
 			description: 'Repository',
-			url: 'https://github.com/sakura-tel/misskey-v11'
+			url: 'https://github.com/sakura-tel/areionskey'
 		},
 
 		servers: [{
@@ -120,7 +120,7 @@ export function genOpenapiSpec(lang = 'ja-JP') {
 			description: desc,
 			externalDocs: {
 				description: 'Source code',
-				url: `https://github.com/sakura-tel/misskey-v11/blob/sakura-tel/main/src/server/api/endpoints/${endpoint.name}.ts`
+				url: `https://github.com/sakura-tel/areionskey/blob/sakura-tel/main/src/server/api/endpoints/${endpoint.name}.ts`
 			},
 			...(endpoint.meta.tags ? {
 				tags: endpoint.meta.tags

@@ -69,7 +69,7 @@ export default Vue.extend({
 			cursor: default
 
 		&:hover
-			background #899492
+			background #232626
 
 			& + .content
 				visibility visible
@@ -104,6 +104,6 @@ export default Vue.extend({
 		margin 0
 		padding 0
 		width 256px
-		background #899492
+		background #232626
 
 </style>

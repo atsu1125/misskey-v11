@@ -7,8 +7,8 @@
   ],
   "author": "syuilo <i@syuilo.com>",
   "license": "MIT",
-  "repository": "https://github.com/sakura-tel/misskey-v11.git",
-  "bugs": "https://github.com/sakura-tel/misskey-v11/issues",
+  "repository": "https://github.com/sakura-tel/areionskey.git",
+  "bugs": "https://github.com/sakura-tel/areionskey/issues",
   "main": "./built/core.js",
   "types": "./built/core.d.ts",
   "scripts": {

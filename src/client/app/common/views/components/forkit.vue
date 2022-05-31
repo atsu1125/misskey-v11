@@ -13,7 +13,7 @@ import Vue from 'vue'
 export default Vue.extend({
 	data() {
 		return {
-			repositoryUrl: 'https://github.com/sakura-tel/misskey-v11'
+			repositoryUrl: 'https://github.com/sakura-tel/areionskey'
 		};
 	}
 });

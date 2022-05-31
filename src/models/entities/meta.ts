@@ -150,6 +150,12 @@ export class Meta {
 	public localDriveCapacityMb: number;
 
 	@Column('integer', {
+		default: 2048,
+		comment: 'Drive capacity of a premium user (MB)'
+	})
+	public premiumDriveCapacityMb: number;
+
+	@Column('integer', {
 		default: 32,
 		comment: 'Drive capacity of a remote user (MB)'
 	})
@@ -282,14 +288,14 @@ export class Meta {
 
 	@Column('varchar', {
 		length: 512,
-		default: 'https://github.com/sakura-tel/misskey-v11',
+		default: 'https://github.com/sakura-tel/areionskey',
 		nullable: false
 	})
 	public repositoryUrl: string;
 
 	@Column('varchar', {
 		length: 512,
-		default: 'https://github.com/sakura-tel/misskey-v11/issues/new',
+		default: 'https://github.com/sakura-tel/areionskey/issues/new',
 		nullable: true
 	})
 	public feedbackUrl: string | null;

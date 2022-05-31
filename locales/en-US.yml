@@ -144,6 +144,7 @@ common:
     cw-placeholder: "Comments for the post (optional)"
     username-prompt: "Please enter username"
     enter-file-name: "Edit file name"
+    preview: "Preview"
   weekday-short:
     sunday: "S"
     monday: "M"
@@ -722,6 +723,8 @@ common/views/components/notification-settings.vue:
   mark-as-read-all-talk-messages: "Mark all conversations as read"
   auto-watch: "Automatically watch out for posts"
   auto-watch-desc: "Automatically receive notifications about posts you react to, or respond to."
+common/views/components/instance.vue:
+  start: "Start"
 common/views/components/integration-settings.vue:
   title: "Service cooperation"
   connect: "Connect"
@@ -1312,6 +1315,7 @@ admin/views/instance.vue:
   proxy-remote-files: "Proxy remote files"
   proxy-remote-files-desc: "If enabled, Remote files that not stored locally or deleted by storage overusage will be proxied locally and also thumbnails will be generated."
   local-drive-capacity-mb: "Volume of Drive per user"
+  premium-drive-capacity-mb: "Volume of Drive per premium user"
   remote-drive-capacity-mb: "Volume of Drive per remote user"
   mb: "In megabytes"
   recaptcha-config: "the reCAPTCHA settings"

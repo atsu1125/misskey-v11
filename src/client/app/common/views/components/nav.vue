@@ -23,9 +23,9 @@ export default Vue.extend({
 	i18n: i18n('common/views/components/nav.vue'),
 	data() {
 		return {
-			aboutUrl: `/docs/${lang}/about`,
-			repositoryUrl: 'https://github.com/sakura-tel/misskey-v11',
-			feedbackUrl: 'https://github.com/sakura-tel/misskey-v11/issues/new',
+			aboutUrl: `https://wiki.sakura.tel/areionskey`,
+			repositoryUrl: 'https://github.com/sakura-tel/areionskey',
+			feedbackUrl: 'https://github.com/sakura-tel/areionskey/issues/new',
 			ToSUrl: null
 		}
 	},

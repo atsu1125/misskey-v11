@@ -11,21 +11,21 @@
 				<b>{{ $t('@.post-form.recent-tags') }}:</b>
 				<a v-for="tag in recentHashtags.slice(0, 5)" @click="addTag(tag)" :title="$t('@.post-form.click-to-tagging')">#{{ tag }}</a>
 			</div>
-			<div class="with-quote" v-if="quoteId">{{ $t('@.post-form.quote-attached') }} <a @click="quoteId = null">[x]</a></div>
-			<div v-if="visibility === 'specified'" class="visibleUsers">
-				<span v-for="u in visibleUsers">
-					<mk-user-name :user="u"/><a @click="removeVisibleUser(u)">[x]</a>
-				</span>
-				<a @click="addVisibleUser">{{ $t('@.post-form.add-visible-user') }}</a>
+			<div class="with-quote" v-if="quoteId"><fa icon="quote-left"/> {{ $t('@.post-form.quote-attached') }} <button @click="quoteId = null"><fa icon="times"/></button></div>
+			<div v-if="visibility === 'specified'" class="to-specified">
+				<fa icon="envelope"/> {{ $t('@.post-form.specified-recipient') }}
+				<div class="visibleUsers">
+					<span v-for="u in visibleUsers">
+						<mk-user-name :user="u"/>
+						<button @click="removeVisibleUser(u)"><fa icon="times"/></button>
+					</span>
+				</div>
+				<button :title="$t('@.post-form.add-visible-user')" @click="addVisibleUser"><fa icon="plus"/></button>
 			</div>
-			<div class="local-only" v-if="localOnly === true">{{ $t('@.post-form.local-only-message') }}</div>
+			<div class="local-only" v-if="localOnly === true"><fa icon="heart"/> {{ $t('@.post-form.local-only-message') }}</div>
 			<input v-show="useCw" ref="cw" v-model="cw" :placeholder="$t('@.post-form.cw-placeholder')" v-autocomplete="{ model: 'cw' }">
 			<div class="textarea">
-				<textarea :class="{ with: (files.length != 0 || poll) }"
-					ref="text" v-model="text" :disabled="posting"
-					@keydown="onKeydown" @paste="onPaste" :placeholder="placeholder"
-					v-autocomplete="{ model: 'text' }"
-				></textarea>
+				<textarea :class="{ with: (files.length != 0 || poll) }" ref="text" v-model="text" :disabled="posting" @keydown="onKeydown" @paste="onPaste" :placeholder="placeholder" v-autocomplete="{ model: 'text' }"></textarea>
 				<button class="emoji" @click="emoji" ref="emoji">
 					<fa :icon="['far', 'laugh']"/>
 				</button>
@@ -148,23 +148,6 @@ export default Vue.extend({
 			margin-bottom 8px
 
 		> .textarea
-			> .emoji
-				position absolute
-				top 0
-				right 0
-				padding 10px
-				font-size 18px
-				color var(--text)
-				opacity 0.5
-
-				&:hover
-					color var(--textHighlighted)
-					opacity 1
-
-				&:active
-					color var(--primary)
-					opacity 1
-
 			> textarea
 				margin 0
 				max-width 100%
@@ -189,6 +172,23 @@ export default Vue.extend({
 				&.with
 					border-bottom solid 1px var(--primaryAlpha01) !important
 					border-radius 4px 4px 0 0
+
+			> .emoji
+				position absolute
+				top 0
+				right 0
+				padding 10px
+				font-size 18px
+				color var(--text)
+				opacity 0.5
+
+				&:hover
+					color var(--textHighlighted)
+					opacity 1
+
+				&:active
+					color var(--primary)
+					opacity 1
 
 			> .files
 				margin 0
@@ -245,9 +245,10 @@ export default Vue.extend({
 				display inline
 				top -1px
 				font-size 14px
+				color var(--text)
 
 				> span
-					margin-left 14px
+					margin-left 8px
 
 					> button
 						padding 4px 8px
@@ -258,6 +259,9 @@ export default Vue.extend({
 
 						&:active
 							color var(--primaryDarken30)
+
+			> button
+				margin-left 4px
 
 		> .local-only
 			margin 0 0 8px 0

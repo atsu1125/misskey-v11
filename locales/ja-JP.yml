@@ -1,6 +1,6 @@
+---
 meta:
   lang: "日本語"
-  divider: ""
 
 common:
   misskey: "A ⭐ of fediverse"
@@ -18,7 +18,7 @@ common:
     ui-desc: "どのようなUIが使いやすいかは人それぞれです。だから、Misskeyは自由度の高いUIを持っています。レイアウトやデザインを調整したり、カスタマイズ可能な様々なウィジェットを配置したりして、自分だけのホームを作ってください。"
     drive: "ドライブ"
     drive-desc: "以前投稿したことのある画像をまた投稿したくなったことはありませんか？もしくは、アップロードしたファイルをフォルダ分けして整理したくなったことはありませんか？Misskeyの根幹に組み込まれたドライブ機能によってそれらが解決します。ファイルの共有も簡単です。"
-    outro: "他にもMisskeyにしかない機能はまだまだあるので、ぜひあなた自身の目で確かめてください。Misskeyは分散型SNSなので、このインスタンスが気に入らなければ他のインスタンスを試すこともできます。それでは、GLHF!"
+    outro: "他にもMisskeyにしかない機能はまだまだあるので、ぜひあなた自身の目で確かめてください。Misskeyは分散型SNSなので、このインスタンスが気に入らなければ他のインスタンスを試すこともできます。それでは、お楽しみください。"
   application-authorization: "アプリの連携"
   close: "閉じる"
   do-not-copy-paste: "ここにコードを入力したり張り付けたりしないでください。アカウントが不正利用される可能性があります。"
@@ -47,12 +47,13 @@ common:
     renote: "Renote"
     mention: "言及"
     reaction: "リアクション"
-
   got-it: "わかった"
+
   customization-tips:
     title: "カスタマイズのヒント"
     paragraph: "<p>ホームのカスタマイズでは、ウィジェットを追加/削除したり、ドラッグ&ドロップして並べ替えたりすることができます。</p><p>一部のウィジェットは、<strong><strong>右</strong>クリック</strong>することで表示を変更することができます。</p><p>ウィジェットを削除するには、ヘッダーの<strong>「ゴミ箱」</strong>と書かれたエリアにウィジェットをドラッグ&ドロップします。</p><p>カスタマイズを終了するには、右上の「完了」をクリックします。</p>"
-    gotit: "Got it!"
+    gotit: "わかった"
+
   notification:
     file-uploaded: "ファイルがアップロードされました"
     message-from: "{}さんからメッセージ:"
@@ -61,6 +62,9 @@ common:
     notified-by: "{}さんから"
     reply-from: "{}さんから返信:"
     quoted-by: "{}さんが引用:"
+    youGotNewFollower: "フォローされました"
+    receiveFollowRequest: "フォローリクエストされました"
+
   time:
     unknown: "なぞのじかん"
     future: "未来"
@@ -343,8 +347,8 @@ common:
   search: "検索"
   delete: "削除"
   loading: "読み込み中"
-  ok: "おｋ"
-  cancel: "やめる"
+  ok: "OK"
+  cancel: "キャンセル"
   update-available-title: "更新があります"
   update-available: "Misskeyの新しいバージョンがあります({newer}。現在{current}を利用中)。ページを再度読み込みすると更新が適用されます。"
   my-token-regenerated: "あなたのトークンが更新されたのでサインアウトします。"
@@ -738,7 +742,7 @@ common/views/components/signup.vue:
   unavailable: "既に利用されています"
   error: "通信エラー"
   invalid-format: "a~z、A~Z、0~9、_が使えます"
-  too-short: "1文字以上でお願いします！"
+  too-short: "1文字以上でお願いします"
   too-long: "20文字以内でお願いします"
   password: "パスワード"
   password-placeholder: "8文字以上を推奨します"
@@ -773,7 +777,7 @@ common/views/components/notification-settings.vue:
   auto-watch-desc: "リアクションしたり返信したりした投稿に関する通知を自動的に受け取るようにします。"
 
 common/views/components/instance.vue:
-  start: 始める
+  start: "始める"
 
 common/views/components/integration-settings.vue:
   title: "サービス連携"
@@ -1145,7 +1149,7 @@ desktop/views/components/notes.vue:
   retry: "リトライ"
 
 desktop/views/components/notifications.vue:
-  empty: "ありません！"
+  empty: "ありません"
   youGotNewFollower: "フォローされました"
   receiveFollowRequest: "フォローリクエストされました"
 
@@ -1209,7 +1213,7 @@ desktop/views/components/settings.2fa.vue:
   activate-key: "クリックしてセキュリティキーをアクティベートしてください"
   security-key-name: "キー名"
   register-security-key: "キーの登録を完了"
-  something-went-wrong: "わー！ キーを登録する際に問題が発生しました:"
+  something-went-wrong: "キーを登録する際に問題が発生しました:"
   key-unregistered: "キーが削除されました"
   use-password-less-login: "パスワードなしのログインを使用"
 
@@ -1446,6 +1450,7 @@ admin/views/instance.vue:
   proxy-remote-files: "リモートのファイルをプロキシする"
   proxy-remote-files-desc: "この設定を有効にすると、未保存または保存容量超過で削除されたリモートファイルをローカルでプロキシし、サムネイルも生成するようになります。"
   local-drive-capacity-mb: "ローカルユーザーひとりあたりのドライブ容量"
+  premium-drive-capacity-mb: "プレミアムユーザーひとりあたりのドライブ容量"
   remote-drive-capacity-mb: "リモートユーザーひとりあたりのドライブ容量"
   mb: "メガバイト単位"
   recaptcha-config: "reCAPTCHAの設定"
@@ -1821,7 +1826,7 @@ desktop/views/widgets/notifications.vue:
 desktop/views/widgets/polls.vue:
   title: "アンケート"
   refresh: "他を見る"
-  nothing: "ありません！"
+  nothing: "ありません"
 
 desktop/views/widgets/post-form.vue:
   title: "投稿"
@@ -1835,12 +1840,12 @@ desktop/views/widgets/profile.vue:
 desktop/views/widgets/trends.vue:
   title: "トレンド"
   refresh: "他を見る"
-  nothing: "ありません！"
+  nothing: "ありません"
 
 desktop/views/widgets/users.vue:
   title: "おすすめユーザー"
   refresh: "他を見る"
-  no-one: "いません！"
+  no-one: "いません"
 
 mobile/views/components/drive.vue:
   used: "使用中"
@@ -1914,7 +1919,7 @@ mobile/views/components/notification.vue:
   receiveFollowRequest: "フォローリクエストされました"
 
 mobile/views/components/notifications.vue:
-  empty: "ありません！"
+  empty: "ありません"
 
 mobile/views/components/sub-note-content.vue:
   private: "この投稿は非公開です"
@@ -1936,7 +1941,7 @@ mobile/views/components/ui.nav.vue:
   widgets: "ウィジェット"
   game: "ゲーム"
   admin: "管理"
-  about: "Misskeyについて"
+  about: "Areionskeyについて"
 
 mobile/views/pages/drive.vue:
   contextmenu:
@@ -2072,7 +2077,7 @@ deck/deck.notification.vue:
   receiveFollowRequest: "フォローリクエストされました"
 
 deck/deck.notifications.vue:
-  empty: "ありません！"
+  empty: "ありません"
 
 docs:
   edit-this-page-on-github: "間違いや改善点を見つけましたか？"
@@ -2381,8 +2386,8 @@ pages:
       _for:
         arg1: "回数"
         arg2: "処理"
-    typeError: 'スロット{slot}は"{expect}"を受け付けますが、"{actual}"が入れられています！'
-    thereIsEmptySlot: "スロット{slot}が空です！"
+    typeError: 'スロット{slot}は"{expect}"を受け付けますが、"{actual}"が入れられています'
+    thereIsEmptySlot: "スロット{slot}が空です"
     types:
       string: "テキスト"
       number: "数値"

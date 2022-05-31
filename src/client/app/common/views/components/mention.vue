@@ -90,11 +90,11 @@ export default Vue.extend({
 			border-radius 0 4px 4px 0
 
 	> .avator
-		//width: 1.5em;
+		// width 1.5em
 		height 1.25em
-		margin: 0 0.2em;
-		vertical-align: bottom;
-		border-radius: 100%;
+		margin 0 0.2em
+		vertical-align middle
+		border-radius 100%
 
 	> .main
 		> .host.fade
