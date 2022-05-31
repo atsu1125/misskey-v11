@@ -7,7 +7,6 @@ import { generateVisibilityQuery } from '../../common/generate-visibility-query'
 import { generateMuteQuery } from '../../common/generate-mute-query';
 import { activeUsersChart } from '../../../../services/chart';
 import { Brackets } from 'typeorm';
-import { generateBlockedUserQuery } from '../../common/generate-block-query';
 
 export const meta = {
 	desc: {
@@ -116,7 +115,6 @@ export default define(meta, async (ps, user) => {
 
 	generateVisibilityQuery(query, user);
 	generateMuteQuery(query, user);
-	generateBlockedUserQuery(query, user);
 
 	if (ps.includeMyRenotes === false) {
 		query.andWhere(new Brackets(qb => {

@@ -4,7 +4,6 @@ import Channel from '../channel';
 import { fetchMeta } from '../../../../misc/fetch-meta';
 import { Notes } from '../../../../models';
 import { PackedNote } from '../../../../models/repositories/note';
-import { isBlockerUserRelated } from '../../../../misc/is-blocker-user-related';
 
 export default class extends Channel {
 	public readonly chName = 'globalTimeline';
@@ -41,7 +40,6 @@ export default class extends Channel {
 
 		// 流れてきたNoteがミュートしているユーザーが関わるものだったら無視する
 		if (shouldMuteThisNote(note, this.muting)) return;
-		if (isBlockerUserRelated(note, this.blocking)) return;
 
 		this.send('note', note);
 	}

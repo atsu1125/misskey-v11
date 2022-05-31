@@ -4,7 +4,6 @@ import Channel from '../channel';
 import { Notes } from '../../../../models';
 import { PackedNote } from '../../../../models/repositories/note';
 import { normalizeTag } from '../../../../misc/normalize-tag';
-import { isBlockerUserRelated } from '../../../../misc/is-blocker-user-related';
 
 export default class extends Channel {
 	public readonly chName = 'hashtag';
@@ -37,7 +36,6 @@ export default class extends Channel {
 
 		// 流れてきたNoteがミュートしているユーザーが関わるものだったら無視する
 		if (shouldMuteThisNote(note, this.muting)) return;
-		if (isBlockerUserRelated(note, this.blocking)) return;
 
 		this.send('note', note);
 	}
