@@ -17,6 +17,7 @@ import { Notes, Users, Emojis, UserKeypairs } from '../models';
 import { ILocalUser, User } from '../models/entities/user';
 import { In } from 'typeorm';
 import { ensure } from '../prelude/ensure';
+import config from '../config';
 
 // Init router
 const router = new Router();
@@ -24,6 +25,8 @@ const router = new Router();
 //#region Routing
 
 function inbox(ctx: Router.RouterContext) {
+	if (config.disableFederation) ctx.throw(404);
+
 	let signature;
 
 	try {
@@ -66,6 +69,8 @@ router.post('/users/:user/inbox', json(), inbox);
 router.get('/notes/:note', async (ctx, next) => {
 	if (!isActivityPubReq(ctx)) return await next();
 
+	if (config.disableFederation) ctx.throw(404);
+
 	const note = await Notes.findOne({
 		id: ctx.params.note,
 		visibility: In(['public', 'home']),
@@ -94,6 +99,8 @@ router.get('/notes/:note', async (ctx, next) => {
 
 // note activity
 router.get('/notes/:note/activity', async ctx => {
+	if (config.disableFederation) ctx.throw(404);
+
 	const note = await Notes.findOne({
 		id: ctx.params.note,
 		userHost: null,
@@ -125,6 +132,8 @@ router.get('/users/:user/collections/featured', Featured);
 
 // publickey
 router.get('/users/:user/publickey', async ctx => {
+	if (config.disableFederation) ctx.throw(404);
+
 	const userId = ctx.params.user;
 
 	const user = await Users.findOne({
@@ -163,6 +172,8 @@ async function userInfo(ctx: Router.RouterContext, user: User | undefined) {
 router.get('/users/:user', async (ctx, next) => {
 	if (!isActivityPubReq(ctx, true)) return await next();
 
+	if (config.disableFederation) ctx.throw(404);
+
 	const userId = ctx.params.user;
 
 	const user = await Users.findOne({
@@ -177,6 +188,8 @@ router.get('/users/:user', async (ctx, next) => {
 router.get('/@:user', async (ctx, next) => {
 	if (!isActivityPubReq(ctx)) return await next();
 
+	if (config.disableFederation) ctx.throw(404);
+
 	const user = await Users.findOne({
 		usernameLower: ctx.params.user.toLowerCase(),
 		host: null,
@@ -189,6 +202,8 @@ router.get('/@:user', async (ctx, next) => {
 
 // emoji
 router.get('/emojis/:emoji', async ctx => {
+	if (config.disableFederation) ctx.throw(404);
+	
 	const emoji = await Emojis.findOne({
 		host: null,
 		name: ctx.params.emoji

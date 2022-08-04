@@ -60,6 +60,8 @@ objectStorageQueue
 	.on('stalled', (job) => objectStorageLogger.warn(`stalled id=${job.id}`));
 
 export function deliver(user: ILocalUser, content: any, to: string) {
+	if (config.disableFederation) return;
+	
 	if (content == null) return null;
 
 	const data = {
