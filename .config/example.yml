@@ -76,6 +76,8 @@ id: 'aid'
 
 #   ┌─────────────────────┐
 #───┘ Other configuration └─────────────────────────────────────
+# Whether disable Federation
+#disableFederation: true
 
 # If enabled:
 #  The first account created is automatically marked as Admin.
