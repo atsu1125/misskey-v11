@@ -36,7 +36,7 @@ Areionskey は [Vue.js: Vue I18n](https://github.com/kazupon/vue-i18n) プラグ
 src ... Source code
   @types ... Type definitions
   prelude ... Independence utils for coding JavaScript without side effects
-  misc ... Independence utils for Misskey without side effects
+  misc ... Independence utils for Areionskey without side effects
   service ... Common functions with side effects
   queue ... Job queues and Jobs
   server ... Web Server
@@ -51,7 +51,7 @@ test ... Test code
 
 当該ディレクトリで `yarn` を実行してください。
 
-## Misskey Room にアイテムを追加する
+## Areionskey Room にアイテムを追加する
 
 * 素材名・オブジェクト名・テクスチャ名には 英語を使用します。
 * 長さの単位に メートルを使用します。

@@ -34,7 +34,7 @@ Test codes are located in `/test`.
 src ... Source code
   @types ... Type definitions
   prelude ... Independence utils for coding JavaScript without side effects
-  misc ... Independence utils for Misskey without side effects
+  misc ... Independence utils for Areionskey without side effects
   service ... Common functions with side effects
   queue ... Job queues and Jobs
   server ... Web Server
@@ -49,7 +49,7 @@ test ... Test code
 
 Just execute `yarn` to fix it.
 
-## Adding MisskeyRoom items
+## Adding Areionskey Room items
 
 * Use English for material, object and texture names.
 * Use meter for unit of length.

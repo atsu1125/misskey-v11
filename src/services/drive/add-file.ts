@@ -303,7 +303,19 @@ export default async function(
 
 		if (much) {
 			logger.info(`file with same hash is found: ${much.id}`);
-			return much;
+
+			// ファイルに後からsensitiveが付けられたらフラグを上書き
+			if (sensitive && !much.isSensitive) {
+				await DriveFiles.update({
+					id: much.id
+				}, {
+					isSensitive: sensitive
+				});
+
+				return await DriveFiles.findOneOrFail({ id: much.id });
+			} else {
+				return much;
+			}
 		}
 	}
 
@@ -346,16 +358,11 @@ export default async function(
 	const properties: {
 		width?: number;
 		height?: number;
-		avgColor?: string;
 	} = {};
 
 	if (info.width) {
 		properties['width'] = info.width;
 		properties['height'] = info.height;
-	}
-
-	if (info.avgColor) {
-		properties['avgColor'] = `rgb(${info.avgColor.join(',')}`;
 	}
 
 	const profile = await UserProfiles.findOne(user.id);
@@ -370,6 +377,7 @@ export default async function(
 	file.folderId = folder !== null ? folder.id : null;
 	file.comment = comment;
 	file.properties = properties;
+	file.blurhash = info.blurhash || null;
 	file.isLink = isLink;
 	file.isSensitive = Users.isLocalUser(user) && profile!.alwaysMarkNsfw ? true :
 		(sensitive !== null && sensitive !== undefined)

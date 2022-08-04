@@ -11,13 +11,11 @@
 
 [Official Instance](https://uma.milkey.homes)
 
-[Official Wiki](https://wiki.sakura.tel/areionskey)
-
 </div>
 
 ## Contribution
 
-- Please check the [contribution guideline](https://wiki.sakura.tel/areionskey/contribution).
+- Please check the [contribution guideline](CONTRIBUTING.md).
 - If you want to translate, you can use [GitLocalize](https://gitlocalize.com/repo/6995).
 
 ### Collaborators
@@ -26,11 +24,11 @@
  <tr>
   <td><img src="https://avatars.githubusercontent.com/u/85814493?s=120&v=4"></img></td>
 	<td><img src="https://avatars.githubusercontent.com/u/83960488?s=120&v=4"></img></td>
-	<td><img src="https://avatars.githubusercontent.com/u/79707512?s=120&v=4"></img></td>
+	<td><img src="https://avatars.githubusercontent.com/u/101872529?s=120&v=4"></img></td>
  </tr>
  <tr>
   <td align="center"><a href="https://github.com/fs5m8">@fs5m8</a></td>
 	<td align="center"><a href="https://github.com/atsu1125">@atsu1125</a></td>
-	<td align="center"><a href="https://github.com/remitocat">@remitocat</a></td>
+	<td align="center"><a href="https://github.com/yui87">@yui87</a></td>
  </tr>
 </table>

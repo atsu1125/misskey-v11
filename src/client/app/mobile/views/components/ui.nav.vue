@@ -85,7 +85,7 @@ export default Vue.extend({
 		return {
 			hasGameInvitation: false,
 			connection: null,
-			aboutUrl: `https://wiki.sakura.tel/areionskey`,
+			aboutUrl: `/docs/${lang}/about`,
 			announcements: [],
 			searching: false,
 			showNotifications: false,

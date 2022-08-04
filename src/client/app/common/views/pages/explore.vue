@@ -8,7 +8,7 @@
 	</mk-user-list>
 
 	<div class="localfedi7" v-if="meta && stats && tag == null" :style="{ backgroundImage: meta.bannerUrl ? `url(${meta.bannerUrl})` : null }">
-		<header>{{ $t('explore', { host: meta.name || 'Misskey' }) }}</header>
+		<header>{{ $t('explore', { host: meta.name || 'Areionskey' }) }}</header>
 		<div>{{ $t('users-info', { users: num(stats.originalUsersCount) }) }}</div>
 	</div>
 
@@ -16,11 +16,8 @@
 		<mk-user-list :pagination="pinnedUsers" :expanded="false">
 			<fa :icon="faBookmark" fixed-width/>{{ $t('pinned-users') }}
 		</mk-user-list>
-		<mk-user-list :pagination="verifiedUsers">
+		<mk-user-list :pagination="verifiedUsers" :expanded="false">
 			<fa :icon="faCertificate" fixed-width/>{{ $t('verified-users') }}
-		</mk-user-list>
-		<mk-user-list :pagination="popularUsers" :expanded="false">
-			<fa :icon="faChartLine" fixed-width/>{{ $t('popular-users') }}
 		</mk-user-list>
 		<mk-user-list :pagination="recentlyUpdatedUsers" :expanded="false">
 			<fa :icon="faCommentAlt" fixed-width/>{{ $t('recently-updated-users') }}
@@ -34,22 +31,7 @@
 		<header>{{ $t('explore-fediverse') }}</header>
 	</div>
 
-	<ui-container :body-togglable="true" :expanded="false" ref="tags">
-		<template #header><fa :icon="faHashtag" fixed-width/>{{ $t('popular-tags') }}</template>
-
-		<div class="vxjfqztj">
-			<router-link v-for="tag in tagsLocal" :to="`/explore/tags/${tag.tag}`" :key="'local:' + tag.tag" class="local">{{ tag.tag }}</router-link>
-			<router-link v-for="tag in tagsRemote" :to="`/explore/tags/${tag.tag}`" :key="'remote:' + tag.tag">{{ tag.tag }}</router-link>
-		</div>
-	</ui-container>
-
-	<mk-user-list v-if="tag != null" :pagination="tagUsers" :key="`${tag}`">
-		<fa :icon="faHashtag" fixed-width/>{{ tag }}
-	</mk-user-list>
 	<template v-if="tag == null">
-		<mk-user-list :pagination="popularUsersF" :expanded="false">
-			<fa :icon="faChartLine" fixed-width/>{{ $t('popular-users') }}
-		</mk-user-list>
 		<mk-user-list :pagination="recentlyUpdatedUsersF" :expanded="false">
 			<fa :icon="faCommentAlt" fixed-width/>{{ $t('recently-updated-users') }}
 		</mk-user-list>
@@ -63,9 +45,8 @@
 <script lang="ts">
 import Vue from 'vue';
 import i18n from '../../../i18n';
-import { faChartLine, faPlus, faHashtag, faRocket, faSearch, faCertificate } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faRocket, faSearch, faCertificate } from '@fortawesome/free-solid-svg-icons';
 import { faBookmark, faCommentAlt } from '@fortawesome/free-regular-svg-icons';
-import endpoint from '../../../../../server/api/endpoints/endpoint';
 
 export default Vue.extend({
 	i18n: i18n('common/views/pages/explore.vue'),
@@ -91,11 +72,6 @@ export default Vue.extend({
 				origin: 'local',
 				sort: '+follower',
 			} },
-			popularUsers: { endpoint: 'users', limit: 10, params: {
-				state: 'alive',
-				origin: 'local',
-				sort: '+follower',
-			} },
 			recentlyUpdatedUsers: { endpoint: 'users', limit: 10, params: {
 				origin: 'local',
 				sort: '+updatedAt',
@@ -105,11 +81,6 @@ export default Vue.extend({
 				state: 'alive',
 				sort: '+createdAt',
 			} },
-			popularUsersF: { endpoint: 'users', limit: 10, params: {
-				state: 'alive',
-				origin: 'remote',
-				sort: '+follower',
-			} },
 			recentlyUpdatedUsersF: { endpoint: 'users', limit: 10, params: {
 				origin: 'combined',
 				sort: '+updatedAt',
@@ -118,28 +89,15 @@ export default Vue.extend({
 				origin: 'combined',
 				sort: '+createdAt',
 			} },
-			tagsLocal: [],
-			tagsRemote: [],
 			stats: null,
 			query: null,
 			meta: null,
 			num: Vue.filter('number'),
-			faBookmark, faChartLine, faCommentAlt, faPlus, faHashtag, faRocket, faSearch, faCertificate
+			faBookmark, faCommentAlt, faPlus, faRocket, faSearch, faCertificate
 		};
 	},
 
 	computed: {
-		tagUsers(): any {
-			return {
-				endpoint: 'hashtags/users',
-				limit: 30,
-				params: {
-					tag: this.tag,
-					origin: 'combined',
-					sort: '+follower',
-				}
-			};
-		},
 		foundUsers(): any {
 			return {
 				endpoint: 'users/search',
@@ -158,24 +116,6 @@ export default Vue.extend({
 	},
 
 	created() {
-		this.$emit('init', {
-			title: this.$t('@.explore'),
-			icon: faHashtag
-		});
-		this.$root.api('hashtags/list', {
-			sort: '+attachedLocalUsers',
-			attachedToLocalUserOnly: true,
-			limit: 30
-		}).then(tags => {
-			this.tagsLocal = tags;
-		});
-		this.$root.api('hashtags/list', {
-			sort: '+attachedRemoteUsers',
-			attachedToRemoteUserOnly: true,
-			limit: 30
-		}).then(tags => {
-			this.tagsRemote = tags;
-		});
 		this.$root.api('stats').then(stats => {
 			this.stats = stats;
 		});

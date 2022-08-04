@@ -148,20 +148,15 @@ export default Vue.extend({
 					'profile',
 					'calendar',
 					'activity',
-					'rss',
-					'hashtags',
-					'photo-stream',
+					'server',
 					'version'
 				],
 				right: [
 					'customize',
 					'broadcast',
 					'notifications',
-					'users',
-					'polls',
-					'server',
-					'nav',
-					'tips'
+					'rss',
+					'nav'
 				]
 			};
 

@@ -4,20 +4,21 @@ meta:
 common:
   misskey: "A ⭐ of the fediverse"
   about-title: "A ⭐ of the fediverse."
-  about: "Thank you for finding Misskey. Misskey is a <b>decentralized microblogging platform</b> born on Earth. Since it exists within the Fediverse (a universe where various social media platforms are organized), it is mutually linked with other social media platforms. Why don't you take a short break from the hustle and bustle of the city, and dive into a new Internet?"
+  about: "Areionskey is <b>a distributed microblogging platform</b>. It is interconnected to other platforms through intercommunication via ActivityPub, forming a federation called Fediverse."
   intro:
-    title: "What is Misskey?"
-    about: "Misskey is an open-source, <b>decentralized microblogging software</b>. It has a sophisticated, fully customizable user interface, a variety of ways for expressing a reaction to posts, free file storage providing an integrated management system, and other advanced features are available. In addition, Misskey connects to a network system called the “Fediverse”, which enables us to communicate with users on other SNSs. For example, when you post something, it will be sent not only to Misskey users, but also those on Mastodon and Pleroma. Just imagine that the planet is sending a radio transmission to another planet, in order to communicate."
+    title: "What is Areionskey?"
+    about: "Areionskey is a free/open-source, <b>distributed microblogging platform</b>. It has a sophisticated, fully customizable user interface, a variety of ways for expressing a reaction to posts, free file storage providing an integrated management system, and other advanced features are available. In addition, Areionskey is interconnected to other platforms through intercommunication via ActivityPub, forming a federation called Fediverse, which enables us to communicate with users on other platforms. For example, when you post something, it will be sent not only to Areionskey users, but also those on other platforms. Just imagine that the planet is sending a radio transmission to another planet, in order to communicate."
     features: "Features"
     rich-contents: "Post"
-    rich-contents-desc: "Just post your idea, hot topics, and anything you want to share. You may want to decorate your words, attach your favorite pictures, send files, including videos, or create a poll - those are some of the things you can do with Misskey!"
+    rich-contents-desc: "Just post your idea, hot topics, and anything you want to share. You may want to decorate your words, attach your favorite pictures, send files, including videos, or create a poll - those are some of the things you can do with Areionskey!"
     reaction: "Reactions"
-    reaction-desc: 'The easiest way to express your emotions. Misskey allows you to add various reactions to posts. Other SNSs only have a "like" reaction.'
+    reaction-desc: 'The easiest way to express your emotions. Areionskey allows you to add various reactions to posts.'
     ui: "Interface"
-    ui-desc: "No single UI can suit everyone. Therefore, Misskey has a highly customizable UI for your tastes. You can make your home original by editing the layout of your timeline, and moving around selectable widgets that you can easily adjust to make this place your own."
+    ui-desc: "No single UI can suit everyone. Therefore, Areionskey has a highly customizable UI for your tastes. You can make your home original by editing the layout of your timeline, and moving around selectable widgets that you can easily adjust to make this place your own."
     drive: "Drive"
-    drive-desc: "Wanna post a picture you have already uploaded? Wish to organize, name and create a folder for your uploaded files? Misskey Drive is the best solution for you. Very easy to share your files online."
-    outro: "Check Misskey-unique features by seeing them with your own eyes! If you feel like this instance is not for you, try other instances, as Misskey is a decentralized SNS, so that you can easily find your mates. Then, GLHF!"
+    drive-desc: "Wanna post a picture you have already uploaded? Wish to organize, name and create a folder for your uploaded files? Areionskey Drive is the best solution for you. Very easy to share your files online."
+    outro: "Check Areionskey-unique features by seeing them with your own eyes! If you feel like this instance is not for you, try other instances, as Areionskey is a distributed microblogging platform, so that you can easily find your mates. Then, GLHF!"
+  powered-by-areionskey: "Powered by <b>Areionskey</b>."
   application-authorization: "Application authorizations"
   close: "Close"
   do-not-copy-paste: "Please do not enter or paste the code here. Account may be compromised."
@@ -212,7 +213,7 @@ common:
     default-note-visibility: "Default visibility"
     remember-note-visibility: "Remember post visibility"
     web-search-engine: "Web search engine"
-    web-search-engine-desc: "Example: https://www.google.com/search?q={{query}}"
+    web-search-engine-desc: "Example: https://www.foobar.com/&q={{query}}"
     paste: "Paste"
     pasted-file-name: "Template for pasted file name"
     pasted-file-name-desc: 'Example: "yyyy-MM-dd HH-mm-ss [{{number}}]" → "2018-03-20 21-30-24 1"'
@@ -286,14 +287,14 @@ common:
     enable-sounds-desc: "Play a sound when you receive a post/message. This setting is stored in the browser."
     volume: "Volume"
     test: "Test"
-    update: "Misskey Update"
+    update: "Areionskey Update"
     version: "Current version:"
     latest-version: "Latest version:"
     update-checking: "Checking for updates"
     do-update: "Check for updates"
     update-settings: "Advanced settings"
     no-updates: "No updates are available"
-    no-updates-desc: "Your Misskey is up to date."
+    no-updates-desc: "Your Areionskey is up to date."
     update-available: "A new version is available"
     update-available-desc: "Updates will be applied after reloading the page."
     advanced-settings: "Advanced Settings"
@@ -335,7 +336,7 @@ common:
   ok: "Confirm"
   cancel: "Cancel"
   update-available-title: "Update available"
-  update-available: "A new version of Misskey is now available({newer}, the current version is {current}). Reload the page to apply updates."
+  update-available: "A new version of Areionskey is now available({newer}, the current version is {current}). Reload the page to apply updates."
   my-token-regenerated: "Your token has been regenerated, so you will be signed out."
   premium-user: "Premium account"
   verified-user: "Official account"
@@ -440,7 +441,7 @@ common/views/components/games/reversi/reversi.game.vue:
   looped-map: "Looped map"
   can-put-everywhere: "Can put everywhere"
 common/views/components/games/reversi/reversi.index.vue:
-  title: "Misskey Reversi"
+  title: "Areionskey Reversi"
   sub-title: "Play reversi with your friends!"
   invite: "Invite"
   rule: "How to play"
@@ -475,7 +476,7 @@ common/views/components/games/reversi/reversi.room.vue:
 common/views/components/connect-failed.vue:
   title: "Unable to connect to the server"
   description: "There is a problem with your Internet connection, or the server may be down or under maintenance. Please {try again} later."
-  thanks: "Thank you for using Misskey."
+  thanks: "Thank you for using Areionskey."
   troubleshoot: "Troubleshoot"
 common/views/components/connect-failed.troubleshooter.vue:
   title: "Troubleshooting"
@@ -490,9 +491,9 @@ common/views/components/connect-failed.troubleshooter.vue:
   no-network-desc: "Please make sure that you have a network connection."
   no-internet: "There is no Internet connection"
   no-internet-desc: "Please make sure you are connected to the Internet."
-  no-server: "Unable to connect to the Misskey server"
-  no-server-desc: "The network connection of your device is normal, but you could not connect to the Misskey server. There is a possibility that the server is either down, or under maintenance, please try again later."
-  success: "Successfully connected to the Misskey server"
+  no-server: "Unable to connect to the Areionskey server"
+  no-server-desc: "The network connection of your device is normal, but you could not connect to the Areionskey server. There is a possibility that the server is either down, or under maintenance, please try again later."
+  success: "Successfully connected to the Areionskey server"
   success-desc: "Looks like we have a connection. Please reload the page."
   flush: "Clean cache"
   set-version: "Specify version"
@@ -731,14 +732,14 @@ common/views/components/integration-settings.vue:
   disconnect: "Disconnect"
   connected-to: "You are connected to this account"
 common/views/components/github-setting.vue:
-  description: "Once you connect your GitHub account to your Misskey account, you will be able to see information about your GitHub account on your profile, and you will be able to sign-in via GitHub."
+  description: "Once you connect your GitHub account to your Areionskey account, you will be able to see information about your GitHub account on your profile, and you will be able to sign-in via GitHub."
   connected-to: "You are connected to this GitHub account"
   detail: "More..."
   reconnect: "Reconnect"
   connect: "Link your GitHub account"
   disconnect: "Disconnect"
 common/views/components/discord-setting.vue:
-  description: "Once you connect your Discord account to your Misskey account, you will be able to see information from your Discord account on your profile, and you will be able to sign-in using Discord."
+  description: "Once you connect your Discord account to your Areionskey account, you will be able to see information from your Discord account on your profile, and you will be able to sign-in using Discord."
   connected-to: "You are connected to this Discord account"
   detail: "Details…"
   reconnect: "Reconnect"
@@ -761,6 +762,8 @@ common/views/components/visibility-chooser.vue:
 common/views/components/trends.vue:
   count: "{} users mentioned"
   empty: "No popular hashtag trends"
+common/views/components/tag-cloud.vue:
+  empty: "No tags"
 common/views/components/language-settings.vue:
   title: "Display Language"
   pick-language: "Select a language"
@@ -890,18 +893,18 @@ common/views/widgets/tips.vue:
   tips-line6: "You can move a folder by dragging it within the Drive."
   tips-line7: "You can move folders by dragging them within the Drive."
   tips-line8: "The Home layout can be customized from the settings."
-  tips-line9: "Misskey is licensed under AGPLv3."
+  tips-line9: "Areionskey is licensed under AGPLv3."
   tips-line10: "Using the Time Machine widget makes it easy to trace back to the past timeline."
   tips-line11: 'You can pin posts to user page by clicking on "..."'
   tips-line13: "All the files attached to the post are saved to Drive."
   tips-line14: "While customizing your home layout, you can right click on a widget to change its design."
   tips-line17: "Surrounding the text with ** ** will highlight it."
-  tips-line19: "Several windows can be detached outside the browser."
-  tips-line20: "The percentage of the calendar widget shows the percentage of time elapsed."
-  tips-line21: "You can also use the API to develop bots."
-  tips-line23: "Ai-chan kawaii!"
-  tips-line24: "Misskey has been running since 2014."
-  tips-line25: "In a browser compatible with notification features, you can receive notifications in case Misskey is not open"
+  tips-line19: "Mathematical expressions can be displayed using KaTeX."
+  tips-line20: "Several windows can be detached outside the browser."
+  tips-line21: "The percentage of the calendar widget shows the percentage of time elapsed."
+  tips-line23: "You can also use the API to develop bots."
+  tips-line24: "Areionskey forked from Mei-v11 in 2021."
+  tips-line25: "In a browser compatible with notification features, you can receive notifications in case Areionskey is not open"
 common/views/pages/not-found.vue:
   page-not-found: "The page has not been found"
 common/views/pages/follow.vue:
@@ -1049,7 +1052,7 @@ desktop/views/components/notes.vue:
   error: "Loading failed."
   retry: "Retry"
 desktop/views/components/notifications.vue:
-  empty: "No notifications!"
+  empty: "No notifications"
   youGotNewFollower: "Followed you"
   receiveFollowRequest: "Follow request received"
 desktop/views/components/post-form.vue:
@@ -1083,7 +1086,7 @@ desktop/views/components/settings.2fa.vue:
   intro: "If you set up 2-step verification, you will not only need a password at sign-in, but also a pre-registered physical device (such as your smartphone), which will improve security."
   detail: "Details…"
   url: "https://www.google.com/landing/2step/"
-  caution: "If you lose access to your registered device, you won't be able to connect to Misskey anymore!"
+  caution: "If you lose access to your registered device, you won't be able to connect to Areionskey anymore!"
   register: "Register a device"
   already-registered: "This device is already registered"
   unregister: "Unregister"
@@ -1097,7 +1100,7 @@ desktop/views/components/settings.2fa.vue:
   submit: "Submit"
   success: "Settings saved!"
   failed: "Failed to setup. Please ensure that the token is correct."
-  info: "From the next time you sign in to Misskey, the token displayed on your device will be necessary too, as well as the password."
+  info: "From the next time you sign in to Areionskey, the token displayed on your device will be necessary too, as well as the password."
   totp-header: "Authenticator App"
   security-key-header: "Security Key"
   security-key: "For additional security, you can log in to your account using a hardware Security Key that supports FIDO2. When you then sign in, you'll need the registered Security Key, or an authenticator app with you."
@@ -1105,7 +1108,7 @@ desktop/views/components/settings.2fa.vue:
   activate-key: "Click to activate the Security Key"
   security-key-name: "Name the Key"
   register-security-key: "Complete Key registration"
-  something-went-wrong: "Wow! There was a problem registering the Key:"
+  something-went-wrong: "There was a problem registering the Key:"
   key-unregistered: "The Key has been deleted"
   use-password-less-login: "Use Password-less login"
 common/views/components/media-image.vue:
@@ -1225,7 +1228,7 @@ admin/views/index.vue:
   queue: "Job Queue"
   logs: "Logs"
   db: "Database"
-  back-to-misskey: "Back to Misskey"
+  back-to-misskey: "Back to Areionskey"
 admin/views/db.vue:
   tables: "Tables"
   vacuum: "Vacuum"
@@ -1614,10 +1617,9 @@ desktop/views/pages/welcome.vue:
   timeline: "Timeline"
   announcements: "Announcements"
   photos: "Recent Images"
-  powered-by-misskey: "Powered by <b>Misskey</b>."
   info: "Information"
 desktop/views/pages/drive.vue:
-  title: "Misskey storage"
+  title: "Areionskey storage"
 desktop/views/pages/note.vue:
   prev: "Previous post"
   next: "Next post"
@@ -1668,7 +1670,7 @@ desktop/views/widgets/notifications.vue:
 desktop/views/widgets/polls.vue:
   title: "Polls"
   refresh: "refresh"
-  nothing: "No polls found!"
+  nothing: "No polls found"
 desktop/views/widgets/post-form.vue:
   title: "Post"
   note: "Post"
@@ -1679,11 +1681,11 @@ desktop/views/widgets/profile.vue:
 desktop/views/widgets/trends.vue:
   title: "Trend"
   refresh: "refresh"
-  nothing: "No trends found!"
+  nothing: "No trends found"
 desktop/views/widgets/users.vue:
   title: "Recommended users"
   refresh: "refresh"
-  no-one: "Anyone!"
+  no-one: "Anyone"
 mobile/views/components/drive.vue:
   used: "used"
   folder-count: "Folder(s)"
@@ -1763,7 +1765,7 @@ mobile/views/components/ui.nav.vue:
   widgets: "Widgets"
   game: "Games"
   admin: "Admin"
-  about: "About Misskey"
+  about: "About Areionskey"
 mobile/views/pages/drive.vue:
   contextmenu:
     upload: "Upload a file"
@@ -1876,7 +1878,7 @@ deck/deck.notification.vue:
   youGotNewFollower: "Followed you"
   receiveFollowRequest: "Follow request received"
 deck/deck.notifications.vue:
-  empty: "No notifications!"
+  empty: "No notifications"
 docs:
   edit-this-page-on-github: "Found an error, or do you want to contribute to the documentation?"
   edit-this-page-on-github-link: "Edit this page at GitHub!"
@@ -1891,10 +1893,10 @@ dev/views/new-app.vue:
   new-app-info: "You can also create an application with the API. (app/create)"
   create-app: "Creating application"
   app-name: "Application name"
-  app-name-placeholder: "ex) Misskey for iOS"
+  app-name-placeholder: "ex) Areionskey for iOS"
   app-name-desc: "The name of your app"
   app-overview: "Application summary"
-  app-overview-placeholder: " ex) Misskey iOS Client."
+  app-overview-placeholder: " ex) Areionskey iOS Client."
   app-overview-desc: "A brief description, or an introduction of your app."
   callback-url: "The callback URL (optional)"
   callback-url-placeholder: "ex) https://your.app.example.com/callback.php"
@@ -2170,8 +2172,8 @@ pages:
       _for:
         arg1: "Count"
         arg2: "Action"
-    typeError: 'Slot {slot} accepts "{expect}" type, but It actually contains "{actual}" type!'
-    thereIsEmptySlot: "Slot {slot} is empty!"
+    typeError: 'Slot {slot} accepts "{expect}" type, but It actually contains "{actual}" type'
+    thereIsEmptySlot: "Slot {slot} is empty"
     types:
       string: "Text"
       number: "Number"

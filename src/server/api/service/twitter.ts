@@ -142,7 +142,7 @@ router.get('/tw/cb', async ctx => {
 			.getOne();
 
 		if (link == null) {
-			ctx.throw(404, `@${result.screenName}と連携しているMisskeyアカウントはありませんでした...`);
+			ctx.throw(404, `@${result.screenName}と連携しているAreionskeyアカウントはありませんでした...`);
 			return;
 		}
 
@@ -178,7 +178,7 @@ router.get('/tw/cb', async ctx => {
 			twitterScreenName: result.screenName,
 		});
 
-		ctx.body = `Twitter: @${result.screenName} を、Misskey: @${user.username} に接続しました！`;
+		ctx.body = `Twitter: @${result.screenName} を、Areionskey: @${user.username} に接続しました！`;
 
 		// Publish i updated event
 		publishMainStream(user.id, 'meUpdated', await Users.pack(user, user, {

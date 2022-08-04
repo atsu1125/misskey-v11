@@ -23,7 +23,7 @@ export default Vue.extend({
 	i18n: i18n('common/views/components/nav.vue'),
 	data() {
 		return {
-			aboutUrl: `https://wiki.sakura.tel/areionskey`,
+			aboutUrl: `/docs/${lang}/about`,
 			repositoryUrl: 'https://github.com/sakura-tel/areionskey',
 			feedbackUrl: 'https://github.com/sakura-tel/areionskey/issues/new',
 			ToSUrl: null

@@ -6,7 +6,7 @@ import * as portscanner from 'portscanner';
 import Logger from '../services/logger';
 import loadConfig from '../config/load';
 import { Config } from '../config/types';
-import { program } from '../argv';
+import { envOption } from '../env';
 import { showMachineInfo } from '../misc/show-machine-info';
 import { initDb } from '../db/postgre';
 import * as meta from '../meta.json';
@@ -15,25 +15,25 @@ const logger = new Logger('core', 'cyan');
 const bootLogger = logger.createSubLogger('boot', 'magenta', false);
 
 function greet() {
-	if (!program.quiet) {
-		//#region Misskey logo
+	if (!envOption.quiet) {
+		//#region Areionskey logo
 		const v = `v${meta.version}`;
-		console.log('  _____ _         _           ');
-		console.log(' |     |_|___ ___| |_ ___ _ _ ');
-		console.log(' | | | | |_ -|_ -| \'_| -_| | |');
-		console.log(' |_|_|_|_|___|___|_,_|___|_  |');
-		console.log(' ' + chalk.gray(v) + ('                        |___|\n'.substr(v.length)));
+		console.log('  _____         _             _           ');
+		console.log(' |  _  |___ ___|_|___ ___ ___| |_ ___ _ _ ');
+		console.log(' |     |  _| -_| | . |   |_ -| \'_| -_| | |');
+		console.log(' |__|__|_| |___|_|___|_|_|___|_,_|___|_  |');
+		console.log(' ' + chalk.gray(v) + ('                                    |___|\n'.substr(v.length)));
 		//#endregion
 
+		console.log(' Areionskey is maintained by @fs5m8, @atsu1125, and @yui87.');
 		console.log(' Misskey is maintained by @syuilo, @AyaMorisawa, @mei23, @acid-chicken, and @rinsuki.');
-		console.log(chalk.keyword('orange')(' If you like Misskey, please donate to support development. https://www.patreon.com/syuilo'));
 
 		console.log('');
 		console.log(chalk`< ${os.hostname()} {gray (PID: ${process.pid.toString()})} >`);
 	}
 
-	bootLogger.info('Welcome to Misskey!');
-	bootLogger.info(`Misskey v${meta.version}`, null, true);
+	bootLogger.info('Welcome to Areionskey!');
+	bootLogger.info(`Areionskey v${meta.version}`, null, true);
 }
 
 /**
@@ -62,13 +62,13 @@ export async function masterMain() {
 		process.exit(1);
 	}
 
-	bootLogger.succ('Misskey initialized');
+	bootLogger.succ('Areionskey initialized');
 
-	if (!program.disableClustering) {
+	if (!envOption.disableClustering) {
 		await spawnWorkers(config.clusterLimit);
 	}
 
-	if (!program.noDaemons) {
+	if (!envOption.noDaemons) {
 		require('../daemons/server-stats').default();
 		require('../daemons/notes-stats').default();
 		require('../daemons/queue-stats').default();

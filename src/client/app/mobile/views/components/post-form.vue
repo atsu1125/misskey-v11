@@ -15,9 +15,13 @@
 			</div>
 		</header>
 		<div class="form">
-			<mk-note-preview class="preview" v-if="reply" :note="reply"/>
-			<mk-note-preview class="preview" v-if="renote" :note="renote"/>
-			<div class="with-quote" v-if="quoteId"><fa icon="quote-left"/> {{ $t('@.post-form.quote-attached') }}<button @click="quoteId = null"><fa icon="times"/></button></div>
+			<mk-note-preview class="pre-preview" v-if="reply" :note="reply"/>
+			<mk-note-preview class="pre-preview" v-if="renote" :note="renote"/>
+			<div class="hashtags" v-if="recentHashtags.length > 0 && $store.state.settings.suggestRecentHashtags">
+				<b>{{ $t('@.post-form.recent-tags') }}:</b>
+				<a v-for="tag in recentHashtags.slice(0, 5)" @click="addTag(tag)" :title="$t('@.post-form.click-to-tagging')">#{{ tag }}</a>
+			</div>
+			<div class="with-quote" v-if="quoteId"><fa icon="quote-left"/> {{ $t('@.post-form.quote-attached') }} <span> {{ quoteId }} </span><button @click="quoteId = null"><fa icon="times"/></button></div>
 			<div v-if="visibility === 'specified'" class="to-specified">
 				<fa icon="envelope"/> {{ $t('@.post-form.specified-recipient') }}
 				<div class="visibleUsers">
@@ -55,9 +59,10 @@
 			<input ref="file" class="file" type="file" multiple="multiple" @change="onChangeFile"/>
 		</div>
 	</div>
-	<div class="hashtags" v-if="recentHashtags.length > 0 && $store.state.settings.suggestRecentHashtags">
-		<a v-for="tag in recentHashtags.slice(0, 5)" @click="addTag(tag)">#{{ tag }}</a>
-	</div>
+	<details v-if="preview" class="preview" ref="preview" :open="$store.state.device.showPostPreview" @toggle="togglePreview">
+		<summary>{{ $t('@.post-form.preview') }}</summary>
+		<mk-note class="note" :note="preview" :key="preview.id" :compact="true" :preview="true" />
+	</details>
 </div>
 </template>
 
@@ -148,7 +153,7 @@ export default Vue.extend({
 			>.textarea
 				> textarea
 					display block
-					padding 12px
+					padding 12px 32px 12px 12px
 					margin 0
 					width 100%
 					font-size 16px
@@ -170,12 +175,28 @@ export default Vue.extend({
 					color var(--text)
 					opacity 0.5
 
-			> .preview
+			> .pre-preview
 				padding 16px
 
+			> .hashtags
+				margin 0 12px 8px 12px
+				overflow hidden
+				white-space nowrap
+				font-size 14px
+
+				> b
+					color var(--primary)
+
+				> *
+					margin-right 8px
+					white-space nowrap
+
 			> .with-quote
-				margin 0 0 8px 12px
+				margin 0 12px 8px 12px
 				color var(--primary)
+
+				> span
+					color var(--text)
 
 				> button
 					padding 4px 8px
@@ -188,7 +209,7 @@ export default Vue.extend({
 						color var(--primaryDarken30)
 
 			> .to-specified
-				margin 0 0 8px 12px
+				margin 0 12px 8px 12px
 				color var(--primary)
 
 				> .visibleUsers
@@ -214,7 +235,7 @@ export default Vue.extend({
 					margin-left 4px
 
 			> .local-only
-				margin 0 0 8px 12px
+				margin 0 12px 8px 12px
 				color var(--primary)
 
 			> input
@@ -243,7 +264,6 @@ export default Vue.extend({
 			> footer
 				white-space nowrap
 				overflow auto
-				-webkit-overflow-scrolling touch
 				overflow-scrolling touch
 
 				> *
@@ -260,10 +280,15 @@ export default Vue.extend({
 					border-radius 0
 					box-shadow none
 
-	> .hashtags
-		margin 8px
+	> .preview
+		background var(--face)
 
-		> *
-			margin-right 8px
+		> summary
+			padding 0px 16px 16px 20px
+			font-size 14px
+			color var(--text)
+
+		> .note
+			border-top solid var(--lineWidth) var(--faceDivider)
 
 </style>

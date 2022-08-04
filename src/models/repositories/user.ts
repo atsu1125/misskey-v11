@@ -1,7 +1,7 @@
 import $ from 'cafy';
 import { EntityRepository, Repository, In, Not } from 'typeorm';
 import { User, ILocalUser, IRemoteUser } from '../entities/user';
-import { Notes, NoteUnreads, FollowRequests, Notifications, MessagingMessages, UserNotePinings, Followings, Blockings, Mutings, UserProfiles, UserSecurityKeys, UserGroupJoinings, Pages, DriveFiles } from '..';
+import { Notes, NoteUnreads, FollowRequests, Notifications, MessagingMessages, UserNotePinings, Followings, Blockings, Mutings, UserProfiles, UserSecurityKeys, UserGroupJoinings, Pages, DriveFiles, Users } from '..';
 import { ensure } from '../../prelude/ensure';
 import config from '../../config';
 import { SchemaType } from '../../misc/schema';
@@ -85,12 +85,22 @@ export class UserRepository extends Repository<User> {
 		return withUser || withGroups.some(x => x);
 	}
 
-	public getAvatarUrl(user: User): string {
-		if (user.avatarUrl) {
-			return user.avatarUrl;
-		} else {
-			return `${config.url}/random-avatar/${user.id}`;
-		}
+	public async getHasUnreadNotification(userId: User['id']): Promise<boolean> {
+		const mute = await Mutings.find({
+			muterId: userId
+		});
+		const mutedUserIds = mute.map(m => m.muteeId);
+
+		const count = await Notifications.count({
+			where: {
+				notifieeId: userId,
+				...(mutedUserIds.length > 0 ? { notifierId: Not(In(mutedUserIds)) } : {}),
+				isRead: false
+			},
+			take: 1
+		});
+
+		return count > 0;
 	}
 
 	public async pack(
@@ -135,9 +145,9 @@ export class UserRepository extends Repository<User> {
 			name: user.name,
 			username: user.username,
 			host: user.host,
-			avatarUrl: this.getAvatarUrl(user),
-			avatarBlurhash: user.avatarBlurhash,
-			avatarColor: null, // 後方互換性のため
+			avatarUrl: user.avatar ? DriveFiles.getPublicUrl(user.avatar, true) : config.url + '/avatar/' + user.id,
+			avatarBlurhash: user.avatar?.blurhash || null,
+			avatarColor: null,
 			isAdmin: user.isAdmin || falsy,
 			isBot: user.isBot || falsy,
 			isCat: user.isCat || falsy,
@@ -163,6 +173,7 @@ export class UserRepository extends Repository<User> {
 				createdAt: user.createdAt.toISOString(),
 				updatedAt: user.updatedAt ? user.updatedAt.toISOString() : null,
 				bannerUrl: user.banner ? DriveFiles.getPublicUrl(user.banner, false) : null,
+				bannerBlurhash: user.bannerBlurhash,
 				bannerColor: user.banner?.properties?.avgColor || null,
 				isLocked: user.isLocked,
 				isModerator: user.isModerator || falsy,
@@ -201,6 +212,8 @@ export class UserRepository extends Repository<User> {
 					username: profile!.discordUsername,
 					discriminator: profile!.discordDiscriminator
 				} : null,
+				movedToUserId: user.movedToUserId,
+				movedToUser: user.movedToUserId ? Users.pack(user.movedToUserId) : null,
 			} : {}),
 
 			...(opts.detail && meId === user.id ? {
@@ -213,13 +226,7 @@ export class UserRepository extends Repository<User> {
 				autoAcceptFollowed: profile!.autoAcceptFollowed,
 				isDeleted: user.isDeleted,
 				hasUnreadMessagingMessage: this.getHasUnreadMessagingMessage(user.id),
-				hasUnreadNotification: Notifications.count({
-					where: {
-						notifieeId: user.id,
-						isRead: false
-					},
-					take: 1
-				}).then(count => count > 0),
+				hasUnreadNotification: this.getHasUnreadNotification(user.id),
 				pendingReceivedFollowRequestsCount: FollowRequests.count({
 					followeeId: user.id
 				}),
@@ -316,7 +323,7 @@ export const packedUserSchema = {
 			format: 'url',
 			nullable: true as const, optional: false as const,
 		},
-		avatarColor: {
+		avatarBlurhash: {
 			type: 'any' as const,
 			nullable: true as const, optional: false as const,
 		},
@@ -325,7 +332,7 @@ export const packedUserSchema = {
 			format: 'url',
 			nullable: true as const, optional: true as const,
 		},
-		bannerColor: {
+		bannerBlurhash: {
 			type: 'any' as const,
 			nullable: true as const, optional: true as const,
 		},

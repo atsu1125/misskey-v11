@@ -3,10 +3,11 @@
 	<div class="banner" :style="{ backgroundImage: banner ? `url(${banner})` : null }"></div>
 
 	<div>
-		<img svg-inline src="../../../../assets/title.svg" alt="Misskey">
+		<h1 v-if="name != null && name != ''">{{ name }}</h1>
+		<h1 v-else>Areionskey</h1>
 		<p class="host">{{ host }}</p>
+		<p class="pba" v-html="$t('@.powered-by-areionskey')"></p>
 		<div class="about">
-			<h2>{{ name || 'Misskey' }}</h2>
 			<p v-html="description || this.$t('@.about')"></p>
 			<router-link class="signup" to="/signup">{{ $t('@.signup') }}</router-link>
 		</div>
@@ -163,21 +164,15 @@ export default Vue.extend({
 		margin 0 auto
 		max-width 500px
 
-		> svg
-			display block
-			width 200px
-			height 50px
-			margin 0 auto
-
-		> .host
+		> h1, .host, .pba
 			display block
 			text-align center
-			padding 6px 12px
-			line-height 32px
+			margin 0
+			color var(--text)
+		
+		> h1
+			margin-bottom 16px
 			font-weight bold
-			color #333
-			background rgba(#000, 0.035)
-			border-radius 6px
 
 		> .about
 			margin-top 16px

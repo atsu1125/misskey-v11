@@ -193,7 +193,7 @@ router.get('/dc/cb', async ctx => {
 			.getOne();
 
 		if (profile == null) {
-			ctx.throw(404, `@${username}#${discriminator}と連携しているMisskeyアカウントはありませんでした...`);
+			ctx.throw(404, `@${username}#${discriminator}と連携しているAreionskeyアカウントはありませんでした...`);
 			return;
 		}
 
@@ -267,7 +267,7 @@ router.get('/dc/cb', async ctx => {
 			discordDiscriminator: discriminator
 		});
 
-		ctx.body = `Discord: @${username}#${discriminator} を、Misskey: @${user.username} に接続しました！`;
+		ctx.body = `Discord: @${username}#${discriminator} を、Areionskey: @${user.username} に接続しました！`;
 
 		// Publish i updated event
 		publishMainStream(user.id, 'meUpdated', await Users.pack(user, user, {

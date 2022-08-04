@@ -1,3 +1,3 @@
-# About Misskey
+# About Areionskey
 
-Misskey is a mini blog SNS.
+**Areionskey** is a distributed microblogging platform based on [Mei v11](https://github.com/mei23/misskey-v11). 

@@ -95,26 +95,6 @@ export class User {
 	})
 	public tags: string[];
 
-	@Column('varchar', {
-		length: 512, nullable: true,
-	})
-	public avatarUrl: string | null;
-
-	@Column('varchar', {
-		length: 512, nullable: true,
-	})
-	public bannerUrl: string | null;
-
-	@Column('varchar', {
-		length: 32, nullable: true,
-	})
-	public avatarColor: string | null;
-
-	@Column('varchar', {
-		length: 32, nullable: true,
-	})
-	public bannerColor: string | null;
-
 	@Column('boolean', {
 		default: false,
 		comment: 'Whether the User is suspended.'
@@ -217,6 +197,19 @@ export class User {
 		comment: 'The native access token of the User. It will be null if the origin of the user is local.'
 	})
 	public token: string | null;
+
+	@Column({
+		...id(),
+		nullable: true,
+		comment: 'Moved to user ID',
+	})
+	public movedToUserId: User['id'] | null;
+
+	@OneToOne(type => User, {
+		onDelete: 'SET NULL',
+	})
+	@JoinColumn()
+	public movedToUser: User | null;
 
 	constructor(data: Partial<User>) {
 		if (data == null) return;

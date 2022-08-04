@@ -11,7 +11,7 @@
 				<b>{{ $t('@.post-form.recent-tags') }}:</b>
 				<a v-for="tag in recentHashtags.slice(0, 5)" @click="addTag(tag)" :title="$t('@.post-form.click-to-tagging')">#{{ tag }}</a>
 			</div>
-			<div class="with-quote" v-if="quoteId"><fa icon="quote-left"/> {{ $t('@.post-form.quote-attached') }} <button @click="quoteId = null"><fa icon="times"/></button></div>
+			<div class="with-quote" v-if="quoteId"><fa icon="quote-left"/> {{ $t('@.post-form.quote-attached') }} <span> {{ quoteId }} </span><button @click="quoteId = null"><fa icon="times"/></button></div>
 			<div v-if="visibility === 'specified'" class="to-specified">
 				<fa icon="envelope"/> {{ $t('@.post-form.specified-recipient') }}
 				<div class="visibleUsers">
@@ -141,9 +141,6 @@ export default Vue.extend({
 			&:disabled
 				opacity 0.5
 
-			&::-webkit-input-placeholder
-				color var(--primaryAlpha03)
-
 		> input
 			margin-bottom 8px
 
@@ -226,6 +223,9 @@ export default Vue.extend({
 		> .with-quote
 			margin 0 0 8px 0
 			color var(--primary)
+
+			> span
+				color var(--text)
 
 			> button
 				padding 4px 8px

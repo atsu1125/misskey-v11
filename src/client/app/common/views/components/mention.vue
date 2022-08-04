@@ -1,7 +1,7 @@
 <template>
 <router-link class="ldlomzub" :to="url" v-user-preview="canonical" v-if="url.startsWith('/')">
 	<span class="me" v-if="isMe">{{ $t('@.you') }}</span>
-	<img class="avator" v-if="!isMe && avator != null" :src="avator"/>
+	<!-- <img class="avator" v-if="!isMe && avator != null" :src="avator"/> -->
 	<span class="main">
 		<span class="username">@{{ username }}</span>
 		<span class="host" :class="{ fade: $store.state.settings.contrastedAcct }" v-if="(host != localHost) || $store.state.settings.showFullAcct">@{{ toUnicode(host) }}</span>
@@ -59,10 +59,10 @@ export default Vue.extend({
 			return this.$store.getters.isSignedIn && (
 				`@${this.username}@${toUnicode(this.host)}` === `@${this.$store.state.i.username}@${toUnicode(localHost)}`.toLowerCase()
 			);
-		},
-		avator(): string {
-			const ascii = `@${this.username}` + (this.host != localHost ? `@${this.host}` : '');
-			return `/avatar/${ascii}`
+//		},
+//		avator(): string {
+//			const ascii = `@${this.username}` + (this.host != localHost ? `@${this.host}` : '');
+//			return `/avatar/${ascii}`
 		}
 	},
 	methods: {
@@ -90,7 +90,6 @@ export default Vue.extend({
 			border-radius 0 4px 4px 0
 
 	> .avator
-		// width 1.5em
 		height 1.25em
 		margin 0 0.2em
 		vertical-align middle

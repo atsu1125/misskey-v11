@@ -13,7 +13,7 @@ import { extractApHashtags } from './tag';
 import { apLogger } from '../logger';
 import { Note } from '../../../models/entities/note';
 import { updateUsertags } from '../../../services/update-hashtag';
-import { Users, Instances, DriveFiles, Followings, UserProfiles, UserPublickeys } from '../../../models';
+import { Users, Instances, Followings, UserProfiles, UserPublickeys } from '../../../models';
 import { User, IRemoteUser } from '../../../models/entities/user';
 import { Emoji } from '../../../models/entities/emoji';
 import { UserNotePining } from '../../../models/entities/user-note-pinings';
@@ -30,6 +30,7 @@ import { fetchNodeinfo } from '../../../services/fetch-nodeinfo';
 import { normalizeTag } from '../../../misc/normalize-tag';
 import { resolveUser } from '../../resolve-user';
 import { StatusError } from '../../../misc/fetch';
+import { resolveAnotherUser } from '../resolve-another-user';
 
 const logger = apLogger;
 
@@ -137,6 +138,14 @@ export async function createPerson(uri: string, resolver?: Resolver): Promise<Us
 
 	const isBot = getApType(object) === 'Service';
 
+	const movedTo = (person.id && person.movedTo)
+		? await resolveAnotherUser(person.id, person.movedTo, resolver)
+			.catch(e => {
+				logger.warn(`Error in movedTo: ${e}`);
+				return null;
+			})
+		: null;
+
 	// Create user
 	let user: IRemoteUser;
 	try {
@@ -159,7 +168,8 @@ export async function createPerson(uri: string, resolver?: Resolver): Promise<Us
 				uri: person.id,
 				tags,
 				isBot,
-				isCat: (person as any).isCat === true
+				isCat: (person as any).isCat === true,
+				movedToUserId: movedTo?.id || null,
 			}).then(x => transactionalEntityManager.findOneOrFail(User, x.identifiers[0])) as IRemoteUser;
 
 			await transactionalEntityManager.insert(UserProfile, {
@@ -227,26 +237,14 @@ export async function createPerson(uri: string, resolver?: Resolver): Promise<Us
 
 	const avatarId = avatar ? avatar.id : null;
 	const bannerId = banner ? banner.id : null;
-	const avatarUrl = avatar ? DriveFiles.getPublicUrl(avatar, true) : null;
-	const bannerUrl = banner ? DriveFiles.getPublicUrl(banner) : null;
-	const avatarColor = avatar && avatar.properties.avgColor ? avatar.properties.avgColor : null;
-	const bannerColor = banner && banner.properties.avgColor ? banner.properties.avgColor : null;
 
 	await Users.update(user!.id, {
 		avatarId,
 		bannerId,
-		avatarUrl,
-		bannerUrl,
-		avatarColor,
-		bannerColor
 	});
 
 	user!.avatarId = avatarId;
 	user!.bannerId = bannerId;
-	user!.avatarUrl = avatarUrl;
-	user!.bannerUrl = bannerUrl;
-	user!.avatarColor = avatarColor;
-	user!.bannerColor = bannerColor;
 	//#endregion
 
 	//#region カスタム絵文字取得
@@ -320,6 +318,14 @@ export async function updatePerson(uri: string, resolver?: Resolver | null, hint
 
 	const tags = extractApHashtags(person.tag).map(tag => normalizeTag(tag)).splice(0, 32);
 
+	const movedTo = (person.id && person.movedTo)
+		? await resolveAnotherUser(person.id, person.movedTo, resolver)
+			.catch(e => {
+				logger.warn(`Error in movedTo: ${e}`);
+				return null;
+			})
+		: null;
+
 	const updates = {
 		lastFetchedAt: new Date(),
 		inbox: person.inbox,
@@ -331,18 +337,15 @@ export async function updatePerson(uri: string, resolver?: Resolver | null, hint
 		isBot: getApType(object) === 'Service',
 		isCat: (person as any).isCat === true,
 		isLocked: !!person.manuallyApprovesFollowers,
+		movedToUserId: movedTo?.id || null,
 	} as Partial<User>;
 
 	if (avatar) {
 		updates.avatarId = avatar.id;
-		updates.avatarUrl = DriveFiles.getPublicUrl(avatar, true);
-		updates.avatarColor = avatar.properties.avgColor ? avatar.properties.avgColor : null;
 	}
 
 	if (banner) {
 		updates.bannerId = banner.id;
-		updates.bannerUrl = DriveFiles.getPublicUrl(banner);
-		updates.bannerColor = banner.properties.avgColor ? banner.properties.avgColor : null;
 	}
 
 	// Update user

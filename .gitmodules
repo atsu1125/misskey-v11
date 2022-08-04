@@ -1,6 +1,9 @@
 [submodule "misskey-assets"]
 	path = misskey-assets
 	url = https://github.com/misskey-dev/assets.git
+[submodule "areionskey-assets"]
+	path = areionskey-assets
+	url = https://github.com/sakura-tel/areionskey-assets.git
 [submodule "e2e"]
 	path = e2e
-	url = https://github.com/sakura-tel/milkey-e2e
+	url = https://github.com/sakura-tel/areionskey-e2e.git

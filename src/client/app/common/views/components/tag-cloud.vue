@@ -75,6 +75,7 @@ export default Vue.extend({
 		padding 16px
 		text-align center
 		color var(--text)
+		opacity 0.7
 
 		> [data-icon]
 			margin-right 4px
