@@ -13,16 +13,16 @@
 	</div>
 
 	<template v-if="tag == null">
-		<mk-user-list :pagination="pinnedUsers" :expanded="false">
+		<mk-user-list :pagination="pinnedUsers" :expanded="false" :noMore="true">
 			<fa :icon="faBookmark" fixed-width/>{{ $t('pinned-users') }}
 		</mk-user-list>
-		<mk-user-list :pagination="verifiedUsers" :expanded="false">
+		<mk-user-list :pagination="verifiedUsers" :expanded="false" :noMore="true">
 			<fa :icon="faCertificate" fixed-width/>{{ $t('verified-users') }}
 		</mk-user-list>
-		<mk-user-list :pagination="recentlyUpdatedUsers" :expanded="false">
+		<mk-user-list :pagination="recentlyUpdatedUsers" :expanded="false" :noMore="true">
 			<fa :icon="faCommentAlt" fixed-width/>{{ $t('recently-updated-users') }}
 		</mk-user-list>
-		<mk-user-list :pagination="recentlyRegisteredUsers" :expanded="false">
+		<mk-user-list :pagination="recentlyRegisteredUsers" :expanded="false" :noMore="true">
 			<fa :icon="faPlus" fixed-width/>{{ $t('recently-registered-users') }}
 		</mk-user-list>
 	</template>

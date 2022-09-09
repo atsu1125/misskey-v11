@@ -1,6 +1,11 @@
 <template>
 <div class="header" :class="navbar" :data-shadow="$store.state.device.useShadow">
 	<div class="body">
+		<div class="account">
+			<router-link :to="`/@${ $store.state.i.username }`">
+				<mk-avatar class="avatar" :user="$store.state.i"/>
+			</router-link>
+		</div>
 		<div class="post">
 			<button @click="post" :title="$t('title')"><fa icon="pencil-alt"/></button>
 		</div>
@@ -8,9 +13,6 @@
 		<div class="nav" v-if="$store.getters.isSignedIn">
 			<div class="home" :class="{ active: $route.name == 'index' }" @click="goToTop">
 				<router-link to="/"><fa icon="home"/></router-link>
-			</div>
-			<div class="featured" :class="{ active: $route.name == 'featured' }">
-				<router-link to="/featured"><fa :icon="faNewspaper"/></router-link>
 			</div>
 			<div class="explore" :class="{ active: $route.name == 'explore' || $route.name == 'explore-tag' }">
 				<router-link to="/explore"><fa :icon="faHashtag"/></router-link>
@@ -27,6 +29,9 @@
 			<div :title="$t('@.drive')">
 				<a @click="drive"><fa icon="cloud"/></a>
 			</div>
+			<div>
+				<router-link to="/i/favorites"><fa icon="star"/></router-link>
+			</div>
 			<div ref="notificationsButton" :class="{ active: showNotifications }">
 				<a @click="notifications"><fa :icon="['far', 'bell']"/></a>
 			</div>
@@ -38,28 +43,6 @@
 			</div>
 			<div class="signout">
 				<a @click="signout"><fa icon="power-off"/></a>
-			</div>
-			<div>
-				<router-link to="/i/favorites"><fa icon="star"/></router-link>
-			</div>
-			<div v-if="($store.state.i.isLocked || $store.state.i.carefulBot || $store.state.i.carefulRemote)">
-				<a @click="followRequests"><fa :icon="['far', 'envelope']"/><i v-if="$store.state.i.pendingReceivedFollowRequestsCount">{{ $store.state.i.pendingReceivedFollowRequestsCount }}</i></a>
-			</div>
-			<div class="account">
-				<router-link :to="`/@${ $store.state.i.username }`">
-					<mk-avatar class="avatar" :user="$store.state.i"/>
-				</router-link>
-			</div>
-			<div>
-				<template v-if="$store.state.device.inDeckMode">
-					<a @click="toggleDeckMode(false)"><fa icon="home"/></a>
-				</template>
-				<template v-else>
-					<a @click="toggleDeckMode(true)"><fa icon="columns"/></a>
-				</template>
-			</div>
-			<div>
-				<a @click="dark"><template v-if="$store.state.device.darkmode"><fa icon="moon"/></template><template v-else><fa :icon="['far', 'moon']"/></template></a>
 			</div>
 		</div>
 	</div>
@@ -277,6 +260,21 @@ export default Vue.extend({
 		height 100%
 		background var(--desktopHeaderBg)
 
+		> .account
+			width $width
+			height $width
+			padding 14px
+
+			> *
+				display block
+				width 100%
+				height 100%
+
+				> .avatar
+					pointer-events none
+					width 100%
+					height 100%
+
 		> .post
 			width $width
 			height $width
@@ -313,21 +311,6 @@ export default Vue.extend({
 			position absolute
 			bottom 0
 			left 0
-
-			> .account
-				width $width
-				height $width
-				padding 14px
-
-				> *
-					display block
-					width 100%
-					height 100%
-
-					> .avatar
-						pointer-events none
-						width 100%
-						height 100%
 
 	> .notifications
 		position fixed
