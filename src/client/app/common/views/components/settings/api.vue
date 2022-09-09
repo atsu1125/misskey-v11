@@ -42,7 +42,7 @@ export default Vue.extend({
 
 	data() {
 		return {
-			endpoint: '',
+			endpoint: 'ping',
 			body: '{}',
 			res: null,
 			sending: false,
