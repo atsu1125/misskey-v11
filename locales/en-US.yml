@@ -31,6 +31,7 @@ common:
   signin: "Login"
   signup: "Sign up"
   signout: "Logout"
+  reminder: "Forgot password"
   reload-to-apply-the-setting: "You'll need to reload the page to reflect this setting. Do you want to reload it now?"
   fetching-as-ap-object: "Inquiring to fediverse"
   unfollow-confirm: "Do you want to unfollow {name}?"
@@ -710,6 +711,11 @@ common/views/components/signup.vue:
   tos: "Terms Of Service"
   create: "Create an Account"
   some-error: "An attempt at account creation has failed for some reason. Please try again."
+common/views/components/reminder.vue:
+  username: "Username"
+  email: "Email Address"
+  desc: "If your email address has been verified, you will be sent a link to reset your password."
+  submit: "Submit"
 common/views/components/special-message.vue:
   new-year: "Happy New Year!"
   christmas: "Merry Christmas!"
@@ -918,6 +924,9 @@ common/views/pages/follow-requests.vue:
   received-follow-requests: "Follow requests"
   accept: "Accept"
   reject: "Reject"
+common/views/pages/reset-password.vue:
+  password: "New password"
+  save: "Save"
 desktop:
   banner-crop-title: "Crop the part that appears as a banner"
   banner: "Banner"

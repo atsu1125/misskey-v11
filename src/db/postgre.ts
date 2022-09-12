@@ -51,6 +51,7 @@ import { ModerationLog } from '../models/entities/moderation-log';
 import { UsedUsername } from '../models/entities/used-username';
 import { Relay } from '../models/entities/relay';
 import { envOption } from '../env';
+import { PasswordResetRequest } from '../models/entities/password-reset-request';
 
 const sqlLogger = dbLogger.createSubLogger('sql', 'white', false);
 
@@ -135,6 +136,7 @@ export const entities = [
 	ReversiGame,
 	ReversiMatching,
 	Relay,
+	PasswordResetRequest,
 	...charts as any
 ];
 

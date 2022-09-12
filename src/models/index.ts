@@ -45,6 +45,7 @@ import { PageLikeRepository } from './repositories/page-like';
 import { ModerationLogRepository } from './repositories/moderation-logs';
 import { UsedUsername } from './entities/used-username';
 import { RelayRepository } from './repositories/relay';
+import { PasswordResetRequest } from './entities/password-reset-request';
 
 export const Apps = getCustomRepository(AppRepository);
 export const Notes = getCustomRepository(NoteRepository);
@@ -92,3 +93,4 @@ export const Pages = getCustomRepository(PageRepository);
 export const PageLikes = getCustomRepository(PageLikeRepository);
 export const ModerationLogs = getCustomRepository(ModerationLogRepository);
 export const Relays = getCustomRepository(RelayRepository);
+export const PasswordResetRequests = getRepository(PasswordResetRequest);
