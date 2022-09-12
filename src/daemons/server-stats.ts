@@ -4,6 +4,7 @@ import * as diskusage from 'diskusage';
 import * as Deque from 'double-ended-queue';
 import Xev from 'xev';
 import * as osUtils from 'os-utils';
+import config from '../config';
 
 const ev = new Xev();
 
@@ -26,14 +27,14 @@ export default function() {
 		const disk = await diskusage.check(os.platform() == 'win32' ? 'c:' : '/');
 
 		const stats = {
-			cpu_usage: cpu,
+			cpu_usage: config.hideServerInfo ? -1 : cpu,
 			mem: {
-				total: totalmem,
-				used: usedmem
+				total: config.hideServerInfo ? -1 : totalmem,
+				used: config.hideServerInfo ? -1 : usedmem
 			},
-			disk,
-			os_uptime: os.uptime(),
-			process_uptime: process.uptime()
+			disk: config.hideServerInfo ? -1 : disk,
+			os_uptime: config.hideServerInfo ? -1 : os.uptime(),
+			process_uptime: config.hideServerInfo ? -1 : process.uptime()
 		};
 		ev.emit('serverStats', stats);
 		log.unshift(stats);

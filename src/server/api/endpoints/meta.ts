@@ -7,6 +7,7 @@ import { Emojis } from '../../../models';
 import { getConnection } from 'typeorm';
 import redis from '../../../db/redis';
 import { DB_MAX_NOTE_TEXT_LENGTH } from '../../../misc/hard-limits';
+import config from '../config';
 
 export const meta = {
 	stability: 'stable',
@@ -124,15 +125,15 @@ export default define(meta, async (ps, me) => {
 		feedbackUrl: instance.feedbackUrl,
 
 		secure: config.https != null,
-		machine: os.hostname(),
-		os: os.platform(),
-		node: process.version,
-		psql: await getConnection().query('SHOW server_version').then(x => x[0].server_version),
-		redis: redis.server_info.redis_version,
+		machine: config.hideServerInfo ? 'Unknown' : os.hostname(),
+		os: config.hideServerInfo ? 'Unknown' : os.platform(),
+		node: config.hideServerInfo ? 'Unknown' : process.version,
+		psql: config.hideServerInfo ? 'Unknown' : await getConnection().query('SHOW server_version').then(x => x[0].server_version),
+		redis: config.hideServerInfo ? 'Unknown' : redis.server_info.redis_version,
 
 		cpu: {
-			model: os.cpus()[0].model,
-			cores: os.cpus().length
+			model: config.hideServerInfo ? 'Unknown' : os.cpus()[0].model,
+			cores: config.hideServerInfo ? 'Unknown' : os.cpus().length
 		},
 
 		announcements: instance.announcements || [],
