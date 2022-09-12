@@ -6,7 +6,6 @@
 	</router-link>
 	<span class="is-premium" v-if="note.user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
 	<span class="is-verified" v-if="note.user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../assets/horseshoe.svg" class="horseshoe"/></span>
-	<span class="is-admin" v-if="note.user.isAdmin">admin</span>
 	<span class="is-bot" v-if="note.user.isBot">bot</span>
 	<span class="is-cat" v-if="note.user.isCat">cat</span>
 	<span class="username"><mk-acct :user="note.user"/></span>
@@ -73,7 +72,6 @@ export default Vue.extend({
 		&:hover
 			text-decoration underline
 
-	> .is-admin
 	> .is-bot
 	> .is-cat
 		flex-shrink 0
@@ -84,10 +82,6 @@ export default Vue.extend({
 		color var(--noteHeaderBadgeFg)
 		background var(--noteHeaderBadgeBg)
 		border-radius 3px
-
-		&.is-admin
-			background var(--noteHeaderAdminBg)
-			color var(--noteHeaderAdminFg)
 
 	> .username
 		margin 0 .5em 0 0
