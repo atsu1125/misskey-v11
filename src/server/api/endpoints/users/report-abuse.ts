@@ -1,4 +1,5 @@
 import $ from 'cafy';
+import * as sanitizeHtml from 'sanitize-html';
 import { ID } from '../../../../misc/cafy-id';
 import define from '../../define';
 import { publishAdminStream } from '../../../../services/stream';
@@ -6,6 +7,8 @@ import { ApiError } from '../../error';
 import { getUser } from '../../common/getters';
 import { AbuseUserReports, Users } from '../../../../models';
 import { genId } from '../../../../misc/gen-id';
+import { sendEmail } from '../../../../services/send-email';
+import { fetchMeta } from '../../../../misc/fetch-meta';
 
 export const meta = {
 	desc: {
@@ -94,6 +97,13 @@ export default define(meta, async (ps, me) => {
 				reporterId: report.reporterId,
 				comment: report.comment
 			});
+		}
+
+		const meta = await fetchMeta();
+		if (meta.email) {
+			sendEmail(meta.maintainerEmail, 'New abuse report',
+				sanitizeHtml(ps.comment),
+				sanitizeHtml(ps.comment));
 		}
 	}, 1);
 });
