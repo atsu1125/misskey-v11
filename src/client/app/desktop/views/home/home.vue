@@ -148,15 +148,15 @@ export default Vue.extend({
 				left: [
 					'profile',
 					'calendar',
-					'activity',
+					'sunmoon',
 					'server',
+					'queue',
 					'version'
 				],
 				right: [
 					'customize',
 					'broadcast',
 					'notifications',
-					'rss',
 					'nav'
 				]
 			};
