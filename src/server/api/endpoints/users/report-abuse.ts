@@ -1,5 +1,4 @@
 import $ from 'cafy';
-import * as sanitizeHtml from 'sanitize-html';
 import { ID } from '../../../../misc/cafy-id';
 import define from '../../define';
 import { publishAdminStream } from '../../../../services/stream';
@@ -101,9 +100,7 @@ export default define(meta, async (ps, me) => {
 
 		const meta = await fetchMeta();
 		if (meta.email) {
-			sendEmail(meta.maintainerEmail, 'New abuse report',
-				sanitizeHtml(ps.comment),
-				sanitizeHtml(ps.comment));
+			sendEmail(meta.maintainerEmail, 'New abuse report', ps.comment);
 		}
 	}, 1);
 });

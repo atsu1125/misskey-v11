@@ -1,6 +1,30 @@
 ChangeLog
 =========
 
+1.5.0 (2022/09/15)
+--------------------
+## To Update
+以下を実施してください
+- Areionskey 再起動
+- database マイグレーション
+
+Dockerfiles での Node デフォルトバージョンが 17.3.0 から 18.9.0 になっています
+
+### ✨Improvements
+- パスワードリマインダ を追加 by @atsu1125 [PR#799](https://github.com/sakura-tel/areionskey/pull/799)
+- 通報受信メール送信機能 を追加 by @atsu1125 [PR#796](https://github.com/sakura-tel/areionskey/pull/796)
+- api/server-info, api/ping を追加 by @atsu1125 [PR#795](https://github.com/sakura-tel/areionskey/pull/795)
+- ErasticSearch なしの検索機能 を追加 by @atsu1125 [PR#794](https://github.com/sakura-tel/areionskey/pull/794)
+
+### 🐛Fixes
+- nodeinfo の software を areionskey に変更 by @atsu1125 [PR#728](https://github.com/sakura-tel/areionskey/pull/728)
+- 左右のナビゲーションバー を整理 [5474635](https://github.com/sakura-tel/areionskey/commit/5474635320b6a38af8c2a99b34b231c73704628d)
+- みつける で 無限に もっと見る が出現されないように変更 [3fc4528](https://github.com/sakura-tel/areionskey/commit/3fc45280810a9dbdfde3970a8159937fda403030)
+- 依存関係の更新
+
+### ❌Abolitions
+- ナビゲーションバーやメニュー から ハイライト を削除 [ad1fb5f](https://github.com/sakura-tel/areionskey/commit/ad1fb5f78aff442a9d8c3aa4d844c8eb5e09ff42)
+
 1.4.0 (2022/06/19)
 --------------------
 ### ✨Improvements
