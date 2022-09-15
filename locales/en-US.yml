@@ -391,6 +391,7 @@ common:
     hashtags: "Hashtags"
     queue: "Queue"
     aichan: "Ai-chan"
+    sunmoon: "Moon age and sunrise/sunset"
   dev: "Failed to create the application. Please try again."
   ai-chan-kawaii: "Ai-chan kawaii!"
   you: "You"
@@ -911,6 +912,10 @@ common/views/widgets/tips.vue:
   tips-line23: "You can also use the API to develop bots."
   tips-line24: "Areionskey forked from Mei-v11 in 2021."
   tips-line25: "In a browser compatible with notification features, you can receive notifications in case Areionskey is not open"
+common/views/widgets/sunmoon.vue:
+  title: "Moon age and sunrise/sunset"
+  sunRise: "Sunrise"
+  sunSet: "Sunset"
 common/views/pages/not-found.vue:
   page-not-found: "The page has not been found"
 common/views/pages/follow.vue:
