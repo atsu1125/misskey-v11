@@ -33,6 +33,8 @@
 						<span class="signup" @click="signup">{{ $t('@.signup') }}</span>
 						<span class="divider">|</span>
 						<span class="signin" @click="signin">{{ $t('@.signin') }}</span>
+						<span class="divider">|</span>
+						<span class="explore" onclick="window.location.href='/explore'">Explore</span>
 					</p>
 
 					<img v-if="meta" :src="meta.mascotImageUrl" alt="char" class="char">
@@ -223,7 +225,7 @@ export default Vue.extend({
 			this.$modal.hide('signin');
 			this.$modal.show('reminder');
 		},
-		
+
 		doneReminder() {
 			this.$modal.hide('reminder');
 		},
@@ -425,6 +427,7 @@ export default Vue.extend({
 
 						> .signin
 						> .signup
+						> .explore
 							cursor pointer
 
 							&:hover

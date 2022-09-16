@@ -14,6 +14,9 @@
 		<div class="signin">
 			<a href="/signin" @click.prevent="signin()">{{ $t('@.signin') }}</a>
 		</div>
+		<div class="explore">
+			<router-link class="explore" to="/explore">Explore</router-link>
+		</div>
 		<div class="tl">
 			<mk-welcome-timeline/>
 		</div>
@@ -169,7 +172,7 @@ export default Vue.extend({
 			text-align center
 			margin 0
 			color var(--text)
-		
+
 		> h1
 			margin-bottom 16px
 			font-weight bold
@@ -191,6 +194,7 @@ export default Vue.extend({
 				font-weight bold
 
 		> .signin
+		> .explore
 			margin 16px 0
 
 		> .tl
