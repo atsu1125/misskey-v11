@@ -67,7 +67,6 @@
 		</article>
 		<div class="info" v-if="meta">
 			<p>Version: <b>{{ meta.version }}</b></p>
-			<p>Maintainer: <b><a :href="'mailto:' + meta.maintainerEmail" target="_blank">{{ meta.maintainerName }}</a></b></p>
 		</div>
 		<footer>
 			<small>{{ copyright }}</small>
