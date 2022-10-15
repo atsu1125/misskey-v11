@@ -25,6 +25,7 @@
 		</section>
 		<section>
 			<ui-switch v-model="disableRegistration">{{ $t('disable-registration') }}</ui-switch>
+			<ui-switch v-model="disableDeletion">{{ $t('disable-deletion') }}</ui-switch>
 			<ui-button v-if="disableRegistration" @click="invite">{{ $t('invite') }}</ui-button>
 		</section>
 		<section>
@@ -268,6 +269,7 @@ export default Vue.extend({
 			repositoryUrl: "https://github.com/sakura-tel/areionskey",
 			feedbackUrl: null,
 			disableRegistration: false,
+			disableDeletion: false,
 			disableLocalTimeline: false,
 			disableGlobalTimeline: false,
 			enableEmojiReaction: true,
@@ -337,6 +339,7 @@ export default Vue.extend({
 			this.repositoryUrl = meta.repositoryUrl;
 			this.feedbackUrl = meta.feedbackUrl;
 			this.disableRegistration = meta.disableRegistration;
+			this.disableDeletion = meta.disableDeletion;
 			this.disableLocalTimeline = meta.disableLocalTimeline;
 			this.disableGlobalTimeline = meta.disableGlobalTimeline;
 			this.enableEmojiReaction = meta.enableEmojiReaction;
@@ -466,6 +469,7 @@ export default Vue.extend({
 				repositoryUrl: this.repositoryUrl,
 				feedbackUrl: this.feedbackUrl,
 				disableRegistration: this.disableRegistration,
+				disableDeletion: this.disableDeletion,
 				disableLocalTimeline: this.disableLocalTimeline,
 				disableGlobalTimeline: this.disableGlobalTimeline,
 				enableEmojiReaction: this.enableEmojiReaction,

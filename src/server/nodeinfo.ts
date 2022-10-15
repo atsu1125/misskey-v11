@@ -64,6 +64,7 @@ const nodeinfo2 = async () => {
 			feedbackUrl: meta.feedbackUrl,
 			announcements: meta.announcements,
 			disableRegistration: meta.disableRegistration,
+			disableDeletion: meta.disableDeletion,
 			disableLocalTimeline: meta.disableLocalTimeline,
 			disableGlobalTimeline: meta.disableGlobalTimeline,
 			enableRecaptcha: meta.enableRecaptcha,

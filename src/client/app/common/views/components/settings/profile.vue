@@ -130,7 +130,7 @@
 	<section>
 		<details>
 			<summary>{{ $t('danger-zone') }}</summary>
-			<ui-button @click="deleteAccount()">{{ $t('delete-account') }}</ui-button>
+			<ui-button @click="deleteAccount()" :disabled="disableDeletion">{{ $t('delete-account') }}</ui-button>
 		</details>
 	</section>
 </ui-card>
@@ -182,6 +182,7 @@ export default Vue.extend({
 			avatarUploading: false,
 			bannerUploading: false,
 			exportTarget: 'notes',
+			disableDeletion: false,
 			faDownload, faUpload, faSave, faEnvelope, faUnlockAlt, faBoxes, faCogs
 		};
 	},
@@ -204,6 +205,7 @@ export default Vue.extend({
 	created() {
 		this.$root.getMeta().then(meta => {
 			this.enableEmail = meta.enableEmail;
+			this.disableDeletion = meta.disableDeletion;
 		});
 		this.email = this.$store.state.i.email;
 		this.name = this.$store.state.i.name;
