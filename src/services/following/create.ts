@@ -123,8 +123,9 @@ export default async function(follower: User, followee: User, requestId?: string
 	// フォロワーがBotであり、フォロー対象がBotからのフォローに慎重である or
 	// フォロワーがリモートユーザーであり、フォロー対象がリモートからのフォローに慎重である or
 	// フォロワーがローカルユーザーであり、フォロー対象がリモートユーザーである
+	// フォロワーがサイレンスされている
 	// 上記のいずれかに当てはまる場合はすぐフォローせずにフォローリクエストを発行しておく
-	if (followee.isLocked || (followeeProfile.carefulBot && follower.isBot) || (followeeProfile.carefulRemote && Users.isRemoteUser(follower)) || (Users.isLocalUser(follower) && Users.isRemoteUser(followee))) {
+	if (followee.isLocked || (followeeProfile.carefulBot && follower.isBot) || (followeeProfile.carefulRemote && Users.isRemoteUser(follower)) || follower.isSilenced ||(Users.isLocalUser(follower) && Users.isRemoteUser(followee))) {
 		let autoAccept = false;
 
 		// 鍵アカウントであっても、既にフォローされていた場合はスルー
