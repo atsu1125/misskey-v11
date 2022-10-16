@@ -37,6 +37,17 @@
 					<option value="local">{{ $t('origin.local') }}</option>
 					<option value="remote">{{ $t('origin.remote') }}</option>
 				</ui-select>
+				<ui-input v-model="hostname" type="text" spellcheck="false" :disabled="origin === 'local'">
+					<span>{{ $t('host') }}</span>
+				</ui-input>
+			</ui-horizon-group>
+			<ui-horizon-group inputs>
+				<ui-select v-model="type">
+					<option value="">{{ $t('@.allType') }}</option>
+					<option value="image/*">{{ $t('@.image') }}</option>
+					<option value="video/*">{{ $t('@.video') }}</option>
+					<option value="audio/*">{{ $t('@.audio') }}</option>
+				</ui-select>
 			</ui-horizon-group>
 			<sequential-entrance animation="entranceFromTop" delay="25">
 				<div class="kidvdlkg" v-for="file in files">
@@ -52,6 +63,7 @@
 							<div>
 								<div>
 									<span style="margin-right:16px;">{{ file.type }}</span>
+								</span>
 									<span>{{ file.size | bytes }}</span>
 								</div>
 								<div><mk-time :time="file.createdAt" mode="detail"/></div>
@@ -93,7 +105,9 @@ export default Vue.extend({
 			file: null,
 			target: null,
 			sort: '+createdAt',
-			origin: 'combined',
+			origin: 'local',
+			hostname: '',
+			type: '',
 			limit: 10,
 			offset: 0,
 			files: [],
@@ -110,10 +124,23 @@ export default Vue.extend({
 		},
 
 		origin() {
+			if (this.origin === 'local') this.hostname = '';
 			this.files = [];
 			this.offset = 0;
 			this.fetch();
-		}
+		},
+
+		hostname() {
+			this.files = [];
+			this.offset = 0;
+			this.fetch();
+		},
+
+		type() {
+			this.files = [];
+			this.offset = 0;
+			this.fetch();
+		},
 	},
 
 	mounted() {
@@ -142,6 +169,8 @@ export default Vue.extend({
 		fetch() {
 			this.$root.api('admin/drive/files', {
 				origin: this.origin,
+				hostname: this.hostname,
+				type: this.type || undefined,
 				sort: this.sort,
 				offset: this.offset,
 				limit: this.limit + 1

@@ -85,6 +85,11 @@ common:
   explore: "Explore"
   following: "Following"
   followers: "Followers"
+  allType: "All types"
+  image: "Image"
+  video: "Video"
+  audio: "Audio"
+  host: "Host"
   favorites: "Favorites"
   flush: "Clear cache"
   permissions:

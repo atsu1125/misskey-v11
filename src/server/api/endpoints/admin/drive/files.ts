@@ -1,4 +1,5 @@
 import $ from 'cafy';
+import { toDbHost } from '../../../../../misc/convert-host';
 import define from '../../../define';
 import { fallback } from '../../../../../prelude/symbol';
 import { DriveFiles } from '../../../../../models';
@@ -36,7 +37,11 @@ export const meta = {
 				'remote',
 			]),
 			default: 'local'
-		}
+		},
+
+		type: {
+			validator: $.optional.str.match(/^[a-zA-Z\/\-\*]+$/)
+		},
 	}
 };
 
@@ -51,8 +56,16 @@ const sort: any = { // < https://github.com/Microsoft/TypeScript/issues/1863
 export default define(meta, async (ps, me) => {
 	const q = {} as any;
 
-	if (ps.origin == 'local') q['userHost'] = null;
-	if (ps.origin == 'remote') q['userHost'] = { $ne: null };
+	if (ps.hostname != null && ps.hostname.length > 0) {
+			q['metadata._user.host'] = toDbHost(ps.hostname);
+		} else {
+			if (ps.origin == 'local') q['userHost'] = null;
+			if (ps.origin == 'remote') q['userHost'] = { $ne: null };
+		}
+
+	if (ps.type) {
+		q.type = new RegExp(`^${ps.type.replace(/\*/g, '.+?')}$`);
+	}
 
 	const files = await DriveFiles.find({
 		where: q,

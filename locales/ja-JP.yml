@@ -90,6 +90,11 @@ common:
   explore: "みつける"
   following: "フォロー中"
   followers: "フォロワー"
+  allType: "すべての種類"
+  image: "画像"
+  video: "動画"
+  audio: "音声"
+  host: "ホスト"
   favorites: "お気に入り"
   flush: "キャッシュをクリア"
 
