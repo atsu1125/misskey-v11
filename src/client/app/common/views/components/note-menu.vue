@@ -83,7 +83,7 @@ export default Vue.extend({
 					} : undefined,
 					{
 						icon: ['far', 'trash-alt'],
-						text: this.$t('delete'),
+						text: this.note.userId == this.$store.state.i.id ? this.$t('delete') : this.$t('deleteAsAdmin'),
 						action: this.del
 					}]
 					: []
@@ -170,7 +170,7 @@ export default Vue.extend({
 		del() {
 			this.$root.dialog({
 				type: 'warning',
-				text: this.$t('delete-confirm'),
+				text: this.note.userId == this.$store.state.i.id ? this.$t('delete-confirm') : this.$t('deleteAsAdmin-confirm'),
 				showCancelButton: true
 			}).then(({ canceled }) => {
 				if (canceled) return;

@@ -189,7 +189,7 @@ export default (opts: Opts = {}) => ({
 		del() {
 			this.$root.dialog({
 				type: 'warning',
-				text: this.$t('@.delete-confirm'),
+				text: this.$store.state.i.id === this.appearNote.userId ? this.$t('@.delete-confirm') : this.$t('@.deleteAsAdmin-confirm'),
 				showCancelButton: true
 			}).then(({ canceled }) => {
 				if (canceled) return;
