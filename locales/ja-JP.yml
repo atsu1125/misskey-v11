@@ -37,6 +37,7 @@ common:
   fetching-as-ap-object: "連合に照会中"
   unfollow-confirm: "{name}さんをフォロー解除しますか？"
   delete-confirm: "この投稿を削除しますか？"
+  deleteAsAdmin-confirm: "管理者権限を行使してこの投稿を削除しますか？"
   signin-required: "ログインしてください"
   notification-type: "通知の種類"
   notification-types:
@@ -633,6 +634,8 @@ common/views/components/note-menu.vue:
   unpin: "ピン留め解除"
   delete: "削除"
   delete-confirm: "この投稿を削除しますか？"
+  deleteAsAdmin: "管理者として削除"
+  deleteAsAdmin-confirm: "管理者権限を行使してこの投稿を削除しますか？"
   delete-and-edit: "削除して編集"
   delete-and-edit-confirm: "この投稿を削除してもう一度編集しますか？この投稿へのリアクション、Renote、返信も全て削除されます。"
   remote: "投稿元で見る"
