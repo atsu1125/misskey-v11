@@ -624,6 +624,7 @@ common/views/components/user-menu.vue:
   unsuspend: "Unsuspend"
   suspend-confirm: "Are you sure that you want to suspend this user?"
   unsuspend-confirm: "Are you sure that you want to unsuspend this user?"
+  confirm: "Confirm"
 common/views/components/poll.vue:
   vote-to: "Vote for '{}'"
   vote-count: "{} votes"

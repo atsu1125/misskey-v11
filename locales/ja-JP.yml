@@ -666,6 +666,7 @@ common/views/components/user-menu.vue:
   unsuspend: "凍結解除"
   suspend-confirm: "このユーザーを凍結しますか？"
   unsuspend-confirm: "このユーザーを凍結解除しますか？"
+  confirm: "確認"
 
 common/views/components/poll.vue:
   vote-to: "「{}」に投票する"
