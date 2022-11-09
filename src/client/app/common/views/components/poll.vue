@@ -78,13 +78,20 @@ export default Vue.extend({
 		},
 		vote(id) {
 			if (this.closed || !this.poll.multiple && this.poll.choices.some(c => c.isVoted)) return;
-			this.$root.api('notes/polls/vote', {
-				noteId: this.note.id,
-				choice: id
-			}).then(() => {
-				if (!this.showResult) this.showResult = !this.poll.multiple;
-			});
-		}
+			this.$root.dialog({
+				type: 'warning',
+				text: this.$t('vote-confirm'),
+				showCancelButton: true,
+			}).then(({ canceled, result }) => {
+				if (canceled) return;
+				
+				this.$root.api('notes/polls/vote', {
+					noteId: this.note.id,
+					choice: id
+				}).then(() => {
+					if (!this.showResult) this.showResult = !this.poll.multiple;
+				});
+			}
 	}
 });
 </script>
