@@ -34,7 +34,7 @@
 		"@fortawesome/free-brands-svg-icons": "5.15.4",
 		"@fortawesome/free-regular-svg-icons": "5.15.4",
 		"@fortawesome/free-solid-svg-icons": "5.15.4",
-		"@fortawesome/vue-fontawesome": "2.0.8",
+		"@fortawesome/vue-fontawesome": "2.0.9",
 		"@koa/cors": "3.3.0",
 		"@koa/multer": "3.0.0",
 		"@koa/router": "8.0.8",
@@ -54,7 +54,7 @@
 		"@types/jsonld": "1.5.6",
 		"@types/katex": "0.14.0",
 		"@types/koa": "2.13.5",
-		"@types/koa-bodyparser": "4.3.9",
+		"@types/koa-bodyparser": "4.3.10",
 		"@types/koa-cors": "0.0.2",
 		"@types/koa-favicon": "2.0.21",
 		"@types/koa-logger": "3.1.2",
@@ -98,7 +98,7 @@
 		"@types/ws": "8.5.3",
 		"abort-controller": "3.0.0",
 		"animejs": "3.2.1",
-		"apexcharts": "3.36.0",
+		"apexcharts": "3.36.3",
 		"autobind-decorator": "2.4.0",
 		"autosize": "4.0.4",
 		"autwh": "0.1.0",
@@ -211,7 +211,7 @@
 		"summaly": "2.7.0",
 		"suncalc": "1.8.0",
 		"syslog-pro": "1.0.0",
-		"systeminformation": "5.12.11",
+		"systeminformation": "5.12.13",
 		"syuilo-password-strength": "0.0.1",
 		"terser-webpack-plugin": "4.2.3",
 		"textarea-caret": "3.1.0",
@@ -254,6 +254,6 @@
 		"xev": "2.0.1"
 	},
 	"devDependencies": {
-		"@redocly/openapi-core": "1.0.0-beta.111"
+		"@redocly/openapi-core": "1.0.0-beta.112"
 	}
 }

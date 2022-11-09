@@ -111,10 +111,10 @@
   dependencies:
     "@fortawesome/fontawesome-common-types" "^0.2.36"
 
-"@fortawesome/vue-fontawesome@2.0.8":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-2.0.8.tgz#9c9ae1cd2cbe7f4b0c63dd53709c26167d541aa6"
-  integrity sha512-SRmP0q9Ox4zq8ydDR/hrH+23TVU1bdwYVnugLVaAIwklOHbf56gx6JUGlwES7zjuNYqzKgl8e39iYf6ph8qSQw==
+"@fortawesome/vue-fontawesome@2.0.9":
+  version "2.0.9"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-2.0.9.tgz#7df35818135be54fd87568f16ec7b998a3d0cce8"
+  integrity sha512-tUmO92PFHbLOplitjHNBVGMJm6S57vp16tBXJVPKSI/6CfjrgLycqKxEpC6f7qsOqUdoXs5nIv4HLUfrOMHzuw==
 
 "@gulp-sourcemaps/identity-map@^2.0.1":
   version "2.0.1"
@@ -254,10 +254,10 @@
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-"@redocly/openapi-core@1.0.0-beta.111":
-  version "1.0.0-beta.111"
-  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.111.tgz#f1bb1ca45777a68c4e2e1112c2634cae8b6cb57e"
-  integrity sha512-t3dwM+IpQWisFyVvcgd7x9LvIv3B2uQOrfyHoQcEIERW3wsouvX98Vh/qhCh+xAXXXpH8Sh+k4Cz2Qn4ei9VAw==
+"@redocly/openapi-core@1.0.0-beta.112":
+  version "1.0.0-beta.112"
+  resolved "https://registry.yarnpkg.com/@redocly/openapi-core/-/openapi-core-1.0.0-beta.112.tgz#e99b9ce4d42189094c73751bee8de8ec103c0226"
+  integrity sha512-VNJPQwLUvTtgsMrd4CAPnl6zJWvggHE50LCOhnQAReyo4Em7HAGYYo9v920HbIgZ5LCB6Y/f5QUTINrgYPaTkg==
   dependencies:
     "@redocly/ajv" "^8.11.0"
     "@types/node" "^14.11.8"
@@ -591,10 +591,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/koa-bodyparser@4.3.9":
-  version "4.3.9"
-  resolved "https://registry.yarnpkg.com/@types/koa-bodyparser/-/koa-bodyparser-4.3.9.tgz#7456736dfdc2fe8e7fdec402341c0fa1089a74e8"
-  integrity sha512-nHgnvM5wZhbxwVyMjAhW9SNcAighAMAmQCK56mrE1vOrFSfVJexf3CQ8pmBTx90P+qBSsLsDEVDX3EeP/WWQMg==
+"@types/koa-bodyparser@4.3.10":
+  version "4.3.10"
+  resolved "https://registry.yarnpkg.com/@types/koa-bodyparser/-/koa-bodyparser-4.3.10.tgz#02b8d3d57579aa7d491d553f1f4058088bfe127f"
+  integrity sha512-6ae05pjhmrmGhUR8GYD5qr5p9LTEMEGfGXCsK8VaSL+totwigm8+H/7MHW7K4854CMeuwRAubT8qcc/EagaeIA==
   dependencies:
     "@types/koa" "*"
 
@@ -1415,10 +1415,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-apexcharts@3.36.0:
-  version "3.36.0"
-  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.36.0.tgz#eba378167be3ebe5044b8980d5907bad9e9a7fff"
-  integrity sha512-9r7M/SOfnYS1g4G1gmRRgeIN1Oj+ct1S0G6PpMPPD3F4jGHgWl5EzxqvoQkk3vpTxN8MbZB5ZHWIAQvPuFiA+w==
+apexcharts@3.36.3:
+  version "3.36.3"
+  resolved "https://registry.yarnpkg.com/apexcharts/-/apexcharts-3.36.3.tgz#debd58ded07163d51e00aeb15827d594e0cc8129"
+  integrity sha512-8/FXEs0ohXMff07Gv28XjhPwEJphIUdq2/wii/pcvi54Tw6z1mjrV8ydN8rlWi/ve8BAPBefJkLmRWv7UOBsLw==
   dependencies:
     svg.draggable.js "^2.2.2"
     svg.easing.js "^2.0.0"
@@ -9196,10 +9196,10 @@ syslog-pro@1.0.0:
   dependencies:
     moment "^2.22.2"
 
-systeminformation@5.12.11:
-  version "5.12.11"
-  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.12.11.tgz#46beb6f83bd78ccd6b4e6e9eb1057a59b9402be9"
-  integrity sha512-4N5nT4BFWqRyadTLO8c/t8/gM6wqgg26/WNjjZCS/UU7VuURuBy/pR6Z6+j0nD3ff+zCpX/sdVfyn+EoIg9saQ==
+systeminformation@5.12.13:
+  version "5.12.13"
+  resolved "https://registry.yarnpkg.com/systeminformation/-/systeminformation-5.12.13.tgz#5ccdd33824cf735231d2392f254b95b2bdec28c2"
+  integrity sha512-2z1Ul+PDkO50yGmEGKWOPk3+TeAtTkbn6PmxqzH9D3BAN53QXgbYy6+PPJmBrszXy+X7g8uwZd1WdThKZtICcg==
 
 syuilo-password-strength@0.0.1:
   version "0.0.1"
