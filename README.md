@@ -7,7 +7,7 @@
 [![gitlocalized](https://gitlocalize.com/repo/6995/whole_project/badge.svg)](https://gitlocalize.com/repo/6995/whole_project?utm_source=badge)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/sakura-tel/areionskey)
 
-🏇 Areionskey is a distributed microblogging platform based on [Mei v11](https://github.com/mei23/misskey-v11).
+🏇 Areionskey is a federated/distributed microblogging platform based on [Mei v11](https://github.com/mei23/misskey-v11).
 
 [Official Instance](https://uma.milkey.homes)
 

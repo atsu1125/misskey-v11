@@ -1,6 +1,5 @@
 <template>
 <form class="mk-signin" :class="{ signing, totpLogin }" @submit.prevent="onSubmit">
-	<div class="avatar" :style="{ backgroundImage: user ? `url('${ user.avatarUrl }')` : null }" v-show="withAvatar"></div>
 	<div class="normal-signin" v-if="!totpLogin">
 		<ui-input v-model="username" type="text" pattern="^[a-zA-Z0-9_]+$" spellcheck="false" autofocus required @input="onUsernameChange">
 			<span>{{ $t('username') }}</span>
@@ -12,11 +11,11 @@
 			<template #prefix><fa icon="lock"/></template>
 		</ui-input>
 		<ui-button type="submit" :disabled="signing">{{ signing ? $t('signing-in') : $t('@.signin') }}</ui-button>
-		<p style="margin: 8px 0;"><a @click="onReminder">{{ $t('@.reminder') }}</a></p>
-		<p v-if="meta && meta.enableTwitterIntegration" style="margin: 8px 0;"><a :href="`${apiUrl}/signin/twitter`"><fa :icon="['fab', 'twitter']"/> {{ $t('signin-with-twitter') }}</a></p>
-		<p v-if="meta && meta.enableGithubIntegration"  style="margin: 8px 0;"><a :href="`${apiUrl}/signin/github`"><fa :icon="['fab', 'github']"/> {{ $t('signin-with-github') }}</a></p>
-		<p v-if="meta && meta.enableDiscordIntegration" style="margin: 8px 0;"><a :href="`${apiUrl}/signin/discord`"><fa :icon="['fab', 'discord']"/> {{ $t('signin-with-discord') /* TODO: Make these layouts better */ }}</a></p>
-		<p style="margin: 8px 0;"><a @click="onFlush">{{ $t('@.flush') }}</a></p>
+		<p v-if="meta && meta.enableTwitterIntegration" style="margin: 8px 0; text-align: center;"><a :href="`${apiUrl}/signin/twitter`"><fa :icon="['fab', 'twitter']"/> {{ $t('signin-with-twitter') }}</a></p>
+		<p v-if="meta && meta.enableGithubIntegration"  style="margin: 8px 0; text-align: center;"><a :href="`${apiUrl}/signin/github`"><fa :icon="['fab', 'github']"/> {{ $t('signin-with-github') }}</a></p>
+		<p v-if="meta && meta.enableDiscordIntegration" style="margin: 8px 0; text-align: center;"><a :href="`${apiUrl}/signin/discord`"><fa :icon="['fab', 'discord']"/> {{ $t('signin-with-discord') /* TODO: Make these layouts better */ }}</a></p>
+		<p style="margin: 8px 0; text-align: center;"><a @click="onReminder">{{ $t('@.reminder') }}</a></p>
+		<p style="margin: 8px 0; text-align: center;"><a @click="onFlush">{{ $t('@.flush') }}</a></p>
 	</div>
 	<div class="2fa-signin" v-if="totpLogin" :class="{ securityKeys: user && user.securityKeys }">
 		<div v-if="user && user.securityKeys" class="twofa-group tap-group">
@@ -241,14 +240,5 @@ export default Vue.extend({
 	&.signing
 		&, *
 			cursor wait !important
-
-	> .avatar
-		margin 0 auto 0 auto
-		width 64px
-		height 64px
-		background #ddd
-		background-position center
-		background-size cover
-		border-radius 100%
 
 </style>

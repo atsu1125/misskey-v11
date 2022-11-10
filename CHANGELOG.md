@@ -1,6 +1,31 @@
 ChangeLog
 =========
 
+1.6.0 (2022/11/11)
+--------------------
+## To Update
+以下を実施してください
+- Areionskey 再起動
+
+Dockerfiles での Node デフォルトバージョンが 18.9.0 から 18.10.0 になっています
+
+### ✨Improvements
+- フォロワー解除機能 を追加 by @atsu1125 [PR#912](https://github.com/sakura-tel/areionskey/pull/912)
+- サイレンスされたユーザからのフォローは フォローリクエストを発行する機能 を追加 by @atsu1125 [PR#872](https://github.com/sakura-tel/areionskey/pull/872)
+
+### 🐛Fixes
+- 投票しようとした時 確認するように変更 by @atsu1125 [PR#934](https://github.com/sakura-tel/areionskey/pull/934)
+- 管理者が 自分以外の投稿を削除しようとした時 確認するように変更 by @atsu1125 [PR#913](https://github.com/sakura-tel/areionskey/pull/913)
+- ドライブ上限を超過した時 エラーを Bad Request に修正 by @atsu1125 [PR#809](https://github.com/sakura-tel/areionskey/pull/809)
+- ブロック時に フォロワーを解除するように変更 by @atsu1125 [f2d6f2a](https://github.com/sakura-tel/areionskey/commit/f2d6f2ad16b3bae1e43d285eebac741a156910fa)
+- ナビゲーションに フォローリクエストを常に表示するように変更 [2135d8e](https://github.com/sakura-tel/areionskey/commit/2135d8ed44009b9e87b1ec16d7eb94b7f7895460)
+- 言語ファイル・文書の更新
+- 依存関係の更新
+
+### ❌Abolitions
+- 非ログイン時の画面 から トレンド関連 を削除 [17f8e24](https://github.com/sakura-tel/areionskey/commit/17f8e2492dd3699b33d148e531a057cf05efd922)
+- Revert [3de1369](https://github.com/sakura-tel/areionskey/commit/3de1369778cdc5f2444dedb5200ae80643693965)
+
 1.5.0 (2022/09/15)
 --------------------
 ## To Update

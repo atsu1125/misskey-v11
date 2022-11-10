@@ -49,17 +49,17 @@
 						<i><fa icon="angle-right"/></i>
 					</router-link>
 				</li>
-				<li v-if="($store.state.i.isLocked || $store.state.i.carefulBot || $store.state.i.carefulRemote)">
-					<router-link to="/i/follow-requests">
-						<i><fa :icon="['far', 'envelope']" fixed-width/></i>
-						<span>{{ $t('follow-requests') }}<i v-if="$store.state.i.pendingReceivedFollowRequestsCount">{{ $store.state.i.pendingReceivedFollowRequestsCount }}</i></span>
-						<i><fa icon="angle-right"/></i>
-					</router-link>
-				</li>
 				<li>
 					<router-link :to="`/@${ $store.state.i.username }/room`">
 						<i><fa :icon="faDoorOpen" fixed-width/></i>
 						<span>{{ $t('room') }}</span>
+						<i><fa icon="angle-right"/></i>
+					</router-link>
+				</li>
+				<li>
+					<router-link to="/i/follow-requests">
+						<i><fa :icon="['far', 'envelope']" fixed-width/></i>
+						<span>{{ $t('follow-requests') }}<i v-if="$store.state.i.pendingReceivedFollowRequestsCount">{{ $store.state.i.pendingReceivedFollowRequestsCount }}</i></span>
 						<i><fa icon="angle-right"/></i>
 					</router-link>
 				</li>

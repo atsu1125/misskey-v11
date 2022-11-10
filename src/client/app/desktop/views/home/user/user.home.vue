@@ -25,7 +25,7 @@ import XActivity from '../../../../common/views/components/activity.vue';
 import XPage from '../../../../common/views/components/page/page.vue';
 
 export default Vue.extend({
-	i18n: i18n(),
+	i18n: i18n('desktop/views/pages/user/user.home.vue'),
 	components: {
 		XTimeline,
 		XPhotos,

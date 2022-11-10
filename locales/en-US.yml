@@ -2,12 +2,12 @@
 meta:
   lang: "English"
 common:
-  misskey: "A ⭐ of the fediverse"
-  about-title: "A ⭐ of the fediverse."
-  about: "Areionskey is <b>a distributed microblogging platform</b>. It is interconnected to other platforms through intercommunication via ActivityPub, forming a federation called Fediverse."
+  misskey: "A isle of the Fediverse"
+  about-title: "A isle of the Fediverse."
+  about: "Areionskey is <b>a federated/distributed microblogging platform</b>. It is interconnected to other platforms through intercommunication via ActivityPub, forming a federation called Fediverse."
   intro:
     title: "What is Areionskey?"
-    about: "Areionskey is a free/open-source, <b>distributed microblogging platform</b>. It has a sophisticated, fully customizable user interface, a variety of ways for expressing a reaction to posts, free file storage providing an integrated management system, and other advanced features are available. In addition, Areionskey is interconnected to other platforms through intercommunication via ActivityPub, forming a federation called Fediverse, which enables us to communicate with users on other platforms. For example, when you post something, it will be sent not only to Areionskey users, but also those on other platforms. Just imagine that the planet is sending a radio transmission to another planet, in order to communicate."
+    about: "Areionskey is a free/open-source, <b>federated/distributed microblogging platform</b>. It has a sophisticated, fully customizable user interface, a variety of ways for expressing a reaction to posts, free file storage providing an integrated management system, and other advanced features are available. In addition, Areionskey is interconnected to other platforms through intercommunication via ActivityPub, forming a federation called Fediverse, which enables us to communicate with users on other platforms. For example, when you post something, it will be sent not only to Areionskey users, but also those on other platforms. Just imagine that the planet is sending a radio transmission to another planet, in order to communicate."
     features: "Features"
     rich-contents: "Post"
     rich-contents-desc: "Just post your idea, hot topics, and anything you want to share. You may want to decorate your words, attach your favorite pictures, send files, including videos, or create a poll - those are some of the things you can do with Areionskey!"
@@ -17,7 +17,7 @@ common:
     ui-desc: "No single UI can suit everyone. Therefore, Areionskey has a highly customizable UI for your tastes. You can make your home original by editing the layout of your timeline, and moving around selectable widgets that you can easily adjust to make this place your own."
     drive: "Drive"
     drive-desc: "Wanna post a picture you have already uploaded? Wish to organize, name and create a folder for your uploaded files? Areionskey Drive is the best solution for you. Very easy to share your files online."
-    outro: "Check Areionskey-unique features by seeing them with your own eyes! If you feel like this instance is not for you, try other instances, as Areionskey is a distributed microblogging platform, so that you can easily find your mates. Then, GLHF!"
+    outro: "Check Areionskey-unique features by seeing them with your own eyes! If you feel like this instance is not for you, try other instances, as Areionskey is a federated/distributed microblogging platform, so that you can easily find your mates. Then, GLHF!"
   powered-by-areionskey: "Powered by <b>Areionskey</b>."
   application-authorization: "Application authorizations"
   close: "Close"
@@ -33,7 +33,7 @@ common:
   signout: "Logout"
   reminder: "Forgot password"
   reload-to-apply-the-setting: "You'll need to reload the page to reflect this setting. Do you want to reload it now?"
-  fetching-as-ap-object: "Inquiring to fediverse"
+  fetching-as-ap-object: "Inquiring to Fediverse"
   unfollow-confirm: "Do you want to unfollow {name}?"
   delete-confirm: "Are you sure you want to delete this post?"
   deleteAsAdmin-confirm: "Are you sure you want to delete using administrator privileges?"
@@ -419,7 +419,7 @@ common/views/pages/explore.vue:
   recently-registered-users: "Users who joined recently"
   recently-discovered-users: "Recently Discovered Users"
   popular-tags: "Popular Tags"
-  federated: "From the fediverse"
+  federated: "From Fediverse"
   explore: "Explore {host}"
   explore-fediverse: "Explore Fediverse"
   users-info: "Currently, {users} users are registered here"
@@ -1667,6 +1667,8 @@ desktop/views/pages/user/user.friends.vue:
   title: "Frequent mentions"
   loading: "Loading"
   no-users: "No frequent mentions"
+desktop/views/pages/user/user.home.vue:
+  activity: "Activity"
 desktop/views/pages/user/user.photos.vue:
   title: "Photos"
   loading: "Loading"
