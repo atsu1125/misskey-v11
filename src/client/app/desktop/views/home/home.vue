@@ -114,10 +114,6 @@ export default Vue.extend({
 					name: 'broadcast',
 					place: 'right',
 					data: {}
-				}, {
-					name: 'hashtags',
-					place: 'right',
-					data: {}
 				}];
 			}
 		},

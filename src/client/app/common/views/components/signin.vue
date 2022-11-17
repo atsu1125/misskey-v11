@@ -53,14 +53,6 @@ import { hexifyAB, byteify } from '../../scripts/2fa';
 export default Vue.extend({
 	i18n: i18n('common/views/components/signin.vue'),
 
-	props: {
-		withAvatar: {
-			type: Boolean,
-			required: false,
-			default: true
-		}
-	},
-
 	data() {
 		return {
 			signing: false,

@@ -10,12 +10,12 @@
 		<div class="about">
 			<p v-html="description || this.$t('@.about')"></p>
 			<router-link class="signup" to="/signup">{{ $t('@.signup') }}</router-link>
-		</div>
-		<div class="signin">
-			<a href="/signin" @click.prevent="signin()">{{ $t('@.signin') }}</a>
-		</div>
-		<div class="explore">
-			<router-link class="explore" to="/explore">Explore</router-link>
+			<div class="signin">
+				<a href="/signin" @click.prevent="signin()">{{ $t('@.signin') }}</a>
+			</div>
+			<div class="explore">
+				<a href="/explore">{{ $t('@.explore') }}</a>
+			</div>
 		</div>
 		<div class="tl">
 			<mk-welcome-timeline/>
@@ -127,7 +127,8 @@ export default Vue.extend({
 	methods: {
 		signin() {
 			this.$root.dialog({
-				type: 'signin'
+				type: 'signin',
+				showOkButton: false
 			});
 		}
 	}
@@ -186,12 +187,11 @@ export default Vue.extend({
 			> p
 				margin 8px
 
-			> .signup
-				font-weight bold
+			> .signin
+				margin-top 8px
 
-		> .signin
-		> .explore
-			margin 16px 0
+			> .explore
+				margin 16px 0
 
 		> .tl
 			margin 16px 0

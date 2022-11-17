@@ -20,6 +20,10 @@
 					<h1><mk-user-name :user="user" :key="user.id" :nowrap="false"/></h1>
 					<span class="username"><mk-acct :user="user" :detail="true" :key="user.id"/></span>
 					<span class="moved" v-if="user.movedToUser != null">moved to <router-link :to="user.movedToUser | userPage()"><mk-acct :user="user.movedToUser" :detail="true"/></router-link></span>
+					<span class="is-admin" v-if="user.isAdmin" :title="$t('@.admin-user')"><fa icon="wrench"/></span>
+					<span class="is-premium" v-if="user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
+					<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../../assets/horseshoe.svg" class="horseshoe"/></span>
+					<span class="is-bot" v-if="user.isBot" :title="$t('@.bot-user')"><fa icon="robot"/></span>
 					<span class="followed" v-if="user.isFollowed">{{ $t('follows-you') }}</span>
 				</div>
 				<div class="description">
@@ -238,7 +242,28 @@ export default Vue.extend({
 					color var(--mobileUserPageAcct)
 
 				> .moved
-					margin-left 8px
+					margin-left 4px
+
+				> .is-admin
+					margin-left .5em
+					color var(--noteHeaderAdminFg)
+
+				> .is-premium
+					margin-left .5em
+					color #FFC107
+
+				> .is-verified
+					margin-left .5em
+					color #4dabf7
+
+					> .horseshoe
+						width 1em
+						height 1em
+						vertical-align: -.125em
+
+				> .is-bot
+					margin-left .5em
+					color var(--noteHeaderBadgeFg)
 
 				> .followed
 					margin-left 8px

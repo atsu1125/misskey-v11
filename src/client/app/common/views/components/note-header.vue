@@ -6,8 +6,7 @@
 	</router-link>
 	<span class="is-premium" v-if="note.user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
 	<span class="is-verified" v-if="note.user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../assets/horseshoe.svg" class="horseshoe"/></span>
-	<span class="is-bot" v-if="note.user.isBot">bot</span>
-	<span class="is-cat" v-if="note.user.isCat">cat</span>
+	<span class="is-bot" v-if="note.user.isBot" :title="$t('@.bot-user')"><fa icon="robot"/></span>
 	<span class="username"><mk-acct :user="note.user"/></span>
 	<div class="info">
 		<span class="app" v-if="note.app && !mini && $store.state.settings.showVia">via <b>{{ note.app.name }}</b></span>
@@ -72,17 +71,6 @@ export default Vue.extend({
 		&:hover
 			text-decoration underline
 
-	> .is-bot
-	> .is-cat
-		flex-shrink 0
-		align-self center
-		margin 0 .5em 0 0
-		padding 1px 6px
-		font-size 80%
-		color var(--noteHeaderBadgeFg)
-		background var(--noteHeaderBadgeBg)
-		border-radius 3px
-
 	> .username
 		margin 0 .5em 0 0
 		overflow hidden
@@ -102,6 +90,10 @@ export default Vue.extend({
 	> .is-premium
 		margin 0 .5em 0 0
 		color #FFC107
+
+	> .is-bot
+		margin 0 .5em 0 0
+		color var(--noteHeaderBadgeFg)
 
 	> .info
 		margin-left auto

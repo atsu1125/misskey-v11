@@ -1,6 +1,27 @@
 ChangeLog
 =========
 
+1.6.1 (2022/11/17)
+--------------------
+## To Update
+以下を実施してください
+- Areionskey 再起動
+
+### ✨Improvements
+- ユーザページに バッジを追加 [562f7d2](https://github.com/sakura-tel/areionskey/commit/562f7d28b516828850bb91a0d2b1af042dfcd5e5)
+
+### 🐛Fixes
+- DNS キャッシュをしないように変更 by @atsu1125 [b0facdf](https://github.com/sakura-tel/areionskey/commit/b0facdf9c77b60329b808b675ee09ae6054d66fe)
+- データのエクスポートができなくなっていたのを修正 [ebe32ce](https://github.com/sakura-tel/areionskey/commit/ebe32ce1e43406c7c4c51e23abc1ea4bcbf9545c)
+- 「閉鎖されているとマーク」を「配信停止」に変更 [7590578](https://github.com/sakura-tel/areionskey/commit/75905784050d46aa9fcf0d7bd1ed2568830ba3f9)
+- Admin バッジ を ノートヘッダから削除，Bot バッジ を 文字からアイコンに変更 [e75deda](https://github.com/sakura-tel/areionskey/commit/e75dedaae35aa45aa1b2ddc90ee3b87e9b45ebb8) [3a28f17](https://github.com/sakura-tel/areionskey/commit/3a28f1727b9dce255f410f0e9912c54e0ae257e6)
+- モバイル: ログインダイアログの OK(わかった) ボタンを削除 [1fcfcc8](https://github.com/sakura-tel/areionskey/commit/1fcfcc82406888a524d27892356ef0cbdf05646f)
+- モバイル: 非ログイン時のWelcome画面の ログイン リンクを 新規登録 リンクと同じ場所に移動 [92320b0](https://github.com/sakura-tel/areionskey/commit/92320b047efdbf5979964ca3d469a8ce3bfe659b)
+- 依存関係の更新
+
+### ❌Abolitions
+- 非ログイン時のユーザ画面 から トレンド関連 を削除 [495c479](https://github.com/sakura-tel/areionskey/commit/495c479ba3f6bb54c26f863f2aadf5d064c62844)
+
 1.6.0 (2022/11/11)
 --------------------
 ## To Update
@@ -23,7 +44,7 @@ Dockerfiles での Node デフォルトバージョンが 18.9.0 から 18.10.0 
 - 依存関係の更新
 
 ### ❌Abolitions
-- 非ログイン時の画面 から トレンド関連 を削除 [17f8e24](https://github.com/sakura-tel/areionskey/commit/17f8e2492dd3699b33d148e531a057cf05efd922)
+- 非ログイン時のWelcome画面 から トレンド関連 を削除 [17f8e24](https://github.com/sakura-tel/areionskey/commit/17f8e2492dd3699b33d148e531a057cf05efd922)
 - Revert [3de1369](https://github.com/sakura-tel/areionskey/commit/3de1369778cdc5f2444dedb5200ae80643693965)
 
 1.5.0 (2022/09/15)

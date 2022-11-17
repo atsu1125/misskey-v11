@@ -9,8 +9,11 @@
 			</p>
 			<div>
 				<span class="username"><mk-acct :user="user" :detail="true" /></span>
-				<span v-if="user.isBot" :title="$t('is-bot')"><fa icon="robot"/></span>
 				<span v-if="user.movedToUser != null">moved to <router-link :to="user.movedToUser | userPage()"><mk-acct :user="user.movedToUser" :detail="true"/></router-link></span>
+				<span class="is-admin" v-if="user.isAdmin" :title="$t('@.admin-user')"><fa icon="wrench"/></span>
+				<span class="is-premium" v-if="user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
+				<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../../assets/horseshoe.svg" class="horseshoe"/></span>
+				<span class="is-bot" v-if="user.isBot" :title="$t('@.bot-user')"><fa icon="robot"/></span>
 			</div>
 		</div>
 		<span class="followed" v-if="$store.getters.isSignedIn && $store.state.i.id != user.id && user.isFollowed">{{ $t('follows-you') }}</span>
@@ -194,12 +197,29 @@ export default Vue.extend({
 			> div
 				> *
 					display inline-block
-					margin-right 16px
+					margin-right .5em
 					line-height 20px
 					opacity 0.8
 
 					&.username
 						font-weight bold
+
+				> .is-admin
+					color var(--noteHeaderAdminFg)
+
+				> .is-premium
+					color #FFC107
+
+				> .is-verified
+					color #4dabf7
+
+					> .horseshoe
+						width 1em
+						height 1em
+						vertical-align: -.125em
+
+				> .is-bot
+					color var(--noteHeaderBadgeFg)
 
 	> .avatar
 		display block
