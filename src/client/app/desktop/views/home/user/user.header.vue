@@ -14,6 +14,7 @@
 				<span class="is-premium" v-if="user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
 				<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../../assets/horseshoe.svg" class="horseshoe"/></span>
 				<span class="is-bot" v-if="user.isBot" :title="$t('@.bot-user')"><fa icon="robot"/></span>
+				<span class="is-cat" v-if="user.isCat" :title="$t('@.cat-user')"><fa :icon="faPaw"/></span>
 			</div>
 		</div>
 		<span class="followed" v-if="$store.getters.isSignedIn && $store.state.i.id != user.id && user.isFollowed">{{ $t('follows-you') }}</span>
@@ -61,6 +62,7 @@ import i18n from '../../../../i18n';
 import * as age from 's-age';
 import XUserMenu from '../../../../common/views/components/user-menu.vue';
 import XIntegrations from '../../../../common/views/components/integrations.vue';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 export default Vue.extend({
 	i18n: i18n('desktop/views/pages/user/user.header.vue'),
@@ -68,6 +70,11 @@ export default Vue.extend({
 		XIntegrations
 	},
 	props: ['user'],
+	data() {
+		return {
+			faPaw
+		}
+	},
 	computed: {
 		style(): any {
 			if (this.user.bannerUrl == null) return {};
@@ -219,6 +226,7 @@ export default Vue.extend({
 						vertical-align: -.125em
 
 				> .is-bot
+				> .is-cat
 					color var(--noteHeaderBadgeFg)
 
 	> .avatar

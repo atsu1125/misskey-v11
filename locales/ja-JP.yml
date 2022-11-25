@@ -359,6 +359,7 @@ common:
   premium-user: "プレミアムアカウント"
   verified-user: "公式アカウント"
   bot-user: "Botアカウント"
+  cat-user: "ねこアカウント"
   hide-password: "パスワードを隠す"
   show-password: "パスワードを表示する"
   enter-username: "ユーザー名を入力してください"

@@ -19,7 +19,14 @@
 				<router-link class="name" :to="user | userPage()">
 					<mk-user-name :user="user" :key="user.id" :nowrap="false"/>
 				</router-link>
-				<span class="acct">@{{ user | acct }} <fa v-if="user.isLocked == true" class="locked" icon="lock" fixed-width/></span>
+				<span class="acct">@{{ user | acct }}
+					<fa v-if="user.isLocked == true" class="locked" icon="lock" fixed-width/>
+					<span class="is-premium" v-if="user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
+					<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../assets/horseshoe.svg" class="horseshoe"/></span>
+					<span class="is-admin" v-if="user.isAdmin" :title="$t('@.admin-user')"><fa icon="wrench"/></span>
+					<span class="is-bot" v-if="user.isBot" :title="$t('@.bot-user')"><fa icon="robot"/></span>
+					<span class="is-cat" v-if="user.isCat" :title="$t('@.cat-user')"><fa :icon="faPaw"/></span>
+				</span>
 				<span class="moved" v-if="user.movedToUser != null">Moved to <router-link :to="user.movedToUser | userPage()"><mk-acct :user="user.movedToUser" :detail="true"/></router-link></span>
 				<span class="followed" v-if="user.isFollowed">{{ $t('follows-you') }}</span>
 			</div>
@@ -75,6 +82,7 @@ import * as age from 's-age';
 import parseAcct from '../../../../../misc/acct/parse';
 import XColumn from './deck.column.vue';
 import XUserMenu from '../../../common/views/components/user-menu.vue';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 export default Vue.extend({
 	i18n: i18n('deck/deck.user-column.vue'),
@@ -86,6 +94,7 @@ export default Vue.extend({
 		return {
 			user: null,
 			fetching: true,
+			faPaw
 		};
 	},
 
@@ -194,6 +203,21 @@ export default Vue.extend({
 
 				> .locked
 					opacity 0.8
+
+				> .is-admin
+					color var(--noteHeaderAdminFg)
+					margin-left .3em
+				> .is-verified
+					color #4dabf7
+					margin-left .3em
+					> .horseshoe
+						width 1em
+						height 1em
+						vertical-align: -.125em
+				> .is-bot
+				> .is-cat
+					color var(--noteHeaderBadgeFg)
+					margin-left .3em
 
 			> .followed
 				display inline-block

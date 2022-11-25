@@ -24,6 +24,7 @@
 					<span class="is-premium" v-if="user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
 					<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../../assets/horseshoe.svg" class="horseshoe"/></span>
 					<span class="is-bot" v-if="user.isBot" :title="$t('@.bot-user')"><fa icon="robot"/></span>
+					<span class="is-cat" v-if="user.isCat" :title="$t('@.cat-user')"><fa :icon="faPaw"/></span>
 					<span class="followed" v-if="user.isFollowed">{{ $t('follows-you') }}</span>
 				</div>
 				<div class="description">
@@ -93,6 +94,7 @@ import XUserMenu from '../../../../common/views/components/user-menu.vue';
 import XHome from './home.vue';
 import { getStaticImageUrl } from '../../../../common/scripts/get-static-image-url';
 import XIntegrations from '../../../../common/views/components/integrations.vue';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 export default Vue.extend({
 	i18n: i18n('mobile/views/pages/user.vue'),
@@ -104,7 +106,8 @@ export default Vue.extend({
 		return {
 			fetching: true,
 			user: null,
-			page: this.$route.name == 'user' ? 'home' : null
+			page: this.$route.name == 'user' ? 'home' : null,
+			faPaw
 		};
 	},
 	computed: {
@@ -262,6 +265,7 @@ export default Vue.extend({
 						vertical-align: -.125em
 
 				> .is-bot
+				> .is-cat
 					margin-left .5em
 					color var(--noteHeaderBadgeFg)
 

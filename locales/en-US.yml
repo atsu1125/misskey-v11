@@ -344,6 +344,7 @@ common:
   premium-user: "Premium account"
   verified-user: "Official account"
   bot-user: "Bot account"
+  cat-user: "Cat account"
   hide-password: "Hide Password"
   show-password: "Show Password"
   enter-username: "Please enter username"
