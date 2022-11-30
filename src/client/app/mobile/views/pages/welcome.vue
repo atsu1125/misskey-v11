@@ -14,7 +14,7 @@
 				<a href="/signin" @click.prevent="signin()">{{ $t('@.signin') }}</a>
 			</div>
 			<div class="explore">
-				<a href="/explore">{{ $t('@.explore') }}</a>
+				<router-link class="explore" to="/explore">{{ $t('@.explore') }}</router-link>
 			</div>
 		</div>
 		<div class="tl">
@@ -187,11 +187,12 @@ export default Vue.extend({
 			> p
 				margin 8px
 
-			> .signin
-				margin-top 8px
+			> .signup
+				font-weight bold
 
+			> .signin
 			> .explore
-				margin 16px 0
+				margin 0.5em
 
 		> .tl
 			margin 16px 0
