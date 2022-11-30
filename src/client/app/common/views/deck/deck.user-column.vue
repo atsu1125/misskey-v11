@@ -46,8 +46,8 @@
 				</dl>
 			</div>
 			<div class="info">
-				<div class="location" v-if="user.host === null && user.location"><fa icon="map-marker"/> {{ user.location }}</div>
-				<div class="birthday" v-if="user.host === null && user.birthday"><fa icon="birthday-cake"/> {{ birthday }} ({{ $t('years-old', { age }) }})</div>
+				<div class="location" v-if="user.location"><fa icon="map-marker"/> {{ user.location }}</div>
+				<div class="birthday" v-if="user.birthday"><fa icon="birthday-cake"/> {{ birthday }} ({{ $t('years-old', { age }) }})</div>
 				<div class="sex" v-if="user.host === null && user.sex && user.sex !== 'not-known'"><fa :icon="sexIcon"/> {{ $t(user.sex) }}</div>
 			</div>
 			<div class="counts">

@@ -146,6 +146,8 @@ export async function createPerson(uri: string, resolver?: Resolver): Promise<Us
 			})
 		: null;
 
+	const bday = person['vcard:bday']?.match(/^\d{4}-\d{2}-\d{2}/);
+
 	// Create user
 	let user: IRemoteUser;
 	try {
@@ -167,6 +169,10 @@ export async function createPerson(uri: string, resolver?: Resolver): Promise<Us
 				featured: person.featured ? getApId(person.featured) : undefined,
 				uri: person.id,
 				tags,
+				profile: {
+					birthday: bday ? bday[0] : undefined,
+					location: person['vcard:Address'] || undefined,
+				},
 				isBot,
 				isCat: (person as any).isCat === true,
 				movedToUserId: movedTo?.id || null,
@@ -326,6 +332,8 @@ export async function updatePerson(uri: string, resolver?: Resolver | null, hint
 			})
 		: null;
 
+	const bday = person['vcard:bday']?.match(/^\d{4}-\d{2}-\d{2}/);
+
 	const updates = {
 		lastFetchedAt: new Date(),
 		inbox: person.inbox,
@@ -334,6 +342,10 @@ export async function updatePerson(uri: string, resolver?: Resolver | null, hint
 		emojis: emojiNames,
 		name: person.name ? truncate(person.name, MAX_NAME_LENGTH) : person.name,
 		tags,
+		profile: {
+			birthday: bday ? bday[0] : undefined,
+			location: person['vcard:Address'] || undefined,
+		},
 		isBot: getApType(object) === 'Service',
 		isCat: (person as any).isCat === true,
 		isLocked: !!person.manuallyApprovesFollowers,
