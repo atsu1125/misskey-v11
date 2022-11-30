@@ -48,6 +48,7 @@
 			<div class="info">
 				<span class="location" v-if="user.host === null && user.location"><fa icon="map-marker"/> {{ user.location }}</span>
 				<span class="birthday" v-if="user.host === null && user.birthday"><fa icon="birthday-cake"/> {{ user.birthday.replace('-', $t('year')).replace('-', $t('month')) + $t('day') }} ({{ $t('years-old', { age }) }})</span>
+				<span class="sex" v-if="user.host === null && user.sex && user.sex !== 'not-known'"><fa :icon="sexIcon"/> {{ $t(user.sex) }}</span>
 			</div>
 			<div class="counts">
 				<div>
@@ -110,7 +111,11 @@ export default Vue.extend({
 
 		age(): number {
 			return age(this.user.birthday);
-		}
+		},
+
+		sexIcon() {
+			return this.user.sex === 'male' ? 'mars' : this.user.sex === 'female' ? 'venus' : this.user.sex === 'not-applicable' ? 'genderless' : null;
+		},
 	},
 
 	watch: {
