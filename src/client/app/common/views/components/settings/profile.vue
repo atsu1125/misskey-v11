@@ -163,6 +163,7 @@ export default Vue.extend({
 			langmap,
 			host: toUnicode(host),
 			enableEmail: false,
+			disableDeletion: false,
 			email: null,
 			name: null,
 			username: null,
