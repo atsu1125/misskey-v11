@@ -1925,6 +1925,7 @@ deck/deck.user-column.vue:
   year: "/"
   month: "/"
   day: "-"
+  happy-birthday: "Happy birthday!"
 deck/deck.notification.vue:
   youGotNewFollower: "Followed you"
   receiveFollowRequest: "Follow request received"

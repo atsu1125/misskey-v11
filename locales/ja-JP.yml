@@ -2129,6 +2129,7 @@ deck/deck.user-column.vue:
   year: "年"
   month: "月"
   day: "日"
+  happy-birthday: "本日誕生日です！"
 
 deck/deck.notification.vue:
   youGotNewFollower: "フォローされました"
