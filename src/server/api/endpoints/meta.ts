@@ -128,7 +128,6 @@ export default define(meta, async (ps, me) => {
 		repositoryUrl: instance.repositoryUrl,
 		feedbackUrl: instance.feedbackUrl,
 
-		secure: config.https != null,
 		machine: config.hideServerInfo ? 'Unknown' : os.hostname(),
 		os: config.hideServerInfo ? 'Unknown' : os.platform(),
 		node: config.hideServerInfo ? 'Unknown' : process.version,

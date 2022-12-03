@@ -89,7 +89,7 @@ export default Vue.extend({
 					}]
 					: []
 				),
-				...(this.actualNote && this.actualNote.renote ? [{
+				...(this.actualNote.userId == this.$store.state.i.id && this.actualNote && this.actualNote.renote ? [{
 					icon: 'undo-alt',
 					text: this.$t('undo-renote'),
 					action: this.undoRenote

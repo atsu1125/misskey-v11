@@ -1,9 +1,47 @@
 ChangeLog
 =========
 
+2.0.0 (2022/12/04)
+--------------------
+### 💥BREAKING CHANGES
+- Drop Node.js v12.x support
+
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+### ✨Improvements
+- めいv11 [v11.37.1-20221204012750](https://github.com/mei23/misskey-v11/releases/tag/11.37.1-20221204012750) by @mei23 までの変更/修正を適用
+
+### 🐛Fixes
+- favorite -> bookmark [19a2cc1](https://github.com/sakura-tel/areionskey/commit/19a2cc10de12b659bec8e2a9cf6240bd98749b64) [3737abd](https://github.com/sakura-tel/areionskey/commit/3737abdf09fc706572ef946112379770893ed036)
+- profile: Location, birthday の連合 を修正 [853afa6](https://github.com/sakura-tel/areionskey/commit/853afa6007d49c51dd4f8db775dfd119fdc8235b)
+- 依存関係の更新
+
+1.6.3 (2022/12/03)
+--------------------
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+### ✨Improvements
+- 手動でのリモート情報の更新をする機能 を追加 by @EbiseLutica, @atsu1125 [PR#994](https://github.com/sakura-tel/areionskey/pull/994) [4594b7b](https://github.com/sakura-tel/areionskey/commit/4594b7b5fa7fd9f601a2125c3ab228398d761f99)
+- profile: Location, birthday の連合 を追加 by @atsu1125 [PR#992](https://github.com/sakura-tel/areionskey/pull/992) [aab6ed3](https://github.com/sakura-tel/areionskey/commit/aab6ed32798a1916134013cce68bd3fc1b5036a1) [2ac9f6f](https://github.com/sakura-tel/areionskey/commit/2ac9f6f9530a9f53b2a8cc828674a9810e53ab0d) [c4a638c](https://github.com/sakura-tel/areionskey/commit/c4a638c7448a0866abfa002e58af568b30f69a38)
+- Renote 取り消し機能 を追加 by @EbiseLutica, @atsu1125 [PR#984](https://github.com/sakura-tel/areionskey/pull/984) [b7fc5a3](https://github.com/sakura-tel/areionskey/commit/b7fc5a31b56002b0e5f3545e896b255726dcc6a8) [1234aa5](https://github.com/sakura-tel/areionskey/commit/1234aa5d6e0681fc27e78339272b5433a7c51137)
+
+### 🐛Fixes
+- forkbomb 攻撃に対処するための修正 by @mei23 [04ac49a](https://github.com/sakura-tel/areionskey/commit/04ac49a32f67dde786294209bf610fa6d352329d)
+- モバイル: 非ログイン時のWelcome画面の 新規登録 / ログイン リンクの隙間 を調整 by @atsu1125 [PE#993](https://github.com/sakura-tel/areionskey/pull/993) [24951cf](https://github.com/sakura-tel/areionskey/commit/24951cfe9671703c6b679cab15db2bdbeaff8389)
+- Deck: ハッシュタグタイムライン追加のダイアログ を改良 by @atsu1125 [PR#983](https://github.com/sakura-tel/areionskey/pull/983) [38f4da1](https://github.com/sakura-tel/areionskey/commit/38f4da1a3ca3b861902a09b9d831388481b4137b) [51dc14e](https://github.com/sakura-tel/areionskey/commit/51dc14e4cd2fc824c1a5c890d937ef773869c52b)
+- 画像の更新
+- 依存関係の更新
+
+### ❌Abolitions
+- ブロックの連合 を削除 [ae2be09](https://github.com/sakura-tel/areionskey/commit/ae2be095651e83b295f2e1c870c0d52a1aaf24b5)
+
 1.6.2 (2022/12/03)
 --------------------
-## To Update
+### To Update
 以下を実施してください
 - Areionskey 再起動
 
@@ -11,7 +49,7 @@ ChangeLog
 
 1.6.1 (2022/11/17)
 --------------------
-## To Update
+### To Update
 以下を実施してください
 - Areionskey 再起動
 
@@ -32,7 +70,7 @@ ChangeLog
 
 1.6.0 (2022/11/11)
 --------------------
-## To Update
+### To Update
 以下を実施してください
 - Areionskey 再起動
 
@@ -57,7 +95,7 @@ Dockerfiles での Node デフォルトバージョンが 18.9.0 から 18.10.0 
 
 1.5.0 (2022/09/15)
 --------------------
-## To Update
+### To Update
 以下を実施してください
 - Areionskey 再起動
 - database マイグレーション

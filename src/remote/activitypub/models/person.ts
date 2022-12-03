@@ -340,10 +340,6 @@ export async function updatePerson(uri: string, resolver?: Resolver | null, hint
 		emojis: emojiNames,
 		name: person.name ? truncate(person.name, MAX_NAME_LENGTH) : person.name,
 		tags,
-		profile: {
-			birthday: bday ? bday[0] : undefined,
-			location: person['vcard:Address'] || undefined,
-		},
 		isBot: getApType(object) === 'Service',
 		isCat: (person as any).isCat === true,
 		isLocked: !!person.manuallyApprovesFollowers,

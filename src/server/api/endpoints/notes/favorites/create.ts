@@ -10,8 +10,8 @@ export const meta = {
 	stability: 'stable',
 
 	desc: {
-		'ja-JP': '指定した投稿をお気に入りに登録します。',
-		'en-US': 'Favorite a note.'
+		'ja-JP': '指定した投稿をブックマークに登録します。',
+		'en-US': 'Bookmark a note.'
 	},
 
 	tags: ['notes', 'favorites'],
