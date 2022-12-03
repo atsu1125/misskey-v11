@@ -169,10 +169,6 @@ export async function createPerson(uri: string, resolver?: Resolver): Promise<Us
 				featured: person.featured ? getApId(person.featured) : undefined,
 				uri: person.id,
 				tags,
-				profile: {
-					birthday: bday ? bday[0] : undefined,
-					location: person['vcard:Address'] || undefined,
-				},
 				isBot,
 				isCat: (person as any).isCat === true,
 				movedToUserId: movedTo?.id || null,
@@ -183,6 +179,8 @@ export async function createPerson(uri: string, resolver?: Resolver): Promise<Us
 				description: person.summary ? htmlToMfm(truncate(person.summary, MAX_SUMMARY_LENGTH), person.tag) : null,
 				url: getOneApHrefNullable(person.url),
 				fields,
+				birthday: bday ? bday[0] : null,
+				location: person['vcard:Address'] || null,
 				userHost: host
 			});
 
@@ -266,7 +264,7 @@ export async function createPerson(uri: string, resolver?: Resolver): Promise<Us
 	});
 	//#endregion
 
-	await updateFeatured(user!.id).catch(err => logger.error(err));
+	await updateFeatured(user!.id, resolver).catch(err => logger.error(err));
 
 	return user!;
 }
@@ -374,6 +372,8 @@ export async function updatePerson(uri: string, resolver?: Resolver | null, hint
 		url: person.url,
 		fields,
 		description: person.summary ? htmlToMfm(truncate(person.summary, MAX_SUMMARY_LENGTH), person.tag) : null,
+		birthday: bday ? bday[0] : null,
+		location: person['vcard:Address'] || null,
 		twitterUserId: null,
 		twitterScreenName: null,
 		githubId: null,
@@ -393,7 +393,7 @@ export async function updatePerson(uri: string, resolver?: Resolver | null, hint
 		followerSharedInbox: person.sharedInbox || (person.endpoints ? person.endpoints.sharedInbox : undefined)
 	});
 
-	await updateFeatured(exist.id).catch(err => logger.error(err));
+	await updateFeatured(exist.id, resolver).catch(err => logger.error(err));
 }
 
 /**
@@ -442,14 +442,14 @@ export function analyzeAttachments(attachments: IObject | IObject[] | undefined)
 	return { fields, services };
 }
 
-export async function updateFeatured(userId: User['id']) {
+export async function updateFeatured(userId: User['id'], resolver?: Resolver) {
 	const user = await Users.findOne(userId).then(ensure);
 	if (!Users.isRemoteUser(user)) return;
 	if (!user.featured) return;
 
 	logger.info(`Updating the featured: ${user.uri}`);
 
-	const resolver = new Resolver();
+	if (resolver == null) resolver = new Resolver();
 
 	// Resolve to (Ordered)Collection Object
 	const collection = await resolver.resolveCollection(user.featured);

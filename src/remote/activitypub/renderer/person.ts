@@ -75,13 +75,13 @@ export async function renderPerson(user: ILocalUser) {
 		attachment: attachment.length ? attachment : undefined,
 	} as any;
 
-	if (user.profile?.birthday) {
-		person['vcard:bday'] = user.profile.birthday;
+	if (profile?.birthday) {
+		person['vcard:bday'] = profile.birthday;
 	}
 
-	if (user.profile?.location) {
-		person['vcard:Address'] = user.profile.location;
+	if (profile?.location) {
+		person['vcard:Address'] = profile.location;
 	}
 
 	return person;
-};
+}
