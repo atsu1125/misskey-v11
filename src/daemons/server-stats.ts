@@ -27,19 +27,21 @@ export default function() {
 		const disk = await diskusage.check(os.platform() == 'win32' ? 'c:' : '/');
 
 		const stats = {
-			cpu_usage: config.hideServerInfo ? -1 : cpu,
+			cpu_usage: cpu,
 			mem: {
-				total: config.hideServerInfo ? -1 : totalmem,
-				used: config.hideServerInfo ? -1 : usedmem
+				total: totalmem,
+				used: usedmem
 			},
-			disk: config.hideServerInfo ? -1 : disk,
-			os_uptime: config.hideServerInfo ? -1 : os.uptime(),
-			process_uptime: config.hideServerInfo ? -1 : process.uptime()
+			disk: disk,
+			os_uptime: os.uptime(),
+			process_uptime: process.uptime()
 		};
 		ev.emit('serverStats', stats);
 		log.unshift(stats);
 		if (log.length > 200) log.pop();
 	}
+
+	if (config.hideServerInfo) return;
 
 	tick();
 
