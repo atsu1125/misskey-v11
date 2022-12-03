@@ -188,8 +188,6 @@ export default Vue.extend({
 				margin 8px
 
 			> .signup
-				font-weight bold
-
 			> .signin
 			> .explore
 				margin 0.5em
