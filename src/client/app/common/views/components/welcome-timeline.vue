@@ -18,6 +18,7 @@
 				<div class="text">
 					<mfm v-if="note.text" :text="note.cw != null ? note.cw : note.text" :author="note.user" :custom-emojis="note.emojis"/>
 				</div>
+				<mk-reactions-viewer class="reactions" :note="note"/>
 			</div>
 		</div>
 	</transition-group>
@@ -152,5 +153,9 @@ export default Vue.extend({
 
 				> .text
 					text-align left
+					margin 8px
+
+				> .reactions
+					pointer-events none
 
 </style>
