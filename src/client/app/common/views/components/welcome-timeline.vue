@@ -9,6 +9,10 @@
 						<mk-user-name :user="note.user"/>
 					</router-link>
 					<span class="username">@{{ note.user | acct }}</span>
+					<span class="is-premium" v-if="note.user.isPremium"><fa icon="crown"/></span>
+					<span class="is-verified" v-if="note.user.isVerified"><img svg-inline src="../../../../assets/horseshoe.svg" class="horseshoe"/></span>
+					<span class="is-bot" v-if="note.user.isBot"><fa icon="robot"/></span>
+					<span class="is-cat" v-if="note.user.isCat"><fa :icon="faPaw"/></span>
 					<div class="info">
 						<router-link class="created-at" :to="note | notePage">
 							<mk-time :time="note.createdAt"/>
@@ -27,6 +31,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import { faPaw } from '@fortawesome/free-solid-svg-icons';
 
 export default Vue.extend({
 	props: {
@@ -41,7 +46,8 @@ export default Vue.extend({
 		return {
 			fetching: true,
 			notes: [],
-			connection: null
+			connection: null,
+			faPaw
 		};
 	},
 
@@ -143,6 +149,24 @@ export default Vue.extend({
 					> .username
 						margin 0 .5em 0 0
 						color var(--noteHeaderAcct)
+
+					> .is-verified
+						margin 0 .5em 0 0
+						color #4dabf7
+
+						> .horseshoe
+							width 1em
+							height 1em
+							vertical-align: -.125em
+
+					> .is-premium
+						margin 0 .5em 0 0
+						color #FFC107
+
+					> .is-bot
+					> .is-cat
+						margin 0 .5em 0 0
+						color var(--noteHeaderBadgeFg)
 
 					> .info
 						margin-left auto
