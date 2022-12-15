@@ -4,6 +4,7 @@ import define from '../../define';
 import { Users, Followings } from '../../../../models';
 import { generateMuteQueryForUsers } from '../../common/generate-mute-query';
 import { generateBlockQueryForUsers } from '../../common/generate-block-query';
+import { fetchMeta } from '../../../../misc/fetch-meta';
 
 export const meta = {
 	desc: {
@@ -40,6 +41,11 @@ export const meta = {
 };
 
 export default define(meta, async (ps, me) => {
+	const m = await fetchMeta();
+	if (me == null && m.disableProfileDirectory) {
+		return [];
+	}
+
 	const query = Users.createQueryBuilder('user')
 		.where('user.isLocked = FALSE')
 		.andWhere('user.host IS NULL')

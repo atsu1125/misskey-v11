@@ -58,6 +58,13 @@ export const meta = {
 			}
 		},
 
+		disableProfileDirectory: {
+			validator: $.optional.nullable.bool,
+			desc: {
+				'ja-JP': 'プロファイルディレクトリを無効にするか否か'
+			}
+		},
+
 		enableEmojiReaction: {
 			validator: $.optional.nullable.bool,
 			desc: {
@@ -469,6 +476,10 @@ export default define(meta, async (ps, me) => {
 
 	if (typeof ps.disableTimelinePreview === 'boolean') {
 		set.disableTimelinePreview = ps.disableTimelinePreview;
+	}
+
+	if (typeof ps.disableProfileDirectory === 'boolean') {
+		set.disableProfileDirectory = ps.disableProfileDirectory;
 	}
 
 	if (typeof ps.enableEmojiReaction === 'boolean') {

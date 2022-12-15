@@ -65,6 +65,11 @@ export class Meta {
 	public disableTimelinePreview: boolean;
 
 	@Column('boolean', {
+		default: false,
+	})
+	public disableProfileDirectory: boolean;
+
+	@Column('boolean', {
 		default: true,
 	})
 	public enableEmojiReaction: boolean;
