@@ -42,6 +42,7 @@
 			<ui-switch v-model="disableLocalTimeline">{{ $t('disable-local-timeline') }}</ui-switch>
 			<ui-switch v-model="disableGlobalTimeline">{{ $t('disable-global-timeline') }}</ui-switch>
 			<ui-info>{{ $t('disabling-timelines-info') }}</ui-info>
+			<ui-switch v-model="disableTimelinePreview">{{ $t('disable-timeline-preview') }}</ui-switch>
 		</section>
 		<section>
 			<ui-switch v-model="enableEmojiReaction">{{ $t('enable-emoji-reaction') }}</ui-switch>
@@ -272,6 +273,7 @@ export default Vue.extend({
 			disableDeletion: false,
 			disableLocalTimeline: false,
 			disableGlobalTimeline: false,
+			disableTimelinePreview: false,
 			enableEmojiReaction: true,
 			useStarForReactionFallback: false,
 			mascotImageUrl: null,
@@ -342,6 +344,7 @@ export default Vue.extend({
 			this.disableDeletion = meta.disableDeletion;
 			this.disableLocalTimeline = meta.disableLocalTimeline;
 			this.disableGlobalTimeline = meta.disableGlobalTimeline;
+			this.disableTimelinePreview = meta.disableTimelinePreview;
 			this.enableEmojiReaction = meta.enableEmojiReaction;
 			this.useStarForReactionFallback = meta.useStarForReactionFallback;
 			this.mascotImageUrl = meta.mascotImageUrl;
@@ -472,6 +475,7 @@ export default Vue.extend({
 				disableDeletion: this.disableDeletion,
 				disableLocalTimeline: this.disableLocalTimeline,
 				disableGlobalTimeline: this.disableGlobalTimeline,
+				disableTimelinePreview: this.disableTimelinePreview,
 				enableEmojiReaction: this.enableEmojiReaction,
 				useStarForReactionFallback: this.useStarForReactionFallback,
 				mascotImageUrl: this.mascotImageUrl,

@@ -51,6 +51,13 @@ export const meta = {
 			}
 		},
 
+		disableTimelinePreview: {
+			validator: $.optional.nullable.bool,
+			desc: {
+				'ja-JP': 'タイムラインプレビューを無効にするか否か'
+			}
+		},
+
 		enableEmojiReaction: {
 			validator: $.optional.nullable.bool,
 			desc: {
@@ -458,6 +465,10 @@ export default define(meta, async (ps, me) => {
 
 	if (typeof ps.disableGlobalTimeline === 'boolean') {
 		set.disableGlobalTimeline = ps.disableGlobalTimeline;
+	}
+
+	if (typeof ps.disableTimelinePreview === 'boolean') {
+		set.disableTimelinePreview = ps.disableTimelinePreview;
 	}
 
 	if (typeof ps.enableEmojiReaction === 'boolean') {
