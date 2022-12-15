@@ -154,6 +154,7 @@ export class UserRepository extends Repository<User> {
 			isVerified: user.isVerified || falsy,
 			isPremium: user.isPremium || falsy,
 			sex: user.sex,
+			avoidSearchIndex: user.avoidSearchIndex || falsy,
 
 			// カスタム絵文字添付
 			emojis: populateEmojis(user.emojis, user.host),

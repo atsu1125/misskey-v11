@@ -101,6 +101,7 @@
 			<ui-switch v-model="carefulBot" :disabled="isLocked" @change="save(false)">{{ $t('careful-bot') }}</ui-switch>
 			<ui-switch v-model="carefulRemote" :disabled="isLocked" @change="save(false)">{{ $t('careful-remote') }}</ui-switch>
 			<ui-switch v-model="autoAcceptFollowed" :disabled="!isLocked && !carefulBot && !carefulRemote" @change="save(false)">{{ $t('auto-accept-followed') }}</ui-switch>
+			<ui-switch v-model="avoidSearchIndex" @change="save(false)">{{ $t('avoid-search-index') }}</ui-switch>
 		</div>
 	</section>
 
@@ -188,6 +189,7 @@ export default Vue.extend({
 			carefulBot: false,
 			carefulRemote: false,
 			autoAcceptFollowed: false,
+			avoidSearchIndex: false,
 			saving: false,
 			avatarUploading: false,
 			bannerUploading: false,
@@ -233,6 +235,7 @@ export default Vue.extend({
 		this.carefulBot = this.$store.state.i.carefulBot;
 		this.carefulRemote = this.$store.state.i.carefulRemote;
 		this.autoAcceptFollowed = this.$store.state.i.autoAcceptFollowed;
+		this.avoidSearchIndex = this.$store.state.i.avoidSearchIndex;
 
 		this.fieldName0 = this.$store.state.i.fields[0] ? this.$store.state.i.fields[0].name : null;
 		this.fieldValue0 = this.$store.state.i.fields[0] ? this.$store.state.i.fields[0].value : null;
@@ -314,7 +317,8 @@ export default Vue.extend({
 				isLocked: !!this.isLocked,
 				carefulBot: !!this.carefulBot,
 				carefulRemote: !!this.carefulRemote,
-				autoAcceptFollowed: !!this.autoAcceptFollowed
+				autoAcceptFollowed: !!this.autoAcceptFollowed,
+				avoidSearchIndex: !!this.avoidSearchIndex,
 			}).then(i => {
 				this.saving = false;
 				this.$store.state.i.avatarId = i.avatarId;

@@ -17,6 +17,9 @@ html
 		link(rel='apple-touch-icon' href= icon || '/apple-touch-icon.png')
 		link(rel='manifest' href='/manifest.json')
 
+		if noindex
+			meta(name='robots' content='noindex')
+
 		title
 			block title
 				= title || 'Areionskey'

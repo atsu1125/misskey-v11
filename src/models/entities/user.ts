@@ -217,6 +217,11 @@ export class User {
 	})
 	public sex: 'not-known' | 'male' | 'female' | 'not-applicable';
 
+	@Column('boolean', {
+		default: false,
+	})
+	public avoidSearchIndex: boolean;
+
 	constructor(data: Partial<User>) {
 		if (data == null) return;
 

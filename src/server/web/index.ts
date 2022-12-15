@@ -319,12 +319,14 @@ router.get('/streaming', async ctx => {
 // Render base html for all requests
 router.get('*', async ctx => {
 	const meta = await fetchMeta();
+	const noindex = ctx.path.match(/^[/](search|tags[/]|explore|featured)/);
 	await ctx.render('base', {
 		img: meta.bannerUrl,
 		title: meta.name || 'Misskey',
 		instanceName: meta.name || 'Misskey',
 		desc: meta.description,
-		icon: meta.iconUrl
+		icon: meta.iconUrl,
+		noindex
 	});
 	setCache(ctx, 'public, max-age=300');
 });
