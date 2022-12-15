@@ -1539,6 +1539,7 @@ admin/views/instance.vue:
   disabling-timelines-info: "これらのタイムラインを無効にしても、管理者およびモデレーターは引き続き利用できます。"
   enable-emoji-reaction: "リアクションに絵文字を使えるようにする"
   use-star-for-reaction-fallback: "不明なリアクションのフォールバックに star を使う"
+  disable-trends: "トレンドを無効にする"
   invite: "招待"
   save: "保存"
   saved: "保存しました"

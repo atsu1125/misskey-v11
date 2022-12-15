@@ -48,6 +48,7 @@
 		<section>
 			<ui-switch v-model="enableEmojiReaction">{{ $t('enable-emoji-reaction') }}</ui-switch>
 			<ui-switch v-model="useStarForReactionFallback">{{ $t('use-star-for-reaction-fallback') }}</ui-switch>
+			<ui-switch v-model="disableTrends">{{ $t('disable-trends') }}</ui-switch>
 		</section>
 		<section>
 			<ui-button @click="updateMeta"><fa :icon="faSave"/> {{ $t('save') }}</ui-button>
@@ -277,6 +278,7 @@ export default Vue.extend({
 			disableTimelinePreview: false,
 			disableProfileDirectory: false,
 			enableEmojiReaction: true,
+			disableTrends: false,
 			useStarForReactionFallback: false,
 			mascotImageUrl: null,
 			bannerUrl: null,
@@ -350,6 +352,7 @@ export default Vue.extend({
 			this.disableProfileDirectory = meta.disableProfileDirectory;
 			this.enableEmojiReaction = meta.enableEmojiReaction;
 			this.useStarForReactionFallback = meta.useStarForReactionFallback;
+			this.disableTrends = meta.disableTrends;
 			this.mascotImageUrl = meta.mascotImageUrl;
 			this.bannerUrl = meta.bannerUrl;
 			this.errorImageUrl = meta.errorImageUrl;
@@ -482,6 +485,7 @@ export default Vue.extend({
 				disableProfileDirectory: this.disableProfileDirectory,
 				enableEmojiReaction: this.enableEmojiReaction,
 				useStarForReactionFallback: this.useStarForReactionFallback,
+				disableTrends: this.disableTrends,
 				mascotImageUrl: this.mascotImageUrl,
 				bannerUrl: this.bannerUrl,
 				errorImageUrl: this.errorImageUrl,

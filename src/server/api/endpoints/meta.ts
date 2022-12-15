@@ -147,6 +147,7 @@ export default define(meta, async (ps, me) => {
 		disableTimelinePreview: instance.disableTimelinePreview,
 		disableProfileDirectory: instance.disableProfileDirectory,
 		enableEmojiReaction: instance.enableEmojiReaction,
+		disableTrends: instance.disableTrends,
 		driveCapacityPerLocalUserMb: instance.localDriveCapacityMb,
 		driveCapacityPerPremiumUserMb: instance.premiumDriveCapacityMb,
 		driveCapacityPerRemoteUserMb: instance.remoteDriveCapacityMb,

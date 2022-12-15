@@ -79,6 +79,11 @@ export class Meta {
 	})
 	public useStarForReactionFallback: boolean;
 
+	@Column('boolean', {
+		default: false,
+	})
+	public disableTrends: boolean;
+
 	@Column('varchar', {
 		length: 64, array: true, default: '{}'
 	})

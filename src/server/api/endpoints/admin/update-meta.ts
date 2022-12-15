@@ -79,6 +79,13 @@ export const meta = {
 			}
 		},
 
+		disableTrends: {
+			validator: $.optional.nullable.bool,
+			desc: {
+				'ja-JP': 'トレンドを無効にするか否か'
+			}
+		},
+
 		pinnedUsers: {
 			validator: $.optional.nullable.arr($.str),
 			desc: {
@@ -488,6 +495,10 @@ export default define(meta, async (ps, me) => {
 
 	if (typeof ps.useStarForReactionFallback === 'boolean') {
 		set.useStarForReactionFallback = ps.useStarForReactionFallback;
+	}
+
+	if (typeof ps.disableTrends === 'boolean') {
+		set.disableTrends = ps.disableTrends;
 	}
 
 	if (Array.isArray(ps.pinnedUsers)) {
