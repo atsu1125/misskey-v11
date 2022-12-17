@@ -21,11 +21,13 @@
 			<ui-input v-model="location">
 				<span>{{ $t('location') }}</span>
 				<template #prefix><fa icon="map-marker-alt"/></template>
+				<template #desc>{{ $t('location-caution') }}</template>
 			</ui-input>
 
 			<ui-input v-model="birthday" type="date">
 				<template #title>{{ $t('birthday') }}</template>
 				<template #prefix><fa icon="birthday-cake"/></template>
+				<template #desc>{{ $t('birthday-caution') }}</template>
 			</ui-input>
 
 			<ui-select v-model="sex">
