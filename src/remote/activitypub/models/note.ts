@@ -56,7 +56,7 @@ export function validateNote(object: any, uri: string) {
 /**
  * Noteをフェッチします。
  *
- * Misskeyに対象のNoteが登録されていればそれを返します。
+ * Areionskeyに対象のNoteが登録されていればそれを返します。
  */
 export async function fetchNote(object: string | IObject): Promise<Note | null> {
 	const dbResolver = new DbResolver();
@@ -267,8 +267,8 @@ export async function createNote(value: string | IObject, resolver?: Resolver, s
 /**
  * Noteを解決します。
  *
- * Misskeyに対象のNoteが登録されていればそれを返し、そうでなければ
- * リモートサーバーからフェッチしてMisskeyに登録しそれを返します。
+ * Areionskeyに対象のNoteが登録されていればそれを返し、そうでなければ
+ * リモートサーバーからフェッチしてAreionskeyに登録しそれを返します。
  */
 export async function resolveNote(value: string | IObject, resolver?: Resolver): Promise<Note | null> {
 	const uri = typeof value == 'string' ? value : value.id;

@@ -1,37 +1,25 @@
 This is the **develop** edition of Areionskey.
 ---------
 
-<div align="center">
-
-<h1>Areionskey</h1>
+# Areionskey
 
 [![GHCR](https://github.com/sakura-tel/areionskey/actions/workflows/ghcr.yml/badge.svg)](https://github.com/sakura-tel/areionskey/actions/workflows/ghcr.yml)
+[![Node.js CI](https://github.com/sakura-tel/areionskey/actions/workflows/nodejs.yml/badge.svg)](https://github.com/sakura-tel/areionskey/actions/workflows/nodejs.yml)
 [![E2E Test](https://github.com/sakura-tel/areionskey/actions/workflows/e2e.yml/badge.svg)](https://github.com/sakura-tel/areionskey/actions/workflows/e2e.yml)
-[![gitlocalized](https://gitlocalize.com/repo/6995/whole_project/badge.svg)](https://gitlocalize.com/repo/6995/whole_project?utm_source=badge)
+[![gitlocalized](https://gitlocalize.com/repo/8223/whole_project/badge.svg)](https://gitlocalize.com/repo/8223/whole_project?utm_source=badge)
 ![GitHub commit activity](https://img.shields.io/github/commit-activity/w/sakura-tel/areionskey)
 
 🏇 Areionskey is a federated/distributed microblogging platform based on [Mei v11](https://github.com/mei23/misskey-v11).
 
 [Official Instance](https://uma.milkey.homes)
 
-</div>
-
 ## Contribution
 
 - Please check the [contribution guideline](CONTRIBUTING.md).
-- If you want to translate, you can use [GitLocalize](https://gitlocalize.com/repo/6995).
+- If you want to translate, you can use [GitLocalize](https://gitlocalize.com/repo/8223).
 
-### Collaborators
+## Collaborators
 
-<table>
- <tr>
-  <td><img src="https://avatars.githubusercontent.com/u/85814493?s=120&v=4"></img></td>
-	<td><img src="https://avatars.githubusercontent.com/u/83960488?s=120&v=4"></img></td>
-	<td><img src="https://avatars.githubusercontent.com/u/101872529?s=120&v=4"></img></td>
- </tr>
- <tr>
-  <td align="center"><a href="https://github.com/fs5m8">@fs5m8</a></td>
-	<td align="center"><a href="https://github.com/atsu1125">@atsu1125</a></td>
-	<td align="center"><a href="https://github.com/yui87">@yui87</a></td>
- </tr>
-</table>
+| [@fs5m8](https://github.com/fs5m8) | [@atsu1125](https://github.com/atsu1125) | [@yui87](https://github.com/yui87) |
+|------|------|------|
+| ![@fs5m8](https://avatars.githubusercontent.com/u/85814493?s=120&v=4) | ![@atsu1125](https://avatars.githubusercontent.com/u/83960488?s=120&v=4) | ![@yui87](https://avatars.githubusercontent.com/u/101872529?s=120&v=4) |

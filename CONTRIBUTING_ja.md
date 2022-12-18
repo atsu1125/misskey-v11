@@ -19,7 +19,7 @@ Areionskey は [Vue.js: Vue I18n](https://github.com/kazupon/vue-i18n) プラグ
 コードネームは、国内の競馬場名 (中央競馬、地方競馬) から、北から順番につけられます。
 メジャーバージョンが上がるごとに変更します。
 
-`Obihiro (1.x.x) → Monbetsu (2.x.x) → Sapporo (3.x.x) → Hakodate (4.x.x) ･･･`
+`Obihiro (1.x.x) → Mombetsu (2.x.x) → Sapporo (3.x.x) → Hakodate (4.x.x) ･･･`
 
 ## ドキュメント
 

@@ -189,4 +189,8 @@ export default Vue.extend({
 				> .reactions
 					pointer-events none
 
+				> .reactions
+					text-align left
+					pointer-events none
+
 </style>

@@ -3,7 +3,7 @@
 	<template v-if="notification.type == 'reaction'">
 		<mk-avatar class="avatar" :user="notification.user"/>
 		<div class="text">
-			<p><mk-reaction-icon :reaction="notification.reaction" :custom-emojis="notification.note.emojis"/><mk-user-name :user="notification.user"/></p>
+			<p class="icon-user"><mk-reaction-icon :reaction="notification.reaction" :custom-emojis="notification.note.emojis"/><mk-user-name :user="notification.user"/></p>
 			<p class="note-ref"><fa icon="quote-left"/>{{ getNoteSummary(notification.note) }}<fa icon="quote-right"/></p>
 		</div>
 	</template>
@@ -11,7 +11,7 @@
 	<template v-if="notification.type == 'renote'">
 		<mk-avatar class="avatar" :user="notification.note.user"/>
 		<div class="text">
-			<p><fa icon="retweet"/><mk-user-name :user="notification.note.user"/></p>
+			<p class="icon-user"><fa icon="retweet"/><mk-user-name :user="notification.note.user"/></p>
 			<p class="note-ref"><fa icon="quote-left"/>{{ getNoteSummary(notification.note.renote) }}<fa icon="quote-right"/></p>
 		</div>
 	</template>
@@ -19,7 +19,7 @@
 	<template v-if="notification.type == 'quote'">
 		<mk-avatar class="avatar" :user="notification.note.user"/>
 		<div class="text">
-			<p><fa icon="quote-left"/><mk-user-name :user="notification.note.user"/></p>
+			<p class="icon-user"><fa icon="quote-left"/><mk-user-name :user="notification.note.user"/></p>
 			<p class="note-preview">{{ getNoteSummary(notification.note) }}</p>
 		</div>
 	</template>
@@ -27,7 +27,7 @@
 	<template v-if="notification.type == 'follow'">
 		<mk-avatar class="avatar" :user="notification.user"/>
 		<div class="text">
-			<p><fa icon="user-plus"/><mk-user-name :user="notification.user"/></p>
+			<p class="icon-user"><fa icon="user-plus"/><mk-user-name :user="notification.user"/></p>
 			<span class="notify-info">{{ $t('youGotNewFollower') }}</span>
 		</div>
 	</template>
@@ -35,7 +35,7 @@
 	<template v-if="notification.type == 'receiveFollowRequest'">
 		<mk-avatar class="avatar" :user="notification.user"/>
 		<div class="text">
-			<p><fa icon="user-clock"/><mk-user-name :user="notification.user"/></p>
+			<p class="icon-user"><fa icon="user-clock"/><mk-user-name :user="notification.user"/></p>
 			<span class="notify-info">{{ $t('receiveFollowRequest') }}</span>
 		</div>
 	</template>
@@ -43,7 +43,7 @@
 	<template v-if="notification.type == 'reply'">
 		<mk-avatar class="avatar" :user="notification.note.user"/>
 		<div class="text">
-			<p><fa icon="reply"/><mk-user-name :user="notification.note.user"/></p>
+			<p class="icon-user"><fa icon="reply"/><mk-user-name :user="notification.note.user"/></p>
 			<p class="note-preview">{{ getNoteSummary(notification.note) }}</p>
 		</div>
 	</template>
@@ -51,7 +51,7 @@
 	<template v-if="notification.type == 'mention'">
 		<mk-avatar class="avatar" :user="notification.note.user"/>
 		<div class="text">
-			<p><fa icon="at"/><mk-user-name :user="notification.note.user"/></p>
+			<p class="icon-user"><fa icon="at"/><mk-user-name :user="notification.note.user"/></p>
 			<p class="note-preview">{{ getNoteSummary(notification.note) }}</p>
 		</div>
 	</template>
@@ -59,7 +59,7 @@
 	<template v-if="notification.type == 'pollVote'">
 		<mk-avatar class="avatar" :user="notification.user"/>
 		<div class="text">
-			<p><fa icon="chart-pie"/><mk-user-name :user="notification.user"/></p>
+			<p class="icon-user"><fa icon="chart-pie"/><mk-user-name :user="notification.user"/></p>
 			<p class="note-ref"><fa icon="quote-left"/>{{ getNoteSummary(notification.note) }}<fa icon="quote-right"/></p>
 		</div>
 	</template>
@@ -114,8 +114,8 @@ export default Vue.extend({
 				margin-right 4px
 
 	.note-ref
-
 		[data-icon]
+			color var(--noteText)
 			display inline-block
 			font-size: 50%
 			opacity: 0.5
@@ -135,20 +135,19 @@ export default Vue.extend({
 		opacity: 0.5
 
 	&.reply, &.mention
-		.text p [data-icon]
+		> .text > .icon-user [data-icon]
 			color #007aff
 
 	&.renote, &.quote
-		.text p [data-icon]
+		> .text > .icon-user [data-icon]
 			color #36d298
 
 	&.follow
-		.text p [data-icon]
+		> .text > .icon-user [data-icon]
 			color #36aed2
 
 	&.followRequest, &.pollVote
-		.text p [data-icon]
+		> .text > .icon-user [data-icon]
 			color #5e7c8c
 
 </style>
-

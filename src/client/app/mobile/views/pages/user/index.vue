@@ -13,8 +13,13 @@
 					<a class="avatar">
 						<img :src="avator" alt="avatar"/>
 					</a>
-					<button v-if="$store.getters.isSignedIn" class="menu" ref="menu" @click="menu"><fa icon="ellipsis-h"/></button>
-					<mk-follow-button v-if="!$store.getters.isSignedIn || ($store.getters.isSignedIn && $store.state.i.id != user.id)" :user="user" :key="user.id"/>
+					<div class="actions" v-if="$store.getters.isSignedIn">
+						<button v-if="$store.getters.isSignedIn" class="menu" ref="menu" @click="menu"><fa icon="ellipsis-h"/></button>
+						<mk-follow-button v-if="$store.state.i.id != user.id" :user="user" :inline="true" :transparent="false" class="follow"/>
+					</div>
+					<div class="actions" v-else>
+						<mk-follow-button :user="user" :inline="true" :transparent="false" class="follow"/>
+					</div>
 				</div>
 				<div class="title">
 					<h1><mk-user-name :user="user" :key="user.id" :nowrap="false"/></h1>
@@ -239,12 +244,14 @@ export default Vue.extend({
 							border 4px solid $bg
 							border-radius 12px
 
-				> .menu
-					margin 0 0 0 auto
-					padding 8px
-					margin-right 8px
-					font-size 18px
-					color var(--text)
+				> .actions
+					position absolute
+					right 0
+
+					> .menu
+						padding 0 14px
+						font-size 18px
+						color var(--text)
 
 			> .title
 				margin 8px 0

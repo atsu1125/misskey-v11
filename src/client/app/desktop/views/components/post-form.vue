@@ -21,6 +21,7 @@
 					</span>
 				</div>
 				<button :title="$t('@.post-form.add-visible-user')" @click="addVisibleUser"><fa icon="plus"/></button>
+				<p> <fa icon="exclamation-triangle"/> {{ $t('@.post-form.specified-warn') }} </p>
 			</div>
 			<div class="local-only" v-if="localOnly === true"><fa icon="heart"/> {{ $t('@.post-form.local-only-message') }}</div>
 			<input v-show="useCw" ref="cw" v-model="cw" :placeholder="$t('@.post-form.cw-placeholder')" v-autocomplete="{ model: 'cw' }">
@@ -262,6 +263,9 @@ export default Vue.extend({
 
 			> button
 				margin-left 4px
+
+			> p
+				margin 4px 0 0 0
 
 		> .local-only
 			margin 0 0 8px 0

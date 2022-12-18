@@ -1,6 +1,38 @@
 ChangeLog
 =========
 
+2.1.0 (2022/12/18)
+--------------------
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+Dockerfiles での Node デフォルトバージョンが 18.9.0 から 18.12.1 になっています
+
+### ✨Improvements
+- mobile/postform: プレビューを追加 by @EbiseLutica(from Groundpolis v2) [9189144](https://github.com/sakura-tel/areionskey/commit/91891445c0860bf283beb868f71711fe728cc8bf)
+- mobile: 下部ナビゲーションバーを追加 by @EbiseLutica(from Groundpolis v2) [db1af2a](https://github.com/sakura-tel/areionskey/commit/db1af2a0bfa5b7543825c1d4dc0c3044a8635d38)
+- profile: 場所/誕生日の設定項目に警告を表示 by @atsu1125 [PR#1037](https://github.com/sakura-tel/areionskey/pull/1037) [8f16281](https://github.com/sakura-tel/areionskey/commit/8f162818435029e4f6b1a742ab66b34af39e2522)
+- 検索エンジンによるインデックスを拒否する機能を追加 by @atsu1125 [PR#1033](https://github.com/sakura-tel/areionskey/pull/1033) [41f664b](https://github.com/sakura-tel/areionskey/commit/41f664bed978acfcbd4fde02513bafb163e0351a)
+- postform: ダイレクト投稿を選択したときに警告を表示 [9986cee](https://github.com/sakura-tel/areionskey/commit/9986ceef8eb717c4b7d039347fc16ff0e2c34733)
+- welcome/timeline: リアクションを表示 by @atsu1125 [PR#1021](https://github.com/sakura-tel/areionskey/pull/1021) [9986cee](https://github.com/sakura-tel/areionskey/commit/9986cee915f994b28f60c2d55e855658153cc3ef)
+
+### 🐛Fixes
+- admin: 管理者/モデレータ以外がアクセスしたときにアクセス拒否画面を出すように変更 by @EbiseLutica(from Groundpolis v2) [3556f9c](https://github.com/sakura-tel/areionskey/commit/3556f9cbcf4219f5fa8004e0b59db9906b4f7395)
+- mobile/notify: 引用符にまで色がついていたのを修正 [4c18113](https://github.com/sakura-tel/areionskey/commit/4c181139f151156fc235bc91fe8b22836d21b47b)
+- note/menu: ブックマークやウォッチの操作後にメニューが開けるように修正 [54ee840](https://github.com/sakura-tel/areionskey/commit/54ee8403d1f89235454f1f3028832280b2066068)
+- mobile/widget: ウィジェットを削除できるように修正 [afe8c83](https://github.com/sakura-tel/areionskey/commit/afe8c835e1839dca7e954f8a3efd3484d339bc3d)
+- daemon/server: hideServerInfo = true 時にエラーが返るのを修正 by @atsu1125 [PR#1022](https://github.com/sakura-tel/areionskey/pull/1022) [3f76d15](https://github.com/sakura-tel/areionskey/commit/3f76d15ab49a36000c0ec9f43af06fa6f010ccd6)
+- note/react: 自分のノートにリアクションできるように変更 by @atsu1125 [PR#1021](https://github.com/sakura-tel/areionskey/pull/1021) [a8138e2](https://github.com/sakura-tel/areionskey/commit/a8138e24246dfe817c864a548bbcc9ae777bc17d)
+- admin: テキストボックスによる設定項目でスペースのみの項目が保存できてしまうのを修正 by @mei23(from Mei v11) [8319033](https://github.com/sakura-tel/areionskey/commit/831903304e4ccd1925b0cb460c819d413090a83c)
+- Home posts -> Unlisted posts [5779815](https://github.com/sakura-tel/areionskey/commit/5779815ff4a87c331f05ed808ea497869681994e)
+- explore: 無限ループしないように修正 [bb11d3c](https://github.com/sakura-tel/areionskey/commit/bb11d3caae3f8bc572d8f0c891c959b2d2600886)
+- widget/stickynote: 即時保存するように変更 [63dfef9](https://github.com/sakura-tel/areionskey/commit/63dfef96fadd0f3ef431a399faa6390b28c151fa)
+- その他 mergin/padding の調整
+- 統一されていない文言やアイコンを統一
+- 言語ファイルや文書の更新
+- 依存関係の更新
+
 2.0.0 (2022/12/04)
 --------------------
 ### 💥BREAKING CHANGES

@@ -236,7 +236,7 @@ export default Vue.extend({
 		max-width 100%
 		height 64px
 		margin 0
-		padding 8px
+		padding 8px 12px
 		resize none
 		font-size 1em
 		color var(--inputText)

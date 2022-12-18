@@ -232,8 +232,9 @@ export default Vue.extend({
 				this.$root.dialog({
 					type: 'success',
 					splash: true
+				}).then(() => {
+					this.destroyDom();
 				});
-				this.destroyDom();
 			});
 		},
 
@@ -244,8 +245,9 @@ export default Vue.extend({
 				this.$root.dialog({
 					type: 'success',
 					splash: true
+				}).then(() => {
+					this.destroyDom();
 				});
-				this.destroyDom();
 			});
 		},
 

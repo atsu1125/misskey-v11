@@ -362,7 +362,7 @@ export const packedUserSchema = {
 			type: 'string' as const,
 			nullable: false as const, optional: true as const,
 			format: 'date-time',
-			description: 'The date that the user account was created on Misskey.'
+			description: 'The date that the user account was created on Areionskey.'
 		},
 		updatedAt: {
 			type: 'string' as const,

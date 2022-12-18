@@ -32,10 +32,10 @@
 	</div>
 
 	<template v-if="tag == null">
-		<mk-user-list :pagination="recentlyUpdatedUsersF" :expanded="false">
+		<mk-user-list :pagination="recentlyUpdatedUsersF" :expanded="false" :noMore="true">
 			<fa :icon="faCommentAlt" fixed-width/>{{ $t('recently-updated-users') }}
 		</mk-user-list>
-		<mk-user-list :pagination="recentlyRegisteredUsersF" :expanded="false">
+		<mk-user-list :pagination="recentlyRegisteredUsersF" :expanded="false" :noMore="true">
 			<fa :icon="faRocket" fixed-width/>{{ $t('recently-discovered-users') }}
 		</mk-user-list>
 	</template>
@@ -67,7 +67,7 @@ export default Vue.extend({
 	data() {
 		return {
 			pinnedUsers: { endpoint: 'pinned-users' },
-			verifiedUsers: { endpoint: 'users', limit: 10, params: {
+			verifiedUsers: { endpoint: 'users', limit: 20, params: {
 				state: 'verified',
 				origin: 'local',
 				sort: '+follower',
@@ -81,11 +81,11 @@ export default Vue.extend({
 				state: 'alive',
 				sort: '+createdAt',
 			} },
-			recentlyUpdatedUsersF: { endpoint: 'users', limit: 10, params: {
+			recentlyUpdatedUsersF: { endpoint: 'users', limit: 30, params: {
 				origin: 'combined',
 				sort: '+updatedAt',
 			} },
-			recentlyRegisteredUsersF: { endpoint: 'users', limit: 10, params: {
+			recentlyRegisteredUsersF: { endpoint: 'users', limit: 30, params: {
 				origin: 'combined',
 				sort: '+createdAt',
 			} },

@@ -60,7 +60,7 @@ import XDraggable from 'vuedraggable';
 import { v4 as uuid } from 'uuid';
 
 export default Vue.extend({
-	i18n: i18n(),
+	i18n: i18n('deck/deck.widgets-column.vue'),
 	components: {
 		XColumn,
 		XDraggable

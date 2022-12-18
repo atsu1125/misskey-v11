@@ -1,4 +1,4 @@
-FROM node:18.9.0-bullseye AS builder
+FROM node:18.12.1-bullseye AS builder
 
 ENV NODE_ENV=production
 WORKDIR /misskey
@@ -13,7 +13,7 @@ RUN yarn install --network-timeout 100000
 COPY . ./
 RUN yarn build
 
-FROM node:18.9.0-bullseye-slim AS runner
+FROM node:18.12.1-bullseye-slim AS runner
 
 ENV NODE_ENV=production
 WORKDIR /misskey

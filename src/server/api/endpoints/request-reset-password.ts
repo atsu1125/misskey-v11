@@ -96,5 +96,5 @@ export default define(meta, async (ps) => {
 
 	const link = `${config.url}/reset-password/${token}`;
 
-	sendEmail(ps.email, 'Password reset requested', `To reset password, please click the URL below.\n${ link }`);
+	sendEmail(ps.email, 'Password reset requested', `To reset password, please click this link: ${link}`);
 });

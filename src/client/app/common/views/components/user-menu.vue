@@ -37,8 +37,7 @@ export default Vue.extend({
 				icon: 'ban',
 				text: this.user.isBlocking ? this.$t('unblock') : this.$t('block'),
 				action: this.toggleBlock
-			}, null
-			]);
+			}]);
 		}
 
 		if (this.$store.getters.isSignedIn && this.$store.state.i.id != this.user.id && this.user.isFollowed) {
@@ -48,7 +47,6 @@ export default Vue.extend({
 				action: this.invalidateFollow
 			}]);
 		}
-
 
 		if (this.$store.getters.isSignedIn && this.$store.state.i.id != this.user.id) {
 			menu = menu.concat([null, {

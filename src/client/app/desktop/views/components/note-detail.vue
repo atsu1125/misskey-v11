@@ -54,8 +54,6 @@
 				</div>
 				<mk-poll v-if="appearNote.poll" :note="appearNote"/>
 				<mk-url-preview v-for="url in urls" :url="url" :key="url" :detail="true"/>
-				<a class="location" v-if="appearNote.geo" :href="`https://maps.google.com/maps?q=${appearNote.geo.coordinates[1]},${appearNote.geo.coordinates[0]}`" rel="noopener" target="_blank"><fa icon="map-marker-alt"/> {{ $t('location') }}</a>
-				<div class="map" v-if="appearNote.geo" ref="map"></div>
 				<div class="renote" v-if="appearNote.renote">
 					<mk-note-preview :note="appearNote.renote"/>
 				</div>
@@ -291,18 +289,6 @@ export default Vue.extend({
 						padding 16px
 						border dashed 1px var(--quoteBorder)
 						border-radius 8px
-
-				> .location
-					margin 4px 0
-					font-size 12px
-					color #ccc
-
-				> .map
-					width 100%
-					height 300px
-
-					&:empty
-						display none
 
 				> .mk-url-preview
 					margin-top 8px

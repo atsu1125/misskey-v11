@@ -7,18 +7,18 @@ common:
   about-title: "A isle of the Fediverse."
   about: "Areionskey は、<b>連合/分散型マイクロブログ・プラットフォーム</b>です。ActivityPub による相互通信により、他のプラットフォームと相互に接続され、Fediverse と呼ばれるつながりを形成しています。"
   intro:
-    title: "Areionskeyって？"
+    title: "Areionskey って？"
     about: "Areionskey は、<b>連合/分散型マイクロブログ・プラットフォーム</b>です。リッチで高度にカスタマイズできるUI、投稿へのリアクション、ファイルを一元管理できるドライブなど、先進的な機能を揃えています。また、ActivityPub による相互通信により、他のプラットフォームと相互に接続され、Fediverse と呼ばれるつながりを形成しています。あなたが何か投稿すると、その投稿は Areionskey だけでなく他のプラットフォームにも伝わります。ちょうどある惑星から他の惑星に電波を発信している様子をイメージしてください。"
     features: "特徴"
     rich-contents: "投稿"
     rich-contents-desc: "自分の考え、話題の出来事、皆と共有したいことについて発信してください。必要であれば、様々な構文を使って投稿を装飾したり、好きな画像、動画などのファイルやアンケートを添付することもできます。"
     reaction: "リアクション"
-    reaction-desc: "あなたの気持ちを伝える最も簡単な方法です。Areionskey は、他のユーザーの投稿に様々なリアクションを付けることができます。"
+    reaction-desc: "あなたの気持ちを伝える最も簡単な方法です。Areionskey は、他のユーザーの投稿に 様々なリアクションを付けることができます。"
     ui: "インターフェース"
     ui-desc: "どのようなUIが使いやすいかは人それぞれです。だから、Areionskey は自由度の高いUIを持っています。レイアウトやデザインを調整したり、カスタマイズ可能な様々なウィジェットを配置したりして、自分だけのホームを作ってください。"
     drive: "ドライブ"
-    drive-desc: "以前投稿したことのある画像をまた投稿したくなったことはありませんか？もしくは、アップロードしたファイルをフォルダ分けして整理したくなったことはありませんか？Areionskey の根幹に組み込まれたドライブ機能によってそれらが解決します。ファイルの共有も簡単です。"
-    outro: "他にも Areionskey にしかない機能はまだまだあるので、ぜひあなた自身の目で確かめてください。Areionskey は 連合/分散型マイクロブログ・プラットフォーム なので、このインスタンスが気に入らなければ他のインスタンスを試すこともできます。それでは、お楽しみください。"
+    drive-desc: "以前投稿したことのある画像を、また投稿したくなったことはありませんか？ もしくは、アップロードしたファイルをフォルダ分けして整理したくなったことはありませんか？ Areionskey の根幹に組み込まれたドライブ機能によって それらが解決します。ファイルの共有も簡単です。"
+    outro: "他にも Areionskey にしかない機能はまだまだあるので、ぜひあなた自身の目で確かめてください。Areionskey は 連合/分散型マイクロブログ・プラットフォーム なので、このインスタンスが気に入らなければ、他のインスタンスを試すこともできます。それでは、お楽しみください。"
   powered-by-areionskey: "Powered by <b>Areionskey</b>."
   application-authorization: "アプリの連携"
   close: "閉じる"
@@ -33,11 +33,11 @@ common:
   signup: "新規登録"
   signout: "ログアウト"
   reminder: "パスワードを忘れた"
-  reload-to-apply-the-setting: "この設定を反映するにはページをリロードする必要があります。今すぐリロードしますか？"
+  reload-to-apply-the-setting: "この設定を反映するには ページをリロードする必要があります。今すぐリロードしますか？"
   fetching-as-ap-object: "連合に照会中"
-  unfollow-confirm: "{name}さんをフォロー解除しますか？"
+  unfollow-confirm: "{name} さんをフォロー解除しますか？"
   delete-confirm: "この投稿を削除しますか？"
-  deleteAsAdmin-confirm: "管理者権限を行使してこの投稿を削除しますか？"
+  deleteAsAdmin-confirm: "管理者権限を行使して この投稿を削除しますか？"
   signin-required: "ログインしてください"
   notification-type: "通知の種類"
   notification-types:
@@ -50,36 +50,36 @@ common:
     renote: "Renote"
     mention: "言及"
     reaction: "リアクション"
-  got-it: "わかった"
+  got-it: "OK"
 
   customization-tips:
     title: "カスタマイズのヒント"
-    paragraph: "<p>ホームのカスタマイズでは、ウィジェットを追加/削除したり、ドラッグ&ドロップして並べ替えたりすることができます。</p><p>一部のウィジェットは、<strong><strong>右</strong>クリック</strong>することで表示を変更することができます。</p><p>ウィジェットを削除するには、ヘッダーの<strong>「ゴミ箱」</strong>と書かれたエリアにウィジェットをドラッグ&ドロップします。</p><p>カスタマイズを終了するには、右上の「完了」をクリックします。</p>"
-    gotit: "わかった"
+    paragraph: "ホームのカスタマイズでは、ウィジェットを追加/削除したり、ドラッグ&ドロップして並べ替えたりすることができます。一部のウィジェットは、右クリックすることで表示を変更することができます。ウィジェットを削除するには、ヘッダーの ゴミ箱 と書かれたエリアにウィジェットをドラッグ&ドロップします。カスタマイズを終了するには、右上の 完了 をクリックします。"
+    gotit: "OK"
 
   notification:
     file-uploaded: "ファイルがアップロードされました"
-    message-from: "{}さんからメッセージ:"
+    message-from: "{} さんからメッセージ:"
     reversi-invited: "対局への招待があります"
-    reversi-invited-by: "{}さんから"
-    notified-by: "{}さんから"
-    reply-from: "{}さんから返信:"
-    quoted-by: "{}さんが引用:"
+    reversi-invited-by: "{} さんから"
+    notified-by: "{} さんから"
+    reply-from: "{} さんから返信:"
+    quoted-by: "{} さんが引用:"
     youGotNewFollower: "フォローされました"
     receiveFollowRequest: "フォローリクエストされました"
 
   time:
-    unknown: "なぞのじかん"
+    unknown: "不明"
     future: "未来"
     just_now: "たった今"
-    seconds_ago: "{}秒前"
-    minutes_ago: "{}分前"
-    hours_ago: "{}時間前"
-    days_ago: "{}日前"
-    weeks_ago: "{}週間前"
-    months_ago: "{}ヶ月前"
-    years_ago: "{}年前"
-  month-and-day: "{month}月 {day}日"
+    seconds_ago: "{} 秒前"
+    minutes_ago: "{} 分前"
+    hours_ago: "{} 時間前"
+    days_ago: "{} 日前"
+    weeks_ago: "{} 週間前"
+    months_ago: "{} ヶ月前"
+    years_ago: "{} 年前"
+  month-and-day: "{month} 月 {day} 日"
 
   trash: "ゴミ箱"
   drive: "ドライブ"
@@ -138,11 +138,11 @@ common:
     reply: "返信"
     renote: "Renote"
     posting: "投稿中"
-    attach-media-from-local: "PCからメディアを添付"
+    attach-media-from-local: "ドライブにアップロードしてメディアを添付"
     attach-media-from-drive: "ドライブからメディアを添付"
     insert-a-kao: "v('ω')v"
     create-poll: "アンケートを作成"
-    text-remain: "残り{}文字"
+    text-remain: "残り {} 文字"
     recent-tags: "最近"
     local-only-message: "この投稿はローカルにのみ公開されます"
     click-to-tagging: "クリックでタグ付け"
@@ -152,6 +152,7 @@ common:
     enter-username: "ユーザー名を入力してください"
     specified-recipient: "宛先"
     add-visible-user: "ユーザーを追加"
+    specified-warn: "ダイレクト投稿は暗号化されません"
     cw-placeholder: "内容への注釈 (オプション)"
     username-prompt: "ユーザー名を入力してください"
     enter-file-name: "ファイル名を編集"
@@ -189,14 +190,14 @@ common:
 
   note-visibility:
     public: "公開"
-    home: "ホーム"
+    home: "未収載"
     home-desc: "ホームタイムラインにのみ公開"
     followers: "フォロワー"
     followers-desc: "自分のフォロワーにのみ公開"
     specified: "ダイレクト"
     specified-desc: "指定したユーザーにのみ公開"
     local-public: "公開 (ローカルのみ)"
-    local-home: "ホーム (ローカルのみ)"
+    local-home: "未収載 (ローカルのみ)"
     local-followers: "フォロワー (ローカルのみ)"
 
   note-placeholders:
@@ -235,8 +236,8 @@ common:
     pasted-file-name-desc: '例: "yyyy-MM-dd HH-mm-ss [{{number}}]" → "2018-03-20 21-30-24 1"'
     paste-dialog: "ペースト時にファイル名を編集"
     paste-dialog-desc: "ペースト時にファイル名を編集するダイアログを表示するようにします。"
-    keep-cw: "CW保持"
-    keep-cw-desc: "投稿にリプライする際、リプライ元の投稿にCWが設定されていたとき、デフォルトで同じCWを設定するようにします。"
+    keep-cw: "CW 保持"
+    keep-cw-desc: "投稿にリプライする際、リプライ元の投稿に CW が設定されていたとき、デフォルトで同じ CW を設定するようにします。"
     i-like-sushi: "私は(プリンよりむしろ)寿司が好き"
     show-reversi-board-labels: "リバーシのボードの行と列のラベルを表示"
     use-avatar-reversi-stones: "リバーシの石にアバターを使う"
@@ -247,10 +248,10 @@ common:
     always-show-nsfw: "常に閲覧注意のメディアを表示する"
     always-mark-nsfw: "常にメディアを閲覧注意として投稿"
     show-full-acct: "ユーザー名のホストを省略しない"
-    show-via: "viaを表示する"
-    reduce-motion: "UIの動きを減らす"
+    show-via: "via を表示する"
+    reduce-motion: "UI の動きを減らす"
     this-setting-is-this-device-only: "このデバイスのみ"
-    use-os-default-emojis: "OS標準の絵文字を使用"
+    use-os-default-emojis: "OS 標準の絵文字を使用"
     line-width: "線の太さ"
     line-width-thin: "細い"
     line-width-normal: "普通"
@@ -271,8 +272,8 @@ common:
     deck-column-width-normal: "普通"
     deck-column-width-wider: "やや広"
     deck-column-width-wide: "広"
-    use-shadow: "UIに影を使用"
-    rounded-corners: "UIの角を丸める"
+    use-shadow: "UI に影を使用"
+    rounded-corners: "UI の角を丸める"
     circle-icons: "円形のアバターを使用"
     contrasted-acct: "ユーザー名にコントラストを付ける"
     deckTemporaryColumnPosition: "デッキの一時カラムの位置"
@@ -294,9 +295,9 @@ common:
     show-clock-on-header: "右上に時計を表示する"
     show-reply-target: "リプライ先を表示する"
     timeline: "タイムライン"
-    show-my-renotes: "自分の行ったRenoteをタイムラインに表示する"
-    show-renoted-my-notes: "自分の投稿のRenoteをタイムラインに表示する"
-    show-local-renotes: "ローカルの投稿のRenoteをタイムラインに表示する"
+    show-my-renotes: "自分の行った Renote をタイムラインに表示する"
+    show-renoted-my-notes: "自分の投稿の Renote をタイムラインに表示する"
+    show-local-renotes: "ローカルの投稿の Renote をタイムラインに表示する"
     remain-deleted-note: "削除された投稿を表示し続ける"
     sound: "サウンド"
     enable-sounds: "サウンドを有効にする"
@@ -327,7 +328,7 @@ common:
     notification-position: "通知の表示"
     notification-position-bottom: "下"
     notification-position-top: "上"
-    disable-via-mobile: "「モバイルからの投稿」フラグを付けない"
+    disable-via-mobile: "モバイルからの投稿 フラグを付けない"
     load-raw-images: "添付された画像を高画質で表示する"
     load-remote-media: "リモートサーバーのメディアを表示する"
     sync: "同期"
@@ -353,12 +354,12 @@ common:
   ok: "OK"
   cancel: "キャンセル"
   update-available-title: "更新があります"
-  update-available: "Areionskey の新しいバージョンがあります({newer}。現在{current}を利用中)。ページを再度読み込みすると更新が適用されます。"
+  update-available: "Areionskey の新しいバージョンがあります ({newer}。現在 {current} を利用中)。ページを再度読み込みすると更新が適用されます。"
   my-token-regenerated: "あなたのトークンが更新されたのでサインアウトします。"
   admin-user: "管理者アカウント"
   premium-user: "プレミアムアカウント"
   verified-user: "公式アカウント"
-  bot-user: "Botアカウント"
+  bot-user: "Bot アカウント"
   cat-user: "ねこアカウント"
   hide-password: "パスワードを隠す"
   show-password: "パスワードを表示する"
@@ -369,10 +370,10 @@ common:
   is-remote-user: "このユーザー情報は不正確な可能性があります。"
   is-remote-post: "この投稿情報はコピーです。"
   view-on-remote: "正確な情報を見る"
-  renoted-by: "{user}がRenote"
+  renoted-by: "{user} が Renote"
   no-notes: "投稿がありません"
-  turn-on-darkmode: "闇に飲まれる"
-  turn-off-darkmode: "光あれ"
+  turn-on-darkmode: "ダークモードへ"
+  turn-off-darkmode: "ライトモードへ"
 
   error:
     title: "問題が発生しました"
@@ -382,19 +383,19 @@ common:
     drawn: "引き分け"
     my-turn: "あなたのターンです"
     opponent-turn: "相手のターンです"
-    turn-of: "{name}のターンです"
-    past-turn-of: "{name}のターン"
-    won: "{name}の勝ち"
+    turn-of: "{name} のターンです"
+    past-turn-of: "{name} のターン"
+    won: "{name} の勝ち"
     black: "黒"
     white: "白"
     total: "合計"
-    this-turn: "{count}ターン目"
+    this-turn: "{count} ターン目"
 
   widgets:
     analog-clock: "アナログ時計"
     profile: "プロフィール"
     calendar: "カレンダー"
-    timemachine: "カレンダー(タイムマシン)"
+    timemachine: "カレンダー (タイムマシン)"
     activity: "アクティビティ"
     rss: "RSSリーダー"
     html: "HTMLウィジェット"
@@ -422,7 +423,7 @@ common:
   you: "あなた"
 
 auth/views/form.vue:
-  share-access: "<i>{name}</i>があなたのアカウントにアクセスすることを許可しますか？"
+  share-access: "{name} があなたのアカウントにアクセスすることを許可しますか？"
   permission-ask: "このアプリは次の権限を要求しています:"
   cancel: "キャンセル"
   accept: "アクセスを許可"
@@ -434,7 +435,7 @@ auth/views/index.vue:
   already-authorized: "このアプリは既に連携済みです"
   allowed: "アプリケーションの連携を許可しました"
   callback-url: "アプリケーションに戻っています"
-  please-go-back: "アプリケーションに戻って、やっていってください。"
+  please-go-back: "アプリケーションに戻ってください。"
   error: "セッションが存在しません。"
   sign-in: "サインインしてください"
 
@@ -447,14 +448,14 @@ common/views/pages/explore.vue:
   recently-discovered-users: "最近発見されたユーザー"
   popular-tags: "人気のタグ"
   federated: "連合"
-  explore: "{host}を探索"
-  explore-fediverse: "Fediverseを探索"
-  users-info: "現在{users}ユーザーが登録されています"
+  explore: "{host} を探索"
+  explore-fediverse: "Fediverse を探索"
+  users-info: "現在 {users} ユーザーが登録されています"
   searchUser: "ユーザーを検索"
 
 common/views/components/reactions-viewer.details.vue:
-  few-users: "{users}が{reaction}をリアクション"
-  many-users: "{users}と他{omitted}人が{reaction}をリアクション"
+  few-users: "{users} が {reaction} をリアクション"
+  many-users: "{users} と他 {omitted} 人が {reaction} をリアクション"
 
 common/views/components/url-preview.vue:
   enable-player: "プレイヤーを開く"
@@ -466,13 +467,13 @@ common/views/components/user-list.vue:
 
 common/views/components/games/reversi/reversi.vue:
   matching:
-    waiting-for: "{}を待っています"
+    waiting-for: "{} を待っています"
     cancel: "キャンセル"
 
 common/views/components/games/reversi/reversi.game.vue:
   surrender: "投了"
   surrendered: "投了により"
-  is-llotheo: "石の少ない方が勝ち(ロセオ)"
+  is-llotheo: "石の少ない方が勝ち (ロセオ)"
   looped-map: "ループマップ"
   can-put-everywhere: "どこでも置けるモード"
 
@@ -497,12 +498,12 @@ common/views/components/games/reversi/reversi.room.vue:
   choose-map: "マップを選択"
   random: "ランダム"
   black-or-white: "先手/後手"
-  black-is: "{}が黒"
+  black-is: "{} が黒"
   rules: "ルール"
-  is-llotheo: "石の少ない方が勝ち(ロセオ)"
+  is-llotheo: "石の少ない方が勝ち (ロセオ)"
   looped-map: "ループマップ"
   can-put-everywhere: "どこでも置けるモード"
-  settings-of-the-bot: "Botの設定"
+  settings-of-the-bot: "Bot の設定"
   this-game-is-started-soon: "ゲームは数秒後に開始されます"
   waiting-for-other: "相手の準備が完了するのを待っています"
   waiting-for-me: "あなたの準備が完了するのを待っています"
@@ -513,7 +514,7 @@ common/views/components/games/reversi/reversi.room.vue:
 
 common/views/components/connect-failed.vue:
   title: "サーバーに接続できません"
-  description: "インターネット回線に問題があるか、サーバーがダウンまたはメンテナンスしている可能性があります。しばらくしてから{再度お試し}ください。"
+  description: "インターネット回線に問題があるか、サーバーがダウン または メンテナンスしている可能性があります。しばらくしてから{再度お試し}ください。"
   thanks: "いつも Areionskey をご利用いただきありがとうございます。"
   troubleshoot: "トラブルシュート"
 
@@ -527,11 +528,11 @@ common/views/components/connect-failed.troubleshooter.vue:
   checking-server: "サーバー接続を確認中"
   finding: "問題を調べています"
   no-network: "ネットワークに接続されていません"
-  no-network-desc: "お使いのPCのネットワーク接続が正常か確認してください。"
+  no-network-desc: "お使いのコンピュータのネットワーク接続が正常か確認してください。"
   no-internet: "インターネットに接続されていません"
-  no-internet-desc: "ネットワークには接続されていますが、インターネットには接続されていないようです。お使いのPCのインターネット接続が正常か確認してください。"
+  no-internet-desc: "ネットワークには接続されていますが、インターネットには接続されていないようです。お使いのコンピュータのインターネット接続が正常か確認してください。"
   no-server: "Areionskey のサーバーに接続できません"
-  no-server-desc: "お使いのPCのインターネット接続は正常ですが、Areionskey のサーバーには接続できませんでした。サーバーがダウンまたはメンテナンスしている可能性があるので、しばらくしてから再度御アクセスください。"
+  no-server-desc: "お使いのコンピュータのインターネット接続は正常ですが、Areionskey のサーバーには接続できませんでした。サーバーがダウン または メンテナンスしている可能性があるので、しばらくしてから再度ごアクセスください。"
   success: "Areionskey のサーバーに接続できました"
   success-desc: "正常に接続できるようです。ページを再度読み込みしてください。"
   flush: "キャッシュの削除"
@@ -550,7 +551,7 @@ common/views/components/theme.vue:
   install-a-theme: "テーマのインストール"
   theme-code: "テーマコード"
   install: "インストール"
-  installed: "「{}」をインストールしました"
+  installed: "{} をインストールしました"
   create-a-theme: "テーマの作成"
   save-created-theme: "テーマを保存"
   primary-color: "プライマリ カラー"
@@ -571,19 +572,19 @@ common/views/components/theme.vue:
   installed-themes: "インストールされたテーマ"
   select-theme: "テーマを選択してください"
   uninstall: "アンインストール"
-  uninstalled: "「{}」をアンインストールしました"
+  uninstalled: "{} をアンインストールしました"
   author: "作者"
   desc: "説明"
   export: "エクスポート"
   import: "インポート"
-  import-by-code: "またはコードをペースト"
+  import-by-code: "または コードをペースト"
   theme-name-required: "テーマ名は必須です。"
 
 common/views/components/cw-button.vue:
   hide: "隠す"
   show: "もっと見る"
-  chars: "{count}文字"
-  files: "{count}ファイル"
+  chars: "{count} 文字"
+  files: "{count} ファイル"
   poll: "アンケート"
 
 common/views/components/messaging.vue:
@@ -606,7 +607,7 @@ common/views/components/messaging-room.vue:
 common/views/components/messaging-room.form.vue:
   input-message-here: "ここにメッセージを入力"
   send: "送信"
-  attach-from-local: "PCからファイルを添付する"
+  attach-from-local: "ドライブにアップロードしてファイルを添付する"
   attach-from-drive: "ドライブからファイルを添付する"
   only-one-file-attached: "メッセージに添付できるファイルはひとつです"
 
@@ -640,8 +641,8 @@ common/views/components/note-menu.vue:
   delete-confirm: "この投稿を削除しますか？"
   deleteAsAdmin: "管理者として削除"
   deleteAsAdmin-confirm: "管理者権限を行使してこの投稿を削除しますか？"
-  undo-renote: "リノートを取り消す"
-  undo-renote-confirm: "このリノートを取り消しますか？"
+  undo-renote: "Renote を取り消す"
+  undo-renote-confirm: "この Renote を取り消しますか？"
   delete-and-edit: "削除して編集"
   delete-and-edit-confirm: "この投稿を削除してもう一度編集しますか？この投稿へのリアクション、Renote、返信も全て削除されます。"
   remote: "投稿元で見る"
@@ -677,22 +678,22 @@ common/views/components/user-menu.vue:
   remote-user-updated: "リモートユーザー情報を更新しました"
 
 common/views/components/poll.vue:
-  vote-to: "「{}」に投票する"
-  vote-count: "{}票"
-  total-votes: "計{}票"
+  vote-to: "{} に投票する"
+  vote-count: "{} 票"
+  total-votes: "計 {} 票"
   vote: "投票する"
   show-result: "結果を見る"
   voted: "投票済み"
   closed: "終了済み"
-  remaining-days: "終了まであと{d}日{h}時間"
-  remaining-hours: "終了まであと{h}時間{m}分"
-  remaining-minutes: "終了まであと{m}分{s}秒"
-  remaining-seconds: "終了まであと{s}秒"
+  remaining-days: "終了まであと {d} 日 {h} 時間"
+  remaining-hours: "終了まであと {h} 時間 {m} 分"
+  remaining-minutes: "終了まであと {m} 分 {s} 秒"
+  remaining-seconds: "終了まであと {s} 秒"
   vote-confirm: "投票しますか？"
 
 common/views/components/poll-editor.vue:
   no-only-one-choice: "アンケートには、選択肢が最低2つ必要です"
-  choice-n: "選択肢{}"
+  choice-n: "選択肢 {}"
   remove: "この選択肢を削除"
   add: "+選択肢を追加"
   destroy: "アンケートを破棄"
@@ -713,7 +714,7 @@ common/views/components/poll-editor.vue:
 
 common/views/components/reaction-picker.vue:
   choose-reaction: "リアクションを選択"
-  input-reaction-placeholder: "または絵文字を入力"
+  input-reaction-placeholder: "または 絵文字を入力"
 
 common/views/components/emoji-picker.vue:
   recent-emoji: "最近使った絵文字"
@@ -744,9 +745,9 @@ common/views/components/signin.vue:
   token: "トークン"
   signing-in: "やってます..."
   or: "または"
-  signin-with-twitter: "Twitterでログイン"
-  signin-with-github: "GitHubでログイン"
-  signin-with-discord: "Discordでログイン"
+  signin-with-twitter: "Twitter でログイン"
+  signin-with-github: "GitHub でログイン"
+  signin-with-discord: "Discord でログイン"
   login-failed: "ログインできませんでした。ユーザー名とパスワードを確認してください。"
   tap-key: "セキュリティキーをクリックしてログイン"
   enter-2fa-code: "認証コードを入力してください"
@@ -759,11 +760,11 @@ common/views/components/signup.vue:
   available: "利用できます"
   unavailable: "既に利用されています"
   error: "通信エラー"
-  invalid-format: "a~z、A~Z、0~9、_が使えます"
+  invalid-format: "a - z, A - Z, 0 - 9, _ が使えます"
   too-short: "1文字以上でお願いします"
   too-long: "20文字以内でお願いします"
   password: "パスワード"
-  password-placeholder: "8文字以上を推奨します"
+  password-placeholder: "8 文字以上を推奨します"
   weak-password: "弱いパスワード"
   normal-password: "まあまあのパスワード"
   strong-password: "強いパスワード"
@@ -772,7 +773,7 @@ common/views/components/signup.vue:
   password-matched: "確認されました"
   password-not-matched: "一致していません"
   recaptcha: "認証"
-  agree-to: "{0}に同意します。"
+  agree-to: "{0} に同意します。"
   tos: "利用規約"
   create: "アカウント作成"
   some-error: "何らかの原因によりアカウントの作成に失敗しました。再度お試しください。"
@@ -798,7 +799,7 @@ common/views/components/notification-settings.vue:
   mark-as-read-all-unread-notes: "すべての投稿を既読にする"
   mark-as-read-all-talk-messages: "すべてのトークを既読にする"
   auto-watch: "投稿の自動ウォッチ"
-  auto-watch-desc: "リアクションしたり返信したりした投稿に関する通知を自動的に受け取るようにします。"
+  auto-watch-desc: "リアクションしたり返信したりした投稿に関する通知を、自動的に受け取るようにします。"
 
 common/views/components/instance.vue:
   start: "始める"
@@ -810,7 +811,7 @@ common/views/components/integration-settings.vue:
   connected-to: "次のアカウントに接続されています"
 
 common/views/components/github-setting.vue:
-  description: "お使いの GitHub アカウントをお使いの Areionskey アカウントに接続しておくと、プロフィールで GitHub アカウント情報が表示されるようになったり、GitHubを用いた便利なサインインを利用できるようになります。"
+  description: "お使いの GitHub アカウントをお使いの Areionskey アカウントに接続しておくと、プロフィールで GitHub アカウント情報が表示されるようになったり、GitHub を用いた便利なサインインを利用できるようになります。"
   connected-to: "次の GitHub アカウントに接続されています"
   detail: "詳細..."
   reconnect: "再接続する"
@@ -818,7 +819,7 @@ common/views/components/github-setting.vue:
   disconnect: "切断する"
 
 common/views/components/discord-setting.vue:
-  description: "お使いの Discord アカウントをお使いの Areionskey アカウントに接続しておくと、プロフィールで Discord アカウント情報が表示されるようになったり、Discordを用いた便利なサインインを利用できるようになります。"
+  description: "お使いの Discord アカウントをお使いの Areionskey アカウントに接続しておくと、プロフィールで Discord アカウント情報が表示されるようになったり、Discord を用いた便利なサインインを利用できるようになります。"
   connected-to: "次の Discord アカウントに接続されています"
   detail: "詳細..."
   reconnect: "再接続する"
@@ -830,7 +831,7 @@ common/views/components/uploader.vue:
 
 common/views/components/visibility-chooser.vue:
   public: "公開"
-  home: "ホーム"
+  home: "未収載"
   home-desc: "ホームタイムラインにのみ公開"
   followers: "フォロワー"
   followers-desc: "自分のフォロワーにのみ公開"
@@ -838,7 +839,7 @@ common/views/components/visibility-chooser.vue:
   specified-desc: "指定したユーザーにのみ公開"
   local-public: "公開 (ローカルのみ)"
   local-public-desc: "リモートへは公開しない"
-  local-home: "ホーム (ローカルのみ)"
+  local-home: "未収載 (ローカルのみ)"
   local-followers: "フォロワー (ローカルのみ)"
 
 common/views/components/trends.vue:
@@ -874,10 +875,10 @@ common/views/components/profile-editor.vue:
   birthday-caution: "インターネットに公開されます。個人情報は慎重に取り扱ってください"
   avatar: "アバター"
   banner: "バナー"
-  is-cat: "このアカウントはCatです"
-  is-bot: "このアカウントはBotです"
+  is-cat: "このアカウントは Cat です"
+  is-bot: "このアカウントは Bot です"
   is-locked: "フォローを承認制にする"
-  careful-bot: "Botからのフォローだけ承認制にする"
+  careful-bot: "Bot からのフォローだけ承認制にする"
   careful-remote: "リモートからのフォローだけ承認制にする"
   auto-accept-followed: "フォローしているユーザーからのフォローを自動承認する"
   avoid-search-index: "検索エンジンによるインデックスを避ける"
@@ -918,7 +919,7 @@ common/views/components/user-list-editor.vue:
   rename: "リスト名を変更"
   delete: "リストを削除"
   remove-user: "このリストから削除"
-  delete-are-you-sure: "リスト「$1」を削除しますか？"
+  delete-are-you-sure: "リスト $1 を削除しますか？"
   deleted: "削除しました"
   add-user: "ユーザーを追加"
 
@@ -927,10 +928,10 @@ common/views/components/user-group-editor.vue:
   rename: "グループ名を変更"
   delete: "グループを削除"
   transfer: "グループを譲渡"
-  transfer-are-you-sure: "グループ「$1」を「@$2」さんに譲渡しますか？"
+  transfer-are-you-sure: "グループ $1 を @$2 さんに譲渡しますか？"
   transferred: "グループを譲渡しました"
   remove-user: "このグループから削除"
-  delete-are-you-sure: "グループ「$1」を削除しますか？"
+  delete-are-you-sure: "グループ $1 を削除しますか？"
   deleted: "削除しました"
   invite: "招待"
   invited: "招待を送信しました"
@@ -960,7 +961,7 @@ common/views/widgets/broadcast.vue:
 common/views/widgets/calendar.vue:
   year: "{}年"
   month: "{}月"
-  day: "{}日"
+  day: "{}"
   today: "今日:"
   this-month: "今月:"
   this-year: "今年:"
@@ -982,8 +983,7 @@ common/views/widgets/server.vue:
 
 common/views/widgets/memo.vue:
   title: "付箋"
-  memo: "ここに入力"
-  save: "保存"
+  placeholder: "ここに入力"
 
 common/views/widgets/html.vue:
   placeholder-title: "ここにタイトルを書いてください"
@@ -996,8 +996,8 @@ common/views/widgets/slideshow.vue:
   no-image: "このフォルダには画像がありません"
 
 common/views/widgets/tips.vue:
-  tips-line1: "<kbd>t</kbd>でタイムラインにフォーカスできます"
-  tips-line2: "<kbd>p</kbd>または<kbd>n</kbd>で投稿フォームを開きます"
+  tips-line1: "<kbd>t</kbd> でタイムラインにフォーカスできます"
+  tips-line2: "<kbd>p</kbd> または <kbd>n</kbd> で投稿フォームを開きます"
   tips-line3: "投稿フォームにはファイルをドラッグ&ドロップできます"
   tips-line4: "投稿フォームにクリップボードにある画像データをペーストできます"
   tips-line5: "ドライブにファイルをドラッグ&ドロップしてアップロードできます"
@@ -1009,11 +1009,11 @@ common/views/widgets/tips.vue:
   tips-line11: "投稿の ... をクリックして、投稿をユーザーページにピン留めできます"
   tips-line13: "投稿に添付したファイルは全てドライブに保存されます"
   tips-line14: "ホームのカスタマイズ中、ウィジェットを右クリックしてデザインを変更できます"
-  tips-line17: "「**」でテキストを囲むと**強調表示**されます"
-  tips-line19: "KaTeXを用いて数式表示ができます"
+  tips-line17: " ** でテキストを囲むと**強調表示**されます"
+  tips-line19: "KaTeX を用いて数式表示ができます"
   tips-line20: "いくつかのウィンドウはブラウザの外に切り離すことができます"
   tips-line21: "カレンダーウィジェットのパーセンテージは、経過の割合を示しています"
-  tips-line23: "APIを利用してbotの開発なども行えます"
+  tips-line23: "API を利用して Bot の開発なども行えます"
   tips-line24: "Areionskey は 2021年に めいv11 からフォークされました"
   tips-line25: "対応ブラウザでは Areionskey を開いていなくても通知を受け取れます"
 
@@ -1026,7 +1026,7 @@ common/views/pages/not-found.vue:
   page-not-found: "ページが見つかりませんでした"
 
 common/views/pages/follow.vue:
-  signed-in-as: "{}としてサインイン中"
+  signed-in-as: "{} としてサインイン中"
   following: "フォロー中"
   follow: "フォロー"
   request-pending: "フォロー許可待ち"
@@ -1067,14 +1067,14 @@ desktop/views/components/activity.vue:
   toggle: "表示を切り替え"
 
 desktop/views/components/calendar.vue:
-  title: "{year}年 {month}月"
+  title: "{year} 年 {month} 月"
   prev: "前の月"
   next: "次の月"
   go: "クリックして時間遡行"
 
 desktop/views/components/choose-file-from-drive-window.vue:
-  chosen-files: "{count}ファイル選択中"
-  upload: "PCからドライブにファイルをアップロード"
+  chosen-files: "{count} ファイル選択中"
+  upload: "ドライブにファイルをアップロード"
   cancel: "キャンセル"
   ok: "決定"
   choose-prompt: "ファイルを選択"
@@ -1100,7 +1100,7 @@ desktop/views/components/drive.file.vue:
     rename: "名前を変更"
     mark-as-sensitive: "閲覧注意に設定"
     unmark-as-sensitive: "閲覧注意を解除"
-    copy-url: "URLをコピー"
+    copy-url: "URL をコピー"
     download: "ダウンロード"
     else-files: "その他"
     set-as-avatar: "アバターに設定"
@@ -1110,7 +1110,7 @@ desktop/views/components/drive.file.vue:
     rename-file: "ファイル名の変更"
     input-new-file-name: "新しいファイル名を入力してください"
     copied: "コピー完了"
-    copied-url-to-clipboard: "URLをクリップボードにコピーしました"
+    copied-url-to-clipboard: "URL をクリップボードにコピーしました"
 
 desktop/views/components/drive.folder.vue:
   upload-folder: "既定アップロード先"
@@ -1132,13 +1132,13 @@ desktop/views/components/drive.vue:
   search: "検索"
   empty-draghover: "ドロップですか？いいですよ、ボクはカワイイですからね"
   empty-drive: "ドライブには何もありません。"
-  empty-drive-description: "右クリックして「ファイルをアップロード」を選んだり、ファイルをドラッグ&ドロップすることでもアップロードできます。"
+  empty-drive-description: "右クリックして ファイルをアップロード を選んだり、ファイルをドラッグ&ドロップすることでも、アップロードできます。"
   empty-folder: "このフォルダーは空です"
   unable-to-process: "操作を完了できません"
   circular-reference-detected: "移動先のフォルダーは、移動するフォルダーのサブフォルダーです。"
   unhandled-error: "不明なエラー"
-  url-upload: "URLアップロード"
-  url-of-file: "アップロードしたいファイルのURL"
+  url-upload: "URL アップロード"
+  url-of-file: "アップロードしたいファイルの URL"
   url-upload-requested: "アップロードをリクエストしました"
   may-take-time: "アップロードが完了するまで時間がかかる場合があります。"
   create-folder: "フォルダー作成"
@@ -1146,7 +1146,7 @@ desktop/views/components/drive.vue:
   contextmenu:
     create-folder: "フォルダーを作成"
     upload: "ファイルをアップロード"
-    url-upload: "URLからアップロード"
+    url-upload: "URL からアップロード"
 
 desktop/views/components/media-video.vue:
   sensitive: "閲覧注意"
@@ -1195,7 +1195,7 @@ desktop/views/components/note.vue:
 
 desktop/views/components/notes.vue:
   error: "読み込みに失敗しました。"
-  retry: "リトライ"
+  retry: "再試行"
 
 desktop/views/components/notifications.vue:
   empty: "ありません"
@@ -1205,17 +1205,17 @@ desktop/views/components/notifications.vue:
 desktop/views/components/post-form.vue:
   posted: "投稿しました！"
   replied: "返信しました！"
-  reposted: "Renoteしました！"
+  reposted: "Renote しました！"
   note-failed: "投稿に失敗しました"
   reply-failed: "返信に失敗しました"
-  renote-failed: "Renoteに失敗しました"
+  renote-failed: "Renote に失敗しました"
   preview: "プレビュー"
 
 desktop/views/components/post-form-window.vue:
   note: "新規投稿"
   reply: "返信"
-  attaches: "添付: {}メディア"
-  uploading-media: "{}個のメディアをアップロード中"
+  attaches: "添付: {} メディア"
+  uploading-media: "{} 個のメディアをアップロード中"
 
 desktop/views/components/progress-dialog.vue:
   waiting: "待機中"
@@ -1224,17 +1224,17 @@ desktop/views/components/renote-form.vue:
   quote: "引用する..."
   cancel: "キャンセル"
   renote: "Renote"
-  renote-home: "Renote (Home)"
+  renote-home: "Renote (未収載)"
   reposting: "しています..."
-  success: "Renoteしました！"
-  failure: "Renoteに失敗しました"
+  success: "Renote しました！"
+  failure: "Renote に失敗しました"
 
 desktop/views/components/renote-form-window.vue:
-  title: "この投稿をRenoteしますか？"
+  title: "この投稿を Renote しますか？"
 
 desktop/views/pages/user-following-or-followers.vue:
-  following: "{user}のフォロー"
-  followers: "{user}のフォロワー"
+  following: "{user} のフォロー"
+  followers: "{user} のフォロワー"
 
 desktop/views/components/settings.2fa.vue:
   intro: "二段階認証を設定すると、サインイン時にパスワードだけでなく、予め登録しておいた物理的なデバイス(例えばあなたのスマートフォンなど)も必要になり、よりセキュリティが向上します。"
@@ -1257,7 +1257,7 @@ desktop/views/components/settings.2fa.vue:
   info: "次回サインインからは、同様にパスワードに加えてデバイスに表示されているトークンを入力します。"
   totp-header: "認証アプリ"
   security-key-header: "セキュリティキー"
-  security-key: "セキュリティを強化するために、FIDO2 をサポートするハードウェアセキュリティキーを使用してアカウントにログインできます。 サインインの際は、登録されたセキュリティキーまたは認証アプリが必要になります。"
+  security-key: "セキュリティを強化するために、FIDO2 をサポートするハードウェアセキュリティキーを使用してアカウントにログインできます。サインインの際は、登録されたセキュリティキー または 認証アプリが必要になります。"
   last-used: "最後の使用:"
   activate-key: "クリックしてセキュリティキーをアクティベートしてください"
   security-key-name: "キー名"
@@ -1271,17 +1271,17 @@ common/views/components/media-image.vue:
   click-to-show: "クリックして表示"
 
 common/views/components/api-settings.vue:
-  intro: "APIを利用するには、上記のトークンを「i」というキーでパラメータに付加してリクエストします。"
+  intro: "API を利用するには、上記のトークンを i というキーでパラメータに付加してリクエストします。"
   caution: "アカウントを不正利用される可能性があるため、このトークンは第三者に教えないでください(アプリなどにも入力しないでください)。"
-  regeneration-of-token: "万が一このトークンが漏れたりその可能性がある場合はトークンを再生成できます。"
+  regeneration-of-token: "万が一このトークンが漏れたりその可能性がある場合は、トークンを再生成できます。"
   regenerate-token: "トークンを再生成"
   token: "Token:"
   enter-password: "パスワードを入力してください"
   console:
-    title: "APIコンソール"
+    title: "API コンソール"
     endpoint: "エンドポイント"
     parameter: "パラメータ"
-    credential-info: "「i」パラメータは自動で付与されます。"
+    credential-info: "i パラメータは自動で付与されます。"
     send: "送信"
     sending: "応答待ち"
     response: "結果"
@@ -1305,9 +1305,9 @@ common/views/components/mute-and-block.vue:
   no-blocked-users: "ブロックしているユーザーはいません"
   word-mute: "ワードミュート"
   muted-words: "ミュートされたキーワード"
-  muted-words-description: "スペースで区切るとAND指定になり、改行で区切るとOR指定になります"
-  unmute-confirm: "このユーザーをミュート解除しますか？"
-  unblock-confirm: "このユーザーをブロック解除しますか？"
+  muted-words-description: "スペースで区切ると AND 指定になり、改行で区切ると OR 指定になります"
+  unmute-confirm: "このユーザーを ミュート解除しますか？"
+  unblock-confirm: "このユーザーを ブロック解除しますか？"
   save: "保存"
 
 common/views/components/password-settings.vue:
@@ -1327,7 +1327,7 @@ common/views/components/post-form-attaches.vue:
 desktop/views/components/sub-note-content.vue:
   private: "この投稿は非公開です"
   deleted: "この投稿は削除されました"
-  media-count: "{}つのメディア"
+  media-count: "{} つのメディア"
   poll: "アンケート"
 
 desktop/views/components/settings.tags.vue:
@@ -1463,15 +1463,15 @@ admin/views/instance.vue:
   instance-name: "インスタンス名"
   instance-description: "インスタンスの紹介"
   host: "ホスト"
-  icon-url: "アイコンURL"
-  logo-url: "ロゴURL"
-  banner-url: "バナー画像URL"
-  error-image-url: "エラー画像URL"
+  icon-url: "アイコン URL"
+  logo-url: "ロゴ URL"
+  banner-url: "バナー画像 URL"
+  error-image-url: "エラー画像 URL"
   languages: "インスタンスの対象言語"
   languages-desc: "スペースで区切って複数設定できます。"
-  tos-url: "利用規約URL"
-  repository-url: "リポジトリURL"
-  feedback-url: "フィードバックURL"
+  tos-url: "利用規約 URL"
+  repository-url: "リポジトリ URL"
+  feedback-url: "フィードバック URL"
   maintainer-config: "管理者情報"
   maintainer-name: "管理者名"
   maintainer-email: "管理者の連絡先"
@@ -1487,44 +1487,44 @@ admin/views/instance.vue:
   object-storage-port: "ポート"
   object-storage-access-key: "アクセスキー"
   object-storage-secret-key: "シークレットキー"
-  object-storage-use-ssl: "SSLを使用"
-  objectStorageUseProxy: "Proxyを利用する"
+  object-storage-use-ssl: "SSL を使用"
+  objectStorageUseProxy: "Proxy を利用する"
   objectStorageSetPublicRead: "アップロード時に'public-read'を設定する"
   objectStorageS3ForcePathStyle: "S3ForcePathStyle"
-  object-storage-s3-info: "Amazon S3をオブジェクトストレージとして使用する場合の「エンドポイント」と「リージョン」の設定については{0}をご確認ください。"
+  object-storage-s3-info: "Amazon S3 をオブジェクトストレージとして使用する場合の エンドポイント と リージョン の設定については {0} をご確認ください。"
   object-storage-s3-info-here: "こちら"
-  object-storage-gcs-info: "Google Cloud Storageをオブジェクトストレージとして使用する場合、「エンドポイント」は storage.googleapis.com に設定し、「リージョン」は空欄にします。"
+  object-storage-gcs-info: "Google Cloud Storage をオブジェクトストレージとして使用する場合、エンドポイント は storage.googleapis.com に設定し、リージョン は空欄にします。"
   cache-remote-files: "リモートのファイルをキャッシュする"
   cache-remote-files-desc: "この設定を無効にすると、リモートファイルをキャッシュせず直リンクするようになります。そのためサーバーのストレージを節約できますが、プライバシー設定で直リンクを無効にしているユーザーにはファイルが見えなくなったり、サムネイルが生成されないので通信量が増加します。通常はこの設定をオンにするか次のリモートファイルのプロキシを有効にすることをおすすめします。"
   proxy-remote-files: "リモートのファイルをプロキシする"
-  proxy-remote-files-desc: "この設定を有効にすると、未保存または保存容量超過で削除されたリモートファイルをローカルでプロキシし、サムネイルも生成するようになります。"
+  proxy-remote-files-desc: "この設定を有効にすると、未保存 または 保存容量超過で削除されたリモートファイルをローカルでプロキシし、サムネイルも生成するようになります。"
   local-drive-capacity-mb: "ローカルユーザーひとりあたりのドライブ容量"
   premium-drive-capacity-mb: "プレミアムユーザーひとりあたりのドライブ容量"
   remote-drive-capacity-mb: "リモートユーザーひとりあたりのドライブ容量"
   mb: "メガバイト単位"
-  recaptcha-config: "reCAPTCHAの設定"
-  recaptcha-info: "reCAPTCHAを有効にする場合、reCAPTCHAトークンを取得する必要があります。https://www.google.com/recaptcha/intro/ にアクセスしてトークンを取得してください。"
-  recaptcha-info2: "v3は非対応です。v2を使用してください。"
-  enable-recaptcha: "reCAPTCHAを有効にする"
+  recaptcha-config: "reCAPTCHA の設定"
+  recaptcha-info: "reCAPTCHA を有効にする場合、reCAPTCHA トークンを取得する必要があります。https://www.google.com/recaptcha/intro/ にアクセスしてトークンを取得してください。"
+  recaptcha-info2: "v3 は非対応です。v2 を使用してください。"
+  enable-recaptcha: "reCAPTCHA を有効にする"
   recaptcha-site-key: "サイトキー"
   recaptcha-secret-key: "シークレットキー"
   recaptcha-preview: "プレビュー"
   hidden-tags: "非表示ハッシュタグ"
   hidden-tags-info: "集計から除外するハッシュタグを改行で区切って記述します。"
   external-service-integration-config: "外部サービス連携"
-  twitter-integration-config: "Twitter連携の設定"
-  twitter-integration-info: "コールバックURLは {url} に設定します。"
-  enable-twitter-integration: "Twitter連携を有効にする"
+  twitter-integration-config: "Twitter 連携の設定"
+  twitter-integration-info: "コールバック URL は {url} に設定します。"
+  enable-twitter-integration: "Twitter 連携を有効にする"
   twitter-integration-consumer-key: "Consumer key"
   twitter-integration-consumer-secret: "Consumer secret"
-  github-integration-config: "GitHub連携の設定"
-  github-integration-info: "コールバックURLは {url} に設定します。"
-  enable-github-integration: "GitHub連携を有効にする"
+  github-integration-config: "GitHub 連携の設定"
+  github-integration-info: "コールバック URL は {url} に設定します。"
+  enable-github-integration: "GitHub 連携を有効にする"
   github-integration-client-id: "Client ID"
   github-integration-client-secret: "Client Secret"
-  discord-integration-config: "Discord連携の設定"
-  discord-integration-info: "コールバックURLは {url} に設定します。"
-  enable-discord-integration: "Discord連携を有効にする"
+  discord-integration-config: "Discord 連携の設定"
+  discord-integration-info: "コールバック URL は {url} に設定します。"
+  enable-discord-integration: "Discord 連携を有効にする"
   discord-integration-client-id: "Client ID"
   discord-integration-client-secret: "Client Secret"
   proxy-account-config: "プロキシアカウントの設定"
@@ -1552,20 +1552,20 @@ admin/views/instance.vue:
   email-config-info: "メールアドレス確認やパスワードリセットの際に使われます。"
   enable-email: "メール配信を有効にする"
   email: "メールアドレス"
-  smtp-secure: "SMTP接続に暗黙的なSSL/TLSを使用する"
-  smtp-secure-info: "STARTTLS使用時はオフにします。"
-  smtp-host: "SMTPホスト"
-  smtp-port: "SMTPポート"
-  smtp-auth: "SMTP認証を行う"
-  smtp-user: "SMTPユーザー"
-  smtp-pass: "SMTPパスワード"
+  smtp-secure: "SMTP 接続に暗黙的な SSL/TLS を使用する"
+  smtp-secure-info: "STARTTLS 使用時はオフにします。"
+  smtp-host: "SMTP ホスト"
+  smtp-port: "SMTP ポート"
+  smtp-auth: "SMTP 認証を行う"
+  smtp-user: "SMTP ユーザー"
+  smtp-pass: "SMTP パスワード"
   test-email: "テスト"
-  serviceworker-config: "ServiceWorker"
-  enable-serviceworker: "ServiceWorkerを有効にする"
+  serviceworker-config: "Service Worker"
+  enable-serviceworker: "Service Worker を有効にする"
   serviceworker-info: "プッシュ通知を行うには有効する必要があります。"
-  vapid-publickey: "VAPID公開鍵"
-  vapid-privatekey: "VAPID秘密鍵"
-  vapid-info: "ServiceWorkerを有効にする場合、VAPIDキーペアを生成する必要があります。シェルで次のようにします:"
+  vapid-publickey: "VAPID 公開鍵"
+  vapid-privatekey: "VAPID 秘密鍵"
+  vapid-info: "Service Worker を有効にする場合、VAPID キーペアを生成する必要があります。シェルで次のようにします:"
 
 admin/views/charts.vue:
   title: "チャート"
@@ -1596,7 +1596,7 @@ admin/views/charts.vue:
 
 admin/views/drive.vue:
   operation: "操作"
-  fileid-or-url: "ファイルIDまたはファイルURL"
+  fileid-or-url: "ファイル ID または ファイル URL"
   file-not-found: "ファイルが見つかりません"
   lookup: "照会"
   sort:
@@ -1622,12 +1622,12 @@ admin/views/drive.vue:
 
 admin/views/users.vue:
   operation: "操作"
-  username-or-userid: "ユーザー名またはユーザーID"
+  username-or-userid: "ユーザー名 または ユーザー ID"
   user-not-found: "ユーザーが見つかりません"
   lookup: "照会"
   reset-password: "パスワードをリセット"
   reset-password-confirm: "パスワードをリセットしますか？"
-  password-updated: "パスワードは現在「{password}」です"
+  password-updated: "パスワードは現在 {password} です"
   suspend: "凍結"
   suspend-confirm: "凍結しますか？"
   suspended: "凍結しました"
@@ -1700,13 +1700,13 @@ admin/views/emoji.vue:
   add-emoji:
     title: "絵文字の登録"
     name: "絵文字名"
-    name-desc: "a~z 0~9 _ の文字が使えます。"
+    name-desc: "a - z, 0 - 9, _ の文字が使えます。"
     category: "カテゴリ"
     aliases: "エイリアス"
     aliases-desc: "スペースで区切って複数設定できます。"
-    url: "絵文字画像URL"
+    url: "絵文字画像 URL"
     add: "追加"
-    info: "50KB以下のPNG画像をおすすめします。"
+    info: "50 KB 以下の PNG 画像をおすすめします。"
     added: "絵文字を登録しました"
   emojis:
     title: "絵文字一覧"
@@ -1714,7 +1714,7 @@ admin/views/emoji.vue:
     remove: "削除"
   updated: "更新しました"
   remove-emoji:
-    are-you-sure: "「$1」を削除しますか？"
+    are-you-sure: " $1 を削除しますか？"
     removed: "削除しました"
 
 admin/views/announcements.vue:
@@ -1724,9 +1724,10 @@ admin/views/announcements.vue:
   add: "追加"
   title: "タイトル"
   text: "内容"
+  image-url: "画像 URL"
   saved: "保存しました"
   _remove:
-    are-you-sure: "「$1」を削除しますか？"
+    are-you-sure: " $1 を削除しますか？"
     removed: "削除しました"
 
 admin/views/hashtags.vue:
@@ -1744,7 +1745,7 @@ admin/views/federation.vue:
   latest-request-sent-at: "直近のリクエスト送信"
   latest-request-received-at: "直近のリクエスト受信"
   remove-all-following: "フォローを全解除"
-  remove-all-following-info: "{host}からのフォローをすべて解除します。そのインスタンスがもう存在しなくなった場合などに実行してください。"
+  remove-all-following-info: "{host} からのフォローをすべて解除します。そのインスタンスがもう存在しなくなった場合などに実行してください。"
   delete-all-files: "ファイルをすべて削除"
   block: "ブロック"
   marked-as-closed: "配信停止"
@@ -1775,7 +1776,7 @@ admin/views/federation.vue:
     blocked: "ブロック"
     not-responding: "応答なし"
     marked-as-closed: "配信停止"
-  result-is-truncated: "上位{n}件を表示しています。"
+  result-is-truncated: "上位 {n} 件を表示しています。"
   charts: "チャート"
   chart-srcs:
     requests: "リクエスト"
@@ -1798,7 +1799,7 @@ admin/views/federation.vue:
 
 admin/views/relay.vue:
   add-relay: "リレーの追加"
-  inbox: "inboxのURL"
+  inbox: "inbox の URL"
   add: "追加"
   remove: "削除"
   added-relays: "追加済みのリレー"
@@ -1825,14 +1826,14 @@ desktop/views/pages/selectdrive.vue:
   title: "ファイルを選択してください"
   ok: "決定"
   cancel: "キャンセル"
-  upload: "PCからドライブにファイルをアップロード"
+  upload: "ドライブにファイルをアップロード"
 
 desktop/views/pages/search.vue:
   not-available: "検索機能はインスタンスの設定で無効になっています。"
-  not-found: "「{q}」に関する投稿は見つかりませんでした。"
+  not-found: "{q} に関する投稿は見つかりませんでした。"
 
 desktop/views/pages/tag.vue:
-  no-posts-found: "ハッシュタグ「{q}」が付けられた投稿は見つかりませんでした。"
+  no-posts-found: "ハッシュタグ {q} が付けられた投稿は見つかりませんでした。"
 
 desktop/views/pages/user-list.users.vue:
   users: "ユーザー"
@@ -1914,7 +1915,7 @@ mobile/views/components/drive.vue:
   folder-is-empty: "このフォルダは空です"
   folder-name: "フォルダー名"
   here-is-root: "現在いる場所はルートで、フォルダではありません。"
-  url-prompt: "アップロードしたいファイルのURL"
+  url-prompt: "アップロードしたいファイルの URL"
   uploading: "アップロードをリクエストしました。アップロードが完了するまで時間がかかる場合があります。"
   folder-name-cannot-empty: "フォルダ名を空白にすることはできません。"
 
@@ -1948,7 +1949,7 @@ common/views/components/follow-button.vue:
   follow-processing: "フォロー処理中"
   follow-request: "フォロー申請"
   remoteFollow: "リモートフォロー"
-  remoteFollowMessage: "以下のアカウントをフォローしたいインスタンスの検索ボックスに入れてフォローして下さい。\n```\n{acct}\n```\n\n\nまたは、以下にフォローしたいアカウントを入力して下さい。"
+  remoteFollowMessage: "以下のアカウントをフォローしたいインスタンスの検索ボックスに入れてフォローして下さい。\n```\n{acct}\n```\n\n\nまたは 以下にフォローしたいアカウントを入力して下さい。"
 
 mobile/views/components/note.vue:
   private: "この投稿は非公開です"
@@ -1982,7 +1983,7 @@ mobile/views/components/notifications.vue:
 mobile/views/components/sub-note-content.vue:
   private: "この投稿は非公開です"
   deleted: "この投稿は削除されました"
-  media-count: "{}つのメディア"
+  media-count: "{} つのメディア"
   poll: "アンケート"
 
 mobile/views/components/ui.header.vue:
@@ -2004,20 +2005,20 @@ mobile/views/components/ui.nav.vue:
 mobile/views/pages/drive.vue:
   contextmenu:
     upload: "ファイルをアップロード"
-    url-upload: "ファイルをURLでアップロード"
+    url-upload: "ファイルを URL でアップロード"
     create-folder: "フォルダーを作成"
     rename-folder: "フォルダー名を変更"
     move-folder: "このフォルダを移動"
     delete-folder: "このフォルダを削除"
 
 mobile/views/pages/signup.vue:
-  lets-start: "📦 始めましょう"
+  lets-start: "始めましょう"
 
 mobile/views/pages/followers.vue:
-  followers-of: "{name}のフォロワー"
+  followers-of: "{name} のフォロワー"
 
 mobile/views/pages/following.vue:
-  following-of: "{name}のフォロー"
+  following-of: "{name} のフォロー"
 
 mobile/views/pages/home.vue:
   home: "ホーム"
@@ -2028,11 +2029,11 @@ mobile/views/pages/home.vue:
   messages: "ダイレクト投稿"
 
 mobile/views/pages/tag.vue:
-  no-posts-found: "ハッシュタグ「{q}」が付けられた投稿は見つかりませんでした。"
+  no-posts-found: "ハッシュタグ {q} が付けられた投稿は見つかりませんでした。"
 
 mobile/views/pages/widgets.vue:
-  dashboard: "ダッシュボード"
-  widgets-hints: "ウィジェットを追加/削除したり並べ替えたりできます。ウィジェットを移動するには「三」をドラッグします。ウィジェットを削除するには「x」をタップします。いくつかのウィジェットはタップすることで表示を変更できます。"
+  dashboard: "ウィジェット"
+  widgets-hints: "ウィジェットを追加/削除したり並べ替えたりできます。ウィジェットを移動するには、三本線のアイコンをドラッグします。ウィジェットを削除するには x をタップします。いくつかのウィジェットはタップすることで表示を変更できます。"
   add-widget: "追加"
   customization-tips: "カスタマイズのヒント"
 
@@ -2040,7 +2041,7 @@ mobile/views/pages/widgets/activity.vue:
   activity: "アクティビティ"
 
 mobile/views/pages/share.vue:
-  share-with: "{name}で共有"
+  share-with: "{name} で共有"
 
 mobile/views/pages/note.vue:
   title: "投稿"
@@ -2052,7 +2053,7 @@ mobile/views/pages/games/reversi.vue:
 
 mobile/views/pages/search.vue:
   search: "検索"
-  not-found: "「{q}」に関する投稿は見つかりませんでした。"
+  not-found: "{q} に関する投稿は見つかりませんでした。"
 
 mobile/views/pages/selectdrive.vue:
   select-file: "ファイルを選択"
@@ -2061,7 +2062,7 @@ mobile/views/pages/notifications.vue:
   notifications: "通知"
 
 mobile/views/pages/settings.vue:
-  signed-in-as: "{}としてサインイン中"
+  signed-in-as: "{} としてサインイン中"
 
 mobile/views/pages/user.vue:
   follows-you: "フォローされています"
@@ -2107,7 +2108,7 @@ deck:
   select-list: "リストを選択してください"
   select-tagTl:
     title: "ハッシュタグを選択してください"
-    text: "ハッシュタグはホームから追加できます"
+    text: "ハッシュタグは 設定→ハッシュタグ から追加できます"
   swap-left: "左に移動"
   swap-right: "右に移動"
   swap-up: "上に移動"
@@ -2149,9 +2150,12 @@ deck/deck.notification.vue:
 deck/deck.notifications.vue:
   empty: "ありません"
 
+deck/deck.widgets-column.vue:
+  edit: "編集"
+
 docs:
   edit-this-page-on-github: "間違いや改善点を見つけましたか？"
-  edit-this-page-on-github-link: "このページをGitHubで編集"
+  edit-this-page-on-github-link: "このページを GitHub で編集"
 
 dev/views/index.vue:
   manage-apps: "アプリの管理"
@@ -2163,7 +2167,7 @@ dev/views/apps.vue:
 
 dev/views/new-app.vue:
   new-app: "新しいアプリケーション"
-  new-app-info: "アプリケーションはAPIからでも作成できます。 (app/create)"
+  new-app-info: "アプリケーションは API からでも作成できます。 (app/create)"
   create-app: "アプリケーションの作成"
   app-name: "アプリケーション名"
   app-name-placeholder: "ex) Areionskey for iOS"
@@ -2171,11 +2175,11 @@ dev/views/new-app.vue:
   app-overview: "アプリの概要"
   app-overview-placeholder: " ex) Areionskey iOSクライアント。"
   app-overview-desc: "あなたのアプリの簡単な説明や紹介。"
-  callback-url: "コールバックURL (オプション)"
+  callback-url: "コールバック URL (オプション)"
   callback-url-placeholder: "ex) https://your.app.example.com/callback.php"
-  callback-url-desc: "ユーザーが認証フォームで認証した際にリダイレクトするURLを設定できます。"
+  callback-url-desc: "ユーザーが認証フォームで認証した際にリダイレクトする URL を設定できます。"
   authority: "権限"
-  authority-desc: "ここで要求した機能だけがAPIからアクセスできます。"
+  authority-desc: "ここで要求した機能だけが API からアクセスできます。"
   authority-warning: "アプリ作成後も変更できますが、新たな権限を付与する場合、その時点で関連付けられているユーザーキーはすべて無効になります。"
 
 pages:
@@ -2184,8 +2188,8 @@ pages:
   read-page: "ソースを表示中"
   page-created: "ページを作成しました"
   page-updated: "ページを更新しました"
-  name-already-exists: "指定されたページURLは既に存在しています"
-  title-invalid-name: "不正なページURLです"
+  name-already-exists: "指定されたページ URL は既に存在しています"
+  title-invalid-name: "不正なページ URL です"
   text-invalid-name: "空白でないか確認してください"
   are-you-sure-delete: "このページを削除しますか？"
   page-deleted: "ページを削除しました"
@@ -2203,11 +2207,11 @@ pages:
   variables: "変数"
   variables-info: "変数を使うことで動的なページを作成できます。テキスト内で <b>{ 変数名 }</b> と書くとそこに変数の値を埋め込めます。例えば <b>Hello { thing } world!</b> というテキストで、変数(thing)の値が <b>ai</b> だった場合、テキストは <b>Hello ai world!</b> になります。"
   variables-info2: "変数の評価(値を算出すること)は上から下に行われるので、ある変数の中で自分より下の変数を参照することはできません。例えば上から <b>A、B、C</b> と3つの変数を定義したとき、<b>C</b>の中で<b>A</b>や<b>B</b>を参照することはできますが、<b>A</b>の中で<b>B</b>や<b>C</b>を参照することはできません。"
-  variables-info3: "ユーザーからの入力を受け取るには、ページに「ユーザー入力」ブロックを設置し、「変数名」に入力を格納したい変数名を設定します(変数は自動で作成されます)。その変数を使ってユーザー入力に応じた動作を行えます。"
-  variables-info4: "関数を使うと、値の算出処理を再利用可能な形にまとめることができます。関数を作るには、「関数」タイプの変数を作成します。関数にはスロット(引数)を設定することができ、スロットの値は関数内で変数として利用可能です。また、AiScript標準で関数を引数に取る関数(高階関数と呼ばれます)も存在します。関数は予め定義しておくほかに、このような高階関数のスロットに即席でセットすることもできます。"
+  variables-info3: "ユーザーからの入力を受け取るには、ページに ユーザー入力 ブロックを設置し、変数名 に入力を格納したい変数名を設定します(変数は自動で作成されます)。その変数を使ってユーザー入力に応じた動作を行えます。"
+  variables-info4: "関数を使うと、値の算出処理を再利用可能な形にまとめることができます。関数を作るには、関数 タイプの変数を作成します。関数にはスロット(引数)を設定することができ、スロットの値は関数内で変数として利用可能です。また、AiScript標準で関数を引数に取る関数(高階関数と呼ばれます)も存在します。関数は予め定義しておくほかに、このような高階関数のスロットに即席でセットすることもできます。"
   more-details: "詳しい説明"
   title: "タイトル"
-  url: "ページURL"
+  url: "ページ URL"
   summary: "ページの要約"
   align-center: "中央寄せ"
   hide-title-when-pinned: "ピン留めされているときにタイトルを非表示"
@@ -2456,8 +2460,8 @@ pages:
       _for:
         arg1: "回数"
         arg2: "処理"
-    typeError: 'スロット{slot}は"{expect}"を受け付けますが、"{actual}"が入れられています'
-    thereIsEmptySlot: "スロット{slot}が空です"
+    typeError: 'スロット {slot} は "{expect}" を受け付けますが、"{actual}" が入れられています'
+    thereIsEmptySlot: "スロット {slot} が空です"
     types:
       string: "テキスト"
       number: "数値"

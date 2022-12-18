@@ -58,7 +58,7 @@
 				</li>
 				<li>
 					<router-link to="/i/follow-requests">
-						<i><fa :icon="['far', 'envelope']" fixed-width/></i>
+						<i><fa icon="user-clock" fixed-width/></i>
 						<span>{{ $t('follow-requests') }}<i v-if="$store.state.i.pendingReceivedFollowRequestsCount">{{ $store.state.i.pendingReceivedFollowRequestsCount }}</i></span>
 						<i><fa icon="angle-right"/></i>
 					</router-link>

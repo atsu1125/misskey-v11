@@ -193,7 +193,7 @@ export default Vue.extend({
 							challenge: byteify(registration.challenge, 'base64'),
 							rp: {
 								id: hostname,
-								name: 'Misskey'
+								name: 'Areionskey'
 							},
 							user: {
 								id: Uint8Array.from(this.$store.state.i.id, c => c.charCodeAt(0)),

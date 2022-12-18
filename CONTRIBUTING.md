@@ -17,7 +17,7 @@ Versioning follows [Semantic Versioning 2.0.0](https://semver.org/).
 Codenames are based on the names of racetracks in Japan (JRA and local), starting from the north of Japan.
 This will change with each major version.
 
-`Obihiro (1.x.x) → Monbetsu (2.x.x) → Sapporo (3.x.x) → Hakodate (4.x.x) ･･･`
+`Obihiro (1.x.x) → Mombetsu (2.x.x) → Sapporo (3.x.x) → Hakodate (4.x.x) ･･･`
 
 ## Documentation
 

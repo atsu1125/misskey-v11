@@ -239,7 +239,7 @@
 		</ui-card>
 
 		<ui-card>
-			<template #title>summaly Proxy</template>
+			<template #title>Summaly Proxy</template>
 			<section class="fit-top fit-bottom">
 				<ui-input v-model="summalyProxy">URL</ui-input>
 			</section>

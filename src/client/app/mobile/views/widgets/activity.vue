@@ -19,7 +19,7 @@ export default define({
 		compact: false
 	})
 }).extend({
-	i18n: i18n(),
+	i18n: i18n('mobile/views/pages/widgets/activity.vue'),
 	components: {
 		XActivity: () => import('../../../common/views/components/activity.vue').then(m => m.default)
 	},

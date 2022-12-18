@@ -4,13 +4,14 @@
 		<template #func><slot name="func"></slot></template>
 		<slot name="header"></slot>
 	</x-header>
-	<x-nav :is-open="isDrawerOpening"/>
+	<x-nav v-if="$store.getters.isSignedIn" :is-open="isDrawerOpening"/>
 	<div class="content">
 		<slot></slot>
 	</div>
 	<mk-stream-indicator v-if="$store.getters.isSignedIn"/>
 	<button class="nav button" v-if="$store.state.device.inDeckMode" @click="isDrawerOpening = !isDrawerOpening"><fa icon="bars"/><i v-if="indicate"><fa icon="circle"/></i></button>
 	<button class="post button" v-if="$store.state.device.inDeckMode" @click="$post()"><fa icon="pencil-alt"/></button>
+	<x-footer v-if="!$store.state.device.inDeckMode"/>
 </div>
 </template>
 
@@ -18,11 +19,13 @@
 import Vue from 'vue';
 import MkNotify from './notify.vue';
 import XHeader from './ui.header.vue';
+import XFooter from './ui.footer.vue';
 import XNav from './ui.nav.vue';
 
 export default Vue.extend({
 	components: {
 		XHeader,
+		XFooter,
 		XNav
 	},
 
@@ -100,7 +103,9 @@ export default Vue.extend({
 <style lang="stylus" scoped>
 .mk-ui
 	&:not(.deck)
-		padding-top 48px
+		padding 48px 0 64px 0
+		> .button
+			bottom: 64px
 
 	> .button
 		position fixed
@@ -127,6 +132,11 @@ export default Vue.extend({
 				color var(--notificationIndicator)
 				font-size 16px
 				animation blink 1s infinite
+
+		&.home
+			left 28px
+			background var(--secondary)
+			color var(--text)
 
 		&.post
 			right 28px
