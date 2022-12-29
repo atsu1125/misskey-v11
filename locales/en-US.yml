@@ -1277,8 +1277,6 @@ admin/views/index.vue:
   logs: "Logs"
   db: "Database"
   back-to-misskey: "Back to Areionskey"
-  permission-denied: "Permission denied"
-  permission-denied-text: "You can't access this page because you aren't either an administrator and a moderator."
 admin/views/db.vue:
   tables: "Tables"
   vacuum: "Vacuum"

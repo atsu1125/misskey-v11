@@ -1410,8 +1410,6 @@ admin/views/index.vue:
   logs: "ログ"
   db: "データベース"
   back-to-misskey: "Areionskey に戻る"
-  permission-denied: "権限がありません"
-  permission-denied-text: "管理者またはモデレーターでないため、このページにアクセスできません。"
 
 admin/views/db.vue:
   tables: "テーブル"
