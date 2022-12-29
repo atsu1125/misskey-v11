@@ -106,6 +106,8 @@ export default (os: MiOS) => new Vuex.Store({
 	getters: {
 		isSignedIn: state => state.i != null,
 
+		isAdminOrModerator: state => state.i && (state.i.isAdmin || state.i.isModerator),
+
 		home: state => state.settings.homeProfiles[state.device.homeProfile],
 
 		mobileHome: state => state.settings.mobileHomeProfiles[state.device.mobileHomeProfile],

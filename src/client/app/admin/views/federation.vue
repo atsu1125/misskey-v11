@@ -54,7 +54,7 @@
 					<span>{{ $t('latest-request-received-at') }}</span>
 					<template #prefix><fa :icon="faInbox"/></template>
 				</ui-input>
-				<ui-switch v-model="instance.isMarkedAsClosed" @change="updateInstance()">{{ $t('marked-as-closed') }}</ui-switch>
+				<ui-switch v-model="instance.isMarkedAsClosed" @change="updateInstance()" :disabled="!$store.getters.isAdminOrModerator">{{ $t('marked-as-closed') }}</ui-switch>
 				<details>
 					<summary>{{ $t('charts') }}</summary>
 					<ui-horizon-group inputs>
@@ -78,11 +78,11 @@
 					</ui-horizon-group>
 					<div ref="chart"></div>
 				</details>
-				<details>
+				<details :disabled="!$store.getters.isAdminOrModerator">
 					<summary>{{ $t('delete-all-files') }}</summary>
 					<ui-button @click="deleteAllFiles()" style="margin-top: 16px;"><fa :icon="faTrashAlt"/> {{ $t('delete-all-files') }}</ui-button>
 				</details>
-				<details>
+				<details :disabled="!$store.getters.isAdminOrModerator">
 					<summary>{{ $t('remove-all-following') }}</summary>
 					<ui-button @click="removeAllFollowing()" style="margin-top: 16px;"><fa :icon="faMinusCircle"/> {{ $t('remove-all-following') }}</ui-button>
 					<ui-info warn>{{ $t('remove-all-following-info', { host: instance.host }) }}</ui-info>
@@ -152,7 +152,7 @@
 			<ui-textarea v-model="blockedHosts">
 				<template #desc>{{ $t('blocked-hosts-info') }}</template>
 			</ui-textarea>
-			<ui-button @click="saveBlockedHosts">{{ $t('save') }}</ui-button>
+			<ui-button @click="saveBlockedHosts" :disabled="!$store.getters.isAdminOrModerator">{{ $t('save') }}</ui-button>
 		</section>
 	</ui-card>
 </div>
