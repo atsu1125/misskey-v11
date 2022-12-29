@@ -19,7 +19,7 @@ export default Vue.extend({
 
 	&.nowrap
 		white-space pre
-		word-wrap normal // https://codeday.me/jp/qa/20190424/690106.html
+		word-wrap normal
 
 	>>> .title
 		display block
@@ -36,8 +36,5 @@ export default Vue.extend({
 		padding 6px 0 6px 12px
 		color var(--mfmQuote)
 		border-left solid 3px var(--mfmQuoteLine)
-
-	>>> pre code
-		font-size 80%
 
 </style>

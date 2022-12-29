@@ -1,6 +1,6 @@
 <template>
 <div class="header" :style="style">
-	<p class="warn" v-if="env != 'production'">{{ $t('@.do-not-use-in-production') }} <a href="/assets/flush.html?force">Flush</a></p>
+	<p class="warn" v-if="env != 'production'">{{ $t('@.do-not-use-in-production') }} <a @click="onFlush">Flush</a></p>
 	<div class="main" ref="main">
 		<div class="backdrop"></div>
 		<div class="main">
@@ -76,6 +76,9 @@ export default Vue.extend({
 				top: 0,
 				behavior: 'smooth'
 			});
+		},
+		onFlush() {
+			location.href = '/flush';
 		}
 	},
 });

@@ -1,6 +1,40 @@
 ChangeLog
 =========
 
+2.1.1 (2022/12/25)
+--------------------
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+### ✨Improvements
+- sound: 通知音を追加, サウンドの個別 ON/OFF 機能を追加 by @fs5m8 [56fba4c](https://github.com/sakura-tel/areionskey/commit/56fba4c559fa67e691a53e0686d8d51f27b2c7f6)
+
+### 🐛Fixes
+- image: サムネイルの余白は塗り潰すように変更 by @fs5m8 [7a97403](https://github.com/sakura-tel/areionskey/commit/7a974038748bc6cf8e5feb91a1ee5134d2098192)
+- misc/fetch: 取得する JSON の大きさを 256kB に制限するよう変更 by @fs5m8 [9a5ced7](https://github.com/sakura-tel/areionskey/commit/9a5ced7f150461d775adf685ba3484ff941d04c3)
+- block: ブロック時に RejectFollow するよう変更 by @mei23 (from Mei v11) [755fab1](https://github.com/sakura-tel/areionskey/commit/755fab1814ad8a405472085ca97d15db847e44d5)
+- image: サムネイルの表示が cover になっていたのを修正 by @mei23 (from Mei v11) [a333f60](https://github.com/sakura-tel/areionskey/commit/a333f60fe57879ca3fbba4b1bdb7885e4b33e8a1)
+- nav: フォローリクエストの項目を フォローリクエストがあるときのみ表示するよう変更 by @fs5m8 [0f5b05f](https://github.com/sakura-tel/areionskey/commit/0f5b05f494ddb329785ad103e7a2abf580752c29)
+- configfiles: 投稿ID生成のデフォルトを ULID に変更 by @fs5m8 [167b032](https://github.com/sakura-tel/areionskey/commit/167b03226fa7574df2d59337d3cdb624cf01c2fd)
+- admin: アクセス拒否時のテキストを 全体表示にし，i18n対応に変更 by @fs5m8 [fb68f6e](https://github.com/sakura-tel/areionskey/commit/fb68f6e3e29c7159edb301df70cc96ad9ff08584)
+- login/out -> signin/out 語彙を変更 by @fs5m8 [b52b8de](https://github.com/sakura-tel/areionskey/commit/b52b8de8c0b959cde226a83b4163aa019efe411e)
+- desktop/header: 開発ビルド警告バーの flush のリンク先を変更 by @fs5m8 [730f035](https://github.com/sakura-tel/areionskey/commit/730f035c0380b23f14dc6f16fa78ae9ae829614b)
+- signin: 不要なメソッドを削除 by @fs5m8 [a2c2e98](https://github.com/sakura-tel/areionskey/commit/a2c2e989772c3a9f653ed0c1bcd736afe2a2a0dd)
+- signin/flush: ダイアログをリッチに変更 by @fs5m8 [6d6b8f8](https://github.com/sakura-tel/areionskey/commit/6d6b8f87a3283cc4a4d682cc32b6d8571532459a)
+- ui-container: ヘッダをクリックしても展開しないよう変更 by @fs5m8 [89b3e2d](https://github.com/sakura-tel/areionskey/commit/89b3e2d877db02748e54ae55ded3477ed66bd57d) 
+- その他 font-size/mergin/padding の調整
+- 統一されていない文言やアイコンを統一
+- 言語ファイルや文書の更新
+- 依存関係の更新
+
+### ❌Abolitions
+- note/menu: メンション 項目を削除 by @fs5m8 [09e2345](https://github.com/sakura-tel/areionskey/commit/09e2345349145486dda1b0aa82a9f1f89c6952c9)
+- desktop/settings: アプリをメニューから削除 by @fs5m8 [5020614](https://github.com/sakura-tel/areionskey/commit/5020614817fad83e8d1bf97a1cf66a11d92876e4)
+- widget: hashtag(trends) を削除 by @fs5m8 [caa864a](https://github.com/sakura-tel/areionskey/commit/caa864abd7fba89c47547329108d49cd45efe897)
+- page: featured を削除 by @fs5m8 [caa864a](https://github.com/sakura-tel/areionskey/commit/caa864abd7fba89c47547329108d49cd45efe897)
+- component: tag-cloud, trends を削除 by @fs5m8 [caa864a](https://github.com/sakura-tel/areionskey/commit/caa864abd7fba89c47547329108d49cd45efe897)
+
 2.1.0 (2022/12/18)
 --------------------
 ### To Update

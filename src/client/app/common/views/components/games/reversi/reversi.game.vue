@@ -233,7 +233,7 @@ export default Vue.extend({
 			this.o.put(this.myColor, pos);
 
 			// サウンドを再生する
-			if (this.$store.state.device.enableSounds) {
+			if (this.$store.state.device.enableSounds && this.$store.state.device.enableSoundsInReversi) {
 				const sound = new Audio(`${url}/assets/reversi-put-me.mp3`);
 				sound.volume = this.$store.state.device.soundVolume;
 				sound.play();
@@ -256,7 +256,7 @@ export default Vue.extend({
 			this.$forceUpdate();
 
 			// サウンドを再生する
-			if (this.$store.state.device.enableSounds && x.color != this.myColor) {
+			if (this.$store.state.device.enableSounds && this.$store.state.device.enableSoundsInReversi && x.color != this.myColor) {
 				const sound = new Audio(`${url}/assets/reversi-put-you.mp3`);
 				sound.volume = this.$store.state.device.soundVolume;
 				sound.play();

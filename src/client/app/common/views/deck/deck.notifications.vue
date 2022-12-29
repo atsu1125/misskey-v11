@@ -27,6 +27,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import i18n from '../../../i18n';
+import * as config from '../../../config';
 import XNotification from './deck.notification.vue';
 import paging from '../../../common/scripts/paging';
 
@@ -108,6 +109,12 @@ export default Vue.extend({
 			});
 
 			this.prepend(notification);
+
+			if (this.$store.state.device.enableSounds && this.$store.state.device.enableSoundsInNotifications) {
+				const sound = new Audio(`${config.url}/assets/notify.mp3`);
+				sound.volume = this.$store.state.device.soundVolume;
+				sound.play();
+			}
 		},
 	}
 });

@@ -37,7 +37,7 @@
 			<ui-button link :href="dlUrl" :download="file.name"><fa icon="download"/> {{ $t('download') }}</ui-button>
 			<ui-button @click="rename"><fa icon="pencil-alt"/> {{ $t('rename') }}</ui-button>
 			<ui-button @click="move"><fa :icon="['far', 'folder-open']"/> {{ $t('move') }}</ui-button>
-			<ui-button @click="toggleSensitive" v-if="file.isSensitive"><fa :icon="['far', 'eye']"/> {{ $t('unmark-as-sensitive') }}</ui-button>
+			<ui-button @click="toggleSensitive" v-if="file.isSensitive"><fa :icon="['fas', 'eye']"/> {{ $t('unmark-as-sensitive') }}</ui-button>
 			<ui-button @click="toggleSensitive" v-else><fa :icon="['far', 'eye-slash']"/> {{ $t('mark-as-sensitive') }}</ui-button>
 			<ui-button @click="del"><fa :icon="['far', 'trash-alt']"/> {{ $t('delete') }}</ui-button>
 		</div>

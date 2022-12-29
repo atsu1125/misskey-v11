@@ -25,10 +25,6 @@ export default Vue.extend({
 		items(): any[] {
 			if (this.$store.getters.isSignedIn) {
 				return [{
-					icon: 'at',
-					text: this.$t('mention'),
-					action: this.mention
-				}, null, {
 					icon: 'info-circle',
 					text: this.$t('detail'),
 					action: this.detail

@@ -9,7 +9,6 @@ import wPolls from './polls.vue';
 import wMessaging from './messaging.vue';
 import wProfile from './profile.vue';
 import wCustomize from './customize.vue';
-import wAichan from './aichan.vue';
 
 Vue.component('mkw-notifications', wNotifications);
 Vue.component('mkw-timemachine', wTimemachine);
@@ -20,4 +19,3 @@ Vue.component('mkw-polls', wPolls);
 Vue.component('mkw-messaging', wMessaging);
 Vue.component('mkw-profile', wProfile);
 Vue.component('mkw-customize', wCustomize);
-Vue.component('mkw-aichan', wAichan);

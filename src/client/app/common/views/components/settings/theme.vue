@@ -45,12 +45,10 @@
 			</ui-select>
 		</label>
 
-		<a href="https://assets.msky.cafe/theme/list" rel="noopener" target="_blank">{{ $t('find-more-theme') }}</a>
-
 		<details class="creator">
 			<summary><fa icon="palette"/> {{ $t('create-a-theme') }}</summary>
 			<div>
-				<span>{{ $t('base-theme') }}:</span>
+				<p class="text">{{ $t('base-theme') }}</p>
 				<ui-radio v-model="myThemeBase" value="light">{{ $t('base-theme-light') }}</ui-radio>
 				<ui-radio v-model="myThemeBase" value="dark">{{ $t('base-theme-dark') }}</ui-radio>
 			</div>
@@ -63,15 +61,15 @@
 				</ui-textarea>
 			</div>
 			<div>
-				<div style="padding-bottom:8px;">{{ $t('primary-color') }}:</div>
+				<p class="text">{{ $t('primary-color') }}</p>
 				<color-picker v-model="myThemePrimary"/>
 			</div>
 			<div>
-				<div style="padding-bottom:8px;">{{ $t('secondary-color') }}:</div>
+				<p class="text">{{ $t('secondary-color') }}</p>
 				<color-picker v-model="myThemeSecondary"/>
 			</div>
 			<div>
-				<div style="padding-bottom:8px;">{{ $t('text-color') }}:</div>
+				<p class="text">{{ $t('text-color') }}</p>
 				<color-picker v-model="myThemeText"/>
 			</div>
 			<ui-button @click="preview()"><fa icon="eye"/> {{ $t('preview-created-theme') }}</ui-button>
@@ -82,7 +80,7 @@
 			<summary><fa icon="download"/> {{ $t('install-a-theme') }}</summary>
 			<ui-button @click="import_()"><fa icon="file-import"/> {{ $t('import') }}</ui-button>
 			<input ref="file" type="file" accept=".misskeytheme" style="display:none;" @change="onUpdateImportFile"/>
-			<p>{{ $t('import-by-code') }}:</p>
+			<p>{{ $t('import-by-code') }}</p>
 			<ui-textarea v-model="installThemeCode">
 				<span>{{ $t('theme-code') }}</span>
 			</ui-textarea>
@@ -336,7 +334,7 @@ export default Vue.extend({
 			top: 50%;
 			left: 50%;
 			overflow: hidden;
-			padding: 0 200px;
+			padding: 0 80px;
 			transform: translate3d(-50%, -50%, 0);
 
 			input {
@@ -537,11 +535,6 @@ export default Vue.extend({
 			}
 		}
 
-	> a
-		display block
-		margin-top -16px
-		margin-bottom 16px
-
 	> details
 		border-top solid var(--lineWidth) var(--faceDivider)
 
@@ -555,4 +548,7 @@ export default Vue.extend({
 		> div
 			padding 16px 0
 			border-bottom solid var(--lineWidth) var(--faceDivider)
+
+			> .text
+				padding 0 0 8px 0
 </style>

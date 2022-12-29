@@ -183,6 +183,7 @@ export default Vue.extend({
 						}
 					},
 					tooltip: {
+						theme: this.$store.state.device.darkmode ? 'dark' : 'light',
 						shared: true,
 						intersect: false
 					},

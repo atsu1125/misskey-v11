@@ -1,6 +1,5 @@
 <template>
 <div class="mk-connect-failed">
-	<img src="/assets/error.jpg" onerror="this.src='https://raw.githubusercontent.com/syuilo/misskey/develop/src/client/assets/error.jpg';" alt=""/>
 	<h1>{{ $t('title') }}</h1>
 	<p class="text">
 		<span>{{ this.$t('description').substr(0, this.$t('description').indexOf('{')) }}</span>
@@ -9,6 +8,11 @@
 	</p>
 	<button v-if="!troubleshooting" @click="troubleshooting = true">{{ $t('troubleshoot') }}</button>
 	<x-troubleshooter v-if="troubleshooting"/>
+	<p class="tools">
+		<a @click="onFlush">{{ $t('@.flush') }}</a>
+		<!-- <a href="/assets/flush.html">{{ $t('flush') }}</a> -->
+		<a href="/assets/version.html">{{ $t('set-version') }}</a>
+	</p>
 	<p class="thanks">{{ $t('thanks') }}</p>
 </div>
 </template>
@@ -35,6 +39,11 @@ export default Vue.extend({
 	methods: {
 		reload() {
 			location.reload(true);
+		},
+
+		onFlush() {
+			const r = confirm(this.$t('flush-are-you-sure'));
+			if (r) location.href = '/flush';
 		}
 	}
 });
@@ -47,13 +56,6 @@ export default Vue.extend({
 	width 100%
 	padding 32px 18px
 	text-align center
-
-	> img
-		display block
-		height 200px
-		margin 0 auto
-		pointer-events none
-		user-select none
 
 	> h1
 		display block
@@ -70,7 +72,7 @@ export default Vue.extend({
 
 	> button
 		display block
-		margin 1em auto 0 auto
+		margin 1em auto
 		padding 8px 10px
 		color var(--primaryForeground)
 		background var(--primary)
@@ -84,6 +86,15 @@ export default Vue.extend({
 		&:active
 			background var(--primaryDarken10)
 
+	> .tools
+		display block
+		margin 0 auto
+		max-width 600px
+		font-size 1em
+
+		> a
+			margin 0 4px
+
 	> .thanks
 		display block
 		margin 2em auto 0 auto
@@ -93,13 +104,6 @@ export default Vue.extend({
 		font-style oblique
 		color #aaa
 		border-top solid 1px #eee
-
-	@media (max-width 500px)
-		padding 24px 18px
-		font-size 80%
-
-		> img
-			height 150px
 
 </style>
 

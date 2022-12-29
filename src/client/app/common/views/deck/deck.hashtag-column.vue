@@ -73,6 +73,9 @@ export default Vue.extend({
 							enabled: true
 						},
 					},
+					tooltip: {
+						theme: this.$store.state.device.darkmode ? 'dark' : 'light'
+					},
 					dataLabels: {
 						enabled: false
 					},

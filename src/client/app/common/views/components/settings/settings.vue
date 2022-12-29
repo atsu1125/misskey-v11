@@ -208,6 +208,14 @@
 				<ui-switch v-model="enableSounds">{{ $t('@._settings.enable-sounds') }}
 					<template #desc>{{ $t('@._settings.enable-sounds-desc') }}</template>
 				</ui-switch>
+				<ui-switch :disabled="!enableSounds" v-if="!$root.isMobile" v-model="enableSoundsInTimeline">{{ $t('@._settings.enable-sounds-intimeline')}}
+				</ui-switch>
+				<ui-switch :disabled="!enableSounds" v-if="!$root.isMobile" v-model="enableSoundsInNotifications">{{ $t('@._settings.enable-sounds-innotifications')}}
+				</ui-switch>
+				<ui-switch :disabled="!enableSounds" v-model="enableSoundsInMessage">{{ $t('@._settings.enable-sounds-inmessage')}}
+				</ui-switch>
+				<ui-switch :disabled="!enableSounds" v-model="enableSoundsInReversi">{{ $t('@._settings.enable-sounds-inreversi')}}
+				</ui-switch>
 				<label>{{ $t('@._settings.volume') }}</label>
 				<input type="range"
 					v-model="soundVolume"
@@ -419,6 +427,26 @@ export default Vue.extend({
 		enableSounds: {
 			get() { return this.$store.state.device.enableSounds; },
 			set(value) { this.$store.commit('device/set', { key: 'enableSounds', value }); }
+		},
+
+		enableSoundsInTimeline: {
+			get() { return this.$store.state.device.enableSoundsInTimeline; },
+			set(value) { this.$store.commit('device/set', { key: 'enableSoundsInTimeline', value }); }
+		},
+
+		enableSoundsInNotifications: {
+			get() { return this.$store.state.device.enableSoundsInNotifications; },
+			set(value) { this.$store.commit('device/set', { key: 'enableSoundsInNotifications', value }); }
+		},
+
+		enableSoundsInMessage: {
+			get() { return this.$store.state.device.enableSoundsInMessage; },
+			set(value) { this.$store.commit('device/set', { key: 'enableSoundsInMessage', value }); }
+		},
+
+		enableSoundsInReversi: {
+			get() { return this.$store.state.device.enableSoundsInReversi; },
+			set(value) { this.$store.commit('device/set', { key: 'enableSoundsInReversi', value }); }
 		},
 
 		soundVolume: {
@@ -675,7 +703,7 @@ export default Vue.extend({
 			});
 		},
 		soundTest() {
-			const sound = new Audio(`${url}/assets/message.mp3`);
+			const sound = new Audio(`${url}/assets/notify.mp3`);
 			sound.volume = this.$store.state.device.soundVolume;
 			sound.play();
 		},

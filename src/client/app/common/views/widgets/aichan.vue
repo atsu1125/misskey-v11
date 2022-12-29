@@ -6,12 +6,10 @@
 
 <script lang="ts">
 import define from '../../../common/define-widget';
-import i18n from '../../../i18n';
 
 export default define({
 	name: 'aichan',
 }).extend({
-	i18n: i18n(),
   mounted() {
 		window.addEventListener('mousemove', ev => {
 			const iframeRect = this.$refs.live2d.getBoundingClientRect();

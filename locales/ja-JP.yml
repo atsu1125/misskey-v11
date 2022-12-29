@@ -29,16 +29,16 @@ common:
   customize-home: "ホームをカスタマイズ"
   featured-notes: "ハイライト"
   dark-mode: "ダークモード"
-  signin: "ログイン"
+  signin: "サインイン"
   signup: "新規登録"
-  signout: "ログアウト"
+  signout: "サインアウト"
   reminder: "パスワードを忘れた"
   reload-to-apply-the-setting: "この設定を反映するには ページをリロードする必要があります。今すぐリロードしますか？"
   fetching-as-ap-object: "連合に照会中"
   unfollow-confirm: "{name} さんをフォロー解除しますか？"
   delete-confirm: "この投稿を削除しますか？"
   deleteAsAdmin-confirm: "管理者権限を行使して この投稿を削除しますか？"
-  signin-required: "ログインしてください"
+  signin-required: "サインインしてください"
   notification-type: "通知の種類"
   notification-types:
     all: "すべて"
@@ -217,7 +217,7 @@ common:
     mute-and-block: "ミュート/ブロック"
     blocking: "ブロック"
     security: "セキュリティ"
-    signin: "ログイン履歴"
+    signin: "サインイン履歴"
     password: "パスワード"
     other: "その他"
     appearance: "デザイン"
@@ -301,7 +301,11 @@ common:
     remain-deleted-note: "削除された投稿を表示し続ける"
     sound: "サウンド"
     enable-sounds: "サウンドを有効にする"
-    enable-sounds-desc: "投稿やメッセージを送受信したときなどにサウンドを再生します。この設定はブラウザに記憶されます。"
+    enable-sounds-desc: "この設定はブラウザに記憶されます。"
+    enable-sounds-intimeline: "タイムラインに新しい投稿が流れたとき (ホームのみ)"
+    enable-sounds-innotifications: "通知を受信したとき"
+    enable-sounds-inmessage: "メッセージを受信したとき"
+    enable-sounds-inreversi: "リバーシで石を置いたとき"
     volume: "ボリューム"
     test: "テスト"
     update: "Areionskey Update"
@@ -517,6 +521,9 @@ common/views/components/connect-failed.vue:
   description: "インターネット回線に問題があるか、サーバーがダウン または メンテナンスしている可能性があります。しばらくしてから{再度お試し}ください。"
   thanks: "いつも Areionskey をご利用いただきありがとうございます。"
   troubleshoot: "トラブルシュート"
+  flush: "キャッシュの削除"
+  set-version: "バージョン指定"
+  flush-are-you-sure: "ブラウザに保存されたキャッシュをクリアしますか？"
 
 common/views/components/connect-failed.troubleshooter.vue:
   title: "トラブルシューティング"
@@ -535,8 +542,6 @@ common/views/components/connect-failed.troubleshooter.vue:
   no-server-desc: "お使いのコンピュータのインターネット接続は正常ですが、Areionskey のサーバーには接続できませんでした。サーバーがダウン または メンテナンスしている可能性があるので、しばらくしてから再度ごアクセスください。"
   success: "Areionskey のサーバーに接続できました"
   success-desc: "正常に接続できるようです。ページを再度読み込みしてください。"
-  flush: "キャッシュの削除"
-  set-version: "バージョン指定"
 
 common/views/components/media-banner.vue:
   sensitive: "閲覧注意"
@@ -743,14 +748,15 @@ common/views/components/signin.vue:
   username: "ユーザー名"
   password: "パスワード"
   token: "トークン"
-  signing-in: "やってます..."
+  signing-in: "サインインしています..."
   or: "または"
-  signin-with-twitter: "Twitter でログイン"
-  signin-with-github: "GitHub でログイン"
-  signin-with-discord: "Discord でログイン"
-  login-failed: "ログインできませんでした。ユーザー名とパスワードを確認してください。"
-  tap-key: "セキュリティキーをクリックしてログイン"
+  signin-with-twitter: "Twitter でサインイン"
+  signin-with-github: "GitHub でサインイン"
+  signin-with-discord: "Discord でサインイン"
+  login-failed: "サインインできませんでした。ユーザー名とパスワードを確認してください。"
+  tap-key: "セキュリティキーをクリックしてサインイン"
   enter-2fa-code: "認証コードを入力してください"
+  flush-are-you-sure: "ブラウザに保存されたキャッシュをクリアしますか？"
 
 common/views/components/signup.vue:
   invitation-code: "招待コード"
@@ -1057,10 +1063,10 @@ desktop:
   invalid-filetype: "この形式のファイルはサポートされていません"
 
 desktop/views/components/activity.chart.vue:
-  total: "Black ... Total"
-  notes: "Blue ... Notes"
-  replies: "Red ... Replies"
-  renotes: "Green ... Renotes"
+  total: "Black: Total"
+  notes: "Blue: Notes"
+  replies: "Red: Replies"
+  renotes: "Green: Renotes"
 
 desktop/views/components/activity.vue:
   title: "アクティビティ"
@@ -1257,14 +1263,14 @@ desktop/views/components/settings.2fa.vue:
   info: "次回サインインからは、同様にパスワードに加えてデバイスに表示されているトークンを入力します。"
   totp-header: "認証アプリ"
   security-key-header: "セキュリティキー"
-  security-key: "セキュリティを強化するために、FIDO2 をサポートするハードウェアセキュリティキーを使用してアカウントにログインできます。サインインの際は、登録されたセキュリティキー または 認証アプリが必要になります。"
+  security-key: "セキュリティを強化するために、FIDO2 をサポートするハードウェアセキュリティキーを使用してアカウントにサインインできます。サインインの際は、登録されたセキュリティキー または 認証アプリが必要になります。"
   last-used: "最後の使用:"
   activate-key: "クリックしてセキュリティキーをアクティベートしてください"
   security-key-name: "キー名"
   register-security-key: "キーの登録を完了"
   something-went-wrong: "キーを登録する際に問題が発生しました:"
   key-unregistered: "キーが削除されました"
-  use-password-less-login: "パスワードなしのログインを使用"
+  use-password-less-login: "パスワードなしのサインインを使用"
 
 common/views/components/media-image.vue:
   sensitive: "閲覧注意"
@@ -1404,6 +1410,8 @@ admin/views/index.vue:
   logs: "ログ"
   db: "データベース"
   back-to-misskey: "Areionskey に戻る"
+  permission-denied: "権限がありません"
+  permission-denied-text: "管理者またはモデレーターでないため、このページにアクセスできません。"
 
 admin/views/db.vue:
   tables: "テーブル"
@@ -1937,6 +1945,7 @@ mobile/views/components/drive.file-detail.vue:
   nsfw: "閲覧注意"
   mark-as-sensitive: "閲覧注意に設定"
   unmark-as-sensitive: "閲覧注意を解除"
+  delete: "削除"
 
 mobile/views/components/media-video.vue:
   sensitive: "閲覧注意"
@@ -2089,7 +2098,7 @@ mobile/views/pages/user/home.vue:
   domains: "頻出ドメイン"
   frequently-replied-users: "よく話すユーザー"
   followers-you-know: "知り合いのフォロワー"
-  last-used-at: "最終ログイン"
+  last-used-at: "最終サインイン"
 
 mobile/views/pages/user/home.photos.vue:
   no-photos: "写真はありません"

@@ -152,7 +152,7 @@ export default define({
 			> .day
 				margin 10px 0
 				line-height 32px
-				font-size 28px
+				font-size 38px
 
 		> .info
 			display block

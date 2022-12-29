@@ -51,7 +51,7 @@ export default Vue.extend({
 <style lang="stylus" scoped>
 .ui-radio
 	display inline-block
-	margin 0 32px 0 0
+	margin 0 32px 12px 0
 	cursor pointer
 	transition all 0.3s
 

@@ -226,7 +226,7 @@
 	</ui-card>
 
 	<details>
-		<summary style="color:var(--text);">{{ $t('advanced-config') }}</summary>
+		<summary style="color: var(--text); margin: 0 16px 16px 16px;">{{ $t('advanced-config') }}</summary>
 
 		<ui-card>
 			<template #title><fa :icon="faHashtag"/> {{ $t('hidden-tags') }}</template>

@@ -1,7 +1,7 @@
 <template>
 <form class="mk-signin" :class="{ signing, totpLogin }" @submit.prevent="onSubmit">
 	<div class="normal-signin" v-if="!totpLogin">
-		<ui-input v-model="username" type="text" pattern="^[a-zA-Z0-9_]+$" spellcheck="false" autofocus required @input="onUsernameChange">
+		<ui-input v-model="username" type="text" pattern="^[a-zA-Z0-9_]+$" spellcheck="false" autofocus required>
 			<span>{{ $t('username') }}</span>
 			<template #prefix>@</template>
 			<template #suffix>@{{ host }}</template>
@@ -77,16 +77,6 @@ export default Vue.extend({
 	},
 
 	methods: {
-		onUsernameChange() {
-			this.$root.api('users/show', {
-				username: this.username
-			}).then(user => {
-				this.user = user;
-			}, () => {
-				this.user = null;
-			});
-		},
-
 		queryKey() {
 			this.queryingKey = true;
 			return navigator.credentials.get({
@@ -128,8 +118,8 @@ export default Vue.extend({
 		},
 
 		onReminder() {
-					this.$emit('reminder');
-				},
+			this.$emit('reminder');
+		},
 
 		onSubmit() {
 			this.signing = true;
@@ -176,9 +166,15 @@ export default Vue.extend({
 		},
 
 		onFlush() {
-			const r = confirm('ブラウザに保存されたキャッシュをクリアしますか？');
-			if (r) location.href = '/flush';
-		},
+			this.$root.dialog({
+				type: 'warning',
+				text: this.$t('flush-are-you-sure'),
+				showCancelButton: true
+			}).then(({ canceled }) => {
+				if (canceled) return;
+				location.href = '/flush';
+			});
+		}
 	}
 });
 </script>

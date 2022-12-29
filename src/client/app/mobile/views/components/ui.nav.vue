@@ -20,14 +20,14 @@
 						<li v-if="$store.state.device.enableMobileQuickNotificationView"><p @click="showNotifications = true"><i><fa :icon="faBell" fixed-width/></i>{{ $t('notifications') }}<i v-if="hasUnreadNotification" class="circle"><fa icon="circle"/></i><i><fa icon="angle-right"/></i></p></li>
 						<li v-else><router-link to="/i/notifications" :data-active="$route.name == 'notifications'"><i><fa :icon="faBell" fixed-width/></i>{{ $t('notifications') }}<i v-if="hasUnreadNotification" class="circle"><fa icon="circle"/></i><i><fa icon="angle-right"/></i></router-link></li>
 						<li><router-link to="/i/messaging" :data-active="$route.name == 'messaging'"><i><fa :icon="['far', 'comments']" fixed-width/></i>{{ $t('@.messaging') }}<i v-if="hasUnreadMessagingMessage" class="circle"><fa icon="circle"/></i><i><fa icon="angle-right"/></i></router-link></li>
-						<li v-if="$store.getters.isSignedIn"><router-link to="/i/follow-requests" :data-active="$route.name == 'follow-requests'"><i><fa icon="user-clock" fixed-width/></i>{{ $t('follow-requests') }}<i v-if="$store.getters.isSignedIn && $store.state.i.pendingReceivedFollowRequestsCount" class="circle"><fa icon="circle"/></i><i><fa icon="angle-right"/></i></router-link></li>
+						<li v-if="$store.getters.isSignedIn && $store.state.i.pendingReceivedFollowRequestsCount"><router-link to="/i/follow-requests" :data-active="$route.name == 'follow-requests'"><i><fa icon="user-clock" fixed-width/></i>{{ $t('follow-requests') }}<i class="circle"><fa icon="circle"/></i><i><fa icon="angle-right"/></i></router-link></li>
 						<li><a @click="search"><i><fa icon="search" fixed-width/></i>{{ $t('search') }}<i><fa icon="angle-right"/></i></a></li>
 						<li><router-link to="/explore" :data-active="$route.name == 'explore' || $route.name == 'explore-tag'"><i><fa :icon="faHashtag" fixed-width/></i>{{ $t('@.explore') }}<i><fa icon="angle-right"/></i></router-link></li>
 						<li><router-link to="/games/reversi" :data-active="$route.name == 'reversi'"><i><fa icon="gamepad" fixed-width/></i>{{ $t('game') }}<i v-if="hasGameInvitation" class="circle"><fa icon="circle"/></i><i><fa icon="angle-right"/></i></router-link></li>
 					</ul>
 					<ul>
 						<li><router-link to="/i/drive" :data-active="$route.name == 'drive'"><i><fa icon="cloud" fixed-width/></i>{{ $t('@.drive') }}<i><fa icon="angle-right"/></i></router-link></li>
-						<li><router-link to="/i/widgets" :data-active="$route.name == 'widgets'"><i><fa :icon="['far', 'calendar-alt']" fixed-width/></i>{{ $t('widgets') }}<i><fa icon="angle-right"/></i></router-link></li>
+						<li><router-link to="/i/widgets" :data-active="$route.name == 'widgets'"><i><fa icon="calculator" fixed-width/></i>{{ $t('widgets') }}<i><fa icon="angle-right"/></i></router-link></li>
 						<li><router-link to="/i/favorites" :data-active="$route.name == 'favorites'"><i><fa icon="star" fixed-width/></i>{{ $t('@.favorites') }}<i><fa icon="angle-right"/></i></router-link></li>
 						<li><router-link to="/i/lists" :data-active="$route.name == 'user-lists'"><i><fa icon="list" fixed-width/></i>{{ $t('user-lists') }}<i><fa icon="angle-right"/></i></router-link></li>
 						<li><router-link to="/i/groups" :data-active="$route.name == 'user-groups'"><i><fa :icon="faUsers" fixed-width/></i>{{ $t('user-groups') }}<i><fa icon="angle-right"/></i></router-link></li>
@@ -49,7 +49,7 @@
 						<img v-if="announcement.image" :src="announcement.image" alt="" style="display: block; max-height: 120px; max-width: 100%;"/>
 					</article>
 				</div>
-				<a :href="aboutUrl"><p class="about">{{ $t('about') }}</p></a>
+				<a :href="aboutUrl"><p class="about">Areionskey {{ version }} ({{ codename }})</p></a>
 			</div>
 			<div class="notifications" v-if="showNotifications">
 				<header>
@@ -66,7 +66,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import i18n from '../../../i18n';
-import { lang } from '../../../config';
+import { lang, version, codename } from '../../../config';
 import { faNewspaper, faHashtag, faHome, faColumns, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faMoon, faSun, faStickyNote, faBell } from '@fortawesome/free-regular-svg-icons';
 import { search } from '../../../common/scripts/search';
@@ -88,6 +88,7 @@ export default Vue.extend({
 			announcements: [],
 			searching: false,
 			showNotifications: false,
+			version, codename,
 			faNewspaper, faHashtag, faMoon, faSun, faHome, faColumns, faStickyNote, faUsers, faBell,
 		};
 	},

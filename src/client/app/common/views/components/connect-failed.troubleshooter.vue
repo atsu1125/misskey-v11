@@ -31,9 +31,6 @@
 		<p v-if="server === false"><b><fa icon="exclamation-triangle"/>{{ $t('no-server') }}</b><br>{{ $t('no-server-desc') }}</p>
 		<p v-if="server === true" class="success"><b><fa icon="info-circle"/>{{ $t('success') }}</b><br>{{ $t('success-desc') }}</p>
 	</div>
-	<footer>
-		<a href="/assets/flush.html">{{ $t('flush') }}</a> | <a href="/assets/version.html">{{ $t('set-version') }}</a>
-	</footer>
 </div>
 </template>
 
@@ -85,6 +82,7 @@ export default Vue.extend({
 <style lang="stylus" scoped>
 .troubleshooter
 	margin-top 1em
+	margin-bottom 1em
 
 	> .body
 		width 100%

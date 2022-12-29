@@ -357,7 +357,7 @@ export default Vue.extend({
 
 	> summary
 		padding 0px 16px 16px 20px
-		font-size 14px
+		font-size 16px
 		color var(--text)
 
 	> .note

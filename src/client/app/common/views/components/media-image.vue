@@ -13,7 +13,7 @@
 	:title="image.name"
 	@click.prevent="onClick"
 >
-	<img-with-blurhash :hash="image.blurhash" :src="url" :alt="image.name" :title="image.name"/>
+	<img-with-blurhash class="img" :hash="image.blurhash" :src="url" :alt="image.name" :title="image.name"/>
 	<div class="gif" v-if="image.type === 'image/gif'">GIF</div>
 </a>
 </template>
@@ -105,6 +105,10 @@ export default Vue.extend({
 	background-position center
 	background-size contain
 	background-repeat no-repeat
+
+	> .img
+		color var(--text)
+		background-color var(--bg)
 
 	> .gif
 		background-color var(--text)

@@ -131,6 +131,7 @@ export default Vue.extend({
 						},
 					},
 					tooltip: {
+						theme: this.$store.state.device.darkmode ? 'dark' : 'light',
 						shared: true,
 						intersect: false
 					},
@@ -169,7 +170,7 @@ export default Vue.extend({
 						labels: {
 							formatter: v => Vue.filter('bytes')(v, 0),
 							style: {
-								color: tinycolor(getComputedStyle(document.documentElement).getPropertyValue('--text')).toRgbString()
+								colors: tinycolor(getComputedStyle(document.documentElement).getPropertyValue('--text')).toRgbString()
 							}
 						}
 					}

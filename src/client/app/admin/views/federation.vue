@@ -392,7 +392,7 @@ export default Vue.extend({
 					labels: {
 						formatter: this.data.bytes ? v => Vue.filter('bytes')(v, 0) : v => Vue.filter('number')(v),
 						style: {
-							color: tinycolor(getComputedStyle(document.documentElement).getPropertyValue('--text')).toRgbString()
+							colors: tinycolor(getComputedStyle(document.documentElement).getPropertyValue('--text')).toRgbString()
 						}
 					}
 				},

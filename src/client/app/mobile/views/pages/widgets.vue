@@ -1,6 +1,6 @@
 <template>
 <mk-ui>
-	<template #header><span style="margin-right:4px;"><fa :icon="['far', 'calendar-alt']"/></span>{{ $t('dashboard') }}</template>
+	<template #header><span style="margin-right:4px;"><fa icon="calculator"/></span>{{ $t('dashboard') }}</template>
 	<template #func>
 		<button @click="customizing = !customizing"><fa icon="cog"/></button>
 	</template>
@@ -24,8 +24,8 @@
 					<option value="memo">{{ $t('@.widgets.memo') }}</option>
 					<option value="nav">{{ $t('@.widgets.nav') }}</option>
 					<option value="tips">{{ $t('@.widgets.tips') }}</option>
-					<option value="aichan">{{ $t('@.widgets.aichan') }}</option>
 					<option value="sunmoon">{{ $t('@.widgets.sunmoon') }}</option>
+					<!-- <option value="aichan">{{ $t('@.widgets.aichan') }}</option> -->
 				</select>
 				<button @click="addWidget">{{ $t('add-widget') }}</button>
 				<p><a @click="hint">{{ $t('customization-tips') }}</a></p>
@@ -91,11 +91,14 @@ export default Vue.extend({
 				name: 'rss',
 				id: 'c', data: {}
 			}, {
+				name: 'server',
+				id: 'd', data: {}
+			}, {
 				name: 'nav',
-				id: 'f', data: {}
+				id: 'e', data: {}
 			}, {
 				name: 'version',
-				id: 'g', data: {}
+				id: 'f', data: {}
 			}]);
 		}
 	},

@@ -192,6 +192,9 @@ export default Vue.extend({
 					curve: 'straight',
 					width: 2
 				},
+				tooltip: {
+					theme: this.$store.state.device.darkmode ? 'dark' : 'light'
+				},
 				legend: {
 					labels: {
 						colors: tinycolor(getComputedStyle(document.documentElement).getPropertyValue('--text')).toRgbString()
@@ -215,7 +218,7 @@ export default Vue.extend({
 					labels: {
 						formatter: this.data.bytes ? v => Vue.filter('bytes')(v, 0) : v => Vue.filter('number')(v),
 						style: {
-							color: tinycolor(getComputedStyle(document.documentElement).getPropertyValue('--text')).toRgbString()
+							colors: tinycolor(getComputedStyle(document.documentElement).getPropertyValue('--text')).toRgbString()
 						}
 					}
 				},
@@ -507,6 +510,7 @@ export default Vue.extend({
 
 	> header
 		display flex
+		flex-wrap wrap
 		margin 0 8px
 		padding 0 0 8px 0
 		font-size 1em

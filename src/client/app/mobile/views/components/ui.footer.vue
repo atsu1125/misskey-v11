@@ -16,7 +16,7 @@
 					<i v-if="$parent.hasUnreadMessagingMessage" class="circle"><fa icon="circle"/></i>
 				</router-link>
 				<router-link v-if="$store.getters.isSignedIn" :class="{ active: $route.name == 'widgets' }" to="/i/widgets">
-					<fa :icon="['far', 'calendar-alt']"/>
+					<fa icon="calculator"/>
 				</router-link>
 			</div>
 		</div>

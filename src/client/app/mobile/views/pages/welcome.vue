@@ -9,8 +9,9 @@
 		<p class="pba" v-html="$t('@.powered-by-areionskey')"></p>
 		<div class="about">
 			<p v-html="description || this.$t('@.about')"></p>
-			<router-link class="signup" to="/signup">{{ $t('@.signup') }}</router-link>
-			<div class="signin">
+			<div class="sign">
+				<router-link class="signup" to="/signup">{{ $t('@.signup') }}</router-link>
+				<span class="divider">|</span>
 				<a href="/signin" @click.prevent="signin()">{{ $t('@.signin') }}</a>
 			</div>
 			<div class="explore">
@@ -187,10 +188,14 @@ export default Vue.extend({
 			> p
 				margin 8px
 
-			> .signup
-			> .signin
 			> .explore
 				margin 0.5em
+			> .sign
+				margin 8px 0
+				font-size 115%
+
+				> .divider
+					margin 0 16px
 
 		> .tl
 			margin 16px 0
