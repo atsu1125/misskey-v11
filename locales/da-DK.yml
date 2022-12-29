@@ -26,7 +26,6 @@ common:
   enter-password: "Skriv din adgangskode"
   2fa: "To-faktor adgangsstyring"
   customize-home: "Tilpas dit layout"
-  featured-notes: "Fremhævede poster"
   dark-mode: "Nat design"
   signin: "Log ind"
   signup: "Bliv bruger"

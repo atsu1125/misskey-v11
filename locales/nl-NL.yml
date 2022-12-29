@@ -24,7 +24,6 @@ common:
   enter-password: "Voer het wachtwoord in"
   2fa: "Tweestapsverificatie"
   customize-home: "Layout aanpassen"
-  featured-notes: "Uitgelicht"
   dark-mode: "Donker thema"
   signin: "Aanmelden"
   signup: "Registreren"

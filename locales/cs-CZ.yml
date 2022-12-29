@@ -26,7 +26,6 @@ common:
   enter-password: "Prosím zadejte heslo"
   2fa: "Dvoufaktorová autentikace"
   customize-home: "Přizpůsobit vzhled domovské stránky"
-  featured-notes: "Oblíbené poznámky"
   dark-mode: "Tmavý režim"
   signin: "Přihlásit"
   signup: "Registrovat"

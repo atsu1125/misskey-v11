@@ -26,7 +26,6 @@ common:
   enter-password: "Enter your password"
   2fa: "Two-factor authentication"
   customize-home: "Customize home layout"
-  featured-notes: "Featured notes"
   dark-mode: "Dark Mode"
   signin: "Sign in"
   signup: "Sign up"

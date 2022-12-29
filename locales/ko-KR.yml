@@ -26,7 +26,6 @@ common:
   enter-password: "비밀번호를 입력하여 주십시오"
   2fa: "2단계 인증"
   customize-home: "홈 커스터마이징"
-  featured-notes: "하이라이트"
   dark-mode: "다크 모드"
   signin: "로그인"
   signup: "신규 등록"

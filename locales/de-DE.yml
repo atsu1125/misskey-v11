@@ -25,7 +25,6 @@ common:
   enter-password: "Bitte Passwort eingeben"
   2fa: "Zwei-Faktor-Authentifizierung"
   customize-home: "Layout Anpassen"
-  featured-notes: "Beliebt"
   dark-mode: "Dunkler Modus"
   signin: "Einloggen"
   signup: "Registrieren"

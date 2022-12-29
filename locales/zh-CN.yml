@@ -26,7 +26,6 @@ common:
   enter-password: "请输入您的密码"
   2fa: "双重身份验证"
   customize-home: "自定义主页"
-  featured-notes: "高亮"
   dark-mode: "黑暗模式"
   signin: "登录"
   signup: "注册"
