@@ -39,6 +39,10 @@
 					</ul>
 					<ul>
 						<li @click="toggleDeckMode"><p><i><fa :icon="$store.state.device.inDeckMode ? faHome : faColumns" fixed-width/></i><span>{{ $store.state.device.inDeckMode ? $t('@.home') : $t('@.deck') }}</span></p></li>
+						<li v-if="$store.state.device.appTypeForce == 'auto'" @click="toggleAppType">
+							<p><i><fa :icon="$root.isMobile ? faDesktop : faMobileAlt" fixed-width/></i>
+							<span>{{ $root.isMobile ? $t('@.desktop-mode') : $t('@.mobile-mode') }}</span></p>
+						</li>
 						<li @click="dark"><p><i><fa :icon="$store.state.device.darkmode ? faSun : faMoon" fixed-width/></i><span>{{ $store.state.device.darkmode ? $t('@.turn-off-darkmode') : $t('@.turn-on-darkmode') }}</span></p></li>
 					</ul>
 				</div>
@@ -67,7 +71,7 @@
 import Vue from 'vue';
 import i18n from '../../../i18n';
 import { lang, version, codename } from '../../../config';
-import { faNewspaper, faHashtag, faHome, faColumns, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faNewspaper, faHashtag, faHome, faColumns, faUsers, faDesktop, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import { faMoon, faSun, faStickyNote, faBell } from '@fortawesome/free-regular-svg-icons';
 import { search } from '../../../common/scripts/search';
 
@@ -89,7 +93,7 @@ export default Vue.extend({
 			searching: false,
 			showNotifications: false,
 			version, codename,
-			faNewspaper, faHashtag, faMoon, faSun, faHome, faColumns, faStickyNote, faUsers, faBell,
+			faNewspaper, faHashtag, faMoon, faSun, faHome, faColumns, faStickyNote, faUsers, faBell, faDesktop, faMobileAlt
 		};
 	},
 
@@ -158,6 +162,11 @@ export default Vue.extend({
 				key: 'darkmode',
 				value: !this.$store.state.device.darkmode
 			});
+		},
+
+		toggleAppType() {
+			this.$store.commit('device/set', { key: 'appType', value: this.$root.isMobile ? 'desktop' : 'mobile' });
+			location.replace('/');
 		},
 
 		toggleDeckMode() {

@@ -87,6 +87,12 @@
 						<template v-else><span>{{ $t('@.deck') }}</span><i><fa :icon="faColumns"/></i></template>
 					</p>
 				</li>
+				<li v-if="$store.state.device.appTypeForce == 'auto'" @click="toggleAppType">
+					<p>
+						<template v-if="$root.isMobile"><span>{{ $t('@.desktop-mode') }}</span><i><fa :icon="faDesktop"/></i></template>
+						<template v-else><span>{{ $t('@.mobile-mode') }}</span><i><fa :icon="faMobileAlt" style="margin-right: 3px"/></i></template>
+					</p>
+				</li>
 				<li @click="dark">
 					<p>
 						<span>{{ $store.state.device.darkmode ? $t('@.turn-off-darkmode') : $t('@.turn-on-darkmode') }}</span>
@@ -113,7 +119,7 @@ import i18n from '../../../i18n';
 // import MkSettingsWindow from './settings-window.vue';
 import MkDriveWindow from './drive-window.vue';
 import contains from '../../../common/scripts/contains';
-import { faHome, faColumns, faUsers, faDoorOpen } from '@fortawesome/free-solid-svg-icons';
+import { faHome, faColumns, faUsers, faDoorOpen, faDesktop, faMobileAlt } from '@fortawesome/free-solid-svg-icons';
 import { faMoon, faSun, faStickyNote } from '@fortawesome/free-regular-svg-icons';
 
 export default Vue.extend({
@@ -121,7 +127,7 @@ export default Vue.extend({
 	data() {
 		return {
 			isOpen: false,
-			faHome, faColumns, faMoon, faSun, faStickyNote, faUsers, faDoorOpen
+			faHome, faColumns, faMoon, faSun, faStickyNote, faUsers, faDoorOpen, faDesktop, faMobileAlt
 		};
 	},
 	computed: {
@@ -167,6 +173,10 @@ export default Vue.extend({
 				key: 'darkmode',
 				value: !this.$store.state.device.darkmode
 			});
+		},
+		toggleAppType() {
+			this.$store.commit('device/set', { key: 'appType', value: this.$root.isMobile ? 'desktop' : 'mobile' });
+			location.replace('/');
 		},
 		toggleDeckMode() {
 			this.$store.commit('device/set', { key: 'deckMode', value: !this.$store.state.device.inDeckMode });

@@ -91,6 +91,8 @@ common:
   explore: "みつける"
   following: "フォロー中"
   followers: "フォロワー"
+  desktop-mode: 'デスクトップ版'
+  mobile-mode: 'モバイル版'
   favorites: "ブックマーク"
   flush: "キャッシュをクリア"
 

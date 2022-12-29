@@ -86,6 +86,8 @@ common:
   explore: "Explore"
   following: "Following"
   followers: "Followers"
+  desktop-mode: 'Desktop mode'
+  mobile-mode: 'Mobile mode'
   favorites: "Bookmarks"
   flush: "Clear cache"
   permissions:
