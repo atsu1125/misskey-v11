@@ -1661,6 +1661,8 @@ admin/views/users.vue:
   remote-user-updated: "リモートユーザー情報を更新しました"
   delete-all-files: "すべてのファイルを削除"
   delete-all-files-confirm: "すべてのファイルを削除しますか？"
+  delete-account: "アカウントを削除"
+  delete-account-confirm: "このアカウントを削除しますか？"
   username: "ユーザー名"
   host: "ホスト"
   users:

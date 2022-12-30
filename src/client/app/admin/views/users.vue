@@ -30,6 +30,7 @@
 						<ui-button @click="unsuspendUser" :disabled="unsuspending">{{ $t('unsuspend') }}</ui-button>
 					</ui-horizon-group>
 					<ui-button @click="deleteAllFiles"><fa :icon="faTrashAlt"/> {{ $t('delete-all-files') }}</ui-button>
+					<ui-button @click="deleteAccount" :disabled="deleting || user.isModerator || user.isAdmin"><fa :icon="faTrashAlt"/> {{ $t('delete-account') }}</ui-button>
 					<ui-textarea v-if="user" :value="user | json5" readonly tall style="margin-top:16px;"></ui-textarea>
 				</div>
 			</div>
@@ -102,6 +103,7 @@ export default Vue.extend({
 			unverifying: false,
 			suspending: false,
 			unsuspending: false,
+			deleting: false,
 			sort: '+createdAt',
 			state: 'all',
 			origin: 'local',
@@ -407,6 +409,29 @@ export default Vue.extend({
 					text: e.message
 				});
 			});
+		},
+
+		async deleteAccount() {
+			if (!await this.getConfirmed(this.$t('delete-account-confirm'))) return;
+
+			this.deleting = true;
+
+			const process = async () => {
+				await this.$root.api('admin/delete-account', { userId: this.user.id });
+				this.$root.dialog({
+					type: 'success',
+					splash: true
+				});
+			};
+
+			await process().catch(e => {
+				this.$root.dialog({
+					type: 'error',
+					text: e.message
+				});
+			});
+
+			this.deleting = false;
 		},
 
 		async getConfirmed(text: string): Promise<Boolean> {
