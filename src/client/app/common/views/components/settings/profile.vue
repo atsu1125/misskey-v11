@@ -145,7 +145,7 @@
 	<section>
 		<details>
 			<summary>{{ $t('danger-zone') }}</summary>
-			<ui-button @click="deleteAccount()" :disabled="disableDeletion">{{ $t('delete-account') }}</ui-button>
+			<ui-button @click="deleteAccount()">{{ $t('delete-account') }}</ui-button>
 		</details>
 	</section>
 </ui-card>
@@ -430,14 +430,25 @@ export default Vue.extend({
 			});
 			if (canceled) return;
 
-			this.$root.api('i/delete-account', {
-				password
-			}).then(() => {
-				this.$root.dialog({
-					type: 'success',
-					text: this.$t('account-deleted')
+			if (this.disableDeletion) {
+				this.$root.api('i/suspend-account', {
+					password
+				}).then(() => {
+					this.$root.dialog({
+						type: 'success',
+						text: this.$t('account-deleted')
+					});
 				});
-			});
+			} else {
+				this.$root.api('i/delete-account', {
+					password
+				}).then(() => {
+					this.$root.dialog({
+						type: 'success',
+						text: this.$t('account-deleted')
+					});
+				});
+			}
 		}
 	}
 });
