@@ -381,7 +381,6 @@ export default Vue.extend({
 	padding 16px 0 16px 16px
 	overflow auto
 	overflow-y hidden
-	-webkit-overflow-scrolling touch
 
 	@media (max-width 500px)
 		padding 8px 0 8px 8px

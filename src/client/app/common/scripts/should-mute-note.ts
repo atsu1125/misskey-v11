@@ -5,7 +5,7 @@ export default function(me, settings, note) {
 	const includesMutedWords = (text: string) =>
 		text
 			? settings.mutedWords.some(q => q.length > 0 && !q.some(word =>
-				word.startsWith('/') && word.endsWith('/') ? !(new RegExp(word.substr(1, word.length - 2)).test(text)) : !text.includes(word)))
+				word.startsWith('/') && word.endsWith('/') ? !(new RegExp(word.substring(1, word.length - 1)).test(text)) : !text.includes(word)))
 			: false;
 
 	return (

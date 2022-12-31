@@ -67,9 +67,6 @@ export default Vue.extend({
 .root.photos
 
 	> .stream
-		display -webkit-flex
-		display -moz-flex
-		display -ms-flex
 		display flex
 		justify-content center
 		flex-wrap wrap

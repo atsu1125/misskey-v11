@@ -109,7 +109,7 @@ export default Vue.extend({
 
 		this.connection = this.$root.stream.useSharedConnection('queueStats');
 		this.connection.send('requestLog', {
-			id: Math.random().toString().substr(2, 8),
+			id: Math.random().toString().substring(2, 10),
 			length: this.chartLimit
 		});
 

@@ -34,7 +34,7 @@ export default define(meta, async (ps) => {
 
 	if (ps.domain) {
 		const whiteDomains = ps.domain.split(' ').filter(x => !x.startsWith('-'));
-		const blackDomains = ps.domain.split(' ').filter(x => x.startsWith('-')).map(x => x.substr(1));
+		const blackDomains = ps.domain.split(' ').filter(x => x.startsWith('-')).map(x => x.substring(1));
 
 		if (whiteDomains.length > 0) {
 			query.andWhere(new Brackets(qb => {

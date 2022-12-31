@@ -186,12 +186,12 @@ export default Vue.extend({
 	> .is-suspended
 	> .is-remote
 		&.is-suspended
-			color #570808
-			background #ffdbdb
+			color var(--suspendedInfoFg)
+			background var(--suspendedInfoBg)
 
 		&.is-remote
-			color #573c08
-			background #fff0db
+			color var(--remoteInfoFg)
+			background var(--remoteInfoBg)
 
 		> p
 			margin 0 auto
@@ -370,7 +370,6 @@ export default Vue.extend({
 					color var(--text)
 
 	> nav
-		position -webkit-sticky
 		position sticky
 		top 47px
 		background-color $bg

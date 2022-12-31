@@ -140,7 +140,7 @@ export default Vue.extend({
 				if (q.startsWith('@')) {
 					this.$router.push(`/${q}`);
 				} else if (q.startsWith('#')) {
-					this.$router.push(`/tags/${encodeURIComponent(q.substr(1))}`);
+					this.$router.push(`/tags/${encodeURIComponent(q.substring(1))}`);
 				} else if (q.startsWith('https://')) {
 					this.searching = true;
 					try {

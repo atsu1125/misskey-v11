@@ -125,7 +125,7 @@ export default Vue.extend({
 		connection.on('stats', this.onStats);
 		connection.on('statsLog', this.onStatsLog);
 		connection.send('requestLog', {
-			id: Math.random().toString().substr(2, 8),
+			id: Math.random().toString().substring(2, 10),
 			length: limit
 		});
 

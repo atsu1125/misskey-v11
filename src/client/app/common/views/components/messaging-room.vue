@@ -384,7 +384,6 @@ export default Vue.extend({
 				background var(--messagingRoomBg)
 
 	> footer
-		position -webkit-sticky
 		position sticky
 		z-index 2
 		bottom 0

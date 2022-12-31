@@ -4,7 +4,7 @@ import { EventEmitter } from 'eventemitter3';
 import { v4 as uuid } from 'uuid';
 
 import initStore from './store';
-import { apiUrl, version, locale, env } from './config';
+import { url, apiUrl, version, locale, env } from './config';
 import Progress from './common/scripts/loading';
 
 import Err from './common/views/components/connect-failed.vue';
@@ -258,6 +258,11 @@ export default class MiOS extends EventEmitter {
 				this.store.dispatch('mergeMe', {
 					hasUnreadMessagingMessage: true
 				});
+				if (this.store.state.device.enableSounds && this.store.state.device.enableSoundsInMessage) {
+					const sound = new Audio(`${url}/assets/notify.mp3`);
+					sound.volume = this.store.state.device.soundVolume;
+					sound.play();
+				}
 			});
 
 			main.on('unreadMention', () => {

@@ -31,7 +31,7 @@ export default Vue.extend({
 		length(value: number) {
 			const string = value.toString();
 
-			return string.includes('e') ? -~string.substr(string.indexOf('e')) : string.length;
+			return string.includes('e') ? -~string.substring(string.indexOf('e')) : string.length;
 		},
 	},
 });
@@ -39,8 +39,6 @@ export default Vue.extend({
 
 <style lang="stylus" scoped>
 .mk-frac
-	-webkit-font-feature-settings 'tnum'
-	-moz-font-feature-settings 'tnum'
 	font-feature-settings 'tnum'
 	font-variant-numeric tabular-nums
 

@@ -121,6 +121,7 @@
 				<ui-switch v-model="keepCw">{{ $t('@._settings.keep-cw') }}
 					<template #desc>{{ $t('@._settings.keep-cw-desc') }}</template>
 				</ui-switch>
+				<ui-switch v-model="enablePostPreview">{{ $t('@._settings.enable-post-preview') }}</ui-switch>
 				<ui-switch v-if="$root.isMobile" v-model="disableViaMobile">{{ $t('@._settings.disable-via-mobile') }}</ui-switch>
 			</section>
 
@@ -208,9 +209,9 @@
 				<ui-switch v-model="enableSounds">{{ $t('@._settings.enable-sounds') }}
 					<template #desc>{{ $t('@._settings.enable-sounds-desc') }}</template>
 				</ui-switch>
-				<ui-switch :disabled="!enableSounds" v-if="!$root.isMobile" v-model="enableSoundsInTimeline">{{ $t('@._settings.enable-sounds-intimeline')}}
+				<ui-switch :disabled="!enableSounds" v-model="enableSoundsInTimeline">{{ $t('@._settings.enable-sounds-intimeline')}}
 				</ui-switch>
-				<ui-switch :disabled="!enableSounds" v-if="!$root.isMobile" v-model="enableSoundsInNotifications">{{ $t('@._settings.enable-sounds-innotifications')}}
+				<ui-switch :disabled="!enableSounds" v-model="enableSoundsInNotifications">{{ $t('@._settings.enable-sounds-innotifications')}}
 				</ui-switch>
 				<ui-switch :disabled="!enableSounds" v-model="enableSoundsInMessage">{{ $t('@._settings.enable-sounds-inmessage')}}
 				</ui-switch>
@@ -467,6 +468,11 @@ export default Vue.extend({
 		postStyle: {
 			get() { return this.$store.state.device.postStyle; },
 			set(value) { this.$store.commit('device/set', { key: 'postStyle', value }); }
+		},
+
+		enablePostPreview: {
+			get() { return this.$store.state.settings.enablePostPreview; },
+			set(value) { this.$store.dispatch('settings/set', { key: 'enablePostPreview', value }); }
 		},
 
 		disableViaMobile: {

@@ -101,6 +101,5 @@ export default Vue.extend({
 		> .drive
 			height calc(100% - 42px)
 			overflow scroll
-			-webkit-overflow-scrolling touch
 
 </style>

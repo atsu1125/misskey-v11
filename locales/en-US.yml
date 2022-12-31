@@ -81,12 +81,14 @@ common:
   messaging: "Talk"
   home: "Home"
   deck: "Deck"
+  desktop-mode: "Desktop"
+  mobile-mode: "Mobile"
+  turn-on-darkmode: "Dark mode"
+  turn-off-darkmode: "Light mode"
   timeline: "Timeline"
   explore: "Explore"
   following: "Following"
   followers: "Followers"
-  desktop-mode: 'Desktop mode'
-  mobile-mode: 'Mobile mode'
   favorites: "Bookmarks"
   flush: "Clear cache"
   permissions:
@@ -225,6 +227,7 @@ common:
     paste-dialog-desc: "Display a dialog to edit the file name when you paste a file."
     keep-cw: "Preserve content warning"
     keep-cw-desc: "When replying to a post, the same content warning is set by default to the reply, as has been set by the original post."
+    enable-post-preview: "Enable note preview"
     i-like-sushi: "I prefer sushi rather than pudding"
     show-reversi-board-labels: "Show row and column labels in Reversi"
     use-avatar-reversi-stones: "Use avatar as a stone in reversi"
@@ -361,8 +364,6 @@ common:
   view-on-remote: "For completion, view it remotely."
   renoted-by: "Renoted by {user}"
   no-notes: "Without any notes"
-  turn-on-darkmode: "Switch to dark mode"
-  turn-off-darkmode: "Switch to light mode"
   error:
     title: "Something happened :("
     retry: "Retry"
@@ -404,6 +405,7 @@ common:
     aichan: "Ai-chan"
     sunmoon: "Moon age and sunrise/sunset"
   dev: "Failed to create the application. Please try again."
+  with-great-power: "With great power comes great responsibility."
   ai-chan-kawaii: "Ai-chan kawaii!"
   you: "You"
 auth/views/form.vue:
@@ -516,8 +518,8 @@ common/views/components/media-banner.vue:
   click-to-show: "Click to show"
 common/views/components/theme.vue:
   theme: "Theme"
-  light-theme: "Theme to use in Light mode"
-  dark-theme: "Theme during dark mode"
+  light-theme: "Theme in Light mode"
+  dark-theme: "Theme in Dark mode"
   light-themes: "Light theme"
   dark-themes: "Dark theme"
   install-a-theme: "Install a theme"
@@ -820,7 +822,9 @@ common/views/components/profile-editor.vue:
   avatar: "Avatar"
   banner: "Banner"
   is-cat: "This account is a Cat"
+  is-cat-desc: "Your avatar will have cat ears and your posts will be nyaized. Do not enable if you want to tell from post correctly."
   is-bot: "This account is a Bot"
+  is-bot-desc: "Identifies this account as a Bot. Do not enable if you are not a Bot."
   is-locked: "Follower requests require approval"
   careful-bot: "Follower requests from bots require approval"
   careful-remote: "Follower requests from remote require approval"
@@ -880,7 +884,7 @@ common/views/components/user-group-editor.vue:
 common/views/components/user-lists.vue:
   user-lists: "Lists"
   create-list: "Create a list"
-  list-name: "List name"
+  list-name: "Please enter a list name"
 common/views/components/user-groups.vue:
   user-groups: "Groups"
   create-group: "Create a group"
@@ -1232,7 +1236,7 @@ desktop/views/components/timeline.vue:
   hashtag: "Hashtag"
   add-tag-timeline: "Add hashtag cloud"
   add-list: "Add list"
-  list-name: "List name"
+  list-name: "Please enter a list name"
 desktop/views/components/ui.header.vue:
   welcome-back: "Welcome back,"
   adjective: "-san"
@@ -1283,6 +1287,7 @@ admin/views/db.vue:
   vacuum: "Vacuum"
   vacuum-info: "Tidies up the database. Keeps the data intact and reduces disk usage. This is usually done automatically and periodically."
   vacuum-exclamation: "Vacuuming can overload the database for a while, and cause users not to be able to participate in interactions."
+  vacuum-are-you-sure: "Are you sure you want to vacuum the database?"
 admin/views/dashboard.vue:
   dashboard: "Dashboard"
   accounts: "Accounts"
@@ -1320,6 +1325,7 @@ admin/views/logs.vue:
     error: "Error"
     debug: "Debug"
   delete-all: "Remove All"
+  delete-all-are-you-sure: "Are you sure you want to remove all logs?"
 admin/views/abuse.vue:
   title: "Abuse"
   target: "Target"
@@ -1487,6 +1493,7 @@ admin/views/drive.vue:
   clean-up: "Clean up"
 admin/views/users.vue:
   operation: "Operations"
+  confirm: "Confirm"
   username-or-userid: "Username or user ID"
   user-not-found: "User not found"
   lookup: "Look up"
@@ -1658,6 +1665,7 @@ admin/views/federation.vue:
   blocked-hosts: "Blocking"
   blocked-hosts-info: "List up the hosts delimited by line breaks that you want to block."
   save: "Save"
+  saved: "Saved"
 admin/views/relay.vue:
   add-relay: "Add relay"
   inbox: "inbox URL"
@@ -2019,9 +2027,10 @@ pages:
   fontSansSerif: "Sans Serif"
   set-eye-catching-image: "Set an eye-catching image"
   remove-eye-catching-image: "Delete an eye-catching image"
+  enter-title: "Please enter a title"
   choose-block: "Add a block"
   select-type: "Select a type"
-  enter-variable-name: "Please choose a variable name"
+  enter-variable-name: "Please enter a variable name"
   the-variable-name-is-already-used: "This variable name is already used"
   content-blocks: "Content"
   input-blocks: "Input"

@@ -126,7 +126,6 @@ export default Vue.extend({
 			> .avatar
 				display block
 				float left
-				position -webkit-sticky
 				position sticky
 				top 16px
 				width 42px

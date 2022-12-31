@@ -5,7 +5,7 @@
 		<p><b>Machine</b><span>{{ meta.machine }}</span></p>
 		<p><b>OS</b><span>{{ meta.os }}</span></p>
 		<p><b>Node</b><span>{{ meta.node }}</span></p>
-		<p>{{ $t('@.ai-chan-kawaii') }}</p>
+		<p>{{ $t('@.with-great-power') }}</p>
 	</header>
 
 	<marquee-text v-if="instances.length > 0" class="instances" :repeat="10" :duration="60">

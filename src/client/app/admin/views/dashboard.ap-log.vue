@@ -39,7 +39,7 @@ export default Vue.extend({
 		this.connection.on('log', this.onLog);
 		this.connection.on('logs', this.onLogs);
 		this.connection.send('requestLog', {
-			id: Math.random().toString().substr(2, 8),
+			id: Math.random().toString().substring(2, 10),
 			length: 50
 		});
 	},

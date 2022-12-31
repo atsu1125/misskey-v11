@@ -154,7 +154,6 @@ export default Vue.extend({
 				margin-right 8px
 
 	> .newer-indicator
-		position -webkit-sticky
 		position sticky
 		z-index 100
 		height 3px

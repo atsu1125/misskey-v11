@@ -2,8 +2,6 @@ block vars
 
 doctype html
 
-!= '\n<!-- Thank you for using Misskey! @syuilo -->\n'
-
 html
 
 	head
@@ -25,7 +23,7 @@ html
 				= title || 'Areionskey'
 
 		block desc
-			meta(name='description' content= desc || 'A federated/distributed blogging platform')
+			meta(name='description' content= desc || 'A federated/distributed microblogging platform')
 
 		block meta
 
@@ -42,9 +40,9 @@ html
 
 	body
 		noscript: p
-			| JavaScriptを有効にしてください
+			| Areionskey を利用するには JavaScript を有効にしてください
 			br
-			| Please turn on your JavaScript
+			| Please enable JavaScript to use Areionskey
 		div#ini.
 			<svg viewBox="0 0 50 50">
 				<path fill=#fb4e4e d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z" />

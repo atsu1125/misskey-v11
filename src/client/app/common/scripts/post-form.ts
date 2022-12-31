@@ -405,7 +405,7 @@ export default (opts) => ({
 						return;
 					}
 
-					this.quoteId = paste.substr(url.length).match(/^\/notes\/(.+?)\/?$/)[1];
+					this.quoteId = paste.substring(url.length).match(/^\/notes\/(.+?)\/?$/)[1];
 				});
 			}
 		},

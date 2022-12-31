@@ -38,7 +38,7 @@ const MAX_NAME_LENGTH = 128;
 const MAX_SUMMARY_LENGTH = 2048;
 
 const truncate = (value: string, maxLength: number) => {
-	return value.substr(0, maxLength);
+	return value.substring(0, maxLength);
 };
 
 /**

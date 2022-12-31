@@ -46,16 +46,23 @@ export default Vue.extend({
 		},
 
 		vacuum() {
-			this.$root.api('admin/vacuum', {
-				full: this.fullVacuum,
-				analyze: this.analyzeVacuum,
-			}).then(() => {
-				this.$root.dialog({
-					type: 'success',
-					splash: true
+			this.$root.dialog({
+				type: 'warning',
+				text: this.$t('vacuum-are-you-sure'),
+				showCancelButton: true
+			}).then(({ canceled }) => {
+				if (canceled) return;
+				this.$root.api('admin/vacuum', {
+					full: this.fullVacuum,
+					analyze: this.analyzeVacuum,
+				}).then(() => {
+					this.$root.dialog({
+						type: 'success',
+						splash: true
+					});
 				});
 			});
-		},
+		}
 	}
 });
 </script>

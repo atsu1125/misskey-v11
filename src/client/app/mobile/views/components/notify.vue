@@ -8,6 +8,7 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import * as config from '../../../config';
 import anime from 'animejs';
 
 export default Vue.extend({
@@ -18,6 +19,7 @@ export default Vue.extend({
 		}
 	},
 	mounted() {
+		this.onNotify();
 		this.$nextTick(() => {
 			anime({
 				targets: this.$el,
@@ -36,6 +38,16 @@ export default Vue.extend({
 				});
 			}, 6000);
 		});
+	},
+
+	methods: {
+		onNotify() {
+			if (this.$store.state.device.enableSounds && this.$store.state.device.enableSoundsInNotifications) {
+				const sound = new Audio(`${config.url}/assets/notify.mp3`);
+				sound.volume = this.$store.state.device.soundVolume;
+				sound.play();
+			}
+		}
 	}
 });
 </script>

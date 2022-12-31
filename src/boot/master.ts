@@ -22,7 +22,7 @@ function greet() {
 		console.log(' |  _  |___ ___|_|___ ___ ___| |_ ___ _ _ ');
 		console.log(' |     |  _| -_| | . |   |_ -| \'_| -_| | |');
 		console.log(' |__|__|_| |___|_|___|_|_|___|_,_|___|_  |');
-		console.log(' ' + chalk.gray(v) + ('                                    |___|\n'.substr(v.length)));
+		console.log(' ' + chalk.gray(v) + ('                                    |___|\n'.substring(v.length)));
 		//#endregion
 
 		console.log(' Areionskey is maintained by @fs5m8, @atsu1125, and @yui87.');

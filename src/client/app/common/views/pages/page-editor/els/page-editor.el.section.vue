@@ -66,7 +66,7 @@ export default Vue.extend({
 	methods: {
 		async rename() {
 			const { canceled, result: title } = await this.$root.dialog({
-				title: 'Enter title',
+				title: this.$t('enter-title'),
 				input: {
 					type: 'text',
 					default: this.value.title

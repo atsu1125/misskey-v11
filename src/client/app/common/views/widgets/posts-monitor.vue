@@ -117,7 +117,7 @@ export default define({
 		this.connection.on('stats', this.onStats);
 		this.connection.on('statsLog', this.onStatsLog);
 		this.connection.send('requestLog',{
-			id: Math.random().toString().substr(2, 8)
+			id: Math.random().toString().substring(2, 10)
 		});
 	},
 	beforeDestroy() {

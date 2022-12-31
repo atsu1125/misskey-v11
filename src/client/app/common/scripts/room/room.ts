@@ -433,7 +433,7 @@ export class Room {
 				(child.material as THREE.MeshStandardMaterial).name &&
 				(child.material as THREE.MeshStandardMaterial).name === 'Carpet'
 			) {
-				const colorHex = parseInt(this.roomInfo.carpetColor.substr(1), 16);
+				const colorHex = parseInt(this.roomInfo.carpetColor.substring(1), 16);
 				(child.material as THREE.MeshStandardMaterial).color.setHex(colorHex);
 			}
 		});
@@ -457,7 +457,7 @@ export class Room {
 
 				if (val == null) continue;
 
-				const colorHex = parseInt(val.substr(1), 16);
+				const colorHex = parseInt(val.substring(1), 16);
 				(child.material as THREE.MeshStandardMaterial).color.setHex(colorHex);
 			}
 		});

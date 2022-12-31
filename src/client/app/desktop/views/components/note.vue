@@ -204,8 +204,6 @@ export default Vue.extend({
 			width 58px
 			height 58px
 			border-radius 8px
-			//position -webkit-sticky
-			//position sticky
 			//top 74px
 
 		> .main

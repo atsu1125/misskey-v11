@@ -498,7 +498,6 @@ export default Vue.extend({
 	> nav
 		display block
 		position sticky
-		position -webkit-sticky
 		top 0
 		z-index 1
 		width 100%

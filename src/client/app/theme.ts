@@ -73,16 +73,16 @@ function compile(theme: Theme): { [key: string]: string } {
 	function getColor(code: string): tinycolor.Instance {
 		// ref
 		if (code[0] == '@') {
-			return getColor(theme.props[code.substr(1)]);
+			return getColor(theme.props[code.substring(1)]);
 		}
 		if (code[0] == '$') {
-			return getColor(theme.vars[code.substr(1)]);
+			return getColor(theme.vars[code.substring(1)]);
 		}
 
 		// func
 		if (code[0] == ':') {
 			const parts = code.split('<');
-			const func = parts.shift().substr(1);
+			const func = parts.shift().substring(1);
 			const arg = parseFloat(parts.shift());
 			const color = getColor(parts.join('<'));
 

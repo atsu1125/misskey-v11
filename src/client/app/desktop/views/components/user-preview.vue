@@ -53,7 +53,7 @@ export default Vue.extend({
 			});
 		} else {
 			const query = this.user.startsWith('@') ?
-				parseAcct(this.user.substr(1)) :
+				parseAcct(this.user.substring(1)) :
 				{ userId: this.user };
 
 			this.$root.api('users/show', query).then(user => {

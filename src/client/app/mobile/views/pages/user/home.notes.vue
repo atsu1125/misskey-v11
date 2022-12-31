@@ -36,7 +36,6 @@ export default Vue.extend({
 
 	> div
 		overflow-x scroll
-		-webkit-overflow-scrolling touch
 		white-space nowrap
 		padding 8px
 

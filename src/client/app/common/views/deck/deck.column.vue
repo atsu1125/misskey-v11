@@ -463,6 +463,5 @@ export default Vue.extend({
 		height "calc(100% - %s)" % $header-height
 		overflow auto
 		overflow-x hidden
-		-webkit-overflow-scrolling touch
 
 </style>

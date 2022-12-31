@@ -146,7 +146,6 @@ export default Vue.extend({
 
 		> .preview
 			width fit-content
-			width -moz-fit-content
 			max-width 100%
 			margin 0 auto
 			box-shadow 1px 1px 4px rgba(#000, 0.2)

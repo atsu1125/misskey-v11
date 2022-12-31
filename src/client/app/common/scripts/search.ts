@@ -9,7 +9,7 @@ export async function search(v: any, q: string) {
 	}
 
 	if (q.startsWith('#')) {
-		v.$router.push(`/tags/${encodeURIComponent(q.substr(1))}`);
+		v.$router.push(`/tags/${encodeURIComponent(q.substring(1))}`);
 		return;
 	}
 

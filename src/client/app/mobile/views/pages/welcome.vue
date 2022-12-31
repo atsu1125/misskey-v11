@@ -204,7 +204,6 @@ export default Vue.extend({
 				max-height 300px
 				border-radius 6px
 				overflow auto
-				-webkit-overflow-scrolling touch
 
 		> .photos
 			display grid

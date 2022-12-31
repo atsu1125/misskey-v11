@@ -2,9 +2,9 @@
 <div class="mk-connect-failed">
 	<h1>{{ $t('title') }}</h1>
 	<p class="text">
-		<span>{{ this.$t('description').substr(0, this.$t('description').indexOf('{')) }}</span>
+		<span>{{ this.$t('description').substring(0, this.$t('description').indexOf('{')) }}</span>
 		<a @click="reload">{{ this.$t('description').match(/\{(.+?)\}/)[1] }}</a>
-		<span>{{ this.$t('description').substr(this.$t('description').indexOf('}') + 1) }}</span>
+		<span>{{ this.$t('description').substring(this.$t('description').indexOf('}') + 1) }}</span>
 	</p>
 	<button v-if="!troubleshooting" @click="troubleshooting = true">{{ $t('troubleshoot') }}</button>
 	<x-troubleshooter v-if="troubleshooting"/>

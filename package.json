@@ -1,7 +1,7 @@
 {
 	"name": "areionskey",
 	"author": "sakura-tel <sakura-tel@pm.me>",
-	"version": "2.1.1-atsuchan-b2",
+	"version": "2.2.0-atsuchan-a1",
 	"codename": "Mombetsu",
 	"repository": {
 		"type": "git",
@@ -58,7 +58,7 @@
 		"@types/js-yaml": "4.0.5",
 		"@types/jsdom": "16.2.14",
 		"@types/jsonld": "1.5.6",
-		"@types/katex": "0.14.0",
+		"@types/katex": "0.16.0",
 		"@types/koa": "2.13.5",
 		"@types/koa-bodyparser": "4.3.10",
 		"@types/koa-cors": "0.0.2",
@@ -72,7 +72,7 @@
 		"@types/koa__router": "8.0.11",
 		"@types/lolex": "5.1.2",
 		"@types/mocha": "10.0.1",
-		"@types/node": "18.11.17",
+		"@types/node": "18.11.18",
 		"@types/node-fetch": "3.0.3",
 		"@types/nodemailer": "6.4.7",
 		"@types/nprogress": "0.2.0",
@@ -107,7 +107,7 @@
 		"autobind-decorator": "2.4.0",
 		"autosize": "4.0.4",
 		"autwh": "0.1.0",
-		"aws-sdk": "2.1281.0",
+		"aws-sdk": "2.1285.0",
 		"bcryptjs": "2.4.3",
 		"blurhash": "1.1.5",
 		"bootstrap-vue": "2.23.1",
@@ -135,7 +135,7 @@
 		"gulp-rename": "2.0.0",
 		"gulp-replace": "1.1.4",
 		"gulp-sourcemaps": "3.0.0",
-		"gulp-stylus": "2.7.1",
+		"gulp-stylus": "3.0.0",
 		"gulp-terser": "2.1.0",
 		"gulp-tslint": "8.1.4",
 		"gulp-typescript": "5.0.1",
@@ -182,7 +182,7 @@
 		"pg": "8.8.0",
 		"portscanner": "2.2.0",
 		"postcss": "8.4.20",
-		"postcss-loader": "6.2.1",
+		"postcss-loader": "7.0.2",
 		"private-ip": "2.3.4",
 		"probe-image-size": "7.2.3",
 		"progress-bar-webpack-plugin": "2.1.0",
@@ -190,7 +190,7 @@
 		"promise-sequential": "1.1.1",
 		"pug": "3.0.2",
 		"punycode": "2.1.1",
-		"pureimage": "0.3.14",
+		"pureimage": "0.3.15",
 		"qrcode": "1.5.1",
 		"random-seed": "0.3.0",
 		"randomcolor": "0.6.2",
@@ -217,7 +217,7 @@
 		"summaly": "2.7.0",
 		"suncalc": "1.8.0",
 		"syslog-pro": "1.0.0",
-		"systeminformation": "5.16.8",
+		"systeminformation": "5.16.9",
 		"syuilo-password-strength": "0.0.1",
 		"terser-webpack-plugin": "4.2.3",
 		"textarea-caret": "3.1.0",
@@ -258,7 +258,7 @@
 		"xev": "2.0.1"
 	},
 	"devDependencies": {
-		"@redocly/openapi-core": "1.0.0-beta.117",
+		"@redocly/openapi-core": "1.0.0-beta.118",
 		"npm-run-all": "4.1.5"
 	}
 }

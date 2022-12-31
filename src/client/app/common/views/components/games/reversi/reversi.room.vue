@@ -277,8 +277,6 @@ export default Vue.extend({
 						color var(--text)
 						cursor pointer
 						transition border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1)
-						-webkit-appearance none
-						-moz-appearance none
 						appearance none
 
 						&:hover

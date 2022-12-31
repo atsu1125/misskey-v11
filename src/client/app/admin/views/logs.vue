@@ -78,10 +78,17 @@ export default Vue.extend({
 		},
 
 		deleteAll() {
-			this.$root.api('admin/delete-logs').then(() => {
-				this.$root.dialog({
-					type: 'success',
-					splash: true
+			this.$root.dialog({
+				type: 'warning',
+				text: this.$t('delete-all-are-you-sure'),
+				showCancelButton: true
+			}).then(({ canceled }) => {
+				if (canceled) return;
+				this.$root.api('admin/delete-logs').then(() => {
+					this.$root.dialog({
+						type: 'success',
+						splash: true
+					});
 				});
 			});
 		}

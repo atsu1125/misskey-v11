@@ -204,7 +204,6 @@ main
 			max-height calc(100% - 70px)
 			margin 0 auto
 			overflow auto
-			-webkit-overflow-scrolling touch
 			background var(--popupBg)
 			border-radius 8px
 			box-shadow 0 0 16px rgba(#000, 0.1)

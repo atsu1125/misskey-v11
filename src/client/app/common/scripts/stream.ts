@@ -160,7 +160,7 @@ class Pool {
 		this.channel = channel;
 		this.stream = stream;
 
-		this.id = Math.random().toString().substr(2, 8);
+		this.id = Math.random().toString().substring(2, 10);
 
 		this.stream.on('_disconnected_', this.onStreamDisconnected);
 	}
@@ -279,7 +279,7 @@ class NonSharedConnection extends Connection {
 		super(stream, channel);
 
 		this.params = params;
-		this.id = Math.random().toString().substr(2, 8);
+		this.id = Math.random().toString().substring(2, 10);
 
 		this.connect();
 	}

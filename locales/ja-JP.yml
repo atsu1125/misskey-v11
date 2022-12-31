@@ -86,12 +86,14 @@ common:
   messaging: "トーク"
   home: "ホーム"
   deck: "デッキ"
+  desktop-mode: "デスクトップ"
+  mobile-mode: "モバイル"
+  turn-on-darkmode: "ダークモード"
+  turn-off-darkmode: "ライトモード"
   timeline: "タイムライン"
   explore: "みつける"
   following: "フォロー中"
   followers: "フォロワー"
-  desktop-mode: 'デスクトップ版'
-  mobile-mode: 'モバイル版'
   favorites: "ブックマーク"
   flush: "キャッシュをクリア"
 
@@ -239,6 +241,7 @@ common:
     paste-dialog-desc: "ペースト時にファイル名を編集するダイアログを表示するようにします。"
     keep-cw: "CW 保持"
     keep-cw-desc: "投稿にリプライする際、リプライ元の投稿に CW が設定されていたとき、デフォルトで同じ CW を設定するようにします。"
+    enable-post-preview: "ノートのプレビューを使用する"
     i-like-sushi: "私は(プリンよりむしろ)寿司が好き"
     show-reversi-board-labels: "リバーシのボードの行と列のラベルを表示"
     use-avatar-reversi-stones: "リバーシの石にアバターを使う"
@@ -377,8 +380,6 @@ common:
   view-on-remote: "正確な情報を見る"
   renoted-by: "{user} が Renote"
   no-notes: "投稿がありません"
-  turn-on-darkmode: "ダークモードへ"
-  turn-off-darkmode: "ライトモードへ"
 
   error:
     title: "問題が発生しました"
@@ -424,6 +425,7 @@ common:
     sunmoon: "月齢と日の出入り"
 
   dev: "アプリの作成に失敗しました。再度お試しください。"
+  with-great-power: "大いなる力には大いなる責任が伴う。"
   ai-chan-kawaii: "藍ちゃかわいい"
   you: "あなた"
 
@@ -550,7 +552,7 @@ common/views/components/media-banner.vue:
 
 common/views/components/theme.vue:
   theme: "テーマ"
-  light-theme: "非ダークモード時に使用するテーマ"
+  light-theme: "ライトモード時に使用するテーマ"
   dark-theme: "ダークモード時に使用するテーマ"
   light-themes: "明るいテーマ"
   dark-themes: "暗いテーマ"
@@ -883,12 +885,14 @@ common/views/components/profile-editor.vue:
   avatar: "アバター"
   banner: "バナー"
   is-cat: "このアカウントは Cat です"
+  is-cat-desc: "アバターに猫耳が生え、投稿が nyaize されます。正しく発信したい場合は有効にしないでください。"
   is-bot: "このアカウントは Bot です"
+  is-bot-desc: "Bot であることを識別します。Bot でない場合は有効にしないでください。"
   is-locked: "フォローを承認制にする"
   careful-bot: "Bot からのフォローだけ承認制にする"
   careful-remote: "リモートからのフォローだけ承認制にする"
   auto-accept-followed: "フォローしているユーザーからのフォローを自動承認する"
-  avoid-search-index: "検索エンジンによるインデックスを避ける"
+  avoid-search-index: "検索エンジンによるインデックスを拒否する"
   advanced: "その他"
   privacy: "プライバシー"
   save: "保存"
@@ -946,7 +950,7 @@ common/views/components/user-group-editor.vue:
 common/views/components/user-lists.vue:
   user-lists: "リスト"
   create-list: "リストを作成"
-  list-name: "リスト名"
+  list-name: "リスト名を入力してください"
 
 common/views/components/user-groups.vue:
   user-groups: "グループ"
@@ -990,7 +994,7 @@ common/views/widgets/server.vue:
 
 common/views/widgets/memo.vue:
   title: "付箋"
-  placeholder: "ここに入力"
+  placeholder: "ここに入力してください"
 
 common/views/widgets/html.vue:
   placeholder-title: "ここにタイトルを書いてください"
@@ -1354,7 +1358,7 @@ desktop/views/components/timeline.vue:
   hashtag: "ハッシュタグ"
   add-tag-timeline: "ハッシュタグを追加"
   add-list: "リストを追加"
-  list-name: "リスト名"
+  list-name: "リスト名を入力してください"
 
 desktop/views/components/ui.header.vue:
   welcome-back: "おかえりなさい、"
@@ -1417,6 +1421,7 @@ admin/views/db.vue:
   vacuum: "バキューム"
   vacuum-info: "データベースの掃除を行います。データはそのままで、ディスク使用量を減らします。通常この操作は自動で定期的に行われます。"
   vacuum-exclamation: "バキュームを行うと、しばらくの間データベースの負荷が高くなり、ユーザーの操作を受け付けなくなる場合があります。"
+  vacuum-are-you-sure: "データベースをバキュームしますか？"
 
 admin/views/dashboard.vue:
   dashboard: "ダッシュボード"
@@ -1457,6 +1462,7 @@ admin/views/logs.vue:
     error: "エラー"
     debug: "デバッグ"
   delete-all: "全て削除"
+  delete-all-are-you-sure: "ログを全て削除しますか？"
 
 admin/views/abuse.vue:
   title: "スパム報告"
@@ -1629,6 +1635,7 @@ admin/views/drive.vue:
 
 admin/views/users.vue:
   operation: "操作"
+  confirm: "確認"
   username-or-userid: "ユーザー名 または ユーザー ID"
   user-not-found: "ユーザーが見つかりません"
   lookup: "照会"
@@ -1805,6 +1812,7 @@ admin/views/federation.vue:
   blocked-hosts: "ブロック"
   blocked-hosts-info: "ブロックしたいホストを改行で区切って記述します。"
   save: "保存"
+  saved: "保存しました"
 
 admin/views/relay.vue:
   add-relay: "リレーの追加"
@@ -2230,9 +2238,10 @@ pages:
   fontSansSerif: "サンセリフ"
   set-eye-catching-image: "アイキャッチ画像を設定"
   remove-eye-catching-image: "アイキャッチ画像を削除"
+  enter-title: "タイトルを入力してください"
   choose-block: "ブロックを追加"
   select-type: "種類を選択"
-  enter-variable-name: "変数名を決めてください"
+  enter-variable-name: "変数名を入力してください"
   the-variable-name-is-already-used: "その変数名は既に使われています"
   content-blocks: "コンテンツ"
   input-blocks: "入力"

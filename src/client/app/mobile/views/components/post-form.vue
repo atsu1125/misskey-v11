@@ -33,9 +33,6 @@
 				<button @click="addVisibleUser"><fa icon="plus"/></button>
 				<p> <fa icon="exclamation-triangle"/> {{ $t('@.post-form.specified-warn') }} </p>
 			</div>
-			<div class="hashtags" v-if="recentHashtags.length > 0 && $store.state.settings.suggestRecentHashtags">
-				<a v-for="tag in recentHashtags.slice(0, 5)" :key="tag" @click="addTag(tag)">#{{ tag }}</a>
-			</div>
 			<div class="local-only" v-if="localOnly === true"><fa icon="heart"/> {{ $t('@.post-form.local-only-message') }}</div>
 			<input v-show="useCw" ref="cw" v-model="cw" :placeholder="$t('@.post-form.cw-placeholder')" v-autocomplete="{ model: 'cw' }">
 			<div class="textarea">
@@ -62,7 +59,7 @@
 			</footer>
 			<input ref="file" class="file" type="file" multiple="multiple" @change="onChangeFile"/>
 		</div>
-		<details v-if="preview" class="preview" ref="preview" :open="$store.state.device.showPostPreview" @toggle="togglePreview">
+		<details v-if="preview && this.$store.state.settings.enablePostPreview" class="preview" ref="preview" :open="$store.state.device.showPostPreview" @toggle="togglePreview">
 			<summary>{{ $t('@.post-form.preview') }}</summary>
 			<mk-note class="note" :note="preview" :key="preview.id" :compact="true" :preview="true" />
 		</details>
@@ -179,8 +176,9 @@ export default Vue.extend({
 					background var(--mobilePostFormTextareaBg)
 					border none
 					border-radius 0
+					border-top solid var(--lineWidth) var(--faceDivider)
+					border-bottom solid var(--lineWidth) var(--faceDivider)
 					outline none
-					box-shadow 0 1px 0 0 var(--mobilePostFormDivider)
 					max-width 100%
 					min-width 100%
 					min-height 80px
@@ -270,7 +268,8 @@ export default Vue.extend({
 				background var(--mobilePostFormTextareaBg)
 				border none
 				border-radius 0
-				box-shadow 0 1px 0 0 var(--mobilePostFormDivider)
+				border-top solid var(--lineWidth) var(--faceDivider)
+				outline none
 				z-index 1
 
 				&:disabled
@@ -304,9 +303,10 @@ export default Vue.extend({
 
 		> .preview
 			background var(--face)
+			border-radius 0 0 8px 8px
 
 			> summary
-				padding 4px 14px 14px 14px
+				padding 10px 14px 14px 14px
 				font-size 16px
 				color var(--text)
 

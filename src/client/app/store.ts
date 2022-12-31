@@ -25,6 +25,7 @@ const defaultSettings = {
 	showLocalRenotes: true,
 	loadRemoteMedia: true,
 	disableViaMobile: false,
+	enablePostPreview: true,
 	memo: null,
 	iLikeSushi: false,
 	rememberNoteVisibility: false,

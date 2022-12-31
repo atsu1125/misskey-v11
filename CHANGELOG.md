@@ -1,6 +1,41 @@
 ChangeLog
 =========
 
+2.2.0 (2022/12/31)
+--------------------
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+### ✨Improvements
+- server: クライアントIPアドレスの取得元ヘッダを変更できるように変更 by @mei23 [88b8c0f](https://github.com/sakura-tel/areionskey/commit/88b8c0fa2f3462accbade30335f2440b2069977a)
+- admin: 管理者によるアカウントの削除機能の追加 by @atsu1125 [PR#1066](https://github.com/sakura-tel/areionskey/pull/1066) [025673e](https://github.com/sakura-tel/areionskey/commit/025673e87fc1bb3b3c6e27d94d2602d1e2f9b9fc)
+- admin/logs: 操作時にダイアログを表示するように変更 by @fs5m8 [025673e](https://github.com/sakura-tel/areionskey/commit/025673efcc3940dac64a8c7b6f068d65c2a0bf79)
+- admin/db: 操作時にダイアログを表示するように変更 by @fs5m8 [a695887](https://github.com/sakura-tel/areionskey/commit/a695887fcc3940dac64a8c7b6f068d65c2a0bf79)
+- frontend: メニューからデスクトップ/モバイルの切替ができるように変更 by @atsu1125 [PR#1063](https://github.com/sakura-tel/areionskey/pull/1063) [a695887](https://github.com/sakura-tel/areionskey/commit/a695887bbb1e667c209684a9849097597cd2c561)
+- sound: トークのウインドウを閉じていても着信時に音を鳴らすように変更 by @fs5m8 [0479521](https://github.com/sakura-tel/areionskey/commit/047952113bf5553003899462c5247d895dae21ca)
+- mobile/sound: モバイルでもサウンドが機能するように変更 by @fs5m8 [cec0fb0](https://github.com/sakura-tel/areionskey/commit/cec0fb06c56d1219d08be17f5a5313edcfa4a0d5)
+- postform: プレビュー機能を無効化できるように変更 by @fs5m8 [0eb1488](https://github.com/sakura-tel/areionskey/commit/0eb1488d733bb8c48f3d94777e7b24b22a7f45fa)
+- settings: isCat/isBot の説明を追加 by @fs5m8 [35cb4ba](https://github.com/sakura-tel/areionskey/commit/35cb4baf52b51c72e654c9d51bde7a6011a97a0a)
+
+### 🐛Fixes
+- server: X-Forwarded-For から クライアントIPアドレスを取得時は 1つ目だけ再帰するように変更 by @mei23 [35cb4ba](https://github.com/sakura-tel/areionskey/commit/35cb4ba2f3462accbade30335f2440b2069977a)
+- activitypub: signToActivityPubGet をデフォルトで有効に変更 by @mei23 [c94ecfd](https://github.com/sakura-tel/areionskey/commit/c94ecfd3a392e768b14e309422d423901a834347)
+- server/inbox: inboxのサイズリミットを1MBから64KBに変更 by @mei23 [6e1d936](https://github.com/sakura-tel/areionskey/commit/6e1d936c6cea32cf969bda794e7d80a787ed5413)
+- admin: 非ログイン時にアクセス拒否表示が表示されないのを修正 by @atsu1125 [PR#1062](https://github.com/sakura-tel/areionskey/pull/1062) [de078e7](https://github.com/sakura-tel/areionskey/commit/de078e7440b48211f8ab90de28b7f0fc11aa5d54)
+- assets: 整理と音声の定位を中央に変更 by @fs5m8 [dd47191](https://github.com/sakura-tel/areionskey/commit/dd471915b0d2788ecd40a66e44acf4b7395d3fa7)
+- mobile/widgets: テーマに適合するように変更 by @fs5m8 [c5bb452](https://github.com/sakura-tel/areionskey/commit/c5bb452c80348a6466e79db1772867dd0a89e8b2)
+- mobile/user: テーマに適合するように変更 by @fs5m8 [c5bb452](https://github.com/sakura-tel/areionskey/commit/c5bb452c80348a6466e79db1772867dd0a89e8b2)
+- mobile/drive/folder-chooser: テーマに適合するように変更 by @fs5m8 [c5bb452](https://github.com/sakura-tel/areionskey/commit/c5bb452c80348a6466e79db1772867dd0a89e8b2)
+- desktop/header/clock: テーマに適合するように変更 by @fs5m8 [0b8a01e](https://github.com/sakura-tel/areionskey/commit/0b8a01e4b6dda6be88076c2f72e354a3daaf9ddf)
+- mobile: focus 時のアウトラインを非表示に変更 by @fs5m8 [b6c2058](https://github.com/sakura-tel/areionskey/commit/b6c2058f79fd61dd9bdd518f66b902ca3ba5bcf3)
+- mobile/postform: 最近のハッシュタグの表示が2つもあったので片方を削除 by @fs5m8 [a015b41](https://github.com/sakura-tel/areionskey/commit/a015b415a12bb53db767add1e417fc3fcb2c712b)
+- TypeScript: String.substr() -> String.substring() by @fs5m8 [eb40267](https://github.com/sakura-tel/areionskey/commit/eb402679560d5d1219b46e8f70d6c61be6271481)
+- CSS: 廃止された/不要になった CSS プロパティの削除 by @fs5m8 [8a37c22](https://github.com/sakura-tel/areionskey/commit/8a37c2248bf7dcbcc7fe24cca5ff16a3ad36f0e3)
+- その他 mergin/padding の調整
+- 言語ファイルや文書の更新
+- 依存関係の更新
+
 2.1.1 (2022/12/25)
 --------------------
 ### To Update

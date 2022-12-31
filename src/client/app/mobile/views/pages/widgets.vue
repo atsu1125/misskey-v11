@@ -160,10 +160,11 @@ main
 
 	> header
 		padding 8px 10px
-		background #fff
+		background var(--bg)
 
 		> button
 			margin 0 8px
+			color var(--text)
 
 		> p
 			margin 8px 0 0
@@ -176,11 +177,11 @@ main
 
 	.customize-container
 		margin 8px
-		background #fff
+		color var(--bg)
+		background var(--text)
 
 		> header
 			line-height 32px
-			background #eee
 
 			> .handle
 				padding 0 8px

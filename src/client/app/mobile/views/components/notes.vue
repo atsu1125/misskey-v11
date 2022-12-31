@@ -33,6 +33,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import i18n from '../../../i18n';
+import * as config from '../../../config';
 import shouldMuteNote from '../../../common/scripts/should-mute-note';
 import paging from '../../../common/scripts/paging';
 
@@ -51,13 +52,22 @@ export default Vue.extend({
 				}
 			},
 
-			onPrepend: (self, note) => {
+			onPrepend: (self, note, silent) => {
 				// 弾く
 				if (shouldMuteNote(self.$store.state.i, self.$store.state.settings, note)) return false;
 
 				// タブが非表示またはスクロール位置が最上部ではないならタイトルで通知
 				if (document.hidden || !self.isScrollTop()) {
 					self.$store.commit('pushBehindNote', note);
+				}
+
+				if (self.isScrollTop()) {
+					// サウンドを再生する
+					if (self.$store.state.device.enableSounds && self.$store.state.device.enableSoundsInTimeline && !silent) {
+						const sound = new Audio(`${config.url}/assets/post.mp3`);
+						sound.volume = self.$store.state.device.soundVolume;
+						sound.play();
+					}
 				}
 			},
 
