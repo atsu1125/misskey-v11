@@ -145,7 +145,10 @@
 	<section>
 		<details>
 			<summary>{{ $t('danger-zone') }}</summary>
-			<ui-button @click="deleteAccount()">{{ $t('delete-account') }}</ui-button>
+			<ui-button @click="deleteAccount()" v-if="disableDeletion">{{ $t('suspend-account') }}</ui-button>
+			<ui-info v-if="disableDeletion">{{ $t('suspend-info')}}</ui-info>
+			<ui-button @click="deleteAccount()" v-if="!disableDeletion">{{ $t('delete-account') }}</ui-button>
+			<ui-info v-if="!disableDeletion">{{ $t('delete-info')}}</ui-info>
 		</details>
 	</section>
 </ui-card>
@@ -436,7 +439,7 @@ export default Vue.extend({
 				}).then(() => {
 					this.$root.dialog({
 						type: 'success',
-						text: this.$t('account-deleted')
+						text: this.$t('account-suspended')
 					});
 				});
 			} else {

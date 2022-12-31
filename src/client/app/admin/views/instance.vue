@@ -25,8 +25,9 @@
 		</section>
 		<section>
 			<ui-switch v-model="disableRegistration">{{ $t('disable-registration') }}</ui-switch>
-			<ui-switch v-model="disableDeletion">{{ $t('disable-deletion') }}</ui-switch>
 			<ui-button v-if="disableRegistration" @click="invite">{{ $t('invite') }}</ui-button>
+			<ui-switch v-model="disableDeletion">{{ $t('disable-deletion') }}</ui-switch>
+			<ui-info>{{ $t('disable-deletion-info') }}</ui-info>
 		</section>
 		<section>
 			<ui-button @click="updateMeta"><fa :icon="faSave"/> {{ $t('save') }}</ui-button>
