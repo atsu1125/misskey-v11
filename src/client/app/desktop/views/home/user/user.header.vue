@@ -11,6 +11,7 @@
 				<span class="username"><mk-acct :user="user" :detail="true" /></span>
 				<span v-if="user.movedToUser != null">moved to <router-link :to="user.movedToUser | userPage()"><mk-acct :user="user.movedToUser" :detail="true"/></router-link></span>
 				<span class="is-admin" v-if="user.isAdmin" :title="$t('@.admin-user')"><fa icon="wrench"/></span>
+				<span class="is-moderator" v-if="user.isModerator" :title="$t('@.moderator')"><fa :icon="faUserShield"/></span>
 				<span class="is-premium" v-if="user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
 				<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../../assets/horseshoe.svg" class="horseshoe"/></span>
 				<span class="is-bot" v-if="user.isBot" :title="$t('@.bot-user')"><fa icon="robot"/></span>
@@ -63,7 +64,7 @@ import i18n from '../../../../i18n';
 import * as age from 's-age';
 import XUserMenu from '../../../../common/views/components/user-menu.vue';
 import XIntegrations from '../../../../common/views/components/integrations.vue';
-import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { faPaw, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import { isBirthday } from '../../../../../../misc/birthday';
 
 export default Vue.extend({
@@ -74,7 +75,7 @@ export default Vue.extend({
 	props: ['user'],
 	data() {
 		return {
-			faPaw
+			faPaw, faUserShield
 		}
 	},
 	computed: {
@@ -231,6 +232,9 @@ export default Vue.extend({
 
 				> .is-admin
 					color var(--noteHeaderAdminFg)
+
+				> .is-moderator
+					color #ff9e3d
 
 				> .is-premium
 					color #FFC107

@@ -24,6 +24,7 @@
 					<span class="is-premium" v-if="user.isPremium" :title="$t('@.premium-user')"><fa icon="crown"/></span>
 					<span class="is-verified" v-if="user.isVerified" :title="$t('@.verified-user')"><img svg-inline src="../../../../assets/horseshoe.svg" class="horseshoe"/></span>
 					<span class="is-admin" v-if="user.isAdmin" :title="$t('@.admin-user')"><fa icon="wrench"/></span>
+					<span class="is-moderator" v-if="user.isModerator" :title="$t('@.moderator')"><fa :icon="faUserShield"/></span>
 					<span class="is-bot" v-if="user.isBot" :title="$t('@.bot-user')"><fa icon="robot"/></span>
 					<span class="is-cat" v-if="user.isCat" :title="$t('@.cat-user')"><fa :icon="faPaw"/></span>
 				</span>
@@ -83,7 +84,7 @@ import * as age from 's-age';
 import parseAcct from '../../../../../misc/acct/parse';
 import XColumn from './deck.column.vue';
 import XUserMenu from '../../../common/views/components/user-menu.vue';
-import { faPaw } from '@fortawesome/free-solid-svg-icons';
+import { faPaw, faUserShield } from '@fortawesome/free-solid-svg-icons';
 import { isBirthday } from '../../../../../misc/birthday';
 
 export default Vue.extend({
@@ -96,7 +97,7 @@ export default Vue.extend({
 		return {
 			user: null,
 			fetching: true,
-			faPaw
+			faPaw, faUserShield
 		};
 	},
 
@@ -224,6 +225,11 @@ export default Vue.extend({
 				> .is-admin
 					color var(--noteHeaderAdminFg)
 					margin-left .3em
+
+			　> .is-moderator
+					color #ff9e3d
+					margin-left .3em
+
 				> .is-verified
 					color #4dabf7
 					margin-left .3em
@@ -231,6 +237,7 @@ export default Vue.extend({
 						width 1em
 						height 1em
 						vertical-align: -.125em
+
 				> .is-bot
 				> .is-cat
 					color var(--noteHeaderBadgeFg)

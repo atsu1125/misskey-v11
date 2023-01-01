@@ -350,6 +350,7 @@ common:
   update-available: "A new version of Areionskey is now available({newer}, the current version is {current}). Reload the page to apply updates."
   my-token-regenerated: "Your token has been regenerated, so you will be signed out."
   admin-user: "Administrator account"
+  moderator: "Moderator"
   premium-user: "Premium account"
   verified-user: "Official account"
   bot-user: "Bot account"
