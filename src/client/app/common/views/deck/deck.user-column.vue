@@ -222,12 +222,16 @@ export default Vue.extend({
 				> .locked
 					opacity 0.8
 
+				> .is-moderator
+					color #ff9e3d
+					margin-left .3em
+
 				> .is-admin
 					color var(--noteHeaderAdminFg)
 					margin-left .3em
 
-			　> .is-moderator
-					color #ff9e3d
+				> .is-premium
+					color #FFC107
 					margin-left .3em
 
 				> .is-verified
