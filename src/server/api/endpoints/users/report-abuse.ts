@@ -67,10 +67,6 @@ export default define(meta, async (ps, me) => {
 		throw new ApiError(meta.errors.cannotReportYourself);
 	}
 
-	if (user.isAdmin) {
-		throw new ApiError(meta.errors.cannotReportAdmin);
-	}
-
 	const report = await AbuseUserReports.save({
 		id: genId(),
 		createdAt: new Date(),
