@@ -111,6 +111,8 @@ export default (os: MiOS) => new Vuex.Store({
 
 		isAdmin: state => state.i && state.i.isAdmin,
 
+		role: state => state.i?.isAdmin ? 'Admin' : state.i?.isModerator ? 'Moderator' : null,
+
 		home: state => state.settings.homeProfiles[state.device.homeProfile],
 
 		mobileHome: state => state.settings.mobileHomeProfiles[state.device.mobileHomeProfile],
