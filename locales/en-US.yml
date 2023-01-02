@@ -1424,6 +1424,7 @@ admin/views/instance.vue:
   use-star-for-reaction-fallback: "Use the star as fallback for unknown reaction"
   disable-trends: "Disable Trends"
   invite: "Invite"
+  invite-revoke: "Revoke All Invitation Codes"
   save: "Save"
   saved: "Saved"
   pinned-users: "Pinned user"

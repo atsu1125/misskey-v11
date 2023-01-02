@@ -1563,6 +1563,7 @@ admin/views/instance.vue:
   use-star-for-reaction-fallback: "不明なリアクションのフォールバックに star を使う"
   disable-trends: "トレンドを無効にする"
   invite: "招待"
+  invite-revoke: "全ての招待コードを無効にする"
   save: "保存"
   saved: "保存しました"
   pinned-users: "ピン留めユーザー"

@@ -26,6 +26,7 @@
 		<section>
 			<ui-switch v-model="disableRegistration" :disabled="!$store.getters.isAdmin">{{ $t('disable-registration') }}</ui-switch>
 			<ui-button v-if="disableRegistration" @click="invite" :disabled="!$store.getters.isAdmin">{{ $t('invite') }}</ui-button>
+			<ui-button v-if="disableRegistration" @click="inviteRevoke" :disabled="!$store.getters.isAdmin">{{ $t('invite-revoke') }}</ui-button>
 			<ui-switch v-model="disableDeletion" :disabled="!$store.getters.isAdmin">{{ $t('disable-deletion') }}</ui-switch>
 			<ui-info>{{ $t('disable-deletion-info') }}</ui-info>
 		</section>
@@ -452,6 +453,20 @@ export default Vue.extend({
 				this.$root.dialog({
 					type: 'info',
 					text: x.code
+				});
+			}).catch(e => {
+				this.$root.dialog({
+					type: 'error',
+					text: e
+				});
+			});
+		},
+
+		inviteRevoke() {
+			this.$root.api('admin/invite-revoke').then(x => {
+				this.$root.dialog({
+					type: 'success',
+					splash: true
 				});
 			}).catch(e => {
 				this.$root.dialog({
