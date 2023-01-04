@@ -25,8 +25,9 @@
 		</section>
 		<section>
 			<ui-switch v-model="disableRegistration" :disabled="!$store.getters.isAdmin">{{ $t('disable-registration') }}</ui-switch>
-			<ui-button v-if="disableRegistration" @click="invite" :disabled="!$store.getters.isAdmin">{{ $t('invite') }}</ui-button>
-			<ui-button v-if="disableRegistration" @click="inviteRevoke" :disabled="!$store.getters.isAdmin">{{ $t('invite-revoke') }}</ui-button>
+			<ui-switch v-model="disableInvitation" :disabled="!$store.getters.isAdmin">{{ $t('disable-invitation') }}</ui-switch>
+			<ui-button v-if="disableRegistration" @click="invite" :disabled="!$store.getters.isAdmin || disableInvitation">{{ $t('invite') }}</ui-button>
+			<ui-button v-if="disableRegistration" @click="inviteRevoke" :disabled="!$store.getters.isAdmin || disableInvitation">{{ $t('invite-revoke') }}</ui-button>
 			<ui-switch v-model="disableDeletion" :disabled="!$store.getters.isAdmin">{{ $t('disable-deletion') }}</ui-switch>
 			<ui-info>{{ $t('disable-deletion-info') }}</ui-info>
 		</section>
@@ -275,6 +276,7 @@ export default Vue.extend({
 			repositoryUrl: "https://github.com/sakura-tel/areionskey",
 			feedbackUrl: null,
 			disableRegistration: false,
+			disableInvitation: false,
 			disableDeletion: false,
 			disableLocalTimeline: false,
 			disableGlobalTimeline: false,
@@ -348,6 +350,7 @@ export default Vue.extend({
 			this.repositoryUrl = meta.repositoryUrl;
 			this.feedbackUrl = meta.feedbackUrl;
 			this.disableRegistration = meta.disableRegistration;
+			this.disableInvitation = meta.disableInvitation;
 			this.disableDeletion = meta.disableDeletion;
 			this.disableLocalTimeline = meta.disableLocalTimeline;
 			this.disableGlobalTimeline = meta.disableGlobalTimeline;
@@ -510,6 +513,7 @@ export default Vue.extend({
 				repositoryUrl: this.repositoryUrl,
 				feedbackUrl: this.feedbackUrl,
 				disableRegistration: this.disableRegistration,
+				disableInvitation: this.disableInvitation,
 				disableDeletion: this.disableDeletion,
 				disableLocalTimeline: this.disableLocalTimeline,
 				disableGlobalTimeline: this.disableGlobalTimeline,

@@ -4,7 +4,7 @@ import { generateKeyPair } from 'crypto';
 import generateUserToken from '../common/generate-native-user-token';
 import config from '../../../config';
 import { fetchMeta } from '../../../misc/fetch-meta';
-import { verifyRecaptcha } from '../../../misc/captcha'; 
+import { verifyRecaptcha } from '../../../misc/captcha';
 import { Users, Signins, RegistrationTickets, UsedUsernames } from '../../../models';
 import { genId } from '../../../misc/gen-id';
 import { usersChart } from '../../../services/chart';
@@ -34,7 +34,7 @@ export default async (ctx: Koa.Context) => {
 	const invitationCode = body['invitationCode'];
 
 	if (instance && instance.disableRegistration) {
-		if (invitationCode == null || typeof invitationCode != 'string') {
+		if (instance.disableInvitation || invitationCode == null || typeof invitationCode != 'string') {
 			ctx.status = 400;
 			return;
 		}

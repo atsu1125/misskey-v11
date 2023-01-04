@@ -10,8 +10,8 @@
 		<div class="about">
 			<p v-html="description || this.$t('@.about')"></p>
 			<div class="sign">
-				<router-link class="signup" to="/signup">{{ $t('@.signup') }}</router-link>
-				<span class="divider">|</span>
+				<router-link class="signup" to="/signup" v-if="meta && !(meta.disableRegistration && meta.disableInvitation)">{{ $t('@.signup') }}</router-link>
+				<span class="divider" v-if="meta && !(meta.disableRegistration && meta.disableInvitation)">|</span>
 				<a href="/signin" @click.prevent="signin()">{{ $t('@.signin') }}</a>
 			</div>
 			<div class="explore">

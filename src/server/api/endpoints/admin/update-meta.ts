@@ -30,6 +30,13 @@ export const meta = {
 			}
 		},
 
+		disableInvitation: {
+			validator: $.optional.nullable.bool,
+			desc: {
+				'ja-JP': '招待制を無効にするか否か'
+			}
+		},
+
 		disableDeletion: {
 			validator: $.optional.nullable.bool,
 			desc: {
@@ -467,6 +474,10 @@ export default define(meta, async (ps, me) => {
 
 	if (typeof ps.disableRegistration === 'boolean') {
 		set.disableRegistration = ps.disableRegistration;
+	}
+
+	if (typeof ps.disableInvitation === 'boolean') {
+		set.disableInvitation = ps.disableInvitation;
 	}
 
 	if (typeof ps.disableDeletion === 'boolean') {

@@ -47,6 +47,11 @@ export class Meta {
 	@Column('boolean', {
 		default: false,
 	})
+	public disableInvitation: boolean;
+
+	@Column('boolean', {
+		default: false,
+	})
 	public disableDeletion: boolean;
 
 	@Column('boolean', {

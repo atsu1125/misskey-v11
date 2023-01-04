@@ -74,6 +74,11 @@ export const meta = {
 				optional: false as const, nullable: false as const,
 				description: 'Whether disabled open registration.',
 			},
+			disableInvitation: {
+				type: 'boolean' as const,
+				optional: false as const, nullable: false as const,
+				description: 'Whether disabled invitation.',
+			},
 			disableDeletion: {
 				type: 'boolean',
 				description: 'Whether disabled account deletion.',
@@ -141,6 +146,7 @@ export default define(meta, async (ps, me) => {
 
 		announcements: instance.announcements || [],
 		disableRegistration: instance.disableRegistration,
+		disableInvitation: instance.disableInvitation,
 		disableDeletion: instance.disableDeletion,
 		disableLocalTimeline: instance.disableLocalTimeline,
 		disableGlobalTimeline: instance.disableGlobalTimeline,
