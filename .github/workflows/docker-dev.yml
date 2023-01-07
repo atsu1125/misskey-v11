@@ -5,6 +5,7 @@ on:
     branches:
       - 'develop'
       - 'atsuchan/dev'
+  workflow_dispatch:
 
 jobs:
   push_to_registry:
