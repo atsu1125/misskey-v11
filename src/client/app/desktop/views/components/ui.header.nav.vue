@@ -7,7 +7,7 @@
 		<li class="explore" :class="{ active: $route.name == 'explore' || $route.name == 'explore-tag' }">
 			<router-link to="/explore"><fa :icon="faHashtag"/><p>{{ $t('@.explore') }}</p></router-link>
 		</li>
-		<li class="game">
+		<li class="game" v-if="this.$store.getters.isSignedIn">
 			<a @click="game">
 				<fa icon="gamepad"/>
 				<p>{{ $t('game') }}</p>

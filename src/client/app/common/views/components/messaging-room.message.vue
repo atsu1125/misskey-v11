@@ -261,8 +261,8 @@ export default Vue.extend({
 					> p.is-deleted
 						color rgba(#fff, 0.5)
 
-					> .text >>>
-						&, *
+					> .text
+						&, :deep(*)
 							color #fff !important
 
 			> footer

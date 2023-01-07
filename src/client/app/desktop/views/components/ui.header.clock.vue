@@ -102,7 +102,8 @@ export default Vue.extend({
 		z-index 3
 		margin 0
 		padding 0
-		width 256px
+		width 250px
+		border-radius 125px 0 125px 125px
 		background var(--desktopHeaderBg)
 
 </style>

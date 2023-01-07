@@ -447,7 +447,7 @@ export default Vue.extend({
 
 			> img
 				width 24px
-				vertical-align bottom
+				vertical-align middle
 
 		.name
 			color var(--autocompleteItemText)

@@ -26,6 +26,7 @@ export default Vue.extend({
 .muteblockuser
 	display flex
 	padding 16px
+	overflow hidden
 
 	> .avatar-link
 		> a

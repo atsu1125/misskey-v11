@@ -1,6 +1,42 @@
 ChangeLog
 =========
 
+2.3.0 (2023/01/04)
+--------------------
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+`docker-compose.yml` の PostgreSQL デフォルトバージョンを `11.2` から `15.x` に，Redis デフォルトバージョンを `4.0.x` から `6.2.x` に変更しました．付属の `docker-compose.yml` で直接実行している場合は，環境に合わせて 書き換え または アップデートを実施してください．
+
+### ✨Improvements
+- reaction: 絵文字の下に影を追加 by @fs5m8 [518e5b2](https://github.com/sakura-tel/areionskey/commit/518e5b209457e5c3919c086746faf35697a90a6a)
+- emoji-picker: 画像を遅延読込に変更 by @fs5m8 [957b72c](https://github.com/sakura-tel/areionskey/commit/957b72ca43f2e463ee25fe737c4f85b5a8cd422e)
+- mobile/reaction: マウスオーバ時の表示を Mobile でも表示するように変更 by @fs5m8 [f6491f0](https://github.com/sakura-tel/areionskey/commit/f6491f0a0390593d5b3928360536995edbdfddbf)
+- emoji: sticker (スタンプ) 機能を追加 by @EbiseLutica mod @fs5m8 [4a2f225](https://github.com/sakura-tel/areionskey/commit/4a2f225a2ab65d401f5b83874c403f22954b3561)
+- emoji: カスタム絵文字は大きく表示するか否かを選択可能に変更 by @EbiseLutica mod @fs5m8 [5fa1db5](https://github.com/sakura-tel/areionskey/commit/5fa1db55c17eee2c59933aa1b08ba0535555da3a)
+- reaction: マウスオーバ時の表示を Misskey v12 相当の表示に変更 by @fs5m8 [203a4e6](https://github.com/sakura-tel/areionskey/commit/203a4e6d63f08f9fb03fcb01e3ef06fe17245035)
+- user: モデレータのバッジを追加 by @atsu1125 [7498f77](https://github.com/sakura-tel/areionskey/commit/7498f775f1e7a8409d4e2cc2dbd41aa5497e9fb3)
+- admin: メニュー内の自分の名前の下に役割を追加 by @atsu1125 [ed80968](https://github.com/sakura-tel/areionskey/commit/ed8096850a24cb5861b9172fa0ae9a6aa59c16b6)
+- emoji-picker: 検索機能を追加 by @sousuke0422 [4646c03](https://github.com/sakura-tel/areionskey/commit/4646c03d81df5270c1002b8c107ccf317295a284) [283925a](https://github.com/sakura-tel/areionskey/commit/283925a5529d057a1216e0e4e54571e614cd38c3)
+- reaction-picker: 絵文字ピッカーを追加 by @sousuke0422 [50f5f24](https://github.com/sakura-tel/areionskey/commit/50f5f246fb9744cffc2da32630ec5b84af54b685)
+
+### 🐛Fixes
+- desktop/crop: ボタン類のフォーマットを他のウインドウと統一するように変更 by @fs5m8 [67a1a4e](https://github.com/sakura-tel/areionskey/commit/67a1a4ead35d7be7db178136033e047d751da18a) [67a1a4e](https://github.com/sakura-tel/areionskey/commit/67a1a4e9a8a48eefec0e62016e2d449eddafa459)
+- 参照置換 `api/admin/show-user` -> `api/users/show` by @fs5m8 [dbbe3f6](https://github.com/sakura-tel/areionskey/commit/dbbe3f6f3526c28bd2e71d38d00f88dd4bf42f70)
+- avatar/cat: ネコミミをアバター画像の平均色となるように変更 by @fs5m8 [cd97f08](https://github.com/sakura-tel/areionskey/commit/cd97f085fd230b13764422c3935b7ed6d06c699b)
+- autocomplete: 画像を中央揃えに変更 by @fs5m8 [8be6e0d](https://github.com/sakura-tel/areionskey/commit/8be6e0d2b94b4a5bb9c20c49e24778d8c0862826)
+- report: `admin` を通報可能に変更 by @atsu1125 [85e5ff8](https://github.com/sakura-tel/areionskey/commit/85e5ff8468cc8343858d0339f936eb0d6eb1ffec)
+- note: リアクション数合計をタイムラインではなく 当該の投稿の詳細画面に表示するように変更 by @fs5m8 [5965173](https://github.com/sakura-tel/areionskey/commit/59651739174cef7463d0f88e130d07fd2676c852)
+- explore: 検索結果に「もっと表示」を表示しないように変更 by @fs5m8 [73905c7](https://github.com/sakura-tel/areionskey/commit/73905c70b11e4999899b5d565deb3d4cf3242022)
+- desktop/header: サインアウト時はゲームを表示しないよう変更 by @fs5m8 [8082e1d](https://github.com/sakura-tel/areionskey/commit/8082e1d31fab7b9971fa8c995203b1d2503927de)
+- mobile/emoji-picker: 出現する位置を調整 by @fs5m8 [0e0dec7](https://github.com/sakura-tel/areionskey/commit/0e0dec7a158b5981d327da64d6445f08aa0956ed)
+- CSS: `backdrop-filter` を削除 by @fs5m8 [a6f9120](https://github.com/sakura-tel/areionskey/commit/a6f912027aa4f07c82f9b27c794714e1a526b472)
+- admin: `moderator` の権限に合わせた frontend の調整 by @atsu1125 [6fb511d](https://github.com/sakura-tel/areionskey/commit/6fb511da083fe0170bd51b63e40d192ef9013926) [3ca49f3](https://github.com/sakura-tel/areionskey/commit/3ca49f3580480ad4eabd4e6ee2edbd6e46efef6e) [4a9c814](https://github.com/sakura-tel/areionskey/commit/4a9c814289c4c1645a736e9e06942a41c3d66144) [77751a0](https://github.com/sakura-tel/areionskey/commit/77751a0d91461961aa88c342778faba2f6fb397e)
+- その他 `overflow`, `transparency` などの調整
+- 言語ファイルの更新
+- 依存関係，ワークフローファイル，テストファイルの更新
+
 2.2.0 (2022/12/31)
 --------------------
 ### To Update

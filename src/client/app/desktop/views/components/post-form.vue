@@ -27,7 +27,7 @@
 			<input v-show="useCw" ref="cw" v-model="cw" :placeholder="$t('@.post-form.cw-placeholder')" v-autocomplete="{ model: 'cw' }">
 			<div class="textarea">
 				<textarea :class="{ with: (files.length != 0 || poll) }" ref="text" v-model="text" :disabled="posting" @keydown="onKeydown" @paste="onPaste" :placeholder="placeholder" v-autocomplete="{ model: 'text' }"></textarea>
-				<button class="emoji" @click="emoji" ref="emoji">
+				<button title="Pick" class="emoji" @click="emoji" ref="emoji">
 					<fa :icon="['far', 'laugh']"/>
 				</button>
 				<x-post-form-attaches class="files" :class="{ with: poll }" :files="files"/>

@@ -13,7 +13,7 @@ jobs:
 
     services:
       postgres:
-        image: postgres:10-alpine
+        image: postgres:15-alpine
         ports:
           - 5432:5432
         env:
@@ -21,17 +21,17 @@ jobs:
           POSTGRES_HOST_AUTH_METHOD: trust
 
       redis:
-        image: redis:alpine
+        image: redis:6.2-alpine
         ports:
           - 6379:6379
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
       with:
         submodules: true
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
@@ -42,7 +42,7 @@ jobs:
     - run: yarn migrateandstart &
 
     - name: Use Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -55,11 +55,12 @@ jobs:
       working-directory: ./e2e
 
     - name: Run E2E Test
-      run: pytest run.py
+      run: pytest run.py --maxfail=1
       working-directory: ./e2e
     
     - name: Upload E2E ScreenShots
-      uses: actions/upload-artifact@v2
+      if: always()
+      uses: actions/upload-artifact@v3
       with:
         name: ScreenShots-${{ matrix.node-version }}
         path: e2e/ScreenShots

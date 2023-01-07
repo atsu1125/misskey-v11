@@ -3,7 +3,7 @@
 	<ui-input v-model="query" style="margin: 1.2em 0.5em 1.5em;">
 		<span>{{ $t('searchUser') }}</span>
 	</ui-input>
-	<mk-user-list v-if="query && query !== ''" :pagination="foundUsers" :key="`${query}`">
+	<mk-user-list v-if="query && query !== ''" :pagination="foundUsers" :key="`${query}`" :noMore="true">
 		<fa :icon="faSearch" fixed-width/>{{ query }}
 	</mk-user-list>
 

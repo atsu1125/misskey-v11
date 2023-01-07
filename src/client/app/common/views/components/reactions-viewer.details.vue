@@ -1,25 +1,17 @@
 <template>
 <transition name="zoom-in-top">
 	<div class="buebdbiu" ref="popover" v-if="show">
-		<i18n path="few-users" v-if="users.length <= 10">
-			<span slot="users">
-				<b v-for="u in users" :key="u.id" style="margin-right: 12px;">
-					<mk-avatar :user="u" style="width: 24px; height: 24px; margin-right: 2px;"/>
-					<mk-user-name :user="u" :nowrap="false" style="line-height: 24px;"/>
-				</b>
-			</span>
-			<mk-reaction-icon slot="reaction" :reaction="reaction" :custom-emojis="customEmojis" ref="icon" />
-		</i18n>
-		<i18n path="many-users" v-if="10 < users.length">
-			<span slot="users">
-				<b v-for="u in users" :key="u.id" style="margin-right: 12px;">
-					<mk-avatar :user="u" style="width: 24px; height: 24px; margin-right: 2px;"/>
-					<mk-user-name :user="u" :nowrap="false" style="line-height: 24px;"/>
-				</b>
-			</span>
-			<span slot="omitted">{{ count - 10 }}</span>
-			<mk-reaction-icon slot="reaction" :reaction="reaction" :custom-emojis="customEmojis" ref="icon" />
-		</i18n>
+		<div class="reaction">
+			<mk-reaction-icon class="icon" :reaction="reaction" :custom-emojis="customEmojis" ref="icon"/>
+			<div class="name">{{ getReactionName(reaction) }}</div>
+		</div>
+		<div class="users">
+			<div class="user" v-for="u in users" :key="u.id">
+				<mk-avatar class="avatar" :user="u" style="width: 24px; height: 24px; margin-right: 4px;"/>
+				<mk-user-name class="name" :user="u" :nowrap="true"/>
+			</div>
+			<div v-if="users.length > 10" class="omitted">+{{ count - 10 }}</div>
+		</div>
 	</div>
 </transition>
 </template>
@@ -27,6 +19,7 @@
 <script lang="ts">
 import Vue from 'vue';
 import i18n from '../../../i18n';
+import { getEmojiName } from '../../scripts/get-emoji-name';
 
 export default Vue.extend({
 	i18n: i18n('common/views/components/reactions-viewer.details.vue'),
@@ -73,11 +66,18 @@ export default Vue.extend({
 			popover.style.left = (x - 28) + 'px';
 			popover.style.top = (y + 16) + 'px';
 		});
-	}
+	},
 	methods: {
 		close() {
 			this.show = false;
 			setTimeout(this.destroyDom, 300);
+		},
+		getReactionName(reaction: string): string {
+			const trimLocal = reaction.replace('@.', '');
+				if (trimLocal.startsWith(':')) {
+				return trimLocal;
+			}
+			return getEmojiName(reaction) ?? reaction;
 		}
 	}
 })
@@ -86,19 +86,49 @@ export default Vue.extend({
 <style lang="stylus" scoped>
 .buebdbiu
 	$bgcolor = var(--popupBg)
+	display flex
 	z-index 10000
-	display block
 	position absolute
-	max-width 240px
-	font-size 0.8em
-	padding 6px 8px
+	padding 8px
 	background $bgcolor
-	text-align center
 	color var(--text)
 	border-radius 4px
 	box-shadow 0 var(--lineWidth) 4px rgba(#000, 0.25)
 	pointer-events none
 	transform-origin center -16px
+
+	> .reaction
+		max-width 350px
+		margin-left 4px
+		text-align center
+
+		> .icon
+			display block
+			margin 0 auto
+			max-width 350px
+			font-size 54px
+
+		> .name
+			font-size 12px
+
+	> .users 
+		flex 1
+		min-width 0
+		font-size 14px
+		border-left solid 0.5px var(--faceDivider)
+		padding-left 12px
+		margin-left 10px
+		margin-right 12px
+		text-align left
+
+		> .user
+			line-height 24px
+			white-space nowrap
+			overflow hidden
+			text-overflow ellipsis
+
+			&:not(:last-child)
+				margin-bottom 4px
 
 	&:before
 		content ""
@@ -123,4 +153,5 @@ export default Vue.extend({
 		border-right solid 14px transparent
 		border-bottom solid 14px $bgcolor
 		border-left solid 14px transparent
+
 </style>

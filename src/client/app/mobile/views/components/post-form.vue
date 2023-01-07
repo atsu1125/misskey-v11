@@ -37,7 +37,7 @@
 			<input v-show="useCw" ref="cw" v-model="cw" :placeholder="$t('@.post-form.cw-placeholder')" v-autocomplete="{ model: 'cw' }">
 			<div class="textarea">
 				<textarea v-model="text" ref="text" :disabled="posting" :placeholder="placeholder" v-autocomplete="{ model: 'text' }" @paste="onPaste"></textarea>
-				<button class="emoji" @click="emoji" ref="emoji">
+				<button title="Pick" class="emoji" @click="emoji" ref="emoji">
 					<fa :icon="['far', 'laugh']"/>
 				</button>
 			</div>

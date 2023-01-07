@@ -75,8 +75,6 @@ export default Vue.extend({
 			z-index 1000
 			width 100%
 			height $height
-			-webkit-backdrop-filter blur(12px)
-			backdrop-filter blur(12px)
 			background-color var(--mobileHeaderBg)
 
 		> .content

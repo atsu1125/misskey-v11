@@ -177,14 +177,14 @@ export default Vue.extend({
 		async showUser() {
 			this.user = null;
 			const user = await this.fetchUser();
-			this.$root.api('admin/show-user', { userId: user.id }).then(info => {
+			this.$root.api('users/show', { userId: user.id }).then(info => {
 				this.user = info;
 			});
 			this.target = '';
 		},
 
 		async showUserOnClick(userId: string) {
-			this.$root.api('admin/show-user', { userId: userId }).then(info => {
+			this.$root.api('users/show', { userId: userId }).then(info => {
 				this.user = info;
 				this.$nextTick(() => {
 					this.$refs.user.scrollIntoView();
@@ -194,7 +194,7 @@ export default Vue.extend({
 
 		/** 処理対象ユーザーの情報を更新する */
 		async refreshUser() {
-			this.$root.api('admin/show-user', { userId: this.user.id }).then(info => {
+			this.$root.api('users/show', { userId: this.user.id }).then(info => {
 				this.user = info;
 			});
 		},

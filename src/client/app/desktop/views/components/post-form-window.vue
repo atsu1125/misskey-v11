@@ -120,6 +120,9 @@ export default Vue.extend({
 <style lang="stylus" scoped>
 .mk-post-form-window
 	.mk-post-form-window--header
+		.notePreview
+			overflow initial
+
 		.icon
 			margin-right 8px
 

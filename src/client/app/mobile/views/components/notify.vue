@@ -76,10 +76,8 @@ export default Vue.extend({
 
 	> div
 		height 100%
-		-webkit-backdrop-filter blur(2px)
-		backdrop-filter blur(2px)
-		background-color rgba(#000, 0.5)
-		border-radius 7px
+		background-color rgba(#000, 0.7)
+		border-radius 6px
 		overflow hidden
 
 </style>

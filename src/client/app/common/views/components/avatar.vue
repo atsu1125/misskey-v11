@@ -50,11 +50,21 @@ export default Vue.extend({
 	},
 	watch: {
 		'user.avatarBlurhash'() {
-			this.$el.style.color = this.getBlurhashAvgColor(this.user.avatarBlurhash);
+			const avgColor = this.getBlurhashAvgColor(this.user.avatarBlurhash);
+			if (avgColor === undefined){
+				this.$el.style.color = "var(--noteText)";
+			}	else {
+				this.$el.style.color = avgColor;
+			}
 		}
 	},
 	mounted() {
-		this.$el.style.color = this.getBlurhashAvgColor(this.user.avatarBlurhash);
+		const avgColor = this.getBlurhashAvgColor(this.user.avatarBlurhash);
+		if (avgColor === undefined){
+			this.$el.style.color = "var(--noteText)";
+		}	else {
+			this.$el.style.color = avgColor;
+		}
 	},
 	methods: {
 		getBlurhashAvgColor(s) {
@@ -100,7 +110,7 @@ export default Vue.extend({
 	&.cat::before,
 	&.cat::after
 		background #df548f
-		border solid 4px var(--noteText)
+		border solid 4px currentColor
 		box-sizing border-box
 		content ''
 		display inline-block

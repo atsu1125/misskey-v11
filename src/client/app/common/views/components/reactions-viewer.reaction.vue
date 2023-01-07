@@ -8,7 +8,7 @@
 	@mouseleave="onMouseleave"
 	ref="reaction"
 >
-	<mk-reaction-icon :reaction="reaction" :customEmojis="note.emojis" ref="icon"/>
+	<mk-reaction-icon class="icon" :reaction="reaction" :customEmojis="note.emojis" ref="icon"/>
 	<span>{{ count }}</span>
 </span>
 </template>
@@ -92,7 +92,6 @@ export default Vue.extend({
 			this.closeDetails();
 		},
 		openDetails() {
-			if (this.$root.isMobile) return;
 			this.$root.api('notes/reactions', {
 				noteId: this.note.id,
 				type: this.reaction,
@@ -185,6 +184,9 @@ export default Vue.extend({
 
 		> span
 			color var(--primaryForeground)
+
+		> .icon
+			filter drop-shadow(0 0 2px rgba(0, 0, 0, 0.5))
 
 	&:not(.reacted)
 		background var(--reactionViewerButtonBg)

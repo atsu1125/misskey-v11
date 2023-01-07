@@ -8,6 +8,7 @@
 		</div>
 		<div v-if="enableEmojiReaction" class="text">
 			<input v-model="text" :placeholder="$t('input-reaction-placeholder')" @keyup.enter="reactText" @input="tryReactText" v-autocomplete="{ model: 'text' }">
+			<button title="Pick" class="emoji" @click="emoji" ref="emoji"><fa :icon="['far', 'laugh']"/></button>
 		</div>
 	</div>
 </div>
@@ -144,6 +145,23 @@ export default Vue.extend({
 			this.reactText();
 		},
 
+		async emoji() {
+			const Picker = await import('./emoji-picker-dialog.vue').then(m => m.default);
+			const button = this.$refs.emoji;
+			const rect = button.getBoundingClientRect();
+			const vm = this.$root.new(Picker, {
+				reaction: true,
+				x: button.offsetWidth + rect.left + window.pageXOffset,
+				y: rect.top + window.pageYOffset
+			});
+			vm.$once('chosen', emoji => {
+				this.react(emoji);
+			});
+			this.$once('hook:beforeDestroy', () => {
+				vm.close();
+			});
+		},
+
 		onMouseover(e) {
 			this.title = e.target.title;
 		},
@@ -231,6 +249,10 @@ export default Vue.extend({
 					height 50px
 					font-size 28px
 					border-radius 4px
+	
+			> .text
+				> .emoji
+					bottom 0.2em			
 
 		&:not(.isMobile)
 			$arrow-size = 16px
@@ -298,6 +320,7 @@ export default Vue.extend({
 		> .text
 			width 216px
 			padding 0 8px 8px 8px
+			color var(--text)
 
 			> input
 				width 100%
@@ -311,6 +334,15 @@ export default Vue.extend({
 				border solid 1px var(--primaryAlpha01)
 				border-radius 4px
 				transition border-color .2s ease
+
+			> .emoji
+				position absolute
+				right 5px
+				bottom 0.4em
+				padding 10px
+				font-size 18px
+				color var(--text)
+				opacity 0.5
 
 				&:hover
 					border-color var(--primaryAlpha02)

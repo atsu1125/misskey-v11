@@ -6,11 +6,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import contains from '../../../common/scripts/contains';
+import contains from '../../scripts/contains';
 
 export default Vue.extend({
 	components: {
-		XPicker: () => import('../../../common/views/components/emoji-picker.vue').then(m => m.default)
+		XPicker: () => import('./emoji-picker.vue').then(m => m.default)
 	},
 
 	props: {
@@ -26,7 +26,8 @@ export default Vue.extend({
 
 	mounted() {
 		this.$nextTick(() => {
-			const width = this.$el.offsetWidth;
+			// const width = this.$el.offsetWidth;
+			const width = (this.$el.offsetWidth ? this.$el.offsetWidth : 350);
 			const height = this.$el.offsetHeight;
 
 			let x = this.x;
@@ -40,8 +41,13 @@ export default Vue.extend({
 				y = window.innerHeight - height + window.pageYOffset;
 			}
 
-			this.$el.style.left = x + 'px';
-			this.$el.style.top = y + 'px';
+			if (this.$root.isMobile) {
+				this.$el.style.left = (window.innerWidth / 2) - (width / 2) + 'px';
+				this.$el.style.top = y + 40 + 'px';
+			} else {
+				this.$el.style.left = x + 'px';
+				this.$el.style.top = y + 'px';
+			}
 
 			for (const el of Array.from(document.querySelectorAll('body *'))) {
 				el.addEventListener('mousedown', this.onMousedown);
@@ -51,9 +57,13 @@ export default Vue.extend({
 
 	methods: {
 		onMousedown(e) {
-			e.preventDefault();
-			if (!contains(this.$el, e.target) && (this.$el != e.target)) this.close();
-			return false;
+			if (!contains(this.$el, e.target) && (this.$el != e.target)) {
+				e.preventDefault();
+				this.close();
+				return false;
+			} else {
+				return true;
+			}
 		},
 
 		chosen(emoji) {

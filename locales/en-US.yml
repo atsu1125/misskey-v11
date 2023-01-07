@@ -241,6 +241,8 @@ common:
     show-via: "Show via"
     reduce-motion: "Reduce motion in UI"
     this-setting-is-this-device-only: "Only for this device"
+    make-custom-emojis-bigger: "Make custom emojis bigger"
+    use-sticker: "Use Sticker"
     use-os-default-emojis: "Use the OS default Emojis"
     line-width: "Line thickness"
     line-width-thin: "Thin"
@@ -682,6 +684,7 @@ common/views/components/reaction-picker.vue:
 common/views/components/emoji-picker.vue:
   recent-emoji: "Recently used"
   custom-emoji: "Custom Emoji"
+  search-emoji: "Search Emoji"
   no-category: "Uncategorized"
   face: "Face mark"
   people: "People"

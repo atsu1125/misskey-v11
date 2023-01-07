@@ -7,7 +7,7 @@ common:
   about-title: "A isle of the Fediverse."
   about: "Areionskey は、<b>連合/分散型マイクロブログ・プラットフォーム</b>です。ActivityPub による相互通信により、他のプラットフォームと相互に接続され、Fediverse と呼ばれるつながりを形成しています。"
   intro:
-    title: "Areionskey って？"
+    title: "Areionskey とは？"
     about: "Areionskey は、<b>連合/分散型マイクロブログ・プラットフォーム</b>です。リッチで高度にカスタマイズできるUI、投稿へのリアクション、ファイルを一元管理できるドライブなど、先進的な機能を揃えています。また、ActivityPub による相互通信により、他のプラットフォームと相互に接続され、Fediverse と呼ばれるつながりを形成しています。あなたが何か投稿すると、その投稿は Areionskey だけでなく他のプラットフォームにも伝わります。ちょうどある惑星から他の惑星に電波を発信している様子をイメージしてください。"
     features: "特徴"
     rich-contents: "投稿"
@@ -250,12 +250,14 @@ common:
     enable-quick-notification-view: "通知のクイックビューを有効にする"
     suggest-recent-hashtags: "最近のハッシュタグを投稿フォームに表示する"
     always-show-nsfw: "常に閲覧注意のメディアを表示する"
-    always-mark-nsfw: "常にメディアを閲覧注意として投稿"
+    always-mark-nsfw: "常にメディアを閲覧注意として投稿する"
     show-full-acct: "ユーザー名のホストを省略しない"
     show-via: "via を表示する"
     reduce-motion: "UI の動きを減らす"
     this-setting-is-this-device-only: "このデバイスのみ"
-    use-os-default-emojis: "OS 標準の絵文字を使用"
+    make-custom-emojis-bigger: "カスタム絵文字を大きく表示する"
+    use-sticker: "スタンプを使用する"
+    use-os-default-emojis: "OS 標準の絵文字を使用する"
     line-width: "線の太さ"
     line-width-thin: "細い"
     line-width-normal: "普通"
@@ -276,9 +278,9 @@ common:
     deck-column-width-normal: "普通"
     deck-column-width-wider: "やや広"
     deck-column-width-wide: "広"
-    use-shadow: "UI に影を使用"
+    use-shadow: "UI に影を使用する"
     rounded-corners: "UI の角を丸める"
-    circle-icons: "円形のアバターを使用"
+    circle-icons: "円形のアバターを使用する"
     contrasted-acct: "ユーザー名にコントラストを付ける"
     deckTemporaryColumnPosition: "デッキの一時カラムの位置"
     deckTemporaryColumnPosition-right: "一番右"
@@ -336,7 +338,7 @@ common:
     notification-position: "通知の表示"
     notification-position-bottom: "下"
     notification-position-top: "上"
-    disable-via-mobile: "モバイルからの投稿 フラグを付けない"
+    disable-via-mobile: "モバイルからの投稿フラグを付けない"
     load-raw-images: "添付された画像を高画質で表示する"
     load-remote-media: "リモートサーバーのメディアを表示する"
     sync: "同期"
@@ -354,7 +356,7 @@ common:
         medium: "中"
         low: "低"
         cheep: "最低"
-      useOrthographicCamera: "平行投影カメラを使用"
+      useOrthographicCamera: "平行投影カメラを使用する"
 
   search: "検索"
   delete: "削除"
@@ -728,6 +730,7 @@ common/views/components/reaction-picker.vue:
 common/views/components/emoji-picker.vue:
   recent-emoji: "最近使った絵文字"
   custom-emoji: "カスタム絵文字"
+  search-emoji: "絵文字を検索"
   no-category: "カテゴリなし"
   face: "顔文字"
   people: "人"
@@ -1055,7 +1058,7 @@ common/views/pages/follow-requests.vue:
   reject: "拒否"
 
 common/views/pages/reset-password.vue:
-  password: "新しいパスワード"
+  password: "新しいパスワードを入力してください"
   save: "保存"
 
 desktop:
@@ -1280,7 +1283,7 @@ desktop/views/components/settings.2fa.vue:
   register-security-key: "キーの登録を完了"
   something-went-wrong: "キーを登録する際に問題が発生しました:"
   key-unregistered: "キーが削除されました"
-  use-password-less-login: "パスワードなしのサインインを使用"
+  use-password-less-login: "パスワードなしのサインインを使用する"
 
 common/views/components/media-image.vue:
   sensitive: "閲覧注意"
@@ -1506,7 +1509,7 @@ admin/views/instance.vue:
   object-storage-port: "ポート"
   object-storage-access-key: "アクセスキー"
   object-storage-secret-key: "シークレットキー"
-  object-storage-use-ssl: "SSL を使用"
+  object-storage-use-ssl: "SSL を使用する"
   objectStorageUseProxy: "Proxy を利用する"
   objectStorageSetPublicRead: "アップロード時に'public-read'を設定する"
   objectStorageS3ForcePathStyle: "S3ForcePathStyle"
