@@ -12,7 +12,7 @@
 				<x-user :user="user"/>
 				<div class="actions">
 					<ui-button v-if="user.host != null" @click="updateRemoteUser"><fa :icon="faSync"/> {{ $t('update-remote-user') }}</ui-button>
-					<ui-button @click="resetPassword"><fa :icon="faKey"/> {{ $t('reset-password') }}</ui-button>
+					<ui-button @click="resetPassword" :disabled="user.isAdmin"><fa :icon="faKey"/> {{ $t('reset-password') }}</ui-button>
 					<ui-horizon-group>
 						<ui-button @click="setPremium" :disabled="changing"><fa :icon="faCrown"/> {{ $t('premium') }}</ui-button>
 						<ui-button @click="unsetPremium" :disabled="changing">{{ $t('unpremium') }}</ui-button>
