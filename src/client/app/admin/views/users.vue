@@ -29,7 +29,7 @@
 						<ui-button @click="suspendUser" :disabled="suspending || user.isModerator || user.isAdmin"><fa :icon="faSnowflake"/> {{ $t('suspend') }}</ui-button>
 						<ui-button @click="unsuspendUser" :disabled="unsuspending">{{ $t('unsuspend') }}</ui-button>
 					</ui-horizon-group>
-					<ui-button @click="deleteAllFiles"><fa :icon="faTrashAlt"/> {{ $t('delete-all-files') }}</ui-button>
+					<ui-button @click="deleteAllFiles" :disabled="(user.isModerator && !$store.getters.isAdmin) || user.isAdmin"><fa :icon="faTrashAlt"/> {{ $t('delete-all-files') }}</ui-button>
 					<ui-button @click="deleteAccount" :disabled="deleting || user.isModerator || user.isAdmin"><fa :icon="faTrashAlt"/> {{ $t('delete-account') }}</ui-button>
 					<ui-textarea v-if="user" :value="user | json5" readonly tall style="margin-top:16px;"></ui-textarea>
 				</div>
