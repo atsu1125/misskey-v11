@@ -1702,8 +1702,11 @@ admin/views/users.vue:
       moderator: "モデレーター"
       adminOrModerator: "管理者+モデレーター"
       verified: "公式アカウント"
+      premiumed: "プレミアムアカウント"
       silenced: "サイレンス済み"
       suspended: "凍結済み"
+      bot: "ボットアカウント"
+      cat: "ねこアカウント"
     origin:
       title: "オリジン"
       combined: "ローカル+リモート"
