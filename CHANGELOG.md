@@ -1,6 +1,20 @@
 ChangeLog
 =========
 
+2.4.2 (2023/02/11)
+--------------------
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+### ✨Improvements
+- OGP: 項目を追加 by @fs5m8 [2d35b67](https://github.com/sakura-tel/areionskey/commit/2d35b67cec463b90f576f7e6dd62f1c574f17f35)
+- URLチェックの強化 by @mei23 [cd43d69](https://github.com/sakura-tel/areionskey/commit/cd43d6943211e0ce5e49cf67f6cc4713f6cf21d1) [1f6ae07](https://github.com/sakura-tel/areionskey/commit/1f6ae07f57787ac2d24097847cc5cbaf263841f5) [88d237a](https://github.com/sakura-tel/areionskey/commit/88d237a18ae0fdd0e79b09929fa61542cf86e24b) [8f793fc](https://github.com/sakura-tel/areionskey/commit/8f793fc0f9ada1ab8412295ab5fcd64d14e90b61)
+
+### 🐛Fixes
+- StyleSheet: 特定の固定幅フォントの指定を削除 by @fs5m8 [0a24cd7](https://github.com/sakura-tel/areionskey/commit/0a24cd728b8b7523aa35d9172500713abc6c30f7)
+- 依存関係の更新
+
 2.4.1 (2023/01/15)
 --------------------
 ### To Update

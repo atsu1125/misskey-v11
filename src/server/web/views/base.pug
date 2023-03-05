@@ -28,10 +28,13 @@ html
 		block meta
 
 		block og
-			meta(property='og:image' content=img)
+			meta(property='og:title' content= title || 'Areionskey') 
+			meta(property='og:description' content= desc || 'A federated/distributed microblogging platform')
+			meta(property='og:image' content= img)
 
 		style
 			include ./../../../../built/client/assets/init.css
+
 		script
 			include ./../../../../built/client/assets/boot.js
 
