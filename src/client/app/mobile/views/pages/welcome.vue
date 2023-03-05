@@ -21,9 +21,6 @@
 		<div class="tl">
 			<mk-welcome-timeline/>
 		</div>
-		<div class="photos">
-			<div v-for="photo in photos" :style="`background-image: url(${photo.thumbnailUrl})`"></div>
-		</div>
 		<div class="stats" v-if="stats">
 			<span><fa icon="user"/> {{ stats.originalUsersCount | number }}</span>
 			<span><fa icon="pencil-alt"/> {{ stats.originalNotesCount | number }}</span>
