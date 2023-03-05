@@ -1,6 +1,22 @@
 ChangeLog
 =========
 
+2.4.1 (2023/01/15)
+--------------------
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+### ✨Improvements
+- Unicode Emoji 15.0 by @mei23, @archaeme, @Johann150, @mia-0 [2a1ca22](https://github.com/sakura-tel/areionskey/commit/2a1ca22202159cfd6cee3d9090ee06b12fced243)
+- diskusage -> check-disk-space by @mei23 [97a340b](https://github.com/sakura-tel/areionskey/commit/97a340b10dc8ce89ac53581dc32a56fba3fbc02b) [0b3d965](https://github.com/sakura-tel/areionskey/commit/0b3d9657a6076d00b06a3ff606e594b842d207ec)
+
+### 🐛Fixes
+- Depend: 本来ないといけない依存関係を追加など by @mei23 [374cb69](https://github.com/sakura-tel/areionskey/commit/374cb6910cdf73111dc0d7614a166f67ae910520)
+- mobile: トーストの位置を修正 by @fs5m8 [7844e93](https://github.com/sakura-tel/areionskey/commit/7844e934d26de4262a79d9f5ce02ad784eb111de)
+- reaction: カウントの文字の大きさを修正 by @fs5m8 [d3dda02](https://github.com/sakura-tel/areionskey/commit/d3dda02e81f9928b48444683cb8a7a209c8fb464)
+- api/ep/emoji: カスタム絵文字名の重複チェックの修正 by @fs5m8 [bdc809c](https://github.com/sakura-tel/areionskey/commit/bdc809c659d1e0627c2339361455119cfa931266)
+
 2.4.0 (2023/01/14)
 --------------------
 ### To Update

@@ -195,8 +195,7 @@ export default Vue.extend({
 			background var(--reactionViewerButtonHoverBg)
 
 	> span
-		font-size 0.9em
 		line-height 32px
-		margin 0 0 0 4px
+		margin 0 0 0 2px
 		color var(--text)
 </style>

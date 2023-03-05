@@ -1,5 +1,5 @@
 <template>
-<div class="mk-stream-indicator">
+<div class="mk-stream-indicator" :class="{ isMobile: $root.isMobile, inDeckMode: $store.state.device.inDeckMode }">
 	<p v-if="stream.state == 'initializing'">
 		<fa icon="spinner" pulse/>
 		<span>{{ $t('connecting') }}<mk-ellipsis/></span>
@@ -84,5 +84,11 @@ export default Vue.extend({
 
 		> [data-icon]
 			margin-right 0.25em
+
+	&.isMobile
+		bottom 66px
+
+		&.inDeckMode
+			bottom 120px
 
 </style>

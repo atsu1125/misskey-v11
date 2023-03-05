@@ -23,7 +23,9 @@ export default Vue.extend({
 		this.$nextTick(() => {
 			anime({
 				targets: this.$el,
-				[this.pos]: '0px',
+				[this.pos]: this.pos === 'bottom'
+										? this.$store.state.device.inDeckMode ? '108px' : '58px'
+										: this.$store.state.device.inDeckMode ? '0px' : '48px',
 				duration: 500,
 				easing: 'easeOutQuad'
 			});
