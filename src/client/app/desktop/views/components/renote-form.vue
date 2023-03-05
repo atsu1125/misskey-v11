@@ -104,7 +104,7 @@ export default Vue.extend({
 
 			&.home
 				right 148px
-				font-size 13px
+				font-size 12px
 
 			&.ok
 				right 16px

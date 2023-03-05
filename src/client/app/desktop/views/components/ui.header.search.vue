@@ -45,7 +45,7 @@ export default Vue.extend({
 		left 0
 		width 48px
 		text-align center
-		line-height 48px
+		line-height 44px
 		color var(--desktopHeaderFg)
 		pointer-events none
 

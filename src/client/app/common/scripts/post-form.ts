@@ -1,6 +1,6 @@
 import insertTextAtCursor from 'insert-text-at-cursor';
 import { length } from 'stringz';
-import { toASCII } from 'punycode';
+import { toASCII } from 'punycode/';
 import MkVisibilityChooser from '../views/components/visibility-chooser.vue';
 import getFace from './get-face';
 import { parse } from '../../../../mfm/parse';
@@ -97,19 +97,25 @@ export default (opts) => ({
 					: x;
 		},
 
-		submitText(): string {
-			return this.renote
-				? this.$t('@.post-form.renote')
-				: this.reply
-					? this.$t('@.post-form.reply')
-					: this.$t('@.post-form.submit');
-		},
-
 		canPost(): boolean {
 			return !this.posting &&
 				(1 <= this.text.length || 1 <= this.files.length || this.poll || this.renote) &&
 				(length(this.text.trim()) <= this.maxNoteTextLength) &&
 				(!this.poll || this.pollChoices.length >= 2);
+		},
+
+		isQuote(): boolean {
+			return this.renote && (1 <= this.text.length || 1 <= this.files.length || this.poll);
+		},
+
+		submitText(): string {
+			return this.isQuote
+				? this.$t('@.post-form.quote')
+				: this.renote
+					? this.$t('@.post-form.renote')
+					: this.reply
+						? this.$t('@.post-form.reply')
+						: this.$t('@.post-form.submit');
 		}
 	},
 
@@ -499,7 +505,7 @@ export default (opts) => ({
 		},
 
 		doPreview() {
-			this.preview = {
+			this.preview = this.canPost ? {
 				id: `${Math.random()}`,
 				createdAt: new Date().toISOString(),
 				userId: this.$store.state.i.id,

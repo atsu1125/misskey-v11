@@ -16,7 +16,7 @@
 			</div>
 		</div>
 		<div @click="choose('followers')" :class="{ active: v == 'followers' }">
-			<div><fa icon="unlock"/></div>
+			<div><fa icon="lock"/></div>
 			<div>
 				<span>{{ $t('followers') }}</span>
 				<span>{{ $t('followers-desc') }}</span>
@@ -43,7 +43,7 @@
 			</div>
 		</div>
 		<div @click="choose('local-followers')" :class="{ active: v == 'local-followers' }">
-			<div><fa icon="unlock"/></div>
+			<div><fa icon="lock"/></div>
 			<div>
 				<span>{{ $t('local-followers') }}</span>
 			</div>

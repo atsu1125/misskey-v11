@@ -50,7 +50,6 @@ export default Vue.extend({
 <style lang="stylus" scoped>
 .qiziqtywpuaucsgarwajitwaakggnisj
 	display flex
-	overflow hidden
 	font-size 0.9em
 
 	> .avatar

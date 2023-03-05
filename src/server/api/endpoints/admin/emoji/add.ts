@@ -41,11 +41,18 @@ export const meta = {
 			message: 'Emoji already exists.',
 			code: 'EMOJI_ALREADY_EXISTS',
 			id: 'fc46b5a4-6b92-4c33-ac66-b806659bb5cf'
+		},
+		emojiNameCorrupts: {
+			message: 'Emoji name corrupts.',
+			code: 'EMOJI_NAME_CORRUPTS',
+			id: '03bc7ada-edee-4959-b7f5-3901a939729c'
 		}
 	}
 };
 
 export default define(meta, async (ps, me) => {
+	if (!ps.name.match(/^[a-zA-Z0-9_+-]+$/)) throw new ApiError(meta.errors.emojiNameCorrupts);
+
 	const type = await detectUrlMime(ps.url);
 
 	const exists = await Emojis.findOne({

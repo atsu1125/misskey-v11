@@ -7,7 +7,6 @@ import { Emojis } from '../../../models';
 import { getConnection } from 'typeorm';
 import redis from '../../../db/redis';
 import { DB_MAX_NOTE_TEXT_LENGTH } from '../../../misc/hard-limits';
-import config from '../config';
 
 export const meta = {
 	stability: 'stable',

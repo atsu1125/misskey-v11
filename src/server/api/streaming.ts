@@ -38,6 +38,7 @@ module.exports = (server: http.Server) => {
 
 		subscriber.subscribe(config.host);
 
+		// eslint-disable-next-line prefer-const
 		ev = new EventEmitter();
 
 		subscriber.on('message', async (_, data) => {

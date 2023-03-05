@@ -1,7 +1,7 @@
 <template>
-<img v-if="customEmoji" class="fvgwvorwhxigeolkkrcderjzcawqrscl" :class="{ normal: normal, custom: $store.state.device.makeCustomEmojisBigger }" :src="url" :alt="alt" :title="alt"/>
-<img v-else-if="char && !useOsDefaultEmojis" class="fvgwvorwhxigeolkkrcderjzcawqrscl" :src="url" :alt="alt" :title="alt"/>
-<span v-else-if="char && useOsDefaultEmojis">{{ char }}</span>
+<img v-if="customEmoji" class="fvgwvorwhxigeolkkrcderjzcawqrscl" :class="{ normal: normal, custom: $store.state.device.makeCustomEmojisBigger, noStyle: noStyle }" :src="url" :alt="alt" :title="alt"/>
+<img v-else-if="char && !useOsDefaultEmojis" class="fvgwvorwhxigeolkkrcderjzcawqrscl" :class="{ noStyle: noStyle }" :src="url" :alt="alt" :title="alt"/>
+<span v-else-if="char && useOsDefaultEmojis" :class="{ noStyle: noStyle }">{{ char }}</span>
 <span v-else>:{{ name }}:</span>
 </template>
 
@@ -21,6 +21,11 @@ export default Vue.extend({
 			required: false
 		},
 		normal: {
+			type: Boolean,
+			required: false,
+			default: false
+		},
+		noStyle: {
 			type: Boolean,
 			required: false,
 			default: false
@@ -115,5 +120,8 @@ export default Vue.extend({
 
 			&:hover
 				transform none
+
+	&.noStyle
+		height auto !important
 
 </style>

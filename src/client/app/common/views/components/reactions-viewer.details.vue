@@ -2,7 +2,7 @@
 <transition name="zoom-in-top">
 	<div class="buebdbiu" ref="popover" v-if="show">
 		<div class="reaction">
-			<mk-reaction-icon class="icon" :reaction="reaction" :custom-emojis="customEmojis" ref="icon"/>
+			<mk-reaction-icon class="icon" :reaction="reaction" :custom-emojis="customEmojis" :noStyle="true" ref="icon"/>
 			<div class="name">{{ getReactionName(reaction) }}</div>
 		</div>
 		<div class="users">
@@ -98,23 +98,23 @@ export default Vue.extend({
 	transform-origin center -16px
 
 	> .reaction
-		max-width 350px
+		max-width 120px
 		margin-left 4px
 		text-align center
 
 		> .icon
 			display block
 			margin 0 auto
-			max-width 350px
-			font-size 54px
+			width 64px
+			font-size 64px
 
 		> .name
-			font-size 12px
+			font-size 0.8em
 
 	> .users 
 		flex 1
 		min-width 0
-		font-size 14px
+		font-size 0.95em
 		border-left solid 0.5px var(--faceDivider)
 		padding-left 12px
 		margin-left 10px

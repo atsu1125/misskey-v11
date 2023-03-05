@@ -36,31 +36,13 @@ export function toHtml(tokens: MfmForest | null, mentionedRemoteUsers: IMentione
 			return el;
 		},
 
-		strike(token) {
+		delete(token) {
 			const el = doc.createElement('del');
 			appendChildren(token.children, el);
 			return el;
 		},
 
 		italic(token) {
-			const el = doc.createElement('i');
-			appendChildren(token.children, el);
-			return el;
-		},
-
-		motion(token) {
-			const el = doc.createElement('i');
-			appendChildren(token.children, el);
-			return el;
-		},
-
-		spin(token) {
-			const el = doc.createElement('i');
-			appendChildren(token.children, el);
-			return el;
-		},
-
-		jump(token) {
 			const el = doc.createElement('i');
 			appendChildren(token.children, el);
 			return el;
@@ -133,11 +115,12 @@ export function toHtml(tokens: MfmForest | null, mentionedRemoteUsers: IMentione
 				case 'twitter.com':
 					a.href = `https://twitter.com/${username}`;
 					break;
-				default:
+				default: {
 					const remoteUserInfo = mentionedRemoteUsers.find(remoteUser => remoteUser.username === username && remoteUser.host === host);
 					a.href = remoteUserInfo ? (remoteUserInfo.url ? remoteUserInfo.url : remoteUserInfo.uri) : `${config.url}/${acct}`;
 					a.className = 'u-url mention';
 					break;
+				}
 			}
 			a.textContent = acct;
 			return a;
@@ -145,12 +128,6 @@ export function toHtml(tokens: MfmForest | null, mentionedRemoteUsers: IMentione
 
 		quote(token) {
 			const el = doc.createElement('blockquote');
-			appendChildren(token.children, el);
-			return el;
-		},
-
-		title(token) {
-			const el = doc.createElement('h1');
 			appendChildren(token.children, el);
 			return el;
 		},

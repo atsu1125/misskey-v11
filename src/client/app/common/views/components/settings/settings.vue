@@ -268,7 +268,7 @@
 
 	<template v-if="page == null || page == 'security'">
 		<ui-card>
-			<template #title><fa icon="unlock-alt"/> {{ $t('@._settings.password') }}</template>
+			<template #title><fa icon="lock"/> {{ $t('@._settings.password') }}</template>
 			<section>
 				<x-password/>
 			</section>

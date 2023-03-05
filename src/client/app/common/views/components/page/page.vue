@@ -58,8 +58,8 @@ class Script {
 
 	public interpolate(str: string) {
 		if (str == null) return null;
-		return str.replace(/{(.+?)}/g, match => {
-			const v = this.vars[match.slice(1, -1).trim()];
+		return str.replace(/\${(.+?)}/g, match => {
+			const v = this.vars[match.slice(2, -1).trim()];
 			return v == null ? 'NULL' : v.toString();
 		});
 	}

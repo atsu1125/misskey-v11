@@ -1,6 +1,42 @@
 ChangeLog
 =========
 
+2.4.0 (2023/01/14)
+--------------------
+### To Update
+以下を実施してください
+- Areionskey 再起動
+
+### ✨Improvements
+- welcome/timeline: CW ボタンを追加 by @fs5m8 [8b191a5](https://github.com/sakura-tel/areionskey/commit/8b191a5e24960789f4cbb7921b53b9572032b90d)
+- pages/aiscript: 変数を指す表記を `{ }` から `${ }` に変更 by @fs5m8 [078250d](https://github.com/sakura-tel/areionskey/commit/078250d681738295d6395d68814ef1a72c0bdc60) [ac96df6](https://github.com/sakura-tel/areionskey/commit/ac96df65ea8665e41bad21f21c2593a31e3c874e)
+- service/drive: 不要なら画像のリサイズをしない 大きいJPEGの圧縮にMozjpegを使用するように変更 by @mei23 [5c67f61](https://github.com/sakura-tel/areionskey/commit/5c67f61ab6b8658abc39f15abe89e35b9c5649d8)
+- mfm: strike の内部名を delete に変更 by @fs5m8 [ba0c188](https://github.com/sakura-tel/areionskey/commit/ba0c188831e4d4e8fd1e773413ac57b042b70006)
+- mfm: カスタム絵文字の直前に カスタム絵文字名に含めることができる文字があるとき カスタム絵文字扱いをやめるように変更 by @fs5m8 [4de9dfa](https://github.com/sakura-tel/areionskey/commit/4de9dfa86a32c4f0440ba3c0f5e4049d7930ebd6) [eb54290](https://github.com/sakura-tel/areionskey/commit/eb542904fe756b5435eb0c9d020c7ad45edd0ddc) [3027922](https://github.com/sakura-tel/areionskey/commit/30279228fb6bb22d1ded738f427b1c848d779c73)
+- api/ep/emoji: カスタム絵文字名の重複と不正な形式をチェックする処理を追加 by @fs5m8 [aae02be](https://github.com/sakura-tel/areionskey/commit/aae02be2644be42275c314ac48c1470bb1ac4a10)
+- icon: unlock -> lock by @fs5m8 [9f30ed8](https://github.com/sakura-tel/areionskey/commit/9f30ed8d5f31c4feb2dbdbb4aa5aa131e76a0bd2)
+- postform: 引用として投稿される条件のときは Renote ではなく 引用 と表示するように変更 by @fs5m8 [458f978](https://github.com/sakura-tel/areionskey/commit/458f9787ddd83f883ecd79cab778ca75fff8a82d)
+- Dev: backend の build に swc を使用するように変更 by @mei23 [842f6bb](https://github.com/sakura-tel/areionskey/commit/842f6bb3e96c34ca5a9f749c885b95a16dbbbd94) [837246e](https://github.com/sakura-tel/areionskey/commit/837246efab2cfd6707e0c9a788f8f87da60352e1)
+- Dev: webpack.config を js に変更 by @mei23 [186fdab](https://github.com/sakura-tel/areionskey/commit/186fdab77ef84bd70cd843ca57e0a3864cf62762)
+- Dev: gulpfile を js に変更 by @mei23 [7ae458b](https://github.com/sakura-tel/areionskey/commit/7ae458b71424942e7e5c5e3d5be7bb441d46b9b9)
+- Dev: TypeScript の Linter に ESLint を使用 by @mei23 [7dced81](https://github.com/sakura-tel/areionskey/commit/7dced8139b348deac7e625b8efe3871993d2b80f)
+- user: ブロックしているときはフォローボタンを非表示にする変更 by @atsu1125 [4cd05ed](https://github.com/sakura-tel/areionskey/commit/4cd05ed218a1638a5d414187f56cc2ee0a9eb2b2)
+
+### 🐛Fixes
+- desktop/header/menu: アイコンの並びを統一 by @fs5m8 [43adf82](https://github.com/sakura-tel/areionskey/commit/43adf8252f040901f195343483ef076ffcdef424)
+- drive/files: 形式バリデータの修正 by @mei23 [ea2bc3f](https://github.com/sakura-tel/areionskey/commit/ea2bc3fefff445520a02565344f1e8dc94cd306c)
+- SQL LIKE escape by @mei23 [22f9ea5](https://github.com/sakura-tel/areionskey/commit/22f9ea50e199780c7808d6750d2446a4b686dce9)
+- Dev: build に不要な依存パッケージを devDependencies に移動 by @mei23 [ce0bd05](https://github.com/sakura-tel/areionskey/commit/ce0bd05ef795033a2b5bdce963019604e79eb730)
+- settings: API token を隠すように変更 by @atsu1125 [7e0d6a4](https://github.com/sakura-tel/areionskey/commit/7e0d6a4a4870aa33adfb5a6ab94f176c5e3d8e44)
+- その他 `mergin`, `padding`, `overflow` などの調整
+- 言語ファイルの更新
+- 依存関係，テストファイルの更新
+
+### ❌Abolitions
+- mfm: `big` の動きを削除 by @fs5m8 [9ecb280](https://github.com/sakura-tel/areionskey/commit/9ecb280e17ba87f58e209e53f5213a238c3cad85)
+- mfm: `motion`, `jump`, `spin` の削除 by @fs5m8 [9ecb280](https://github.com/sakura-tel/areionskey/commit/9ecb280e17ba87f58e209e53f5213a238c3cad85)
+- mfm: `title` の削除 by @fs5m8 [5e39c0d](https://github.com/sakura-tel/areionskey/commit/5e39c0d5715dd1e169e9358b17aacbc5399d23c8)
+
 2.3.0 (2023/01/04)
 --------------------
 ### To Update

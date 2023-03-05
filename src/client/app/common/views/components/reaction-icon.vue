@@ -1,5 +1,5 @@
 <template>
-<mk-emoji :emoji="str.startsWith(':') ? null : str" :name="str.startsWith(':') ? str.substring(1, str.length - 1) : null" :is-reaction="true" :custom-emojis="customEmojis" :normal="true"/>
+<mk-emoji :emoji="str.startsWith(':') ? null : str" :name="str.startsWith(':') ? str.substring(1, str.length - 1) : null" :isReaction="true" :customEmojis="customEmojis" :normal="true" :noStyle="noStyle"/>
 </template>
 
 <script lang="ts">
@@ -15,6 +15,11 @@ export default Vue.extend({
 		customEmojis: {
 			required: false,
 			default: () => undefined as any[]
+		},
+		noStyle: {
+			type: Boolean,
+			required: false,
+			default: false
 		},
 	},
 	data() {

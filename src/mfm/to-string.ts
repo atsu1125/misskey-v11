@@ -25,26 +25,12 @@ export function toString(tokens: MfmForest | null, opts?: RestoreOptions): strin
 			return `<small>${appendChildren(token.children, opts)}</small>`;
 		},
 
-		strike(token, opts) {
+		delete(token, opts) {
 			return `~~${appendChildren(token.children, opts)}~~`;
 		},
 
 		italic(token, opts) {
 			return `<i>${appendChildren(token.children, opts)}</i>`;
-		},
-
-		motion(token, opts) {
-			return `<motion>${appendChildren(token.children, opts)}</motion>`;
-		},
-
-		spin(token, opts) {
-			const attr = token.node.props?.attr;
-			const post = attr ? ` ${attr}` : '';
-			return `<spin${post}>${appendChildren(token.children, opts)}</spin>`;
-		},
-
-		jump(token, opts) {
-			return `<jump>${appendChildren(token.children, opts)}</jump>`;
 		},
 
 		flip(token, opts) {
@@ -93,10 +79,6 @@ export function toString(tokens: MfmForest | null, opts?: RestoreOptions): strin
 
 		quote(token) {
 			return `${appendChildren(token.children, {doNyaize: false}).replace(/^/gm, '>').trim()}\n`;
-		},
-
-		title(token, opts) {
-			return `[${appendChildren(token.children, opts)}]\n`;
 		},
 
 		text(token, opts) {

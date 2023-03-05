@@ -2,39 +2,32 @@
  * Gulp tasks
  */
 
-import * as gulp from 'gulp';
-import * as ts from 'gulp-typescript';
+const gulp = require('gulp');
+const fs = require('fs');
+const swc = require('gulp-swc');
 const sourcemaps = require('gulp-sourcemaps');
-import tslint from 'gulp-tslint';
 const stylus = require('gulp-stylus');
-import * as rimraf from 'rimraf';
-import * as chalk from 'chalk';
-import * as rename from 'gulp-rename';
+const rimraf = require('rimraf');
+const rename = require('gulp-rename');
 const replace = require('gulp-replace');
-const cleanCSS = require('gulp-clean-css');
 const terser = require('gulp-terser');
+const cleanCSS = require('gulp-clean-css');
 
 const locales = require('./locales');
+const swcOptions = JSON.parse(fs.readFileSync('.swcrc', 'utf-8'));
 
 const env = process.env.NODE_ENV || 'development';
-const isDebug = env !== 'production';
 
-if (isDebug) {
-	console.warn(chalk.yellow.bold('WARNING! NODE_ENV is not "production".'));
-	console.warn(chalk.yellow.bold('         built script will not be compressed.'));
-}
-
-gulp.task('build:ts', () => {
-	const tsProject = ts.createProject('./tsconfig.json');
-
-	return tsProject
-		.src()
+gulp.task('build:ts', () =>
+	gulp.src([
+			'src/**/*.ts',
+			'!./src/client/app/**/*.ts'
+	])
 		.pipe(sourcemaps.init())
-		.pipe(tsProject())
-		.on('error', () => {})
+		.pipe(swc(swcOptions))
 		.pipe(sourcemaps.write('.', { includeContent: false, sourceRoot: '../built' }))
-		.pipe(gulp.dest('./built/'));
-});
+		.pipe(gulp.dest('built'))
+);
 
 gulp.task('build:copy:views', () =>
 	gulp.src('./src/server/web/views/**/*').pipe(gulp.dest('./built/server/web/views'))
@@ -51,33 +44,16 @@ gulp.task('build:copy:docs', () =>
 gulp.task('build:copy', gulp.parallel('build:copy:views', 'build:copy:fonts', 'build:copy:docs', () =>
 	gulp.src([
 		'./src/const.json',
-		'./src/emojilist.json',
 		'./src/server/web/views/**/*',
 		'./src/**/assets/**/*',
 		'!./src/client/app/**/assets/**/*'
 	]).pipe(gulp.dest('./built/'))
 ));
 
-gulp.task('lint', () =>
-	gulp.src('./src/**/*.ts')
-		.pipe(tslint({
-			formatter: 'verbose'
-		}))
-		.pipe(tslint.report())
-);
-
-gulp.task('format', () =>
-	gulp.src('./src/**/*.ts')
-		.pipe(tslint({
-			formatter: 'verbose',
-			fix: true
-		}))
-		.pipe(tslint.report())
-);
-
-gulp.task('clean', cb =>
-	rimraf('./built', cb)
-);
+gulp.task('clean', gulp.parallel(
+	cb => rimraf('./built', cb),
+	cb => rimraf('./node_modules/.cache', cb)
+));
 
 gulp.task('cleanall', gulp.parallel('clean', cb =>
 	rimraf('./node_modules', cb)
@@ -109,7 +85,7 @@ gulp.task('copy:client', () =>
 			'./src/client/app/*/assets/**/*'
 		])
 			.pipe(rename(path => {
-				path.dirname = path.dirname!.replace('assets', '.');
+				path.dirname = path.dirname.replace('assets', '.');
 			}))
 			.pipe(gulp.dest('./built/client/assets/'))
 );
@@ -134,4 +110,4 @@ gulp.task('build', gulp.parallel(
 	'doc'
 ));
 
-gulp.task('default', gulp.task('build')!);
+gulp.task('default', gulp.task('build'));

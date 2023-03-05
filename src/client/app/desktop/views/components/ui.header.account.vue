@@ -83,20 +83,20 @@
 			<ul>
 				<li @click="toggleDeckMode">
 					<p>
-						<template v-if="$store.state.device.inDeckMode"><span>{{ $t('@.home') }}</span><i><fa :icon="faHome"/></i></template>
-						<template v-else><span>{{ $t('@.deck') }}</span><i><fa :icon="faColumns"/></i></template>
+						<template v-if="$store.state.device.inDeckMode"><i><fa :icon="faHome" fixed-width/></i><span>{{ $t('@.home') }}</span></template>
+						<template v-else><i><fa :icon="faColumns" fixed-width/></i><span>{{ $t('@.deck') }}</span></template>
 					</p>
 				</li>
 				<li v-if="$store.state.device.appTypeForce == 'auto'" @click="toggleAppType">
 					<p>
-						<template v-if="$root.isMobile"><span>{{ $t('@.desktop-mode') }}</span><i><fa :icon="faDesktop"/></i></template>
-						<template v-else><span>{{ $t('@.mobile-mode') }}</span><i><fa :icon="faMobileAlt" style="margin-right: 3px"/></i></template>
+						<template v-if="$root.isMobile"><i><fa :icon="faDesktop" fixed-width/></i><span>{{ $t('@.desktop-mode') }}</span></template>
+						<template v-else><i><fa :icon="faMobileAlt" fixed-width/></i><span>{{ $t('@.mobile-mode') }}</span></template>
 					</p>
 				</li>
 				<li @click="dark">
 					<p>
+						<template><i><fa :icon="$store.state.device.darkmode ? faSun : faMoon" fixed-width/></i></template>
 						<span>{{ $store.state.device.darkmode ? $t('@.turn-off-darkmode') : $t('@.turn-on-darkmode') }}</span>
-						<template><i><fa :icon="$store.state.device.darkmode ? faSun : faMoon"/></i></template>
 					</p>
 				</li>
 			</ul>

@@ -100,7 +100,7 @@
 	</section>
 
 	<section>
-		<header><fa :icon="faUnlockAlt"/> {{ $t('privacy') }}</header>
+		<header><fa :icon="faLock"/> {{ $t('privacy') }}</header>
 
 		<div>
 			<ui-switch v-model="isLocked" @change="save(false)">{{ $t('is-locked') }}</ui-switch>
@@ -158,10 +158,10 @@
 import Vue from 'vue';
 import i18n from '../../../../i18n';
 import { apiUrl, host } from '../../../../config';
-import { toUnicode } from 'punycode';
+import { toUnicode } from 'punycode/';
 import langmap from 'langmap';
 import { unique } from '../../../../../../prelude/array';
-import { faDownload, faUpload, faUnlockAlt, faBoxes, faCogs } from '@fortawesome/free-solid-svg-icons';
+import { faDownload, faUpload, faLock, faBoxes, faCogs } from '@fortawesome/free-solid-svg-icons';
 import { faSave, faEnvelope } from '@fortawesome/free-regular-svg-icons';
 
 export default Vue.extend({
@@ -204,7 +204,7 @@ export default Vue.extend({
 			bannerUploading: false,
 			exportTarget: 'notes',
 			disableDeletion: false,
-			faDownload, faUpload, faSave, faEnvelope, faUnlockAlt, faBoxes, faCogs
+			faDownload, faUpload, faSave, faEnvelope, faLock, faBoxes, faCogs
 		};
 	},
 

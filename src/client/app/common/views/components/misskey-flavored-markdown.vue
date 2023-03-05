@@ -25,15 +25,6 @@ export default Vue.extend({
 		:deep(.fvgwvorwhxigeolkkrcderjzcawqrscl:only-child)
 			font-size 4em
 
-	:deep(.title)
-		display block
-		margin-bottom 4px
-		padding 4px
-		font-size 90%
-		text-align center
-		background var(--mfmTitleBg)
-		border-radius 4px
-
 	:deep(.quote)
 		display block
 		margin 8px

@@ -47,7 +47,7 @@
 import Vue from 'vue';
 import i18n from '../../../i18n';
 import { apiUrl, host } from '../../../config';
-import { toUnicode } from 'punycode';
+import { toUnicode } from 'punycode/';
 import { hexifyAB, byteify } from '../../scripts/2fa';
 
 export default Vue.extend({

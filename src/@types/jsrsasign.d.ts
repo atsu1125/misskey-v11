@@ -1,4 +1,6 @@
 // Attention: Partial Type Definition
+/* eslint-disable @typescript-eslint/adjacent-overload-signatures */
+/* eslint-disable @typescript-eslint/ban-types */
 
 declare module 'jsrsasign' {
 	//// HELPER TYPES
