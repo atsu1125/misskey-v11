@@ -34,7 +34,7 @@
 						<span class="divider" v-if="meta && !(meta.disableRegistration && meta.disableInvitation)">|</span>
 						<span class="signin" @click="signin">{{ $t('@.signin') }}</span>
 						<span class="divider" v-if="meta && !(meta.disableProfileDirectory)">|</span>
-						<span class="explore" onclick="window.location.href='/explore'" v-if="meta && !(meta.disableProfileDirectory)">Explore</span>
+						<span class="explore" @click="explore" v-if="meta && !(meta.disableProfileDirectory)">Explore</span>
 					</p>
 
 					<img v-if="meta" :src="meta.mascotImageUrl" alt="char" class="char">
@@ -222,7 +222,11 @@ export default Vue.extend({
 				key: 'darkmode',
 				value: !this.$store.state.device.darkmode
 			});
-		}
+		},
+
+		explore() {
+			this.$router.push(`/explore`);
+		},
 	}
 });
 </script>
