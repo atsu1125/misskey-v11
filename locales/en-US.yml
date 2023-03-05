@@ -1695,6 +1695,9 @@ desktop/views/pages/welcome.vue:
   announcements: "Announcements"
   photos: "Recent Images"
   info: "Information"
+  invitation-required-to-register: "This server is currently invitation only. Only those with an invitation code can register."
+  unavailable-registration: "Sorry... This server is not currently accepting registration."
+  available-registration: "This server is accepting registration now!"
 desktop/views/pages/drive.vue:
   title: "Areionskey storage"
 desktop/views/pages/note.vue:
@@ -1924,6 +1927,10 @@ mobile/views/pages/user/home.vue:
   last-used-at: "Last active:"
 mobile/views/pages/user/home.photos.vue:
   no-photos: "No photos"
+mobile/views/pages/welcome.vue:
+  invitation-required-to-register: "This server is currently invitation only. Only those with an invitation code can register."
+  unavailable-registration: "Sorry... This server is not currently accepting registration."
+  available-registration: "This server is accepting registration now!"
 deck:
   widgets: "Widgets"
   home: "Home"

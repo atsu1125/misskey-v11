@@ -9,6 +9,9 @@
 		<p class="pba" v-html="$t('@.powered-by-areionskey')"></p>
 		<div class="about">
 			<p v-html="description || this.$t('@.about')"></p>
+			<ui-info warn v-if="meta && (meta.disableRegistration && meta.disableInvitation)">{{ $t('unavailable-registration') }}</ui-info>
+			<ui-info warn v-if="meta && (meta.disableRegistration && !meta.disableInvitation)">{{ $t('invitation-required-to-register') }}</ui-info>
+			<ui-info v-if="meta && !meta.disableRegistration">{{ $t('available-registration') }}</ui-info>
 			<div class="sign">
 				<router-link class="signup" to="/signup" v-if="meta && !(meta.disableRegistration && meta.disableInvitation)">{{ $t('@.signup') }}</router-link>
 				<span class="divider" v-if="meta && !(meta.disableRegistration && meta.disableInvitation)">|</span>
