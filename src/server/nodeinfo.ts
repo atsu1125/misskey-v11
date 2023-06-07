@@ -73,7 +73,11 @@ const nodeinfo2 = async () => {
 			enableGithubIntegration: meta.enableGithubIntegration,
 			enableDiscordIntegration: meta.enableDiscordIntegration,
 			enableEmail: meta.enableEmail,
-			enableServiceWorker: meta.enableServiceWorker
+			enableServiceWorker: meta.enableServiceWorker,
+			upstream: {
+				name: 'misskey',
+				version: '11.37.1',
+			},
 		}
 	};
 };
